@@ -1,68 +1,170 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  overflow-x: hidden;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+@layer base {
+  @font-face {
+    font-family: "Iran-Sans";
+    src: url(./assets/fonts/IRANSans.ttf);
   }
-  a:hover {
-    color: #747bff;
+
+  @font-face {
+    font-family: "Sahel";
+    src: url(./assets/fonts/Sahel.ttf);
   }
-  button {
-    background-color: #f9f9f9;
+
+  @font-face {
+    font-family: "Pop-Medium";
+    src: url(./assets/fonts/Poppins/poppins.medium.ttf);
+  }
+}
+
+@layer components {
+  .select_dir {
+    direction: rtl;
+  }
+
+  .buttonSimple_shadow {
+    box-shadow: 3px 5px 0px 0px #050071;
+  }
+
+  .buttonPurple_shadow {
+    box-shadow: 3px 5px 0px 0px #050071;
+  }
+
+  .buttonPurple_shadow:hover {
+    box-shadow: 1px 2px 0px 0px #050071;
+  }
+
+  .buttonYellow_shadow {
+    box-shadow: 3px 5px 0px 0px #3d3d3d;
+  }
+
+  .buttonYellow_shadow:hover {
+    box-shadow: 1px 2px 0px 0px #3d3d3d;
+  }
+
+  .Box-shadow1 {
+    box-shadow: 0px 0px 7px 1px #00000014;
+  }
+
+  .Box-shadow2 {
+    box-shadow: 0px 0px 10px 2px #8f9ea1;
+  }
+
+  .OptionIcon_shadow {
+    box-shadow: 4px 3px 0px 0px #bdbcbc;
+  }
+
+  .statistics_holder {
+    box-shadow: 0px 25px 70px rgba(40, 37, 104, 0.4);
+    border-radius: 40px;
+  }
+
+  .boldStyle_text {
+    @apply text-DarkBlue font-Sahel text-xl sm:text-3xl;
+  }
+
+  .mediumStyle_text {
+    @apply text-GrayishPurple text-base;
+  }
+
+  .faqMannequin_shadow {
+    box-shadow: 9px 8px 0px #171717;
+    transition: 0.3s;
+  }
+
+  .faqMannequin_shadow:hover {
+    box-shadow: 5px 4px 0px #171717;
+  }
+
+  .med_box-shadow {
+    box-shadow: 0px 0px 30px 3px #00000076;
+  }
+
+  .bgGradient_menu {
+    background: linear-gradient(
+      90deg,
+      rgba(87, 81, 225, 0) 0%,
+      rgba(67, 63, 174, 0.5) 53.1%,
+      rgba(48, 44, 123, 0) 100%
+    );
+    border-radius: 2px;
+  }
+
+  .specialRadius {
+    border-radius: 40% 60% 36% 64% / 39% 67% 33% 61%;
+  }
+
+  .buttonSwiper_shadow {
+    box-shadow: 2px 4px 0px #382900;
+    transition: 0.2s;
+  }
+
+  .buttonSwiper_shadow:hover {
+    box-shadow: 1px 2px 0px #382900;
+  }
+
+  .heroSection_box_shadow {
+    box-shadow: 9px 10px 0px rgba(0, 0, 0, 0.2);
+  }
+
+  .reverse-img {
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+  }
+
+  .main-container {
+    @apply xl:w-4/5 sm:w-11/12 w-[98%] m-auto my-8;
+  }
+
+  .scrollBehavior {
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .closeButton_modal {
+    @apply w-6 h-6 hover:scale-110 flex justify-center items-center cursor-pointer absolute rounded-full;
+  }
+
+  .fieldsStyle {
+    box-shadow: inset 0px 1px 2px hwb(0 0% 100% / 0.201);
+    @apply w-full h-10 bg-LightLavender text-VioletBlue outline-none border-2 border-LightGrayish focus:border-SunshineYellow py-1.5 px-3 rounded-md;
+  }
+
+  .filter-box {
+    @apply p-5 bg-LightGray rounded-lg mb-7 text-DarkBlue;
+  }
+
+  .spinner-buttons {
+    @apply w-1/4 border-LightGrayish text-GrayishPurple hover:bg-black/5 duration-200 border-x;
+  }
+
+  .importantWord {
+    @apply boldStyle_text text-white bg-[url('./assets/images/importantWord.png')] bg-no-repeat bg-center px-5 mx-2 text-nowrap;
+    background-size: 100% 100%;
+  }
+
+  .playButton {
+    @apply w-14 h-14  rounded-full absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%];
+  }
+
+  .bottomNav_shadow {
+    background: radial-gradient(
+      70.71% 70.71% at 50% 50%,
+      rgba(0, 0, 0, 0.25) 0%,
+      rgba(0, 0, 0, 0) 80%
+    );
+  }
+  .bottomNav {
+    @apply w-10 h-10 hover:scale-95 flex text-white justify-center items-center cursor-pointer rounded-md bg-VioletBlue dark:bg-LavenderMist border-2 border-LightGrayish;
   }
 }
