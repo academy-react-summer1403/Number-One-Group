@@ -8,7 +8,6 @@ import ToastAlert from "../components/common/ToastAlert";
 const App = () => {
   const { i18n } = useTranslation()
   const isLogin = useSelector(state => state.UserInfo.info)
-  console.log(isLogin)
   const router = createBrowserRouter(isLogin === false ? routerPublic : routerPrivate);
 
   return (
