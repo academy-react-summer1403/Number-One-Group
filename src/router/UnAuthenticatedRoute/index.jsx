@@ -1,0 +1,14 @@
+import { createBrowserRouter, Navigate } from "react-router-dom"
+import { MainLayouts } from "../../components/layouts"
+import { Landing } from "../../screens"
+
+const routerPublic = createBrowserRouter([
+    {
+        element: <MainLayouts />,
+        children: [
+            { path: '/', element: <Landing /> },
+            { path: '/home', element: <Navigate to={"/"} /> }
+        ]
+    }
+])
+export default routerPublic
