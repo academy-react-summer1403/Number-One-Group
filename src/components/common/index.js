@@ -11,6 +11,8 @@ import LogoGroup from "./LogoGroup";
 import SearchInput from "./searchBox/SearchInput";
 import SearchModal from "./searchBox/SearchModal";
 import BottomNav from "./bottom-nav";
+import FormHolder from "./form/FormHolder";
+import FormInput from "./form/FormInput";
 
 export {
   HowToStart,
@@ -26,4 +28,6 @@ export {
   SearchInput,
   SearchModal,
   BottomNav,
+  FormHolder,
+  FormInput,
 };

@@ -1,3 +1,4 @@
 import MainLayouts from "./MainLayouts";
+import AuthorizeLayout from "./AuthorizeLayout";
 
-export { MainLayouts };
+export { MainLayouts, AuthorizeLayout };

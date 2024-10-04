@@ -3,11 +3,11 @@ import { Label, SwiperSlider } from "../../common/index"
 import { useTranslation } from "react-i18next"
 import CategoryItem from "./CreateCategoryItem"
 import { useEffect, useState } from "react"
-import GetAllCourseByPagination from "../../../core/services/api/GetData/GetAllCourses"
-import GetTechnologies from "../../../core/services/api/GetData/GetTechnologies"
+import GetAllCourseByPagination from "../../../core/services/api/get-data/GetAllCourses"
+import GetTechnologies from "../../../core/services/api/get-data/GetTechnologies"
 
 const Categories = () => {
-    const { t} = useTranslation()
+    const { t } = useTranslation()
     const [technologies, setTechnologies] = useState([])
     const [newTechnologies, setNewTechnologies] = useState([])
 

@@ -3,7 +3,7 @@ import { Label, SwiperSlider } from "../../common"
 import Tab from "./tab"
 import { useSelector } from "react-redux"
 import { useEffect, useState } from "react"
-import GetTechnologies from "../../../core/services/api/GetData/GetTechnologies"
+import GetTechnologies from "../../../core/services/api/get-data/GetTechnologies"
 
 const TopCourses = () => {
     const { t, i18n } = useTranslation()

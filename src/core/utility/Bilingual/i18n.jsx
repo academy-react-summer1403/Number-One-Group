@@ -81,16 +81,18 @@ i18n.use(initReactI18next)
                     SignUpBtn: "ثبت نام", HaveAccount1: "از قبل حساب کاربری دارید؟",
                     // Steps
                     // ChangePassword
-                    ChangePasswordCaption: "تغییر رمزعبور", ChangePasswordDesc: "جهت دریافت کد یک بار مصرف شماره تماس خود را وارد کنید",
-                    ChangePasswordPlaceholder: "شماره همراه خود را وارد کنید", ChangePasswordBtn: "دریافت کد یک بار مصرف",
+                    ChangePasswordCaption: "تغییر رمزعبور", ChangePasswordDesc: "جهت تغییر رمز عبور ایمیل خود را وارد کنید",
+                    ChangePasswordPlaceholder: "ایمیل خود را وارد کنید", ChangePasswordBtn: "ارسال ایمیل",
                     // GetCode
                     GetCodeCaption: "دریافت کد", GetCodeDesc1: "کدی برای شماره مبایل", GetCodeDesc2: "ارسال شد آن کد را در اینجا وارد کنید",
                     GetCodePlaceholder: "کد را وارد کنید", GetCodeBtn: "تایید کد یک بار مصرف",
                     // SetNewPassword
                     SetNewPasswordCaption: "رمز عبور جدید", SetNewPasswordDesc: "رمز عبور جدید خود را وارد کنید",
-                    SetNewPasswordPlaceholder: "رمز عبور جدید را وارد کنی", SetNewPasswordBtn: "تکمیل فرایند",
+                    SetNewPasswordPlaceholder: "رمز عبور جدید را وارد کنید", SetNewPasswordBtn: "تکمیل فرایند",
                     // GetUserInfo
                     GetUserInfoCaption: " مشخصات کاربری", GetUserInfoDesc: "ایمیل و پسورد خود را وارد کنید", GetUserInfoBtn: "تکمیل ثبت نام",
+                    // GoToEmail
+                    GoToEmailCaption: "چک کردن ایمیل", GoToEmailDesc1: "پیامی به ایمیل", GoToEmailDesc2: "ارسال شد لطفا آن را بررسی کنید", GoToEmailBtn: "بررسی ایمیل",
                     // ErrorPage
                     error: "صفحه خطا", ErrorDesc: "متاسفم! این صفحه در دسترس نیست!",
                     // EventsPage
@@ -219,8 +221,8 @@ i18n.use(initReactI18next)
                     SignUpBtn: "Sign Up", HaveAccount1: "Already have an account?",
                     // Steps
                     // ChangePassword
-                    ChangePasswordCaption: "Change password", ChangePasswordDesc: "Enter your phone number to receive a one-time use code",
-                    ChangePasswordPlaceholder: "Enter your mobile number", ChangePasswordBtn: "Get a verification code",
+                    ChangePasswordCaption: "Change password", ChangePasswordDesc: "Enter your email to change your password",
+                    ChangePasswordPlaceholder: "Enter your email", ChangePasswordBtn: "Send Email",
                     // GetCode
                     GetCodeCaption: "Get the code", GetCodeDesc1: "A code has been sent to mobile number", GetCodeDesc2: "Enter that code here",
                     GetCodePlaceholder: "Enter the code", GetCodeBtn: "Verification code",
@@ -229,6 +231,8 @@ i18n.use(initReactI18next)
                     SetNewPasswordPlaceholder: "Enter the new password", SetNewPasswordBtn: "Complete the process",
                     // GetUserInfo
                     GetUserInfoCaption: "User profile", GetUserInfoDesc: "Enter your email and password", GetUserInfoBtn: "Complete",
+                    // GoToEmail
+                    GoToEmailCaption: "Check Email", GoToEmailDesc1: "A message was sent to", GoToEmailDesc2: "please check it", GoToEmailBtn: "Check Email",
                     // ErrorPage
                     error: "Error Page", ErrorDesc: "Sorry! This Page is Not Available!",
                     // EventsPage
