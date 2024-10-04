@@ -7,7 +7,7 @@ import GetAllCourseByPagination from "../../../core/services/api/get-data/GetAll
 import GetTechnologies from "../../../core/services/api/get-data/GetTechnologies"
 
 const Categories = () => {
-    const { t} = useTranslation()
+    const { t } = useTranslation()
     const [technologies, setTechnologies] = useState([])
     const [newTechnologies, setNewTechnologies] = useState([])
 

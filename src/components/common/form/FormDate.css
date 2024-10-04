@@ -1,0 +1,20 @@
+.rmdp-input {
+  width: 100% !important;
+  height: 2.5rem !important;
+  padding: 0.375rem 0.75rem !important;
+  box-shadow: inset 0px 1px 2px hwb(0 0% 100% / 0.201) !important;
+  @apply border-LightGrayish text-VioletBlue rounded-md !important;
+}
+.rmdp-input:focus {
+  border: 2px solid #ffc224 !important;
+}
+.icon-tabler {
+  right: 10px !important;
+  left: auto !important;
+}
+.rmdp-month-picker,
+.rmdp-year-picker,
+.rmdp-calendar,
+.rmdp-input {
+  @apply bg-LightLavender !important;
+}

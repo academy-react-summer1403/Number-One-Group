@@ -164,8 +164,20 @@ body {
       rgba(0, 0, 0, 0) 80%
     );
   }
-  
+
   .bottomNav {
     @apply w-10 h-10 hover:scale-95 flex text-white justify-center items-center cursor-pointer rounded-md bg-VioletBlue dark:bg-LavenderMist border-2 border-LightGrayish;
+  }
+
+  .authorizePanel_shadow_fa {
+    box-shadow: 10px 8px 0px #000000;
+  }
+
+  .authorizePanel_shadow_en {
+    box-shadow: -10px 8px 0px #000000;
+  }
+
+  .authorizeForm {
+    @apply relative w-full max-w-[500px] sm:min-w-[500px] sm:w-[500px] h-full flex flex-wrap items-center bg-MainBg rounded-[30px] sm:rounded-[50px] px-6 sm:px-16 py-12 sm:py-0;
   }
 }
