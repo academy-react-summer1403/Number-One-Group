@@ -1,18 +1,14 @@
 import { Outlet } from "react-router-dom"
-import Header from "../partials/header/Header";
-import Footer from "../partials/Footer/Footer";
-import { ScrollToUpButton } from "../common";
+import Header from "../partials/header";
+import Footer from "../partials/footer";
 
 const MainLayouts = () => {
   return (
-    <div>
+    <>
       <Header />
-      <main>
-        <Outlet />
-        <ScrollToUpButton />
-      </main>
+      <Outlet />
       <Footer />
-    </div>
+    </>
   )
 }
 

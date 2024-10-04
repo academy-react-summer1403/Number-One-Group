@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { Button, ImportantWord } from "../../common"
+import { Button } from "../../common"
 import Typewriter from 'typewriter-effect';
 import mannequin_heroSection from "../../../assets/images/mannequin-heroSection.png"
 import { boxItems } from "../../../core/constants/landing/heroSection";
@@ -16,7 +16,7 @@ const HeroSection = () => {
             <div className="w-full md:w-[400px] h-fit flex flex-wrap justify-center md:justify-start gap-y-4">
                 <div className="w-full flex justify-center md:justify-start flex-wrap h-fit gap-y-4 md:gap-x-3 items-end">
                     <h1 className='boldStyle_text w-full text-nowrap text-center md:w-auto'>{t("heroSectionTitle1")}</h1>
-                    <ImportantWord isExplosion={true} explosionStyle="hidden xl:block" holderStyle="h-auto">
+                    <h1 className="importantWord py-1.5">
                         <Typewriter
                             options={{
                                 strings: (i18n.language === "en" ? englishWords : persianWords),
@@ -24,7 +24,7 @@ const HeroSection = () => {
                                 loop: true,
                             }}
                         />
-                    </ImportantWord>
+                    </h1>
                 </div>
                 <h1 className='boldStyle_text md:text-start text-center'>{t("heroSectionTitle2")}</h1>
                 <p className='mediumStyle_text md:text-start text-center'>{t("heroSectionDescription")}</p>

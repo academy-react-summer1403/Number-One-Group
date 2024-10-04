@@ -1,11 +1,11 @@
-import HeroSection from "./heroSection.jsx";
-import Categories from "./categories.jsx";
-import AboutUs from "./aboutUs.jsx";
-import TopCourses from "./topCourses.jsx";
-import SkilledTeachers from "./skilledTeachers.jsx";
-import Statistics from "./statistics.jsx";
-import Faq from "./faq.jsx";
-import LastBlogs from "./lastBlogs.jsx";
+import HeroSection from "./HeroSection.jsx";
+import Categories from "./CategoriesSection.jsx";
+import AboutUs from "./AboutUs.jsx";
+import TopCourses from "./TopCourses.jsx";
+import SkilledTeachers from "./SkilledTeachers.jsx";
+import Statistics from "./Statistics.jsx";
+import Faq from "./Faq.jsx";
+import LastBlogs from "./LastBlogs.jsx";
 
 export {
   HeroSection,

@@ -130,6 +130,7 @@ export function SearchIcon(props) {
         </svg>
     )
 }
+
 export function ArrowIcon(props) {
     return (
         <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
@@ -137,6 +138,7 @@ export function ArrowIcon(props) {
         </svg>
     )
 }
+
 export function CategoryIcon(props) {
     return (
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
@@ -146,6 +148,7 @@ export function CategoryIcon(props) {
         </svg>
     )
 }
+
 export function TopicsIcon(props) {
     return (
         <svg
@@ -161,6 +164,7 @@ export function TopicsIcon(props) {
 
     )
 }
+
 export function ArrowLeftIcon(props) {
     return (
         <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
@@ -177,6 +181,7 @@ export function OptionIcon(props) {
         </svg>
     )
 }
+
 export function PlayIcon(props) {
     return (
         <svg width="76" height="81" viewBox="0 0 76 81" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
@@ -192,6 +197,7 @@ export function PlayIcon(props) {
         </svg>
     )
 }
+
 export function CloseIcon(props) {
     return (
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
@@ -199,6 +205,7 @@ export function CloseIcon(props) {
         </svg>
     )
 }
+
 export function MoonIcon(props) {
     return (
         <svg
@@ -236,6 +243,7 @@ export function SunIcon(props) {
         </svg>
     )
 }
+
 export function ShopIcon(props) {
     return (
         <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>

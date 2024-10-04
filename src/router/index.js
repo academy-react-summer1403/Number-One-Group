@@ -1,3 +1,4 @@
 import routerPublic from "./UnAuthenticatedRoute";
+import routerPrivate from "./AuthenticatedRoute";
 
-export {routerPublic};
+export { routerPublic, routerPrivate };

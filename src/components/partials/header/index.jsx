@@ -1,25 +1,23 @@
 import { menuItem } from "../../../core/constants/Header/headerData"
-import MenuHeader from "./menuHeader"
+import MenuHeader from "./MenuHeader"
 import { useTranslation } from "react-i18next"
 import { Button, HamburgerMenu, LogoGroup, SearchInput, SearchModal } from "../../common"
 import { CartIcon, FavoriteIcon } from "../../../core/icon"
 import MediaQuery from "react-responsive"
-import BasketItems from "./basketItems"
-import { useSelector } from "react-redux"
 import { Navbar, Tooltip } from "@nextui-org/react";
 import SideBarMenu from "./SideBarMenu"
 import tooltipStyle from "../../../core/constants/tooltip-style/tooltip"
 import { useState } from "react"
 import SearchBtn from "../../common/searchBox/SearchBtn"
+import BasketItems from "./BasketItem"
 
 const Header = () => {
   const [visibleSearch, setVisibleSearch] = useState(false)
   const [visibleMenu, setVisibleMenu] = useState(false)
-  const { t, i18n } = useTranslation();
-  const cartLength = useSelector(state => state.CartData.value.length)
+  const { t, i18n } = useTranslation()
 
   const baskets = [
-    { icon: CartIcon, number: cartLength, href: "/cart", tooltip: ["سبد خرید", "Cart"] },
+    { icon: CartIcon, number: 0, href: "/cart", tooltip: ["سبد خرید", "Cart"] },
     { icon: FavoriteIcon, number: 0, href: "", tooltip: ["لیست علاقه مندی", "Favorite List"] },
   ];
 

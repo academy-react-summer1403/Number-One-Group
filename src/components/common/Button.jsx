@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { ArrowLeftIcon } from "../../core/icon";
 import { Link } from "react-router-dom";
 
-const Button = ({ text, arrowColor, vStyle, style, Icon, href, vType, isClick,disableArrow }) => {
+const Button = ({ text, arrowColor, vStyle, style, Icon, href, vType, isClick, disableArrow }) => {
     const { t, i18n } = useTranslation();
     const variantStyle = {
         "purple": "bg-VioletBlue text-white buttonPurple_shadow",

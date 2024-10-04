@@ -1,6 +1,5 @@
 import { LinksFooter } from "../../../core/constants/Footer/footerData"
 import LinkSections from "./LinkSections"
-// import { Apps, Link_Item } from "./components"
 
 const LinksWrapper = () => {
     return (

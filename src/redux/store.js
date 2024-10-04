@@ -1,10 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { CartData, DarkMode } from "./slices";
+import { DarkMode, StepStatus, UserInfo } from "./slices";
 
 const store = configureStore({
   reducer: {
     DarkMode,
-    CartData,
+    StepStatus,
+    UserInfo,
   },
 });
 

@@ -1,6 +1,6 @@
 import aboutUs_poster from "../../../assets/images/aboutus_landing.png"
 import liveClass_icon from "../../../assets/images/liveClass.png"
-import { Button, ImportantWord, Label, OptionParts } from "../../common"
+import { Button, Label, OptionParts } from "../../common"
 import { PlayIcon } from "../../../core/icon"
 import { useTranslation } from "react-i18next"
 import { aboutUsOptions } from "../../../core/constants/landing/aboutUs"
@@ -29,7 +29,7 @@ const AboutUs = () => {
         <Label text={t("aboutLabel")} variant="bgGray" />
         <div className="w-full flex flex-wrap justify-center lg:justify-start h-fit gap-x-3 items-end">
           <h1 className="boldStyle_text w-auto">{t("aboutTitle1")}</h1>
-          <ImportantWord>{t("aboutImportantWord")}</ImportantWord>
+          <h1 className="importantWord">{t("aboutImportantWord")}</h1>
         </div>
         <h1 className="boldStyle_text">{t("aboutTitle2")}</h1>
         <p className="w-full mediumStyle_text text-center lg:text-start">{t("aboutDescription")}</p>

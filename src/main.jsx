@@ -1,11 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './app/App.jsx'
+import { App, ProviderApp } from './app'
 import './index.css'
 import "./core/utility/Bilingual/i18n.jsx"
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <ProviderApp>
+      <App />
+    </ProviderApp>
   </React.StrictMode>,
 )
