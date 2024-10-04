@@ -4,7 +4,7 @@ import 'swiper/css';
 import MediaQuery from "react-responsive";
 import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
-import getAllTeachers from "../../../core/services/api/GetData/GetAllTeachers";
+import getAllTeachers from "../../../core/services/api/get-data/GetAllTeachers";
 
 const SkilledTeachers = () => {
     const { t } = useTranslation()

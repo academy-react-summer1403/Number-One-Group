@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next"
 import CreateStatisticsItem from "./createStatisticsItem"
 import { LandingReportsItem } from "../../../core/constants/landing/Statistics"
 import { useEffect, useState } from "react"
-import GetLandingReports from "../../../core/services/api/GetData/GetLandingReports"
+import GetLandingReports from "../../../core/services/api/get-data/GetLandingReports"
 
 const Statistics = () => {
     const { i18n } = useTranslation()
