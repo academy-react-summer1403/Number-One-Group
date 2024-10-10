@@ -3,12 +3,13 @@ import { SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import MediaQuery from "react-responsive";
 import { useTranslation } from "react-i18next";
-import { useGetTeachersQuery } from "../../../hooks/react-query/Teachers";
+import { useQueryWithoutDependencies } from "../../../hooks/react-query";
+import { GetAllTeachers } from "../../../core/services/api/get-data";
 
 const SkilledTeachers = () => {
     const { t } = useTranslation()
 
-    const { data, isSuccess } = useGetTeachersQuery()
+    const { data, isSuccess } = useQueryWithoutDependencies("GET_TEACHERS", GetAllTeachers)
 
     return (
         <div className="w-full flex flex-wrap xl:flex-nowrap justify-center xl:justify-between gap-y-12 py-28 lg:px-44 sm:px-16 px-8">

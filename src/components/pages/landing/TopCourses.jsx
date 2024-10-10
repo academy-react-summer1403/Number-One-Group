@@ -5,7 +5,8 @@ import { useSelector } from "react-redux"
 import { useState } from "react"
 // import Course from "../course/Course"
 import { SwiperSlide } from "swiper/react"
-import { useGetCoursesListQuery, useGetTechnologiesQuery } from "../../../hooks/react-query/Courses"
+import { GetAllCourseByPagination, GetTechnologies } from "../../../core/services/api/get-data"
+import { useQueryWithDependencies, useQueryWithoutDependencies } from "../../../hooks/react-query"
 
 const TopCourses = () => {
     const { t, i18n } = useTranslation()
@@ -18,9 +19,10 @@ const TopCourses = () => {
         300: { spaceBetween: 20, slidesPerView: 1 },
     }
 
-    const { data: tabs, isSuccess: tabIsSuccess } = useGetTechnologiesQuery()
+    const { data: tabs, isSuccess: tabIsSuccess } = useQueryWithoutDependencies("GET_TECHNOLOGIES", GetTechnologies)
 
-    const { data: Courses, isSuccess, isLoading, refetch } = useGetCoursesListQuery(tabValue, { TechCount: 1, ListTech: tabValue })
+    const { data: Courses, isSuccess, isLoading, refetch } = useQueryWithDependencies("GET_COURSES", GetAllCourseByPagination, tabValue, { TechCount: 1, ListTech: tabValue })
+
 
 
     return (

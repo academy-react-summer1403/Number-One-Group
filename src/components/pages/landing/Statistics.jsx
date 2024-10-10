@@ -1,11 +1,11 @@
 import { useTranslation } from "react-i18next"
 import CreateStatisticsItem from "./createStatisticsItem"
-import useGetReportsQuery from "../../../hooks/react-query/Reports"
+import { useQueryWithoutDependencies } from "../../../hooks/react-query"
+import { GetLandingReports } from "../../../core/services/api/get-data"
 
 const Statistics = () => {
     const { i18n } = useTranslation()
-
-    const { data, isSuccess } = useGetReportsQuery()
+    const { data, isSuccess } = useQueryWithoutDependencies("GET_REPORTS", GetLandingReports)
 
     return (
         <div className="w-full lg:px-44 sm:px-16 px-8 pb-28">
