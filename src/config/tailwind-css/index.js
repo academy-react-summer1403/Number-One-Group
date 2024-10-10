@@ -30,6 +30,7 @@ const tailwindCssConfig = {
         IranSans: ["Iran-Sans"],
         Pop_Med: ["Pop-Medium"],
         Sahel: ['"Pop-Medium"', '"Sahel"'],
+        Number: ['"Pop-Medium"', '"Mitra"'],
       },
       screens: {},
     },
