@@ -13,6 +13,7 @@ import SearchModal from "./searchBox/SearchModal";
 import BottomNav from "./bottom-nav";
 import FormHolder from "./form/FormHolder";
 import FormInput from "./form/FormInput";
+import ImageFallBack from "./ImageFallBack";
 
 export {
   HowToStart,
@@ -30,4 +31,5 @@ export {
   BottomNav,
   FormHolder,
   FormInput,
+  ImageFallBack,
 };
