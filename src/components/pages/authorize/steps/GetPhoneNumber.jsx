@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next"
 import { useDispatch } from "react-redux"
 import { FormInput, FormHolder, Button } from "../../../common"
 import { mobileNumberValidation } from "../../../../core/validations/Auth.Validations"
-import { VerifyMessage } from "../../../../core/services/api/post-data/VerifyMessage"
+import { VerifyMessage } from "../../../../core/services/api/post-data"
 
 const GetPhoneNumber = ({ setPhone, phone, title, description }) => {
     const { t } = useTranslation()

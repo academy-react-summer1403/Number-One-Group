@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next"
 import { FormInput, FormHolder, Button } from "../../../common"
 import * as yup from "yup"
-import ResetPassword from "../../../../core/services/api/post-data/ResetPassword"
+import { ResetPassword } from "../../../../core/services/api/post-data"
 
 const SetNewPassword = ({ userId }) => {
     const { t, i18n } = useTranslation()
@@ -24,7 +24,7 @@ const SetNewPassword = ({ userId }) => {
             onSubmit={(event) => { handleSubmit(event) }}
             validations={setNewPasswordValidation}
             style="w-full"
-            additionParams={{enableReinitialize: true}}
+            additionParams={{ enableReinitialize: true }}
         >
             <h1 className='boldStyle_text w-full mb-5'>{t("SetNewPasswordCaption")}</h1>
             <p className='mediumStyle_text mb-5'>{t("SetNewPasswordDesc")}</p>

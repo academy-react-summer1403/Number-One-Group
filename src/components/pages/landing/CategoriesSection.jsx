@@ -3,11 +3,10 @@ import { Label, SwiperSlider } from "../../common/index"
 import { useTranslation } from "react-i18next"
 import CategoryItem from "./CreateCategoryItem"
 import { useEffect, useState } from "react"
-import GetAllCourseByPagination from "../../../core/services/api/get-data/GetAllCourses"
-import GetTechnologies from "../../../core/services/api/get-data/GetTechnologies"
+import { GetAllCourseByPagination, GetTechnologies } from "../../../core/services/api/get-data"
 
 const Categories = () => {
-    const { t } = useTranslation()
+    const { t, i18n } = useTranslation()
     const [technologies, setTechnologies] = useState([])
     const [newTechnologies, setNewTechnologies] = useState([])
 
@@ -53,7 +52,7 @@ const Categories = () => {
                         buttonSideRight="top-[100px] xl:right-[40px] right-[20px] h-12 w-12"
                         buttonColor="bg-SunshineYellow"
                     >
-                        {newTechnologies.map(item => (<SwiperSlide key={item.id}><CategoryItem amount={item.amount} title={item.techName} /></SwiperSlide>))}
+                        {newTechnologies.map(item => (<SwiperSlide key={item.id}><CategoryItem amount={item.amount} title={item.techName} icon={item.iconAddress} /></SwiperSlide>))}
                     </SwiperSlider>
                 </div>
             ) : (

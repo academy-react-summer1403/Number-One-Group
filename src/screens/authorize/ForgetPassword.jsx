@@ -3,7 +3,7 @@ import Vector from '../../assets/images/ForgotPassword.svg'
 import { useEffect, useState } from 'react'
 import { Stepper, SetNewPassword, FirstStepPassword, GoToGmail } from '../../components/pages/authorize'
 import { useLocation, useOutletContext, useParams } from 'react-router-dom'
-import ResetConfirmValue from '../../core/services/api/get-data/ResetConfirmValue'
+import { ResetConfirmValue } from '../../core/services/api/get-data'
 import { useDispatch } from 'react-redux'
 import { increaseAction } from '../../redux/slices/StepStatus'
 

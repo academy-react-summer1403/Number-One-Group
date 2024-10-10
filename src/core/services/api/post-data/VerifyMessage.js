@@ -2,7 +2,7 @@ import { toast } from "react-toastify";
 import http from "../../interceptor";
 import { increaseAction } from "../../../../redux/slices/StepStatus";
 
-export const VerifyMessage = async (api, body, dispatch) => {
+const VerifyMessage = async (api, body, dispatch) => {
   try {
     const response = await http.post(api, body);
 
@@ -19,3 +19,5 @@ export const VerifyMessage = async (api, body, dispatch) => {
     toast.error("مشکلی پیش آمده لطفا بعدا تلاش کنید");
   }
 };
+
+export default VerifyMessage;

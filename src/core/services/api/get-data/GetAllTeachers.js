@@ -1,6 +1,6 @@
 import http from "../../interceptor";
 
-const getAllTeachers = () => {
+const GetAllTeachers = () => {
   try {
     const response = http.get("/Home/GetTeachers");
     return response;
@@ -8,4 +8,4 @@ const getAllTeachers = () => {
     return [];
   }
 };
-export default getAllTeachers
+export default GetAllTeachers;

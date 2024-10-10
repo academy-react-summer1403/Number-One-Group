@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
 import { FormInput, FormHolder, Button } from "../../../common"
 import { getCodeValidation } from "../../../../core/validations/Auth.Validations"
-import { VerifyMessage } from "../../../../core/services/api/post-data/VerifyMessage";
+import { VerifyMessage } from "../../../../core/services/api/post-data";
 
 const GetCode = ({ phone }) => {
     const dispatch = useDispatch()

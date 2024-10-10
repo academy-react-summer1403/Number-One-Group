@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next"
 import { FormInput, FormHolder, Button } from "../../../common"
-import { UserRegister } from "../../../../core/services/api/post-data/Register"
+import { UserRegister } from "../../../../core/services/api/post-data"
 
 const GetUserInfo = ({ phone }) => {
     const { t, i18n } = useTranslation()

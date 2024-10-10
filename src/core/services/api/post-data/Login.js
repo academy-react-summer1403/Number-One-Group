@@ -2,7 +2,7 @@ import { toast } from "react-toastify";
 import http from "../../interceptor";
 import { setItem } from "../../local-storage/LocalStorage";
 
-export const UserLogin = async (user) => {
+const UserLogin = async (user) => {
   try {
     const response = await http.post("/Sign/Login", user);
 
@@ -20,3 +20,5 @@ export const UserLogin = async (user) => {
     toast.error("مشکلی پیش آمده لطفا بعدا تلاش کنید");
   }
 };
+
+export default UserLogin;

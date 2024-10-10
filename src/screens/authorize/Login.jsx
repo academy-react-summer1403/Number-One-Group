@@ -3,7 +3,7 @@ import { Link, useOutletContext } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import Vector from '../../assets/images/SignIn.svg'
 import { loginValidation } from "../../core/validations/Auth.Validations"
-import { UserLogin } from '../../core/services/api/post-data/Login'
+import { UserLogin } from '../../core/services/api/post-data'
 import { useEffect } from 'react'
 
 const Login = () => {

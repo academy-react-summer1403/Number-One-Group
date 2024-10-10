@@ -1,7 +1,7 @@
 import { toast } from "react-toastify";
 import http from "../../interceptor";
 
-export const UserRegister = async (api, body) => {
+const UserRegister = async (api, body) => {
   try {
     const response = await http.post(api, body);
 
@@ -19,3 +19,5 @@ export const UserRegister = async (api, body) => {
     toast.error("مشکلی پیش آمده لطفا بعدا تلاش کنید");
   }
 };
+
+export default UserRegister;
