@@ -3,10 +3,12 @@ import http from "../../interceptor";
 import { increaseAction } from "../../../../redux/slices/StepStatus";
 
 const ForgetPass = async (body, dispatch) => {
-  toast.info("در حال ارسال ایمیل");
   try {
-    const response = await http.post("/Sign/ForgetPassword", body);
-    
+    const response = await toast.promise(
+      http.post("/Sign/ForgetPassword", body),
+      { pending: "...در حال ارسال ایمیل" }
+    );
+
     if (response.success) {
       toast.success("ایمیل با موفقیت ارسال شد");
       setTimeout(() => {
