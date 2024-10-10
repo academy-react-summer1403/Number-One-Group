@@ -9,7 +9,7 @@ import { Navbar } from "@nextui-org/react";
 import SideBarMenu from "./SideBarMenu"
 import { useEffect, useState } from "react"
 import { useLocation } from "react-router-dom"
-import GetProfileInfo from "../../../core/services/api/get-data/GetProfileInfo"
+import { GetProfileInfo } from "../../../core/services/api/get-data"
 import { setInfoAction } from "../../../redux/slices/UserInfo"
 import { getItem } from "../../../core/services/local-storage/LocalStorage"
 import HeaderButtons from "./HeaderButtons"
