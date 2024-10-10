@@ -2,14 +2,20 @@ import { useTranslation } from "react-i18next";
 import { Button } from "../../common"
 import Typewriter from 'typewriter-effect';
 import mannequin_heroSection from "../../../assets/images/mannequin-heroSection.png"
-import { boxItems } from "../../../core/constants/landing/heroSection";
 import { useSelector } from "react-redux";
+import { useQuery } from "react-query";
+import getAllTeachers from "../../../core/services/api/get-data/GetAllTeachers";
 
 const HeroSection = () => {
     const { t, i18n } = useTranslation()
     const persianWords = ["یادگیری", "تلاش", "استقامت"]
     const englishWords = ["Learning", "Effort", "Stamina"]
     const theme = useSelector(state => state.DarkMode)
+
+    const { data, isSuccess, isError } = useQuery({
+        queryKey: ['GET_TEACHERS'],
+        queryFn: getAllTeachers
+    })
 
     return (
         <div className={`w-full h-[420px] flex justify-between items-center ${theme ? "bg-gradientBackgroundDark" : "bg-gradientBackground"} bg-cover lg:px-44 sm:px-16 px-8`}>
@@ -32,10 +38,10 @@ const HeroSection = () => {
             </div>
             <div className="w-[450px] h-full hidden md:flex justify-center items-end relative">
                 <div className={`${i18n.language === "en" ? "left-[-0px]" : "right-[-0px]"} w-44 h-24 flex flex-wrap rounded-lg top-[60px] p-4 heroSection_box_shadow bg-MainBg text-DarkBlue absolute`}>
-                    {boxItems.map(item => (
-                        <div key={item.id} className="w-full h-1/2 py-1 flex items-center gap-x-2">
-                            <div className="w-7 h-7 rounded-full bg-yellow-300"></div>
-                            <h1>{i18n.language == "en" ? item.name[0] : item.name[1]}</h1>
+                    {isSuccess && data.slice(0, 2).map(item => (
+                        <div key={item.teacherId} className="w-full h-1/2 py-1 flex items-center gap-x-2">
+                            <img src={item.pictureAddress} className="w-7 h-7 rounded-full" />
+                            <h1>{item.fullName}</h1>
                         </div>
                     ))}
                 </div>
