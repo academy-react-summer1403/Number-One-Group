@@ -1,5 +1,6 @@
 import { Skeleton } from "@nextui-org/react"
 import { LevelIcon, StudentIcon, TeacherIcon } from "../../../core/icon"
+import ToLike from "../../common/ToLike"
 
 const CourseCenterBody = ({
     instructor,
@@ -35,7 +36,16 @@ const CourseCenterBody = ({
             ))}
             <div className="flex items-center gap-1 justify-end">
                 <Skeleton isLoaded={!isLoaded} className="rounded-lg">
-                   
+                    <ToLike
+                        variant={'course'}
+                        userLikeId={userLikeId}
+                        likeNumber={like}
+                        disLikeNumber={disLike}
+                        LikeStatus={LikeStatus}
+                        DissLikeStatus={DissLikeStatus}
+                        Id={Id}
+                        refetch={refetch}
+                    />
                 </Skeleton>
             </div>
         </div>
