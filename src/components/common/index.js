@@ -14,6 +14,10 @@ import BottomNav from "./bottom-nav";
 import FormHolder from "./form/FormHolder";
 import FormInput from "./form/FormInput";
 import ImageFallBack from "./ImageFallBack";
+import SectionTop from "./sectionTop/SectionTop";
+import SortBox from "./sectionTop/SortBox";
+import SortBoxHolder from "./sectionTop/SortBoxHolder";
+import ChangeView from "./sectionTop/ChangeView.jsx";
 
 export {
   HowToStart,
@@ -32,4 +36,8 @@ export {
   FormHolder,
   FormInput,
   ImageFallBack,
+  SectionTop,
+  SortBox,
+  SortBoxHolder,
+  ChangeView,
 };
