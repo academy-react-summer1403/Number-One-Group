@@ -1,19 +1,27 @@
+import { useTranslation } from "react-i18next";
 import { PaginatedItems, PaginateHolderItems } from "../../components/common/Paginate"
 import BreadCrumb from "../../components/partials/title-section/BreadCrumb"
 import TitleSection from "../../components/partials/title-section/TitleSection"
 import { GetAllCourseByPagination } from "../../core/services/api/get-data";
+import { useSelector } from "react-redux";
 
 const Courses = () => {
+    const { t, i18n } = useTranslation();
+    const filterObj_Courses = useSelector(state => state.FilterCourses)
 
-     // View
-     const skeletonData = [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}];
-     const [showGrid, setShowGrid] = useState(false); 
+    // Paginate
+    const currentCourse = isTabletOrMobile ? 6 : 12;
+    useEffect(() => { Dispatch(setRowsOfPage(currentCourse)) }, [currentCourse])
+
+    // View
+    const skeletonData = [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}];
+    const [showGrid, setShowGrid] = useState(false);
 
     // Query Object
     const { data: coursesData, isSuccess, isError, isLoading, refetch } = useQuery({
-        queryKey: ["GET_COURSES"],
+        queryKey: ["GET_COURSES", filterObj_Courses],
         queryFn: async () => {
-            return await GetAllCourseByPagination();
+            return await GetAllCourseByPagination(filterObj_Courses);
         },
     });
     return (
