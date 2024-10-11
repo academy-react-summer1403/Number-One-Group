@@ -4,6 +4,7 @@ import BreadCrumb from "../../components/partials/title-section/BreadCrumb"
 import TitleSection from "../../components/partials/title-section/TitleSection"
 import { GetAllCourseByPagination } from "../../core/services/api/get-data";
 import { useSelector } from "react-redux";
+import Course from "../../components/pages/course/Course";
 
 const Courses = () => {
     const { t, i18n } = useTranslation();
@@ -34,7 +35,7 @@ const Courses = () => {
                     <PaginatedItems>
                         <div className={`flex flex-wrap relative gap-x-1 justify-around gap-y-5 w-full m-auto my-2`}>
                             <RenderItemsList
-                                RenderComponent={''}
+                                RenderComponent={Course}
                                 isLoading={isLoading}
                                 isSuccess={isSuccess}
                                 isError={isError}
