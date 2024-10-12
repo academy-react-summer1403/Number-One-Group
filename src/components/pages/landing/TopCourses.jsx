@@ -43,7 +43,7 @@ const TopCourses = () => {
                     buttonSideRight="top-[190px] xl:-right-[60px] sm:right-[20px] hidden sm:flex h-12 z-30 w-12"
                     buttonColor="bg-VioletBlue"
                 >
-                    {isSuccess && Courses.courseFilterDtos.map((item, index) => (
+                    {isSuccess && Courses.courseFilterDtos?.map((item, index) => (
                         <SwiperSlide key={index}>
                             {/* <Course item={item} isLoading={isLoading} refetch={refetch} /> */}
                         </SwiperSlide>

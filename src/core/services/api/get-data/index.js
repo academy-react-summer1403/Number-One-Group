@@ -4,6 +4,8 @@ import GetLandingReports from "./GetLandingReports";
 import GetProfileInfo from "./GetProfileInfo";
 import GetTechnologies from "./GetTechnologies";
 import ResetConfirmValue from "./ResetConfirmValue";
+import GetCourseLevel from "./GetCourseLevel";
+import GetCourseType from "./GetCourseType";
 
 export {
   GetAllTeachers,
@@ -12,4 +14,6 @@ export {
   GetProfileInfo,
   GetTechnologies,
   ResetConfirmValue,
+  GetCourseLevel,
+  GetCourseType,
 };

@@ -30,7 +30,7 @@ const HeaderButtons = ({ setVisibleSearch, visibleSearch, basketItems }) => {
                         text={'Login'}
                     /> :
                     <Link>
-                        <img className="rounded-full w-10 h-10" src={userInfo.userImage[0].puctureAddress} alt="Profile" />
+                        {/* <img className="rounded-full w-10 h-10" src={userInfo.userImage[0].puctureAddress} alt="Profile" /> */}
                     </Link>
             }
         </>
