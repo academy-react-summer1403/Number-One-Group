@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
 
 const ImageFallBack = ({ src, alt, fallback, ...props }) => {
+
+    console.log(src)
     const [srcImage, setSrcImage] = useState(src)
 
     useEffect(() => {

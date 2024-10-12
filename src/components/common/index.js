@@ -18,6 +18,8 @@ import SectionTop from "./sectionTop/SectionTop";
 import SortBox from "./sectionTop/SortBox";
 import SortBoxHolder from "./sectionTop/SortBoxHolder";
 import ChangeView from "./sectionTop/ChangeView.jsx";
+import CreateModal from "./CreateModal.jsx";
+import FavoriteBtn from "./FavoriteBtn.jsx";
 
 export {
   HowToStart,
@@ -40,4 +42,6 @@ export {
   SortBox,
   SortBoxHolder,
   ChangeView,
+  CreateModal,
+  FavoriteBtn,
 };

@@ -8,6 +8,7 @@ export const useQueryWithDependencies = (
   dependencies,
   apiParams
 ) => {
+  console.log(key)
   return useQuery({
     queryKey: [key, dependencies],
     queryFn: () => {

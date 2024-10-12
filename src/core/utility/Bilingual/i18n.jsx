@@ -147,6 +147,9 @@ i18n.use(initReactI18next)
                     // SortOptions 
                     Descending: "نزولی", Ascending: "صعودی", ActiveCourses: "دوره های فعال", Price: "قیمت",
                     Popularity: "محبوبیت", MostPopular: "محبوب ترین ها", Latest: "جدید ترین ها", MostVisited: "پربازدیدترین ها",
+                    // NotFound
+                    course_NotFound: "دوره ای یافت نشد", blog_NotFound: "وبلاگی یافت نشد",
+
                 },
             },
             en: {
@@ -287,6 +290,8 @@ i18n.use(initReactI18next)
                     // SortOptions 
                     Descending: "Descending", Ascending: "Ascending", ActiveCourses: "Active Courses", Price: "Price",
                     Popularity: "Popularity", MostPopular: "Most Popular", Latest: "Latest", MostVisited: "Most Visited",
+                    // NotFound
+                    course_NotFound: "Course not found", blog_NotFound: "Blog not found",
                 },
             },
         },

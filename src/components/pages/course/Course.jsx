@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { FavoriteBtn } from "../../common"
+import { FavoriteBtn, ImageFallBack } from "../../common"
 import CourseCenterBody from "./CourseCenterBody"
 import CourseDownBody from "./CourseDownBody"
 import CourseTopBody from "./CourseTopBody"
@@ -33,12 +33,16 @@ const Course = ({ isLoading, refetch, item }) => {
                     {/* course Images */}
                     <Link to={`/CourseDetails/${id}`}>
                         <Skeleton isLoaded={!isLoading} className="h-44 rounded-lg">
-                            <img src={images ?? NotFoundImg} className="w-full h-44 shadow-xl rounded-md" />
+                            <ImageFallBack
+                                src={images}
+                                alt={'coursePicture'}
+                                fallback={NotFoundImg}
+                                className={'w-full h-44 shadow-xl rounded-md'}
+                            />
                         </Skeleton>
                     </Link >
 
                     <div className="flex justify-center gap-8 my-3">
-                        <ComparisonBtn isLoading={isLoading} CourseId={id} />
                         <FavoriteBtn isLoading={isLoading} variantStyle="card" />
                     </div>
                 </div>
