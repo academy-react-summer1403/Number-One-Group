@@ -1,13 +1,14 @@
 import { Navigate } from "react-router-dom"
 import { MainLayouts, AuthorizeLayout } from "../../components/layouts"
-import { Landing, ForgetPasswordLogin, Login, Register, TowStepLogin } from "../../screens"
+import { Landing, ForgetPasswordLogin, Login, Register, TowStepLogin, Blog } from "../../screens"
 
 const routerPublic = [
     {
         element: <MainLayouts />,
         children: [
             { path: '/', element: <Landing /> },
-            { path: '/home', element: <Navigate to={"/"} /> }
+            { path: '/home', element: <Navigate to={"/"} /> },
+            { path: '/Blog', element: <Blog /> },
         ]
     },
     {
