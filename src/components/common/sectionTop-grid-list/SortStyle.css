@@ -1,0 +1,15 @@
+.css-13cymwt-control {
+  @apply border-LightGrayish bg-transparent text-white !important;
+}
+.css-1dimb5e-singleValue {
+  color: hsl(0, 0%, 50%) !important
+}
+.css-1nmdiq5-menu {
+  @apply dark:text-LightLavender !important;
+}
+.css-1u9des2-indicatorSeparator {
+  @apply bg-LightGrayish !important;
+}
+.css-1xc3v61-indicatorContainer {
+  @apply text-LightGrayish !important;
+}

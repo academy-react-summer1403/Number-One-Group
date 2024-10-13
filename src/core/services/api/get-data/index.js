@@ -4,6 +4,8 @@ import GetLandingReports from "./GetLandingReports";
 import GetProfileInfo from "./GetProfileInfo";
 import GetTechnologies from "./GetTechnologies";
 import ResetConfirmValue from "./ResetConfirmValue";
+import GetNewsFilterPage from "./GetNewsFilter";
+import GetListNewsCategory from "./GetListNewsCategory";
 
 export {
   GetAllTeachers,
@@ -12,4 +14,6 @@ export {
   GetProfileInfo,
   GetTechnologies,
   ResetConfirmValue,
+  GetNewsFilterPage,
+  GetListNewsCategory,
 };
