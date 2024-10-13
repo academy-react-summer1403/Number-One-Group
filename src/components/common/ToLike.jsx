@@ -1,10 +1,8 @@
 import { BiDislike, BiLike, BiSolidDislike, BiSolidLike } from "react-icons/bi";
 import { useSelector } from "react-redux";
-import { AddCourseDisLike, AddCourseLike } from "../../core/services/api/post-data";
+import { AddBlogDisLike, AddBlogLike, AddCourseDisLike, AddCourseLike } from "../../core/services/api/post-data";
 import { DeleteBlogLike, DeleteCourseLike } from "../../core/services/api/delete-data";
 import { toast } from "react-toastify";
-import AddNewsLike from "../../core/services/api/post-data/AddNewsLike";
-import AddNewsDisLike from "../../core/services/api/post-data/AddNewsDisLike";
 
 const ToLike = ({
     userLikeId,
@@ -19,7 +17,7 @@ const ToLike = ({
 }) => {
     const ApiVariant = {
         'course': [AddCourseLike, AddCourseDisLike, DeleteCourseLike],
-        'blog': [AddNewsLike, AddNewsDisLike, DeleteBlogLike]
+        'blog': [AddBlogLike, AddBlogDisLike, DeleteBlogLike]
     }
 
     const UserInfo = useSelector(state => state.UserInfo.info)
