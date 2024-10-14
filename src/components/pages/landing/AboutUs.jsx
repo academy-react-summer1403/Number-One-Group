@@ -25,7 +25,7 @@ const AboutUs = () => {
           </ul>
         </div>
       </div>
-      <div className="w-full lg:w-3/5 xl:w-2/5 h-fit flex lg:justify-start justify-center flex-wrap gap-y-3">
+      <div data-aos="fade-right" data-aos-duration="1500" className="w-full lg:w-3/5 xl:w-2/5 h-fit flex lg:justify-start justify-center flex-wrap gap-y-3">
         <Label text={t("aboutLabel")} variant="bgGray" />
         <div className="w-full flex flex-wrap justify-center lg:justify-start h-fit gap-x-3 items-end">
           <h1 className="boldStyle_text w-auto">{t("aboutTitle1")}</h1>
