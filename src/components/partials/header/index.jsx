@@ -7,13 +7,14 @@ import BasketItems from "./BasketItem"
 import { useDispatch } from "react-redux"
 import { Navbar } from "@nextui-org/react";
 import SideBarMenu from "./SideBarMenu"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { useLocation } from "react-router-dom"
 import { GetProfileInfo } from "../../../core/services/api/get-data"
 import { setInfoAction } from "../../../redux/slices/UserInfo"
-import { getItem } from "../../../core/services/local-storage/LocalStorage"
 import HeaderButtons from "./HeaderButtons"
-import { useQueryWithDependencies } from "../../../hooks/react-query"
+import { useQueryWithDependencies } from "../../../core/hooks/react-query"
+import { useQuery } from "@tanstack/react-query"
+import { getItem } from "../../../core/hooks/local-storage"
 
 const Header = () => {
   const [visibleSearch, setVisibleSearch] = useState(false)
@@ -37,7 +38,14 @@ const Header = () => {
 
   const basketItems = baskets.map((item, index) => <BasketItems key={index} item={item} />);
 
-  const { data: userInfo, isSuccess } = useQueryWithDependencies("GET-USER-PROFILE", GetProfileInfo, location)
+  const token = getItem('token')
+
+  const {data: userInfo, isSuccess} = useQuery({
+    queryKey: ["GET-USER-PROFILE", location],
+    queryFn: GetProfileInfo,
+    enabled: token ? true : false
+  })
+  
   if (isSuccess) { dispatch(setInfoAction(userInfo)) }
 
   return (

@@ -1,6 +1,6 @@
 import { Skeleton } from "@nextui-org/react"
 import { LevelIcon, StudentIcon, TeacherIcon } from "../../../core/icon"
-import ToLike from "../../common/ToLike"
+import { ToLike } from "../../common"
 
 const CourseCenterBody = ({
     instructor,
@@ -41,8 +41,8 @@ const CourseCenterBody = ({
                         userLikeId={userLikeId}
                         likeNumber={like}
                         disLikeNumber={disLike}
-                        LikeStatus={LikeStatus}
-                        DissLikeStatus={DissLikeStatus}
+                        likeStatus={LikeStatus}
+                        disLikeStatus={DissLikeStatus}
                         Id={Id}
                         refetch={refetch}
                     />
