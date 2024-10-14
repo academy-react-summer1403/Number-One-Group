@@ -3,10 +3,11 @@ import { Label, SwiperSlider } from "../../common"
 import Tab from "./tab"
 import { useSelector } from "react-redux"
 import { useState } from "react"
-// import Course from "../course/Course"
 import { SwiperSlide } from "swiper/react"
 import { GetAllCourseByPagination, GetTechnologies } from "../../../core/services/api/get-data"
-import { useQueryWithDependencies, useQueryWithoutDependencies } from "../../../hooks/react-query"
+import { useQueryWithDependencies, useQueryWithoutDependencies } from "../../../core/hooks/react-query"
+import { Course } from "../course"
+import { Autoplay } from 'swiper/modules';
 
 const TopCourses = () => {
     const { t, i18n } = useTranslation()
@@ -34,7 +35,7 @@ const TopCourses = () => {
                 {tabIsSuccess && tabs.map(obj => <Tab key={obj.id} setTabValue={setTabValue} value={obj.id} name="landing" title={obj.techName} />)}
                 <span className="w-full h-1 bg-LightGrayish rounded-full bottom-0 absolute"></span>
             </div>
-            <div className="max-[680px]:w-[300px] w-[110%] mt-5 relative">
+            <div className="max-[680px]:w-[300px] w-[110%] min-h-[435px] mt-5 relative">
                 <SwiperSlider
                     perView={4}
                     Breakpoints={Breakpoints}
@@ -42,10 +43,15 @@ const TopCourses = () => {
                     buttonSideLeft="top-[190px] xl:-left-[60px] sm:left-[20px] hidden sm:flex h-12 z-30 w-12"
                     buttonSideRight="top-[190px] xl:-right-[60px] sm:right-[20px] hidden sm:flex h-12 z-30 w-12"
                     buttonColor="bg-VioletBlue"
+                    autoplay={{
+                        delay: 2500,
+                        disableOnInteraction: false,
+                    }}
+                    modules={[Autoplay]}
                 >
                     {isSuccess && Courses.courseFilterDtos?.map((item, index) => (
                         <SwiperSlide key={index}>
-                            {/* <Course item={item} isLoading={isLoading} refetch={refetch} /> */}
+                            <Course item={item} isLoading={isLoading} refetch={refetch} />
                         </SwiperSlide>
                     ))}
                 </SwiperSlider>
