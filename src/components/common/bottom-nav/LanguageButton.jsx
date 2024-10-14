@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { getItem, setItem } from '../../../core/services/local-storage/LocalStorage';
+import { getItem, setItem } from '../../../core/hooks/local-storage';
 
 const LanguageButton = () => {
     const { i18n } = useTranslation();

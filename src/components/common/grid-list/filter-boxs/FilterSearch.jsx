@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next"
-import { Search_TwoIcon } from "../../../core/icon";
+import { Search_TwoIcon } from "../../../../core/icon";
 import { useDispatch } from "react-redux";
 
 const FilterSearch = ({ variant, setQuery, Style }) => {

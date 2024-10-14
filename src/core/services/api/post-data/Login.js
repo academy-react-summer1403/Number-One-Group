@@ -1,6 +1,6 @@
 import { toast } from "react-toastify";
 import http from "../../interceptor";
-import { setItem } from "../../local-storage/LocalStorage";
+import { setItem } from "../../../hooks/local-storage";
 
 const UserLogin = async (user) => {
   try {

@@ -3,7 +3,6 @@ import { Link } from "react-router-dom"
 import { ArrowIcon } from "../../../core/icon";
 import { useSelector } from "react-redux";
 
-
 const BreadCrumb = ({ text, href, type = "Link" }) => {
   const { t } = useTranslation();
   const theme = useSelector(state => state.DarkMode)

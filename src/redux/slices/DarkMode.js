@@ -1,16 +1,13 @@
-import {
-  getItem,
-  setItem,
-} from "../../core/services/local-storage/LocalStorage";
+import { getItem, setItem } from "../../core/hooks/local-storage";
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = getItem("theme") ? getItem("theme") : false;
 
 function changeTheme(state) {
-  console.log(state)
+  console.log(state);
   state = !state;
   setItem("theme", state);
-  return state
+  return state;
 }
 
 const DarkMode = createSlice({

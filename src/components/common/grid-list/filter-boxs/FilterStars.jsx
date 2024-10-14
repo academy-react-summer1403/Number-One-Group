@@ -1,5 +1,6 @@
 import ReactStars from "react-rating-stars-component";
 import { useTranslation } from "react-i18next";
+
 const FilterStars = ({
     title,
     SetRating

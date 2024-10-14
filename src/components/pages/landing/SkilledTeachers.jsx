@@ -3,7 +3,7 @@ import { SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import MediaQuery from "react-responsive";
 import { useTranslation } from "react-i18next";
-import { useQueryWithoutDependencies } from "../../../hooks/react-query";
+import { useQueryWithoutDependencies } from "../../../core/hooks/react-query";
 import { GetAllTeachers } from "../../../core/services/api/get-data";
 
 const SkilledTeachers = () => {

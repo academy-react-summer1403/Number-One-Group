@@ -1,6 +1,6 @@
 import { GetAllTeachers, GetCourseLevel, GetCourseType, GetTechnologies } from "../../../core/services/api/get-data";
 import { setInstructorId, setLevelId, setListTech, setPriceDown, setPriceUp, setQuery, setTechCount, setTypeId } from "../../../redux/slices/filter-box-slices/FilterCourses";
-import { FilterCheckBox, FilterRadio, FilterRange, FilterSearch } from "../../common/filter-box"
+import { FilterCheckBox, FilterRadio, FilterRange, FilterSearch } from "../../common"
 import { useQuery } from "@tanstack/react-query";
 
 const FilterSide_Courses = ({
@@ -15,6 +15,7 @@ const FilterSide_Courses = ({
     { title: "level", setInputID: setLevelId, inputData: levelData, resetFilters: refetchLevel, Status: StatusLevel, key: 'levelName' },
     { title: "instructor", setInputID: setInstructorId, inputData: teacherData, resetFilters: refetchTeacher, Status: StatusTeacher, key: 'fullName' },
   ]
+  
   return (
     <div className="h-fit lg:w-72">
       <FilterSearch variant="Courses" setQuery={setQuery} />

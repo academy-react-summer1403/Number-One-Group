@@ -5,7 +5,7 @@ import mannequin_heroSection from "../../../assets/images/mannequin-heroSection.
 import { useSelector } from "react-redux";
 import Profile from "../../../assets/images/mannequin-faqPoster.png"
 import { GetAllTeachers } from "../../../core/services/api/get-data";
-import { useQueryWithoutDependencies } from "../../../hooks/react-query";
+import { useQueryWithoutDependencies } from "../../../core/hooks/react-query";
 
 const HeroSection = () => {
     const { t, i18n } = useTranslation()
@@ -34,7 +34,7 @@ const HeroSection = () => {
                 <p className='mediumStyle_text md:text-start text-center'>{t("heroSectionDescription")}</p>
                 <Button text={t("heroSectionBtn")} style="mt-5" variant={"purple"} arrowColor="#fff" />
             </div>
-            <div className="w-[450px] h-full hidden md:flex justify-center items-end relative">
+            <div data-aos="fade-left" data-aos-duration="1500" className="w-[450px] h-full hidden md:flex justify-center items-end relative">
                 <div className={`${i18n.language === "en" ? "left-[-0px]" : "right-[-0px]"} w-44 h-24 flex flex-wrap rounded-lg top-[60px] p-4 heroSection_box_shadow bg-MainBg text-DarkBlue absolute`}>
                     {isSuccess && data.slice(0, 2).map(item => (
                         <div key={item.teacherId} className="w-full h-1/2 py-1 flex items-center gap-x-2">

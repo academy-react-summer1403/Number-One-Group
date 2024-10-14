@@ -1,7 +1,7 @@
 import React from 'react'
 import { DateIcon } from '../../../core/icon'
 import { useTranslation } from 'react-i18next'
-import { UnitPrice } from '../../../core/utility/SeparationPrice/SeparationPrice'
+import { UnitPrice } from '../../../core/utility/SeparationPrice'
 import { Skeleton } from '@nextui-org/react'
 
 const CourseDownBody = ({

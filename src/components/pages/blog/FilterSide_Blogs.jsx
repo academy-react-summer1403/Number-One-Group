@@ -1,7 +1,7 @@
-import { FilterRadio, FilterSearch } from "../../common/filter"
+import { FilterRadio, FilterSearch } from "../../common"
 import { setNewsCategoryId, setQuery } from "../../../redux/slices/filter-box-slices/FilterBlog"
 import { GetListNewsCategory } from "../../../core/services/api/get-data"
-import { useQueryWithoutDependencies } from "../../../hooks/react-query"
+import { useQueryWithoutDependencies } from "../../../core/hooks/react-query"
 
 const FilterSide_Blogs = () => {
     const { data: newsCategory } = useQueryWithoutDependencies("GET_NEW_CATEGORY", GetListNewsCategory)

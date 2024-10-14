@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next"
 import CreateStatisticsItem from "./createStatisticsItem"
-import { useQueryWithoutDependencies } from "../../../hooks/react-query"
+import { useQueryWithoutDependencies } from "../../../core/hooks/react-query"
 import { GetLandingReports } from "../../../core/services/api/get-data"
 
 const Statistics = () => {

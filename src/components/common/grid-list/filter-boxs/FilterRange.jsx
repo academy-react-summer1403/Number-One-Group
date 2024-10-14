@@ -2,8 +2,9 @@
 import { Slider } from "@nextui-org/react";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { SeparationPrice } from "../../../core/utility/SeparationPrice/SeparationPrice";
+import { SeparationPrice } from "../../../../core/utility/SeparationPrice";
 import { useDispatch } from "react-redux";
+
 const FilterRange = ({
   title,
   setPriceDown,

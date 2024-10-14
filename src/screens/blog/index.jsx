@@ -8,9 +8,9 @@ import { useTranslation } from "react-i18next";
 import { sortingColOptions_Blog_Fa, sortingColOptions_Blog_En } from "../../core/constants/sort";
 import { useDispatch, useSelector } from "react-redux";
 import { setPageNumber, setSortingCol, setRowsOfPage } from "../../redux/slices/filter-box-slices/FilterBlog";
-import { useQueryWithDependencies, useQueryWithoutDependencies } from "../../hooks/react-query";
+import { useQueryWithDependencies, useQueryWithoutDependencies } from "../../core/hooks/react-query";
 import { GetNewsFilterPage } from "../../core/services/api/get-data";
-import { BreadCrumb, TitleSection } from "../../components/partials/breadCrumb-section";
+import { BreadCrumb, TitleSection } from "../../components/partials/title-section";
 
 const Blog = () => {
     const { t, i18n } = useTranslation();
