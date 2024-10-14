@@ -5,6 +5,8 @@ import ResetPassword from "./ResetPassword";
 import VerifyMessage from "./VerifyMessage";
 import AddCourseLike from "./addCourseLike";
 import AddCourseDisLike from "./AddCourseDisLike";
+import AddBlogLike from "./AddBlogLike";
+import AddBlogDisLike from "./AddBlogDisLike";
 
 export {
   ForgetPass,
@@ -14,4 +16,6 @@ export {
   VerifyMessage,
   AddCourseLike,
   AddCourseDisLike,
+  AddBlogLike,
+  AddBlogDisLike,
 };

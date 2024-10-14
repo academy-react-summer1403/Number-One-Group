@@ -138,6 +138,7 @@ export function ArrowIcon(props) {
         </svg>
     )
 }
+
 export function StarIcon(props) {
     return (
         <svg
@@ -153,6 +154,7 @@ export function StarIcon(props) {
 
     )
 }
+
 export function TeacherIcon(props) {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-5" {...props}>
@@ -213,35 +215,6 @@ export function ArrowLeftIcon(props) {
         <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
             <path d="M14.7227 7.84003H1.59766M1.59766 7.84003L7.22266 2.21503M1.59766 7.84003L7.22266 13.465" stroke="white" strokeWidth="1.875" strokeLinecap="round" strokeLinejoin="round" {...props} />
             <path d="M14.7227 7.84003H1.59766M1.59766 7.84003L7.22266 2.21503M1.59766 7.84003L7.22266 13.465" stroke="white" strokeWidth="1.875" strokeLinecap="round" strokeLinejoin="round" {...props} />
-        </svg>
-    )
-}
-export function DateIcon(props) {
-    return (
-        <svg
-            width="20"
-            height="21"
-            viewBox="0 0 20 21"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            {...props}
-        >
-            <path d="M0 0.300003H20V20.3H0V0.300003Z" fill="none" />
-            <path d="M2.5781 1.8625H4.375V0.925003C4.375 0.579847 4.6548 0.300003 5 0.300003C5.3452 0.300003 5.625 0.579847 5.625 0.925003V1.8625H14.375V0.925003C14.375 0.579847 14.6548 0.300003 15 0.300003C15.3452 0.300003 15.625 0.579847 15.625 0.925003V1.8625H17.4219C18.8435 1.8625 20 3.01902 20 4.44062V17.7219C20 19.1435 18.8435 20.3 17.4219 20.3H2.5781C1.1565 20.3 0 19.1435 0 17.7219V4.44062C0 3.01902 1.1565 1.8625 2.5781 1.8625ZM17.4219 3.1125H15.625V3.7375C15.625 4.08266 15.3452 4.3625 15 4.3625C14.6548 4.3625 14.375 4.08266 14.375 3.7375V3.1125H5.625V3.7375C5.625 4.08266 5.3452 4.3625 5 4.3625C4.6548 4.3625 4.375 4.08266 4.375 3.7375V3.1125H2.5781C1.8458 3.1125 1.25 3.70828 1.25 4.44062V5.925H18.75V4.44062C18.75 3.70828 18.1542 3.1125 17.4219 3.1125ZM2.5781 19.05H17.4219C18.1542 19.05 18.75 18.4542 18.75 17.7219V7.175H1.25V17.7219C1.25 18.4542 1.8458 19.05 2.5781 19.05Z" fill="gray" {...props} />
-        </svg>
-
-    )
-}
-export function View1Icon(props) {
-    return (
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g clipPath="url(#clip0_227_211)">
-                <path d="M12 1H16C16.5523 1 17 1.44772 17 2V6C17 6.55228 16.5523 7 16 7H12C11.4477 7 11 6.55228 11 6V2C11 1.44772 11.4477 1 12 1Z" stroke="#5751E1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props} />
-                <path d="M2 1H6C6.5523 1 7 1.44772 7 2V6C7 6.55228 6.5523 7 6 7H2C1.4477 7 1 6.55228 1 6V2C1 1.44772 1.4477 1 2 1Z" stroke="#5751E1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props} />
-                <path d="M12 11H16C16.5523 11 17 11.4477 17 12V16C17 16.5523 16.5523 17 16 17H12C11.4477 17 11 16.5523 11 16V12C11 11.4477 11.4477 11 12 11Z" stroke="#5751E1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props} />
-                <path d="M2 11H6C6.5523 11 7 11.4477 7 12V16C7 16.5523 6.5523 17 6 17H2C1.4477 17 1 16.5523 1 16V12C1 11.4477 1.4477 11 2 11Z" stroke="#5751E1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props} />
-            </g>
-
         </svg>
     )
 }
@@ -392,6 +365,7 @@ export function EyeIcon(props) {
         </svg>
     )
 }
+
 export function Search_TwoIcon(props) {
     return (
         <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
@@ -416,7 +390,36 @@ export function CheckedHeartIcon(props) {
             <rect x="10" y="3" width="10" height="10" rx="5" fill="#5751E1" />
             <rect x="7" y="8" width="9" height="10" rx="4.5" fill="#5751E1" />
             <path d="M3.42822 3.03906C0.498535 5.5 0.928223 9.52344 2.99854 11.6719L9.87354 18.6641C10.2642 19.0547 10.772 19.2891 11.3188 19.2891C11.9048 19.2891 12.4126 19.0547 12.8032 18.6641L19.6392 11.6719C21.7485 9.52344 22.1782 5.5 19.2485 3.03906C16.9829 1.125 13.5063 1.39844 11.3188 3.625C9.17041 1.39844 5.69385 1.125 3.42822 3.03906ZM4.36572 10.3438C2.92041 8.89844 2.64697 6.16406 4.63916 4.44531C6.1626 3.19531 8.50635 3.39062 9.95166 4.875L11.3188 6.28125L12.686 4.875C14.1704 3.39062 16.5142 3.19531 18.0376 4.48438C20.0298 6.16406 19.7563 8.89844 18.311 10.3438L11.4751 17.3359C11.3579 17.4141 11.2798 17.4141 11.2017 17.3359L4.36572 10.3438Z" fill="#5751E1" />
+        </svg>)
+}
+
+export function DateIcon(props) {
+    return (
+        <svg
+            width="20"
+            height="21"
+            viewBox="0 0 20 21"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            {...props}
+        >
+            <path d="M0 0.300003H20V20.3H0V0.300003Z" fill="none" />
+            <path d="M2.5781 1.8625H4.375V0.925003C4.375 0.579847 4.6548 0.300003 5 0.300003C5.3452 0.300003 5.625 0.579847 5.625 0.925003V1.8625H14.375V0.925003C14.375 0.579847 14.6548 0.300003 15 0.300003C15.3452 0.300003 15.625 0.579847 15.625 0.925003V1.8625H17.4219C18.8435 1.8625 20 3.01902 20 4.44062V17.7219C20 19.1435 18.8435 20.3 17.4219 20.3H2.5781C1.1565 20.3 0 19.1435 0 17.7219V4.44062C0 3.01902 1.1565 1.8625 2.5781 1.8625ZM17.4219 3.1125H15.625V3.7375C15.625 4.08266 15.3452 4.3625 15 4.3625C14.6548 4.3625 14.375 4.08266 14.375 3.7375V3.1125H5.625V3.7375C5.625 4.08266 5.3452 4.3625 5 4.3625C4.6548 4.3625 4.375 4.08266 4.375 3.7375V3.1125H2.5781C1.8458 3.1125 1.25 3.70828 1.25 4.44062V5.925H18.75V4.44062C18.75 3.70828 18.1542 3.1125 17.4219 3.1125ZM2.5781 19.05H17.4219C18.1542 19.05 18.75 18.4542 18.75 17.7219V7.175H1.25V17.7219C1.25 18.4542 1.8458 19.05 2.5781 19.05Z" fill="gray" {...props} />
         </svg>
 
+    )
+}
+
+export function View1Icon(props) {
+    return (
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clipPath="url(#clip0_227_211)">
+                <path d="M12 1H16C16.5523 1 17 1.44772 17 2V6C17 6.55228 16.5523 7 16 7H12C11.4477 7 11 6.55228 11 6V2C11 1.44772 11.4477 1 12 1Z" stroke="#5751E1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props} />
+                <path d="M2 1H6C6.5523 1 7 1.44772 7 2V6C7 6.55228 6.5523 7 6 7H2C1.4477 7 1 6.55228 1 6V2C1 1.44772 1.4477 1 2 1Z" stroke="#5751E1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props} />
+                <path d="M12 11H16C16.5523 11 17 11.4477 17 12V16C17 16.5523 16.5523 17 16 17H12C11.4477 17 11 16.5523 11 16V12C11 11.4477 11.4477 11 12 11Z" stroke="#5751E1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props} />
+                <path d="M2 11H6C6.5523 11 7 11.4477 7 12V16C7 16.5523 6.5523 17 6 17H2C1.4477 17 1 16.5523 1 16V12C1 11.4477 1.4477 11 2 11Z" stroke="#5751E1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props} />
+            </g>
+
+        </svg>
     )
 }

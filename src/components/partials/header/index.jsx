@@ -13,6 +13,7 @@ import { GetProfileInfo } from "../../../core/services/api/get-data"
 import { setInfoAction } from "../../../redux/slices/UserInfo"
 import { getItem } from "../../../core/services/local-storage/LocalStorage"
 import HeaderButtons from "./HeaderButtons"
+import { useQueryWithDependencies } from "../../../hooks/react-query"
 
 const Header = () => {
   const [visibleSearch, setVisibleSearch] = useState(false)
@@ -36,16 +37,8 @@ const Header = () => {
 
   const basketItems = baskets.map((item, index) => <BasketItems key={index} item={item} />);
 
-  const getUserProfile = async () => {
-    const info = await GetProfileInfo()
-    dispatch(setInfoAction(info))
-  }
-
-  useEffect(() => {
-    const token = getItem("token")
-    if (!token) return
-    getUserProfile()
-  }, [location])
+  const { data: userInfo, isSuccess } = useQueryWithDependencies("GET-USER-PROFILE", GetProfileInfo, location)
+  if (isSuccess) { dispatch(setInfoAction(userInfo)) }
 
   return (
     <Navbar

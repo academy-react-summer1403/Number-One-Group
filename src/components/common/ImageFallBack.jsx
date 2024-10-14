@@ -1,20 +1,12 @@
-import { useEffect, useState } from "react"
-
 const ImageFallBack = ({ src, alt, fallback, ...props }) => {
 
-    console.log(src)
-    const [srcImage, setSrcImage] = useState(src)
+    if (src == null) { src = fallback }
 
-    useEffect(() => {
-        if (srcImage) return
-        setSrcImage(fallback)
-    }, [])
-
-    const handleError = () => setSrcImage(fallback)
+    const handleError = () => src = fallback
 
     return (
         <img
-            src={srcImage}
+            src={src}
             alt={alt}
             onError={handleError}
             {...props}

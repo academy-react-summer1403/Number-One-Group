@@ -1,9 +1,9 @@
 import { toast } from "react-toastify";
-import Http from "../../interceptor";
+import http from "../../interceptor";
 
 const AddCourseDisLike = async (ParamsId, refetch) => {
   try {
-    const result = await Http.post(
+    const result = await http.post(
       `/Course/AddCourseDissLike?CourseId=${ParamsId}`
     );
     if (result.success) {
@@ -14,6 +14,7 @@ const AddCourseDisLike = async (ParamsId, refetch) => {
     }
   } catch (error) {
     console.log(error);
+    toast.error("مشکلی پیش آمده لطفا بعدا امتحان کنید");
   }
 };
 

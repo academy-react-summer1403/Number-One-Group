@@ -14,11 +14,15 @@ import BottomNav from "./bottom-nav";
 import FormHolder from "./form/FormHolder";
 import FormInput from "./form/FormInput";
 import ImageFallBack from "./ImageFallBack";
-import SectionTop from "./sectionTop/SectionTop";
-import SortBox from "./sectionTop/SortBox";
-import SortBoxHolder from "./sectionTop/SortBoxHolder";
-import ChangeView from "./sectionTop/ChangeView.jsx";
-import CreateModal from "./CreateModal.jsx";
+import ToLike from "./ToLike";
+import PaginatedItems from "./pagination/Paginate";
+import PaginateHolderItems from "./pagination/PaginateHolderItems";
+import ChangeView from "./sectionTop-grid-list/ChangeView";
+import SectionTop from "./sectionTop-grid-list/SectionTop";
+import SortBox from "./sectionTop-grid-list/SortBox";
+import SortBoxHolder from "./sectionTop-grid-list/SortBoxHolder";
+import RenderItemsList from "./grid-list/RenderItemsList";
+import CreateModal from "./CreateModal";
 import FavoriteBtn from "./FavoriteBtn.jsx";
 
 export {
@@ -38,10 +42,14 @@ export {
   FormHolder,
   FormInput,
   ImageFallBack,
+  ToLike,
+  PaginatedItems,
+  PaginateHolderItems,
+  ChangeView,
   SectionTop,
   SortBox,
   SortBoxHolder,
-  ChangeView,
+  RenderItemsList,
   CreateModal,
   FavoriteBtn,
 };

@@ -6,6 +6,8 @@ import GetTechnologies from "./GetTechnologies";
 import ResetConfirmValue from "./ResetConfirmValue";
 import GetCourseLevel from "./GetCourseLevel";
 import GetCourseType from "./GetCourseType";
+import GetNewsFilterPage from "./GetNewsFilter";
+import GetListNewsCategory from "./GetListNewsCategory";
 
 export {
   GetAllTeachers,
@@ -16,4 +18,6 @@ export {
   ResetConfirmValue,
   GetCourseLevel,
   GetCourseType,
+  GetNewsFilterPage,
+  GetListNewsCategory,
 };

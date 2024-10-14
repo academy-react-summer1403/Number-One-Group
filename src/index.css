@@ -185,4 +185,43 @@ body {
   .authorizeForm {
     @apply relative w-full max-w-[500px] sm:min-w-[500px] sm:w-[500px] h-full flex flex-wrap items-center bg-MainBg rounded-[30px] sm:rounded-[50px] px-6 sm:px-16 py-12 sm:py-0;
   }
+
+  .grid-list {
+    @apply md:block;
+
+    .grid-item {
+      @apply w-full flex gap-4 h-auto;
+
+      .blog-bio {
+        @apply line-clamp-3 h-16;
+      }
+
+      .favorite-btn {
+        @apply bg-LightLavender p-1 rounded-xl;
+      }
+
+      .course-height-img {
+        @apply w-96;
+      }
+
+      .course-body {
+        @apply w-full;
+
+        .course-centerBody {
+          @apply grid-cols-4;
+        }
+
+        .course-flexBody {
+          @apply flex justify-between;
+        }
+
+        .course-bio {
+          @apply line-clamp-1;
+        }
+        .course-title {
+          @apply -mt-2;
+        }
+      }
+    }
+  }
 }

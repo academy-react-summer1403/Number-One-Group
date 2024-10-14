@@ -1,17 +1,17 @@
 import { toast } from "react-toastify";
-import Http from "../../interceptor";
-import onFormData from "../FormData";
+import http from "../../interceptor";
+import useFormData from "../FormData";
 
 const DeleteCourseLike = async (ParamsId, refetch) => {
   try {
-    const obj = {
-      CourseLikeId: ParamsId,
-    };
-    const dataObj = onFormData(obj);
-    const result = await Http.delete(`/Course/DeleteCourseLike`, {
+    const obj = { CourseLikeId: ParamsId };
+    const dataObj = useFormData(obj);
+
+    const result = await http.delete(`/Course/DeleteCourseLike`, {
       data: dataObj,
       headers: { "Content-Type": "multipart/form-data" },
     });
+
     if (result.success) {
       toast.success("نظر شما برداشته شد");
       refetch();
@@ -20,6 +20,7 @@ const DeleteCourseLike = async (ParamsId, refetch) => {
     }
   } catch (error) {
     console.log(error);
+    toast.error("مشکلی پیش آمده لطفا بعدا امتحان کنید");
   }
 };
 
