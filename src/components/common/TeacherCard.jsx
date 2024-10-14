@@ -4,8 +4,8 @@ import { TwitterIcon } from "../../core/icon/index"
 import { WhatsAppIcon } from "../../core/icon/index"
 import { InstagramIcon } from "../../core/icon/index"
 import CreateSocialMediaItems from "./CreateSocialMediaItems"
-import Profile from "../../assets/images/mannequin-faqPoster.png"
 import ImageFallBack from "./ImageFallBack"
+import fallback from "../../assets/images/user-circle-icon.png"
 
 const TeacherCard = ({ name, skill, picture, href }) => {
     const socialMedia = [
@@ -15,13 +15,13 @@ const TeacherCard = ({ name, skill, picture, href }) => {
         { icon: <FacebookIcon /> },
     ]
     return (
-        <div className="w-[308px] flex gap-x-4 items-center">
+        <div data-aos="zoom-in-down" className="w-[308px] flex gap-x-4 items-center">
             <Link to={href} className="w-28 shadow-xl md:min-w-[140px] h-28 md:h-[150px] flex justify-center items-center overflow-hidden rounded-full bg-gradient-to-tr from-[#F7F6F9] to-[#E9F5F5]">
                 <ImageFallBack
                     className={"w-full h-full"}
                     alt={"Profile"}
                     src={picture}
-                    fallback={Profile}
+                    fallback={fallback}
                 />
             </Link>
             <Link to={href} className="h-fit -mt-8">
