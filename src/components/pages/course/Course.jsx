@@ -6,7 +6,7 @@ import CourseTopBody from "./CourseTopBody"
 import { Skeleton } from "@nextui-org/react";
 import NotFoundImg from "../../../assets/images/image-not-found.png"
 
-const Course = ({ isLoading, refetch, item }) => {
+const Course = ({ loading, refetch, item }) => {
     const {
         courseId: id,
         title,
@@ -25,14 +25,13 @@ const Course = ({ isLoading, refetch, item }) => {
         currentUserDissLike: DissLikeStatus,
         describe: bio
     } = item;
-    // console.log(images)
+
     return (
         <>
-            <div className="border border-LightGrayish p-4 pb-3 grid-item w-[300px] h-[435px] rounded-lg hover:shadow-lg duration-200  m-auto relative  group/item">
+            <div data-aos="fade-up" className="border border-LightGrayish p-4 pb-3 grid-item w-[300px] h-[435px] rounded-lg hover:shadow-lg duration-200  m-auto relative  group/item">
                 <div className="w-full h-44 course-height-img mx-auto  rounded-lg">
-                    {/* course Images */}
                     <Link to={`/CourseDetails/${id}`}>
-                        <Skeleton isLoaded={!isLoading} className="h-44 rounded-lg">
+                        <Skeleton isLoaded={!loading} className="h-44 rounded-lg">
                             <ImageFallBack
                                 src={images}
                                 alt={'coursePicture'}
@@ -43,7 +42,7 @@ const Course = ({ isLoading, refetch, item }) => {
                     </Link >
 
                     <div className="flex justify-center gap-8 my-3">
-                        <FavoriteBtn isLoading={isLoading} variantStyle="card" />
+                        <FavoriteBtn isLoading={loading} variantStyle="card" />
                     </div>
                 </div>
                 <div to={`/CourseDetails/${id}`} className="py-2 course-body w-full ">
@@ -53,7 +52,7 @@ const Course = ({ isLoading, refetch, item }) => {
                             score={score}
                             category={category}
                             bio={bio}
-                            isLoaded={isLoading}
+                            isLoaded={loading}
                         />
                     </Link >
                     <CourseCenterBody
@@ -66,13 +65,13 @@ const Course = ({ isLoading, refetch, item }) => {
                         LikeStatus={LikeStatus}
                         DissLikeStatus={DissLikeStatus}
                         Id={id}
-                        isLoaded={isLoading}
+                        isLoaded={loading}
                         refetch={refetch && refetch}
                     />
                     <CourseDownBody
                         price={price}
                         date={date}
-                        isLoaded={isLoading}
+                        isLoaded={loading}
                     />
                 </div >
             </div>
