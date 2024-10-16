@@ -5,5 +5,14 @@ import Register from "./authorize/Register";
 import TowStepLogin from "./authorize/TowStep";
 import Courses from "./courses";
 import Blog from "./blog";
-
-export { Landing, ForgetPasswordLogin, Login, Register, TowStepLogin, Blog, Courses };
+import CourseDetails from "./course-details";
+export {
+  Landing,
+  ForgetPasswordLogin,
+  Login,
+  Register,
+  TowStepLogin,
+  Blog,
+  Courses,
+  CourseDetails,
+};
