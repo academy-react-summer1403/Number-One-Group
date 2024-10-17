@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import { useTranslation } from 'react-i18next';
 import { DownSection, TopSection } from '../comment-card';
 import ReplayComments from './ReplayComments';
 import { GetReplayCourseComment } from '../../../../core/services/api/get-data';
@@ -59,6 +58,7 @@ const UserComments = ({ commentData, variant, replayComment, refetch, courseId }
             replayComment={replayComment}
             courseId={courseId}
             commentId={id}
+            refetchReplay={refetchCallReplay}
             refetch={refetch}
           />
         </div>
