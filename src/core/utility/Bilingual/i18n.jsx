@@ -117,7 +117,7 @@ i18n.use(initReactI18next)
                     descComparison: 'با مقایسه کردن دوره های آموزشی باهم دیگه میتونی دوره مناسب خودتو پیدا کنی!',
                     // course Details
                     CourseOverView: "شرح دوره", LearnCourse: 'در این دوره چه چیزی یاد خواهید گرفت؟',
-                    CourseInfo: 'دوره شامل', CoursePrice: 'هزینه دوره',
+                    CourseInfo: 'دوره شامل', CoursePrice: 'هزینه دوره',CourseFavorite:'آیا از این دوره راضی بودید؟',
                     // Dashboard
                     exitFromAccount: "خروج از حساب", welcome: "خوش آمدید", progressTip: "برای شرکت در دوره ها باید حداقل ٪ ۸۰ از پروفایل خود را تکمیل کنید.",
                     latestNewsAndBlogs: "جدید ترین اخبار و مقالات", currentCourses: "دوره های در حال برگزاری:", suggestedCourses: "دوره های پیشنهادی:", changePassword: "تغییر رمز عبور", twoStep: "تایید ورود دو مرحله ای", emailRecovery: "ایمیل بازیابی",
@@ -125,7 +125,8 @@ i18n.use(initReactI18next)
                     // Comments
                     comment: 'نظر', user_comment: 'نظرات کاربران', sendComment: 'ارسال نظر', titleComment: 'عنوان پیام',
                     descComment: 'توضیحات بیشتر', comment_text: 'متن خود را وارد کنید', ConfirmComment: 'نظر شما پس از تأیید توسط ادمین ثبت خواهد شد!',
-                    commentAnswer: 'پاسخ', viewAnswers: 'مشاهده پاسخ ها',
+                    commentAnswer: 'پاسخ', viewAnswers: 'مشاهده پاسخ ها',viewMore:'مشاهده بیشتر +',viewLess:'مشاهده کمتر -',
+                    notFoundComment: 'نظری وجود ندارد',
                     // Related titles
                     Related: 'مرتبط', Blogs: 'اخبار',
                     // Cart
@@ -258,7 +259,7 @@ i18n.use(initReactI18next)
                     descComparison: 'By comparing training courses, you can find the right course for you!',
                     // course Details
                     CourseOverView: "Course Overview", LearnCourse: 'What will you learn in this course?',
-                    CourseInfo: 'Course Information', CoursePrice: 'Course Fee',
+                    CourseInfo: 'Course Information', CoursePrice: 'Course Fee',CourseFavorite:'What will I learn in this course?',
                     // Dashboard
                     exitFromAccount: "Exit", welcome: "welcome", progressTip: "To participate in the courses, you must complete at least 80% of your profile.",
                     latestNewsAndBlogs: "The latest news and Blogs", currentCourses: "Current courses:", suggestedCourses: "Suggested courses:", changePassword: "Change password", twoStep: "Two-step login verification", emailRecovery: "Email recovery",
@@ -266,7 +267,8 @@ i18n.use(initReactI18next)
                     // Comments
                     comment: 'Comment', user_comment: 'User Comments', sendComment: 'Submit a comment', titleComment: 'Comment title',
                     descComment: 'More details', comment_text: 'Enter your text', ConfirmComment: 'Your comment will be registered after approval by the admin!',
-                    commentAnswer: 'Answer', viewAnswers: 'View Answers',
+                    commentAnswer: 'Answer', viewAnswers: 'View Answers',viewMore:'View More +',viewLess:'View Less -',
+                    notFoundComment: 'There is no comment!',
                     // Related titles
                     Related: 'Related', Blogs: 'Blogs',
                     // Cart

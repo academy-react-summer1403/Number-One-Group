@@ -4,7 +4,6 @@ import FavoriteBtn from "../FavoriteBtn"
 
 const FeedbackSection = ({ params }) => {
     const { t } = useTranslation()
-    console.log(params)
     return (
         <div className="border-y-2 my-7 py-3 flex items-center max-sm:justify-around gap-5">
             <div className="flex items-center gap-8 w-fit h-fit">
