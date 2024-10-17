@@ -23,7 +23,7 @@ const AddComments = ({ apiFunction, Id, refetch }) => {
   }
 
   return (
-    <div className="px-7 py-4 bg-grayCustom rounded-lg bg-LightLavender border-LightGrayish">
+    <div data-aos="fade-right" ata-aos-duration="500" className="px-7 py-4 bg-grayCustom rounded-lg bg-LightLavender border-LightGrayish">
       <h1 className="boldStyle_text text-2xl">{t('sendComment')}</h1>
       <FormHolder
         initialValues={{ title: '', description: '' }}

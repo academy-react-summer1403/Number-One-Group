@@ -16,7 +16,7 @@ const ReplayComments = ({ item, refetch }) => {
     } = item;
 
     return (
-        <div dir={i18n.language === 'fa' ? "ltr" : 'rtl'} className="border-t-2 border-gray-100 py-4">
+        <div data-aos="fade-up" ata-aos-duration="200" dir={i18n.language === 'fa' ? "ltr" : 'rtl'} className="border-t-2 border-gray-100 py-4">
             <div dir={i18n.language === 'fa' ? "rtl" : 'ltr'} className="flex gap-4 w-11/12">
                 <img src={pictureAddress} className='sm:w-24 w-16 sm:h-24 h-16  rounded-full' />
                 <div className='w-full'>

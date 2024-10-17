@@ -38,7 +38,7 @@ const UserComments = ({ commentData, variant, replayComment, refetch, courseId }
 
   return (
     <>
-      <div className="border-t-2 border-LightGrayish py-4 flex max-md:mx-1 gap-4">
+      <div data-aos="fade-up" ata-aos-duration="200" className="border-t-2 border-LightGrayish py-4 flex max-md:mx-1 gap-4">
         <img src={pictureAddress} alt="" className='sm:min-w-24 sm:w-24 w-16 sm:h-24 h-16 rounded-full bg-red-600' />
         <div className='w-full'>
           <TopSection

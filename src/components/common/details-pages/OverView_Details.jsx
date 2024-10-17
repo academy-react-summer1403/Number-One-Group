@@ -19,7 +19,7 @@ const OverView_Details = ({
     const { t } = useTranslation()
     return (
         <div>
-            <div className={`max-sm:text-center ${BorderStyleVariant?.[variant]}`}>
+            <div data-aos="fade-left" className={`max-sm:text-center ${BorderStyleVariant?.[variant]}`}>
                 {/* OverView Text */}
                 <div className={`${Class}`}>
                     <h1 className={`boldStyle_text mb-3`}>{t(titleOverView)}</h1>

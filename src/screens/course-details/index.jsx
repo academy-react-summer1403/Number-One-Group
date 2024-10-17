@@ -16,8 +16,10 @@ import NotFoundImg from "../../assets/images/image-not-found.png"
 import TabPanel from '../../components/pages/course-detail/TabPanel';
 import { DeleteCourseFavorite } from '../../core/services/api/delete-data';
 import { CourseCard } from '../../components/pages/course';
+import { useTranslation } from 'react-i18next';
 
 const CourseDetails = () => {
+    const { i18n } = useTranslation()
     const { id } = useParams();
     const { data: courseData, isSuccess, refetch } = useQueryWithDependencies('GET_COURSE_DETAILS', GetCourseDetails, null, id)
     const {
@@ -88,7 +90,8 @@ const CourseDetails = () => {
                 <BreadCrumb type="Div" text={title} />
             </TitleSection>
             <div className="main-container lg:flex flex-row-reverse gap-6 px-1">
-                <div className="lg:w-3/4  mx-auto sm:w-full">
+                <div data-aos={`fade-${i18n.language === 'fa' ? 'right' : 'left'}`} data-aos-duration="700"
+                    className="lg:w-3/4  mx-auto sm:w-full">
                     <ImageFallBack
                         src={imageAddress}
                         alt={'Course_Pic'}
