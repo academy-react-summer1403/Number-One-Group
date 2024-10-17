@@ -1,7 +1,7 @@
 import Details_Tabs from "./Details_Tabs"
 import Tab from "./Tab";
 import { CommentSection, FeedbackSection, OverView_Details } from "../../common";
-import { AddCourseComment} from "../../../core/services/api/post-data";
+import { AddCourseComment, AddReplyCourseComment} from "../../../core/services/api/post-data";
 
 const TabPanel = ({
     overView,
@@ -33,7 +33,10 @@ const TabPanel = ({
                     <CommentSection
                         Id={params.Id}
                         apiFunction={AddCourseComment}
+                        variant={params.variant} 
+                        replayComment={AddReplyCourseComment} 
                         data={params.commentData}
+                        commentSuccess={params.commentSuccess}
                         refetch={params.refetchComment}
                     />
                     </Tab>

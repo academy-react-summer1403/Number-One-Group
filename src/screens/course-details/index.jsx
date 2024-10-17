@@ -65,7 +65,7 @@ const CourseDetails = () => {
         variant: 'courseDetails', userLikeId: userLikeId, likeNumber: likeCount, disLikeNumber: dissLikeCount,
         LikeStatus: currentUserLike, DissLikeStatus: currentUserDissLike, Id: id, favoriteId: userFavoriteId,
         refetch: refetch, userFavorite: isUserFavorite, action: addFavorite, deleteAction: deleteFavorite,
-        favoriteText: 'CourseFavorite',refetchComment:refetchComment,
+        favoriteText: 'CourseFavorite',refetchComment:refetchComment,commentSuccess:commentSuccess,
         commentData: commentData,
         Id: id,
     }

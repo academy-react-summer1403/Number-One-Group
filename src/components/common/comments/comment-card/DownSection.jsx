@@ -8,6 +8,7 @@ import { IoIosArrowDown } from "react-icons/io"
 const DownSection = ({
   ArrayLength,
   replayStatus,
+  setReplayStatus,
   Style,
   like,
   disLike,
@@ -38,7 +39,7 @@ const DownSection = ({
           </div>
         </CreateModal>
         {ArrayLength !== 0 &&
-          <button onClick={() => setReplayStatus(!replayStatus)} className="bg-LavenderMist py-1 px-3 mt-3 sm:mt-0 text-gray-500 flex gap-2 items-center rounded-lg text-sm">
+          <button onClick={() => {setReplayStatus(!replayStatus)}} className="bg-LavenderMist py-1 px-3 mt-3 sm:mt-0 text-gray-500 flex gap-2 items-center rounded-lg text-sm">
             <p>{t('viewAnswers')} <span className="text-VioletBlue">({ArrayLength && ArrayLength})</span></p>
             <IoIosArrowDown className={`${replayStatus ? "rotate-180" : ""} duration-300`} />
           </button>

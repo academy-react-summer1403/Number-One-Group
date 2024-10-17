@@ -1,8 +1,11 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next';
 import { DownSection, TopSection } from '../comment-card';
-const UserComments = ({ commentData,refetch, courseId }) => {
-  const { t } = useTranslation()
+import ReplayComments from './ReplayComments';
+import { GetReplayCourseComment } from '../../../../core/services/api/get-data';
+const UserComments = ({ commentData, variant, replayComment, refetch, courseId }) => {
+  const [replayStatus, setReplayStatus] = useState(false);
+  const [replayCourse, setReplayCourse] = useState([]);
   const [reload, setReload] = useState(false);
 
   const {
@@ -17,13 +20,22 @@ const UserComments = ({ commentData,refetch, courseId }) => {
     insertDate,
     author,
   } = commentData
-  console.log(commentData)
 
-  // const { data: replay ,refetch : refetchCourse} = useQuery({
-  //   queryKey: ["GET_REPLAY_COURSE_COMMENT"],
-  //   queryFn: async () => { return await GetReplayCourseComment(courseId, id) }
-  // })
-  
+  // Getting Replay course Comment from api
+  const refetchCallReplay = () => {
+    setReload(!reload)
+  }
+  const CallReplayApi = async () => {
+    const res = await GetReplayCourseComment(courseId, id);
+    setReplayCourse(res);
+  };
+  useEffect(() => {
+    CallReplayApi()
+  }, [reload])
+
+  const dataVariant = {
+    'courseDetails': replayCourse,
+  }
 
   return (
     <>
@@ -37,15 +49,28 @@ const UserComments = ({ commentData,refetch, courseId }) => {
             name={author}
           />
           <DownSection
+            ArrayLength={replayCourse?.length}
+            replayStatus={replayStatus}
+            setReplayStatus={setReplayStatus}
             like={likeCount}
             disLike={disslikeCount}
             LikeStatus={currentUserEmotion}
             userLikeId={currentUserLikeId}
+            replayComment={replayComment}
             courseId={courseId}
             commentId={id}
             refetch={refetch}
           />
         </div>
+      </div>
+      <div>
+        {replayStatus ? (
+          dataVariant?.[variant]?.map((item, index) => {
+            return (
+              <ReplayComments key={index} item={item} refetch={refetchCallReplay} />
+            )
+          })
+        ) : null}
       </div>
     </>
   )
