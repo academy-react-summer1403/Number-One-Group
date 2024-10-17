@@ -2,7 +2,7 @@ import React from 'react'
 import { useParams } from 'react-router-dom';
 import TitleSection from '../../components/partials/title-section/TitleSection';
 import { useMutationWithoutRefetch, useMutationWithRefetch, useQueryWithDependencies } from '../../core/hooks/react-query';
-import { GetCourseDetails } from '../../core/services/api/get-data';
+import { GetCourseDetails, GetCoursesComments } from '../../core/services/api/get-data';
 import { BreadCrumb } from '../../components/partials/title-section';
 import MediaQuery from 'react-responsive';
 import { AddCourseFavorite, AddCourseReserve } from '../../core/services/api/post-data';
@@ -46,6 +46,8 @@ const CourseDetails = () => {
 
     // Delete Data with useMutation
     const { mutate: deleteFavorite } = useMutationWithRefetch("DELETE_COURSE_FAVORITE", DeleteCourseFavorite, refetch);
+     // Comment call api with react Query
+    const { data: commentData, isSuccess: commentSuccess , refetch: refetchComment } = useQueryWithDependencies('GET_COMMENTS_COURSE', GetCoursesComments, null, id)
 
     /* PARAMS */
     // Details Params
@@ -64,6 +66,8 @@ const CourseDetails = () => {
         LikeStatus: currentUserLike, DissLikeStatus: currentUserDissLike, Id: id, favoriteId: userFavoriteId,
         refetch: refetch, userFavorite: isUserFavorite, action: addFavorite, deleteAction: deleteFavorite,
         favoriteText: 'CourseFavorite',
+        commentData: commentData,
+        Id: id,
     }
 
     return (

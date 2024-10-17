@@ -9,6 +9,7 @@ import GetCourseType from "./GetCourseType";
 import GetNewsFilterPage from "./GetNewsFilter";
 import GetListNewsCategory from "./GetListNewsCategory";
 import GetCourseDetails from "./GetCourseDetails";
+import GetCoursesComments from "./comments/GetCoursesComments";
 
 export {
   GetAllTeachers,
@@ -22,4 +23,5 @@ export {
   GetNewsFilterPage,
   GetListNewsCategory,
   GetCourseDetails,
+  GetCoursesComments,
 };

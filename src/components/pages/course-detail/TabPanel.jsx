@@ -1,6 +1,7 @@
 import Details_Tabs from "./Details_Tabs"
 import Tab from "./Tab";
-import { FeedbackSection, OverView_Details } from "../../common";
+import { CommentSection, FeedbackSection, OverView_Details } from "../../common";
+import { AddCourseComment} from "../../../core/services/api/post-data";
 
 const TabPanel = ({
     overView,
@@ -24,11 +25,18 @@ const TabPanel = ({
                             titleOverView={'CourseOverView'}
                             titleLearning={'LearnCourse'}
                             variant={variant} />
-                        <FeedbackSection params={params}/>
+                        <FeedbackSection params={params} />
                     </>
                 </Tab>
                 <Tab label="Study program">Study program </Tab>
-                <Tab label="User comments">comments</Tab>
+                <Tab label="User comments">
+                    <CommentSection
+                        Id={params.Id}
+                        apiFunction={AddCourseComment}
+                        data={params.commentData}
+                        refetch={params.refetch}
+                    />
+                    </Tab>
             </Details_Tabs>
         </div>
     )
