@@ -26,6 +26,9 @@ const CommentSection = ({ Id, apiFunction, data, refetch }) => {
           <h1 className="mx-auto w-fit font-semibold text-xl">* {t('notFoundComment')} *</h1>
         )}
       </div>
+      <button onClick={() => setViewMore(!viewMore)} className={`bg-LavenderMist
+        px-5 py-1.5 rounded-3xl mx-auto block text-VioletBlue ${data?.length > 3 ? "" : "hidden"}`}>
+        {t(!viewMore ? 'viewMore' : 'viewLess')} </button>
     </div>
   )
 }

@@ -95,7 +95,6 @@ const CourseDetails = () => {
                         training={miniDescribe}
                         MajorElements={["", "", "", ""]}
                         variant={'course'}
-
                         params={Params}
                     />
                 </div>
