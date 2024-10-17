@@ -1,3 +1,4 @@
 import DetailsSection from "./DetailsSection";
+import BlogBiography from "./BlogBiography";
 
-export {DetailsSection};
+export {DetailsSection,BlogBiography};

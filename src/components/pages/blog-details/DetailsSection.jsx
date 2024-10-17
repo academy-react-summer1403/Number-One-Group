@@ -22,8 +22,8 @@ const DetailsSection = ({
     ]
 
     return (
-        <div className="flex justify-between mt-8 mb-6">
-            <div className="flex gap-4 items-center">
+        <div className="sm:flex justify-between mt-8 mb-6">
+            <div className="flex gap-4 items-center max-sm:mx-auto w-fit mb-5">
                 <div className="px-4 py-1 bg-VioletBlue text-sm text-white rounded-2xl whitespace-nowrap cursor-default">{category}</div>
                 {firstDetails.map((item, index) => (
                     <div key={index} className="flex gap-1.5 mediumStyle_text text-sm">
@@ -32,7 +32,7 @@ const DetailsSection = ({
                     </div>
                 ))}
             </div>
-            <div className="flex gap-4 items-center">
+            <div className="flex gap-4 items-center max-sm:mx-auto w-fit">
                 {lastDetails.map((item, index) => (
                     <div key={index} className="flex gap-1.5">
                         {item.icon}

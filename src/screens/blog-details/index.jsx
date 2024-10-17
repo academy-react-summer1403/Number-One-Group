@@ -6,7 +6,7 @@ import { GetBlogWithId, GetNewsFilterPage } from "../../core/services/api/get-da
 import { ImageFallBack, RelatedItems } from "../../components/common";
 import { BlogCard } from "../../components/pages/blog";
 import NotFoundImg from "../../assets/images/image-not-found.png"
-import { DetailsSection } from "../../components/pages/blog-details";
+import { BlogBiography, DetailsSection } from "../../components/pages/blog-details";
 
 
 const BlogDetails = () => {
@@ -17,7 +17,8 @@ const BlogDetails = () => {
 
     // Blog Object
     const {
-        title, newsCatregoryId, currentImageAddress, newsCatregoryName, updateDate, currentView, commentsCount
+        title, newsCatregoryId, currentImageAddress, newsCatregoryName, updateDate, currentView, commentsCount,
+        googleDescribe
     } = isSuccess && blogData.detailsNewsDto
 
     return (
@@ -38,6 +39,10 @@ const BlogDetails = () => {
                         view={currentView}
                         studyTime={5}
                         commentsNumber={commentsCount}
+                    />
+                    <BlogBiography
+                        title={title}
+                        bio={googleDescribe}
                     />
                 </div>
                 <RelatedItems
