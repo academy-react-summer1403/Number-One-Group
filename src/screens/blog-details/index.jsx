@@ -6,6 +6,7 @@ import { GetBlogWithId, GetNewsFilterPage } from "../../core/services/api/get-da
 import { ImageFallBack, RelatedItems } from "../../components/common";
 import { BlogCard } from "../../components/pages/blog";
 import NotFoundImg from "../../assets/images/image-not-found.png"
+import { DetailsSection } from "../../components/pages/blog-details";
 
 
 const BlogDetails = () => {
@@ -16,7 +17,7 @@ const BlogDetails = () => {
 
     // Blog Object
     const {
-        title, newsCatregoryId, currentImageAddress
+        title, newsCatregoryId, currentImageAddress, newsCatregoryName, updateDate, currentView, commentsCount
     } = isSuccess && blogData.detailsNewsDto
 
     return (
@@ -30,6 +31,13 @@ const BlogDetails = () => {
                     <ImageFallBack
                         src={currentImageAddress} alt={'blog-picture'} fallback={NotFoundImg}
                         className="h-[420px] w-full rounded-xl"
+                    />
+                    <DetailsSection
+                        category={newsCatregoryName}
+                        date={updateDate && updateDate.slice(0, 10)}
+                        view={currentView}
+                        studyTime={5}
+                        commentsNumber={commentsCount}
                     />
                 </div>
                 <RelatedItems
