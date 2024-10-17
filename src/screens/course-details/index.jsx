@@ -7,19 +7,21 @@ import { BreadCrumb } from '../../components/partials/title-section';
 import MediaQuery from 'react-responsive';
 import { DetailsBox } from '../../components/common/details-pages';
 import { AddCourseReserve } from '../../core/services/api/post-data';
-import { useMutation } from '@tanstack/react-query';
 import { LevelIcon } from '../../core/icon';
 import { FaHourglassStart, FaUsers } from "react-icons/fa6";
 import { SiStatuspage } from "react-icons/si";
 import { FaRegIdCard } from "react-icons/fa";
 import ChangeMoment from '../../core/utility/moment/ChangeMoment';
+import { ImageFallBack } from '../../components/common';
+import NotFoundImg from "../../assets/images/image-not-found.png"
+
 
 const CourseDetails = () => {
     const { id } = useParams();
     const { data: courseData, isSuccess, refetch } = useQueryWithDependencies('GET_COURSE_DETAILS', GetCourseDetails, null, id)
 
     const {
-        courseId, title, cost, isCourseReseve, courseLevelName, startTime, endTime, capacity, currentRegistrants,
+        courseId, title, imageAddress, cost, isCourseReseve, courseLevelName, startTime, endTime, capacity, currentRegistrants,
         courseStatusName
 
     } = isSuccess && courseData
@@ -52,7 +54,12 @@ const CourseDetails = () => {
             </TitleSection>
             <div className="main-container lg:flex flex-row-reverse gap-6 px-1">
                 <div className="lg:w-3/4  mx-auto sm:w-full">
-
+                    <ImageFallBack
+                        src={imageAddress}
+                        alt={'Course_Pic'}
+                        fallback={NotFoundImg}
+                        className='w-full h-96 rounded-xl'
+                    />
                 </div>
                 <MediaQuery minWidth={'1024px'}>
                     <DetailsBox {...detailsParams} />
