@@ -20,7 +20,9 @@ import PaginatedItems from "./pagination/Paginate";
 import PaginateHolderItems from "./pagination/PaginateHolderItems";
 import CreateModal from "./CreateModal";
 import FavoriteBtn from "./FavoriteBtn.jsx";
-import { DetailsBox, Title_details } from "./details-pages";
+import DetailsBox from "./details-pages/DetailsBox.jsx";
+import Title_details from "./details-pages/Title_details.jsx";
+import OverView_Details from "./details-pages/OverView_Details.jsx";
 import {
   FilterRadio,
   ChangeView,
@@ -71,4 +73,5 @@ export {
   FilterStars,
   DetailsBox,
   Title_details,
+  OverView_Details,
 };

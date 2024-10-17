@@ -5,15 +5,15 @@ import { useMutationWithoutRefetch, useQueryWithDependencies } from '../../core/
 import { GetCourseDetails } from '../../core/services/api/get-data';
 import { BreadCrumb } from '../../components/partials/title-section';
 import MediaQuery from 'react-responsive';
-import { DetailsBox, Title_details } from '../../components/common/details-pages';
 import { AddCourseReserve } from '../../core/services/api/post-data';
 import { LevelIcon } from '../../core/icon';
 import { FaHourglassStart, FaUsers } from "react-icons/fa6";
 import { SiStatuspage } from "react-icons/si";
 import { FaRegIdCard } from "react-icons/fa";
 import ChangeMoment from '../../core/utility/moment/ChangeMoment';
-import { ImageFallBack } from '../../components/common';
+import { DetailsBox, ImageFallBack, Title_details } from '../../components/common';
 import NotFoundImg from "../../assets/images/image-not-found.png"
+import TabPanel from '../../components/pages/course-detail/TabPanel';
 
 
 const CourseDetails = () => {
@@ -22,7 +22,7 @@ const CourseDetails = () => {
 
     const {
         courseId, title, imageAddress, cost, isCourseReseve, courseLevelName, startTime, endTime, capacity, currentRegistrants,
-        courseStatusName, teacherName, currentRate, techs
+        courseStatusName, teacherName, currentRate, techs, describe, miniDescribe
 
     } = isSuccess && courseData
     // details Box data
@@ -69,6 +69,15 @@ const CourseDetails = () => {
                     />
                     <Title_details
                         {...titleDetailsParams}
+                    />
+                    <MediaQuery maxWidth={'1024px'}>
+                        <DetailsBox {...detailsParams} />
+                    </MediaQuery>
+                    <TabPanel
+                        overView={describe}
+                        training={miniDescribe}
+                        MajorElements={["", "", "", ""]}
+                        variant={'course'}
                     />
                 </div>
                 <MediaQuery minWidth={'1024px'}>
