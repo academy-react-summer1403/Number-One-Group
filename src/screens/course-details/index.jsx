@@ -17,6 +17,7 @@ import TabPanel from '../../components/pages/course-detail/TabPanel';
 import { DeleteCourseFavorite } from '../../core/services/api/delete-data';
 import { CourseCard } from '../../components/pages/course';
 import { useTranslation } from 'react-i18next';
+import { MajorElements } from '../../core/constants/test-text/MajorElements';
 
 const CourseDetails = () => {
     const { i18n } = useTranslation()
@@ -107,7 +108,7 @@ const CourseDetails = () => {
                     <TabPanel
                         overView={describe}
                         training={miniDescribe}
-                        MajorElements={["", "", "", ""]}
+                        MajorElements={MajorElements}
                         variant={'course'}
                         params={Params}
                     />

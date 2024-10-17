@@ -3,10 +3,11 @@ import BreadCrumb from "../../components/partials/title-section/BreadCrumb"
 import TitleSection from "../../components/partials/title-section/TitleSection"
 import { useQueryWithDependencies } from "../../core/hooks/react-query";
 import { GetBlogWithId, GetNewsFilterPage } from "../../core/services/api/get-data";
-import { ImageFallBack, RelatedItems } from "../../components/common";
+import { ImageFallBack, OverView_Details, RelatedItems } from "../../components/common";
 import { BlogCard } from "../../components/pages/blog";
 import NotFoundImg from "../../assets/images/image-not-found.png"
 import { BlogBiography, DetailsSection } from "../../components/pages/blog-details";
+import { MajorElements } from "../../core/constants/test-text/MajorElements";
 
 
 const BlogDetails = () => {
@@ -18,7 +19,7 @@ const BlogDetails = () => {
     // Blog Object
     const {
         title, newsCatregoryId, currentImageAddress, newsCatregoryName, updateDate, currentView, commentsCount,
-        googleDescribe
+        googleDescribe, miniDescribe
     } = isSuccess && blogData.detailsNewsDto
 
     return (
@@ -43,6 +44,14 @@ const BlogDetails = () => {
                     <BlogBiography
                         title={title}
                         bio={googleDescribe}
+                    />
+                    <OverView_Details
+                        training={miniDescribe}
+                        MajorElements={MajorElements}
+                        Class={"hidden"}
+                        variant={'blog_event'}
+                        titleLearning={'LearnBlog'}
+                        ElementClass={'hidden'}
                     />
                 </div>
                 <RelatedItems
