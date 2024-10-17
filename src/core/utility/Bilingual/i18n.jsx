@@ -95,12 +95,10 @@ i18n.use(initReactI18next)
                     GoToEmailCaption: "چک کردن ایمیل", GoToEmailDesc1: "پیامی به ایمیل", GoToEmailDesc2: "ارسال شد لطفا آن را بررسی کنید", GoToEmailBtn: "بررسی ایمیل",
                     // ErrorPage
                     error: "صفحه خطا", ErrorDesc: "متاسفم! این صفحه در دسترس نیست!",
-                    // EventsPage
-                    EventTitle1: "آموزش جاوا اسکریپت با خیال پردازی", EventDate: "14تیر، 1403", EventCity1: "توکیو",
-                    EventTitle2: " ایجاد آینده از طریق فناوری Aewe", EventCity2: "نیویورک",
-                    EventPrice: 'هزینه رویداد', EventInfo: 'اطلاعات رویداد', eventDate: 'تاریخ', StartTime: 'زمان شروع', graduation: 'فارغ التحصیلی',
-                    EventTopics: 'موضوعات', EventQuizzes: 'آزمون ها', EventCertifications: 'گواهینامه ها', duration: 'مدت زمان', lessons: 'درس ها',
-                    EventTotalSeat: 'صندلی کل', Payment: 'پرداخت امن:', ShareCourse: 'این دوره را به اشتراک بگذارید:',
+                    // detailsBox
+                    StartTime: 'زمان شروع', Registrants: 'ثبت نام شده ها',
+                    capacity: 'ظرفیت', endTime: 'زمان پایان', startTime: 'زمان شروع', statusCourse: 'وضعیت دوره',
+                    Payment: 'پرداخت امن:', ShareCourse: 'این دوره را به اشتراک بگذارید:',
                     //Instructors-Details page
                     sideBarTitle: "تماس سریع", sideBarBtn: "فرستادن پیام", sideBarDesc: "از طریق تماس با ما راحت باشید اگر ترجیح می دهید توییتر یا فیس بوک!",
                     instructorBiography: "زندگینامه", instructorSkill: "مهارت ها", instructorCourses: "دوره های من",
@@ -238,12 +236,10 @@ i18n.use(initReactI18next)
                     GoToEmailCaption: "Check Email", GoToEmailDesc1: "A message was sent to", GoToEmailDesc2: "please check it", GoToEmailBtn: "Check Email",
                     // ErrorPage
                     error: "Error Page", ErrorDesc: "Sorry! This Page is Not Available!",
-                    // EventsPage
-                    EventTitle1: "Learning JavaScript With Imagination", EventDate: "25 June, 2024", EventCity1: "Tokyo",
-                    EventTitle2: "Aewe Creating Futures Through Technology", EventCity2: "New Work",
-                    EventPrice: 'Event Fee', EventInfo: 'Event Infomation', eventDate: 'Date', StartTime: 'Start Time', graduation: 'graduation',
-                    EventTopics: 'Topics', EventQuizzes: 'Quizzes', EventCertifications: 'Certifications', duration: 'duration', lessons: 'lessons',
-                    EventTotalSeat: 'Total Seat', Payment: 'Secure Payment:', ShareCourse: 'Share this course:',
+                    // detailsBox
+                    StartTime: 'Start Time', Registrants: 'Registrants',
+                    capacity: 'Capacity', endTime: 'End Time', startTime: 'Start Time', statusCourse: 'Course Status',
+                    Payment: 'Secure Payment:', ShareCourse: 'Share this course:',
                     //Instructors-Details page
                     sideBarTitle: "Quick Contact", sideBarBtn: "Send Message", sideBarDesc: "Feel free to contact us through Twitter or Facebook if you prefer!",
                     instructorBiography: "Biography", instructorSkill: "Skills", instructorCourses: "My Courses",

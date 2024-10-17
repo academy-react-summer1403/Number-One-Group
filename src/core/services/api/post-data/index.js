@@ -7,6 +7,7 @@ import AddCourseLike from "./addCourseLike";
 import AddCourseDisLike from "./AddCourseDisLike";
 import AddBlogLike from "./AddBlogLike";
 import AddBlogDisLike from "./AddBlogDisLike";
+import AddCourseReserve from "./AddCourseReserve";
 
 export {
   ForgetPass,
@@ -18,4 +19,5 @@ export {
   AddCourseDisLike,
   AddBlogLike,
   AddBlogDisLike,
+  AddCourseReserve,
 };

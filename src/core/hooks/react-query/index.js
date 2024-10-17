@@ -1,4 +1,4 @@
-import { useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 
 // Get item with dependencies
 
@@ -22,5 +22,28 @@ export const useQueryWithoutDependencies = (key, action) => {
   return useQuery({
     queryKey: [key],
     queryFn: action,
+  });
+};
+
+// Sending data along with refetching items when successful
+export const useMutationWithRefetch = (key, action, apiParams, refetch) => {
+  return useMutation({
+    mutationKey: [key],
+    mutationFn: () => {
+      return action(apiParams);
+    },
+    onSuccess: () => {
+      refetch();
+    },
+  });
+};
+
+// Sending data items when normal
+export const useMutationWithoutRefetch = (key, action, apiParams) => {
+  return useMutation({
+    mutationKey: [key],
+    mutationFn: () => {
+      return action(apiParams);
+    },
   });
 };
