@@ -18,7 +18,7 @@ const routerPublic = [
             {
                 path: '/BlogDetails',
                 element: <BlogDetails />,
-                children: [{ path: '/BlogDetails/:id', element: <BlogDetail /> }]
+                children: [{ path: '/BlogDetails/:id', element: <BlogDetails /> }]
             },
         ]
     },

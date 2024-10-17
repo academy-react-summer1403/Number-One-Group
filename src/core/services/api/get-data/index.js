@@ -11,6 +11,7 @@ import GetListNewsCategory from "./GetListNewsCategory";
 import GetCourseDetails from "./GetCourseDetails";
 import GetCoursesComments from "./comments/GetCoursesComments";
 import GetReplayCourseComment from "./comments/GetReplayCourseComment";
+import GetBlogWithId from "./GetBlogWithId";
 
 export {
   GetAllTeachers,
@@ -26,4 +27,5 @@ export {
   GetCourseDetails,
   GetCoursesComments,
   GetReplayCourseComment,
+  GetBlogWithId,
 };
