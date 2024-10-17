@@ -25,6 +25,7 @@ import Title_details from "./details-pages/Title_details.jsx";
 import OverView_Details from "./details-pages/OverView_Details.jsx";
 import FeedbackSection from "./details-pages/feedbackSection.jsx";
 import CommentSection from "./comments/CommentSection.jsx";
+import RelatedItems from "./details-pages/RelatedItems.jsx";
 import {
   FilterRadio,
   ChangeView,
@@ -78,4 +79,5 @@ export {
   OverView_Details,
   FeedbackSection,
   CommentSection,
+  RelatedItems,
 };

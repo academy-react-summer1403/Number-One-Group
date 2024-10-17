@@ -26,7 +26,7 @@ const ToLike = ({
         'blog': [AddBlogLike, AddBlogDisLike, DeleteBlogLike],
     }
     const statusVariant = {
-        'course': { like: LikeStatus == true, disLike: DissLikeStatus == true },
+        'course': { like: LikeStatus == false, disLike: DissLikeStatus == false },
         'blog': { like: LikeStatus == false, disLike: DissLikeStatus == false },
         'courseDetails': { like: LikeStatus == 0, disLike: DissLikeStatus == 0 },
         'courseComment': { like: LikeStatus !== "LIKED", disLike: LikeStatus !== "DISSLIKED" }

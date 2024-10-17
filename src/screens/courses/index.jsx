@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { TitleSection, BreadCrumb } from "../../components/partials/title-section"
 import { GetAllCourseByPagination } from "../../core/services/api/get-data";
 import { useDispatch, useSelector } from "react-redux";
-import { Course, FilterSide_Courses } from "../../components/pages/course"
+import { CourseCard, FilterSide_Courses } from "../../components/pages/course"
 import { setPageNumber, setRowsOfPage, setSortCal, setSortType } from "../../redux/slices/filter-box-slices/FilterCourses"
 import MediaQuery, { useMediaQuery } from "react-responsive";
 import { ChangeView, CreateModal, SectionTop, SortBox, SortBoxHolder, RenderItemsList, PaginatedItems, PaginateHolderItems } from "../../components/common";
@@ -90,7 +90,7 @@ const Courses = () => {
                         <PaginatedItems setPage={setPageNumber} currentData={isSuccess && coursesData.totalCount} currentDataInOnePage={currentCourse}>
                             <div className={`flex flex-wrap relative gap-x-1 justify-around gap-y-5 w-full m-auto my-2 ${showGrid && isTabletOrLapTop ? "grid-list" : ""}`}>
                                 <RenderItemsList
-                                    RenderComponent={Course}
+                                    RenderComponent={CourseCard}
                                     isLoading={isLoading}
                                     isSuccess={isSuccess}
                                     isError={isError}

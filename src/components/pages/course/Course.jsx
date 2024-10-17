@@ -6,7 +6,7 @@ import CourseTopBody from "./CourseTopBody"
 import { Skeleton } from "@nextui-org/react";
 import NotFoundImg from "../../../assets/images/image-not-found.png"
 
-const Course = ({ loading, refetch, item, addFavoriteAction,deleteFavoriteAction  }) => {
+const CourseCard = ({ loading, refetch, item, addFavoriteAction,deleteFavoriteAction  }) => {
     const {
         courseId: id,
         title,
@@ -87,4 +87,4 @@ const Course = ({ loading, refetch, item, addFavoriteAction,deleteFavoriteAction
     )
 }
 
-export default Course
+export default CourseCard

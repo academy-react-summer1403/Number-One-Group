@@ -6,8 +6,8 @@ import { useState } from "react"
 import { SwiperSlide } from "swiper/react"
 import { GetAllCourseByPagination, GetTechnologies } from "../../../core/services/api/get-data"
 import { useQueryWithDependencies, useQueryWithoutDependencies } from "../../../core/hooks/react-query"
-import { Course } from "../course"
 import { Autoplay } from 'swiper/modules';
+import { CourseCard } from "../course"
 
 const TopCourses = () => {
     const { t, i18n } = useTranslation()
@@ -51,7 +51,7 @@ const TopCourses = () => {
                 >
                     {isSuccess && Courses.courseFilterDtos?.map((item, index) => (
                         <SwiperSlide key={index}>
-                            <Course item={item} isLoading={isLoading} refetch={refetch} />
+                            <CourseCard item={item} isLoading={isLoading} refetch={refetch} />
                         </SwiperSlide>
                     ))}
                 </SwiperSlider>

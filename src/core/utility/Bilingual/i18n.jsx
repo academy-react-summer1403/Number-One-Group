@@ -128,7 +128,7 @@ i18n.use(initReactI18next)
                     commentAnswer: 'پاسخ', viewAnswers: 'مشاهده پاسخ ها',viewMore:'مشاهده بیشتر +',viewLess:'مشاهده کمتر -',
                     notFoundComment: 'نظری وجود ندارد',
                     // Related titles
-                    Related: 'مرتبط', Blogs: 'اخبار',
+                    Related: 'مرتبط', Blogs: 'اخبار',Courses:'دوره های',
                     // Cart
                     cartTitle: "سبد خرید", cartTotalSum: "جمع کل", cartInfo: "اطلاعات", cartButton: "اقدام به پرداخت", clearBtn: "خالی کردن سبد", numberOfItemsInCart: "تعداد آیتم ها",
                     // About
@@ -270,7 +270,7 @@ i18n.use(initReactI18next)
                     commentAnswer: 'Answer', viewAnswers: 'View Answers',viewMore:'View More +',viewLess:'View Less -',
                     notFoundComment: 'There is no comment!',
                     // Related titles
-                    Related: 'Related', Blogs: 'Blogs',
+                    Related: 'Related', Blogs: 'Blogs',Courses:'Courses',
                     // Cart
                     cartTitle: "Cart", cartTotalSum: "Total sum", cartInfo: "Information", cartButton: "Proceed to pay", clearBtn: "Clear Cart", numberOfItemsInCart: "Number of items",
                     // About
