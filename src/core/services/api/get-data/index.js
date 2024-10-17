@@ -8,6 +8,9 @@ import GetCourseLevel from "./GetCourseLevel";
 import GetCourseType from "./GetCourseType";
 import GetNewsFilterPage from "./GetNewsFilter";
 import GetListNewsCategory from "./GetListNewsCategory";
+import GetCourseDetails from "./GetCourseDetails";
+import GetCoursesComments from "./comments/GetCoursesComments";
+import GetReplayCourseComment from "./comments/GetReplayCourseComment";
 
 export {
   GetAllTeachers,
@@ -20,4 +23,7 @@ export {
   GetCourseType,
   GetNewsFilterPage,
   GetListNewsCategory,
+  GetCourseDetails,
+  GetCoursesComments,
+  GetReplayCourseComment,
 };

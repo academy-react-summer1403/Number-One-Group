@@ -6,7 +6,7 @@ import CourseTopBody from "./CourseTopBody"
 import { Skeleton } from "@nextui-org/react";
 import NotFoundImg from "../../../assets/images/image-not-found.png"
 
-const Course = ({ loading, refetch, item }) => {
+const CourseCard = ({ loading, refetch, item, addFavoriteAction,deleteFavoriteAction  }) => {
     const {
         courseId: id,
         title,
@@ -23,7 +23,9 @@ const Course = ({ loading, refetch, item }) => {
         dissLikeCount: disLike,
         userIsLiked: LikeStatus,
         currentUserDissLike: DissLikeStatus,
-        describe: bio
+        describe: bio,
+        userFavorite,
+        userFavoriteId,
     } = item;
 
     return (
@@ -42,7 +44,13 @@ const Course = ({ loading, refetch, item }) => {
                     </Link >
 
                     <div className="flex justify-center gap-8 my-3">
-                        <FavoriteBtn isLoading={loading} variantStyle="card" />
+                        <FavoriteBtn isLoading={loading}
+                            variantStyle="card"
+                            userFavorite={userFavorite}
+                            action={addFavoriteAction}
+                            deleteAction={deleteFavoriteAction}
+                            Id={id}
+                            favoriteId={userFavoriteId} />
                     </div>
                 </div>
                 <div to={`/CourseDetails/${id}`} className="py-2 course-body w-full ">
@@ -79,4 +87,4 @@ const Course = ({ loading, refetch, item }) => {
     )
 }
 
-export default Course
+export default CourseCard

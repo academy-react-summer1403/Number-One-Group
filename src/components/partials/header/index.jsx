@@ -12,7 +12,7 @@ import { useLocation } from "react-router-dom"
 import { GetProfileInfo } from "../../../core/services/api/get-data"
 import { setInfoAction } from "../../../redux/slices/UserInfo"
 import HeaderButtons from "./HeaderButtons"
-import { useQueryWithDependencies } from "../../../core/hooks/react-query"
+import { useQueryWithDependencies, useQueryWithoutDependencies } from "../../../core/hooks/react-query"
 import { useQuery } from "@tanstack/react-query"
 import { getItem } from "../../../core/hooks/local-storage"
 
@@ -22,9 +22,12 @@ const Header = () => {
   const dispatch = useDispatch()
   const location = useLocation()
 
+   // basket and favoriteBox number
+   const { data: myFavoriteData } = useQueryWithoutDependencies("GET_MY_COURSES", null )
+   const { data: myCourseReserve } = useQueryWithoutDependencies('MY_RESERVED_LIST',null )
   const baskets = [
-    { icon: CartIcon, number: 0, href: "/cart", tooltip: ["سبد خرید", "Cart"] },
-    { icon: FavoriteIcon, number: 0, href: "", tooltip: ["لیست علاقه مندی", "Favorite List"] },
+    { icon: CartIcon, number: myCourseReserve?.length, href: "/cart", tooltip: ["سبد خرید", "Cart"] },
+    { icon: FavoriteIcon, number:  myFavoriteData?.favoriteCourseDto.length, href: "", tooltip: ["لیست علاقه مندی", "Favorite List"] },
   ];
 
   const menuItems = menuItem.map((item, index) => {

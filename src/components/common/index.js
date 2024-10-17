@@ -1,6 +1,7 @@
 import HowToStart from "./howToStart";
 import InformedPoster from "./informedPoster";
 import Button from "./Button";
+import CreateSocialMediaItems from "./CreateSocialMediaItems.jsx";
 import Label from "./Label";
 import OptionParts from "./OptionParts";
 import ButtonSlider from "./swiper/ButtonSlider.jsx";
@@ -19,6 +20,12 @@ import PaginatedItems from "./pagination/Paginate";
 import PaginateHolderItems from "./pagination/PaginateHolderItems";
 import CreateModal from "./CreateModal";
 import FavoriteBtn from "./FavoriteBtn.jsx";
+import DetailsBox from "./details-pages/DetailsBox.jsx";
+import Title_details from "./details-pages/Title_details.jsx";
+import OverView_Details from "./details-pages/OverView_Details.jsx";
+import FeedbackSection from "./details-pages/feedbackSection.jsx";
+import CommentSection from "./comments/CommentSection.jsx";
+import RelatedItems from "./details-pages/RelatedItems.jsx";
 import {
   FilterRadio,
   ChangeView,
@@ -37,6 +44,7 @@ export {
   HowToStart,
   InformedPoster,
   Button,
+  CreateSocialMediaItems,
   Label,
   OptionParts,
   ButtonSlider,
@@ -66,4 +74,10 @@ export {
   FilterRange,
   FilterSearch,
   FilterStars,
+  DetailsBox,
+  Title_details,
+  OverView_Details,
+  FeedbackSection,
+  CommentSection,
+  RelatedItems,
 };

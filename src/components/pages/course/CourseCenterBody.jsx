@@ -15,6 +15,7 @@ const CourseCenterBody = ({
     isLoaded,
     refetch,
 }) => {
+    console.log(DissLikeStatus)
 
     const Data = [
         { icon: <StudentIcon stroke={"gray"} />, title: studentsNumber ?? "" },
@@ -37,13 +38,13 @@ const CourseCenterBody = ({
             <div className="flex items-center gap-1 justify-end">
                 <Skeleton isLoaded={!isLoaded} className="rounded-lg">
                     <ToLike
-                        variant={'course'}
                         userLikeId={userLikeId}
                         likeNumber={like}
                         disLikeNumber={disLike}
-                        likeStatus={LikeStatus}
-                        disLikeStatus={DissLikeStatus}
+                        LikeStatus={LikeStatus}
+                        DissLikeStatus={DissLikeStatus}
                         Id={Id}
+                        variant={'course'}
                         refetch={refetch}
                     />
                 </Skeleton>

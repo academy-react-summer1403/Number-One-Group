@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { TitleSection, BreadCrumb } from "../../components/partials/title-section"
 import { GetAllCourseByPagination } from "../../core/services/api/get-data";
 import { useDispatch, useSelector } from "react-redux";
-import { Course, FilterSide_Courses } from "../../components/pages/course"
+import { CourseCard, FilterSide_Courses } from "../../components/pages/course"
 import { setPageNumber, setRowsOfPage, setSortCal, setSortType } from "../../redux/slices/filter-box-slices/FilterCourses"
 import MediaQuery, { useMediaQuery } from "react-responsive";
 import { ChangeView, CreateModal, SectionTop, SortBox, SortBoxHolder, RenderItemsList, PaginatedItems, PaginateHolderItems } from "../../components/common";
@@ -12,7 +12,9 @@ import { CloseIcon } from "../../core/icon";
 import { useEffect, useState } from "react";
 import tooltipStyle from "../../core/constants/tooltip-style";
 import { sortingOptionsType_Course_Fa, sortingOptionsType_Course_En, sortOptionCal_Fa, sortOptionCal_En } from "../../core/constants/sort";
-import { useQueryWithDependencies, useQueryWithoutDependencies } from "../../core/hooks/react-query";
+import { useMutationWithRefetch, useQueryWithDependencies, useQueryWithoutDependencies } from "../../core/hooks/react-query";
+import { DeleteCourseFavorite } from "../../core/services/api/delete-data";
+import { AddCourseFavorite } from "../../core/services/api/post-data";
 
 const Courses = () => {
     const { t, i18n } = useTranslation();
@@ -37,6 +39,12 @@ const Courses = () => {
     // data courses from api
     const { data: coursesData, isSuccess, isError, isLoading, refetch } = useQueryWithDependencies("GET_COURSES", GetAllCourseByPagination, filterObj_Courses, filterObj_Courses);
     const { data: coursesLength, isSuccess: coursesLengthFinished } = useQueryWithoutDependencies("GET_COURSES_LENGTH", GetAllCourseByPagination)
+    
+    // Add Course in the Favorite List
+    const { mutate: addFavorite } = useMutationWithRefetch("ADD_COURSE_FAVORITE", AddCourseFavorite,refetch);
+
+    // Delete Data with useMutation
+    const { mutate: deleteFavorite } = useMutationWithRefetch("DELETE_COURSE_FAVORITE", DeleteCourseFavorite, refetch);
 
     return (
         <>
@@ -82,14 +90,16 @@ const Courses = () => {
                         <PaginatedItems setPage={setPageNumber} currentData={isSuccess && coursesData.totalCount} currentDataInOnePage={currentCourse}>
                             <div className={`flex flex-wrap relative gap-x-1 justify-around gap-y-5 w-full m-auto my-2 ${showGrid && isTabletOrLapTop ? "grid-list" : ""}`}>
                                 <RenderItemsList
-                                    RenderComponent={Course}
+                                    RenderComponent={CourseCard}
                                     isLoading={isLoading}
                                     isSuccess={isSuccess}
                                     isError={isError}
-                                    originalData={isSuccess && coursesData.courseFilterDtos}
+                                    originalData={isSuccess && coursesData?.courseFilterDtos}
                                     skeletonData={skeletonData}
                                     notFoundText={i18n.language != "en" ? 'دوره ای یافت نشد' : "Course not found"}
                                     refetchData={refetch}
+                                    addFavoriteAction={addFavorite}
+                                    deleteFavoriteAction={deleteFavorite}
                                 />
                             </div>
                         </PaginatedItems>
