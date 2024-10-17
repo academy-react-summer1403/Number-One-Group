@@ -2,7 +2,9 @@ import { useParams } from "react-router-dom";
 import BreadCrumb from "../../components/partials/title-section/BreadCrumb"
 import TitleSection from "../../components/partials/title-section/TitleSection"
 import { useQueryWithDependencies } from "../../core/hooks/react-query";
-import { GetBlogWithId } from "../../core/services/api/get-data";
+import { GetBlogWithId, GetNewsFilterPage } from "../../core/services/api/get-data";
+import { RelatedItems } from "../../components/common";
+import { BlogCard } from "../../components/pages/blog";
 
 const BlogDetails = () => {
     const { id } = useParams();
@@ -12,7 +14,7 @@ const BlogDetails = () => {
 
     // Blog Object
     const {
-        title,
+        title,newsCatregoryId
     } = isSuccess && blogData.detailsNewsDto
 
     return (
@@ -21,6 +23,18 @@ const BlogDetails = () => {
                 <BreadCrumb href={'/Blog'} text="BlogSection" />
                 <BreadCrumb type="Div" text={title} />
             </TitleSection>
+            <div className="main-container lg:flex lg:flex-row-reverse gap-7 my-28">
+                <div className="lg:w-[915px] sm:w-full mobile:w-full mx-auto">
+                </div>
+                <RelatedItems
+                    category={newsCatregoryId}
+                    params={{ newsCatregoryId: newsCatregoryId }}
+                    apiFunction={GetNewsFilterPage}
+                    variant={'news'}
+                    RenderItem={BlogCard}
+                />
+            </div>
+
         </>
     )
 }
