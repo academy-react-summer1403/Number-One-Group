@@ -5,7 +5,7 @@ import { useMutationWithoutRefetch, useQueryWithDependencies } from '../../core/
 import { GetCourseDetails } from '../../core/services/api/get-data';
 import { BreadCrumb } from '../../components/partials/title-section';
 import MediaQuery from 'react-responsive';
-import { DetailsBox } from '../../components/common/details-pages';
+import { DetailsBox, Title_details } from '../../components/common/details-pages';
 import { AddCourseReserve } from '../../core/services/api/post-data';
 import { LevelIcon } from '../../core/icon';
 import { FaHourglassStart, FaUsers } from "react-icons/fa6";
@@ -22,7 +22,7 @@ const CourseDetails = () => {
 
     const {
         courseId, title, imageAddress, cost, isCourseReseve, courseLevelName, startTime, endTime, capacity, currentRegistrants,
-        courseStatusName
+        courseStatusName, teacherName, currentRate, techs
 
     } = isSuccess && courseData
     // details Box data
@@ -40,11 +40,18 @@ const CourseDetails = () => {
     // Add Course Reserve in The Basket 
     const { mutate: reserveMutate } = useMutationWithoutRefetch("ADD_COURSE_RESERVE", AddCourseReserve, courseId);
 
-    // Course Reserve Params
+    /* PARAMS */
+    // Details Params
     const detailsParams = {
         variant: "course-detail", price: cost, Detail: DetailsCourse, arrowColor: "#000",
         colorButton: "yellow", btnText: "AddToCart", actionReserve: reserveMutate, reserveStatus: isCourseReseve
     }
+    // Title Details Params
+    const titleDetailsParams = {
+        title: title, creator: teacherName, NumberStudents: currentRegistrants, Score: currentRate,
+        category: techs, differentDetail: startT, variant: "course-detail",
+    }
+
 
     return (
         <>
@@ -59,6 +66,9 @@ const CourseDetails = () => {
                         alt={'Course_Pic'}
                         fallback={NotFoundImg}
                         className='w-full h-96 rounded-xl'
+                    />
+                    <Title_details
+                        {...titleDetailsParams}
                     />
                 </div>
                 <MediaQuery minWidth={'1024px'}>
