@@ -26,11 +26,11 @@ export const useQueryWithoutDependencies = (key, action) => {
 };
 
 // Sending data along with refetching items when successful
-export const useMutationWithRefetch = (key, action, apiParams, refetch) => {
+export const useMutationWithRefetch = (key, action,refetch) => {
   return useMutation({
     mutationKey: [key],
-    mutationFn: () => {
-      return action(apiParams);
+    mutationFn: (id) => {
+      return action(id);
     },
     onSuccess: () => {
       refetch();
@@ -39,11 +39,11 @@ export const useMutationWithRefetch = (key, action, apiParams, refetch) => {
 };
 
 // Sending data items when normal
-export const useMutationWithoutRefetch = (key, action, apiParams) => {
+export const useMutationWithoutRefetch = (key, action) => {
   return useMutation({
     mutationKey: [key],
-    mutationFn: () => {
-      return action(apiParams);
+    mutationFn: (id) => {
+      return action(id);
     },
   });
 };

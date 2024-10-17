@@ -1,12 +1,13 @@
 import Details_Tabs from "./Details_Tabs"
 import Tab from "./Tab";
-import { OverView_Details } from "../../common";
+import { FeedbackSection, OverView_Details } from "../../common";
 
 const TabPanel = ({
     overView,
     training,
     MajorElements,
     variant,
+    params,
 }) => {
 
     return (
@@ -23,6 +24,7 @@ const TabPanel = ({
                             titleOverView={'CourseOverView'}
                             titleLearning={'LearnCourse'}
                             variant={variant} />
+                        <FeedbackSection params={params}/>
                     </>
                 </Tab>
                 <Tab label="Study program">Study program </Tab>

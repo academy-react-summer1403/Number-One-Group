@@ -31,6 +31,7 @@ const DetailsBox = ({
   price,
   Detail,
   arrowColor,
+  id,
   colorButton,
   btnText,
   shareBox = true,
@@ -47,7 +48,7 @@ const DetailsBox = ({
         toast.error('دوره مورد نظر قبلا رزرو شده')
       }
       else {
-        actionReserve();
+        actionReserve(id);
       }
     }
     else { alert('لطفا لاگین کنید!') }

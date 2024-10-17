@@ -23,6 +23,7 @@ import FavoriteBtn from "./FavoriteBtn.jsx";
 import DetailsBox from "./details-pages/DetailsBox.jsx";
 import Title_details from "./details-pages/Title_details.jsx";
 import OverView_Details from "./details-pages/OverView_Details.jsx";
+import FeedbackSection from "./details-pages/feedbackSection.jsx";
 import {
   FilterRadio,
   ChangeView,
@@ -74,4 +75,5 @@ export {
   DetailsBox,
   Title_details,
   OverView_Details,
+  FeedbackSection,
 };
