@@ -20,8 +20,7 @@ const CommentSection = ({ Id, apiFunction, data, refetch }) => {
               key={index}
               commentData={item}
               refetch={refetch}
-              courseId={Id} 
-              />
+              courseId={Id} />
           ))
         ) : (
           <h1 className="mx-auto w-fit font-semibold text-xl">* {t('notFoundComment')} *</h1>

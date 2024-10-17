@@ -34,7 +34,7 @@ const TabPanel = ({
                         Id={params.Id}
                         apiFunction={AddCourseComment}
                         data={params.commentData}
-                        refetch={params.refetch}
+                        refetch={params.refetchComment}
                     />
                     </Tab>
             </Details_Tabs>

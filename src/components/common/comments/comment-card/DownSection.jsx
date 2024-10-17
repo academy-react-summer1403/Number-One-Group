@@ -19,6 +19,7 @@ const DownSection = ({
 }) => {
   const { t } = useTranslation();
   const { isOpen, onOpen, onClose } = useDisclosure();
+  console.log(refetch)
   
   return (
     <div className='flex justify-between items-center mt-3'>

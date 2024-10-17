@@ -65,7 +65,7 @@ const CourseDetails = () => {
         variant: 'courseDetails', userLikeId: userLikeId, likeNumber: likeCount, disLikeNumber: dissLikeCount,
         LikeStatus: currentUserLike, DissLikeStatus: currentUserDissLike, Id: id, favoriteId: userFavoriteId,
         refetch: refetch, userFavorite: isUserFavorite, action: addFavorite, deleteAction: deleteFavorite,
-        favoriteText: 'CourseFavorite',
+        favoriteText: 'CourseFavorite',refetchComment:refetchComment,
         commentData: commentData,
         Id: id,
     }
@@ -95,6 +95,7 @@ const CourseDetails = () => {
                         training={miniDescribe}
                         MajorElements={["", "", "", ""]}
                         variant={'course'}
+
                         params={Params}
                     />
                 </div>

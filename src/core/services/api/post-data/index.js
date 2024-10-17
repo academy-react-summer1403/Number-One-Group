@@ -11,6 +11,8 @@ import AddCourseReserve from "./AddCourseReserve";
 import AddCourseFavorite from "./AddCourseFavorite";
 import AddReplyCourseComment from "./comments/ReplayCourseComment";
 import AddCourseComment from "./comments/AddCourseComment";
+import AddCourseCommentLike from "./comments/AddCourseCommentLike";
+import CourseCommentDisLike from "./comments/CourseCommentDisLike";
 
 export {
   ForgetPass,
@@ -26,4 +28,6 @@ export {
   AddCourseFavorite,
   AddReplyCourseComment,
   AddCourseComment,
+  AddCourseCommentLike,
+  CourseCommentDisLike,
 };
