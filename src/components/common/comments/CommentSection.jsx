@@ -13,7 +13,7 @@ const CommentSection = ({ Id, replayComment, apiFunction, data, refetch, variant
       <h1 className="mb-6">{t('user_comment')}</h1>
       <AddComments apiFunction={apiFunction} Id={Id} refetch={refetch} />
       <p className="text-xl my-5">{data?.length} {t('comment')}</p>
-      <div className={`my-5 pb-10`}>
+      {/* <div className={`my-5 pb-10`}>
         {data?.length !== 0 ? (
           dataRender?.map((item, index) => (
             <UserComments
@@ -27,7 +27,7 @@ const CommentSection = ({ Id, replayComment, apiFunction, data, refetch, variant
         ) : (
           <h1 className="mx-auto w-fit font-semibold text-xl">* {t('notFoundComment')} *</h1>
         )}
-      </div>
+      </div> */}
       <button onClick={() => setViewMore(!viewMore)} className={`bg-LavenderMist
         px-5 py-1.5 rounded-3xl mx-auto block text-VioletBlue ${data?.length > 3 ? "" : "hidden"}`}>
         {t(!viewMore ? 'viewMore' : 'viewLess')} </button>

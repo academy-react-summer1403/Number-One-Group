@@ -17,6 +17,7 @@ const FeedbackSection = ({ params,variant }) => {
                     numberStatus={'hidden'}
                     Id={params.Id}
                     variant={params.variant}
+                    variantStyle={'details'}
                     refetch={params.refetch}
                     style={'!rounded-full !p-3 border-2'}
                 />

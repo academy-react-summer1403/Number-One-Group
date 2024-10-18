@@ -13,6 +13,7 @@ const ToLike = ({
     numberStatus,
     Id,
     variant,
+    variantStyle,
     refetch,
     style,
 }) => {
@@ -32,7 +33,7 @@ const ToLike = ({
         'courseComment': { like: LikeStatus !== "LIKED", disLike: LikeStatus !== "DISSLIKED" }
     }
 
-    const iconSize = (variant == 'courseDetails' ? 25 : 17);
+    const iconSize = (variantStyle == 'details'? 25 : 17);
 
     // like & disLike function
     const handleToLike = (id, api, status, Delete, btnStatus) => {

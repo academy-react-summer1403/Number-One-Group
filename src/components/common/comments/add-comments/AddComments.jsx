@@ -19,7 +19,7 @@ const AddComments = ({ apiFunction, Id, refetch }) => {
   ]
   const handleApi = (Id, values, refetch) => {
     if (!userInfo) toast.error('لطفا لاگین کنید')
-    else apiFunction(Id, values, refetch)
+    else apiFunction(Id, values, refetch,userInfo)
   }
 
   return (
