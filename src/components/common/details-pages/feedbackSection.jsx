@@ -27,8 +27,6 @@ const FeedbackSection = ({ params,variant }) => {
                     variantApi={variant}
                     userFavorite={params.userFavorite}
                     refetch={params.refetch}
-                    // action={params.action}
-                    // deleteAction={params.deleteAction}
                     Id={params.Id}
                     favoriteId={params.favoriteId}
                 />

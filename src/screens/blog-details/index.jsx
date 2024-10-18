@@ -16,12 +16,6 @@ const BlogDetails = () => {
     // Getting Blog Data from api with use Query
     const { data: blogData, isSuccess, refetch } = useQueryWithDependencies('GET_BLOG_DETAILS', GetBlogWithId, null, id)
 
-    // Add Blog in the Favorite List
-    const { mutate: addFavorite } = useMutationWithRefetch("ADD_BLOG_FAVORITE", AddCourseFavorite, refetch);
-
-    // Delete Blog from Favorite List 
-    const { mutate: deleteFavorite } = useMutationWithRefetch("DELETE_BLOG_FAVORITE", DeleteCourseFavorite, refetch);
-
     // Blog Object
     const {
         title, newsCatregoryId, currentImageAddress, newsCatregoryName, updateDate, currentView, commentsCount,
@@ -33,7 +27,7 @@ const BlogDetails = () => {
     const feedBackParams = {
         variant: 'blog', userLikeId: currentUserLikeId, likeNumber: likeCount, disLikeNumber: dissLikeCount,
         LikeStatus: currentUserIsLike, DissLikeStatus: currentUserIsDissLike, Id: id, favoriteId: currentUserFavoriteId,
-        refetch: refetch, userFavorite: isCurrentUserFavorite, action: addFavorite, deleteAction: deleteFavorite,
+        refetch: refetch, userFavorite: isCurrentUserFavorite,
         favoriteText: 'CourseFavorite'
     }
 
@@ -68,7 +62,7 @@ const BlogDetails = () => {
                         titleLearning={'LearnBlog'}
                         ElementClass={'hidden'}
                     />
-                    <FeedbackSection feedBackParams={feedBackParams} />
+                    <FeedbackSection params={feedBackParams} variant={'blog'} />
                 </div>
                 <RelatedItems
                     category={newsCatregoryId}

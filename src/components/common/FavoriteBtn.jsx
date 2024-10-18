@@ -3,20 +3,21 @@ import { useMediaQuery } from "react-responsive";
 import { Skeleton, Tooltip } from "@nextui-org/react";
 import tooltipStyle from "../../core/constants/tooltip-style"
 import { useTranslation } from "react-i18next";
-import { AddCourseFavorite } from "../../core/services/api/post-data";
-import { DeleteCourseFavorite } from "../../core/services/api/delete-data";
+import { AddBlogFavorite, AddCourseFavorite } from "../../core/services/api/post-data";
+import { DeleteBlogFavorite, DeleteCourseFavorite } from "../../core/services/api/delete-data";
 
-const FavoriteBtn = ({ isLoading, variantStyle, variantApi, userFavorite,refetch, Id, favoriteId }) => {
+const FavoriteBtn = ({ isLoading, variantStyle, variantApi, userFavorite, refetch, Id, favoriteId }) => {
     const isTabletOrLapTop = useMediaQuery({ query: '(min-width: 768px)' })
     const variantAction = {
-        'course': [AddCourseFavorite, DeleteCourseFavorite]
+        'course': [AddCourseFavorite, DeleteCourseFavorite],
+        'blog': [AddBlogFavorite, DeleteBlogFavorite]
     }
     const handleFavorite = (action, deleteAction) => {
         console.log(userFavorite)
         if (userFavorite === false) {
-            action(Id,refetch)
+            action(Id, refetch)
         }
-        else deleteAction(favoriteId,refetch)
+        else deleteAction(favoriteId, refetch)
     }
 
     const variant = {
