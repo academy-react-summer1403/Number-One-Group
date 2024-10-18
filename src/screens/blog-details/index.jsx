@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import BreadCrumb from "../../components/partials/title-section/BreadCrumb"
 import TitleSection from "../../components/partials/title-section/TitleSection"
 import { useQueryWithDependencies } from "../../core/hooks/react-query";
-import { GetBlogsComments, GetBlogWithId, GetNewsFilterPage } from "../../core/services/api/get-data";
+import { GetBlogsComments, GetBlogWithId, GetNewsFilterPage, GetReplayBlogComment, GetReplayCourseComment } from "../../core/services/api/get-data";
 import { CommentSection, FeedbackSection, ImageFallBack, OverView_Details, RelatedItems } from "../../components/common";
 import { BlogCard } from "../../components/pages/blog";
 import NotFoundImg from "../../assets/images/image-not-found.png"
@@ -71,6 +71,7 @@ const BlogDetails = () => {
                         apiFunction={AddBlogComment}
                         variant={'blogDetails'}
                         // replayComment={AddReplyCourseComment}
+                        getReplay={GetReplayCourseComment}
                         data={commentData}
                         commentSuccess={commentSuccess}
                         refetch={refetchComment}

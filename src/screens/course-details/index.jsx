@@ -2,7 +2,7 @@ import React from 'react'
 import { useParams } from 'react-router-dom';
 import TitleSection from '../../components/partials/title-section/TitleSection';
 import { useMutationWithoutRefetch, useMutationWithRefetch, useQueryWithDependencies, useQueryWithoutDependencies } from '../../core/hooks/react-query';
-import { GetAllCourseByPagination, GetCourseDetails, GetCoursesComments, GetTechnologies } from '../../core/services/api/get-data';
+import { GetAllCourseByPagination, GetCourseDetails, GetCoursesComments, GetReplayCourseComment, GetTechnologies } from '../../core/services/api/get-data';
 import { BreadCrumb } from '../../components/partials/title-section';
 import MediaQuery from 'react-responsive';
 import { AddCourseFavorite, AddCourseReserve } from '../../core/services/api/post-data';
@@ -104,6 +104,7 @@ const CourseDetails = () => {
                         training={miniDescribe}
                         MajorElements={MajorElements}
                         variant={'courseComment'}
+                        getReplay={GetReplayCourseComment}
                         params={Params}
                     />
                     <RelatedItems

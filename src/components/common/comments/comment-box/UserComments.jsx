@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react'
 import { DownSection, TopSection } from '../comment-card';
 import ReplayComments from './ReplayComments';
 import { GetReplayCourseComment } from '../../../../core/services/api/get-data';
-const UserComments = ({ commentData, date, disLikeCount, likeStatus, variant, replayComment, refetch, itemId }) => {
+const UserComments = ({ commentData, date, disLikeCount, likeStatus, variant, getReplay, replayComment, refetch, itemId }) => {
   const [replayStatus, setReplayStatus] = useState(false);
-  const [replayCourse, setReplayCourse] = useState([]);
+  const [replayComments, setReplayComments] = useState([]);
   const [reload, setReload] = useState(false);
 
   const {
@@ -23,16 +23,12 @@ const UserComments = ({ commentData, date, disLikeCount, likeStatus, variant, re
     setReload(!reload)
   }
   const CallReplayApi = async () => {
-    const res = await GetReplayCourseComment(itemId, id);
-    setReplayCourse(res);
+    const res = await getReplay(id, itemId);
+    setReplayComments(res);
   };
   useEffect(() => {
     CallReplayApi()
   }, [reload])
-
-  const dataVariant = {
-    'courseDetails': replayCourse,
-  }
 
   return (
     <>
@@ -46,7 +42,7 @@ const UserComments = ({ commentData, date, disLikeCount, likeStatus, variant, re
             name={author}
           />
           <DownSection
-            ArrayLength={replayCourse?.length}
+            ArrayLength={replayComments?.length}
             replayStatus={replayStatus}
             setReplayStatus={setReplayStatus}
             like={likeCount}
@@ -64,13 +60,13 @@ const UserComments = ({ commentData, date, disLikeCount, likeStatus, variant, re
         </div>
       </div>
       <div>
-        {/* {replayStatus ? (
-          dataVariant?.[variant]?.map((item, index) => {
+        {replayStatus ? (
+          replayComments?.map((item, index) => {
             return (
-              <ReplayComments key={index} item={item} refetch={refetchCallReplay} />
+              <ReplayComments key={index} item={item} refetch={refetchCallReplay} variant={variant} />
             )
           })
-        ) : null} */}
+        ) : null}
       </div>
     </>
   )

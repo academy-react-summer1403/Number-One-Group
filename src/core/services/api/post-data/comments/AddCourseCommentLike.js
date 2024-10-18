@@ -2,8 +2,6 @@ import { toast } from "react-toastify";
 import Http from "../../../interceptor";
 
 const AddCourseCommentLike = async (ParamsId, refetch) => {
-  console.log(ParamsId)
-  alert()
   try {
     const result = await Http.post(
       `/Course/AddCourseCommentLike?CourseCommandId=${ParamsId}`

@@ -8,6 +8,7 @@ const TabPanel = ({
     training,
     MajorElements,
     variant,
+    getReplay,
     params,
 }) => {
 
@@ -35,6 +36,7 @@ const TabPanel = ({
                         apiFunction={AddCourseComment}
                         variant={variant} 
                         replayComment={AddReplyCourseComment} 
+                        getReplay={getReplay}
                         data={params.commentData}
                         commentSuccess={params.commentSuccess}
                         refetch={params.refetchComment}

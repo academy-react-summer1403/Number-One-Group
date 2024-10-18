@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import AddComments from "./add-comments/AddComments";
 import UserComments from "./comment-box/UserComments";
 
-const CommentSection = ({ Id, replayComment, apiFunction, data, refetch, variant }) => {
+const CommentSection = ({ Id, replayComment,getReplay, apiFunction, data, refetch, variant }) => {
   const { t } = useTranslation();
   const [viewMore, setViewMore] = useState(false);
   const dataRender = viewMore ? data : data?.slice(0, 3);
@@ -23,6 +23,7 @@ const CommentSection = ({ Id, replayComment, apiFunction, data, refetch, variant
               disLikeCount={variant === 'courseComment' ? item.disslikeCount : item.dissLikeCount}
               likeStatus={variant === 'courseComment' ? item.currentUserEmotion : item.currentUserIsLike}
               variant={variant}
+              getReplay={getReplay}
               // replayComment={replayComment}
               refetch={refetch}
               itemId={Id} />
