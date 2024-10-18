@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next"
 import ToLike from "../ToLike"
 import FavoriteBtn from "../FavoriteBtn"
 
-const FeedbackSection = ({ params }) => {
+const FeedbackSection = ({ params,variant }) => {
     const { t } = useTranslation()
     return (
         <div data-aos="fade-right" ata-aos-duration="700" className="border-y-2 my-7 py-3 flex items-center max-sm:justify-around gap-5">
@@ -24,9 +24,11 @@ const FeedbackSection = ({ params }) => {
             <div>
                 <FavoriteBtn
                     variantStyle="other"
+                    variantApi={variant}
                     userFavorite={params.userFavorite}
-                    action={params.action}
-                    deleteAction={params.deleteAction}
+                    refetch={params.refetch}
+                    // action={params.action}
+                    // deleteAction={params.deleteAction}
                     Id={params.Id}
                     favoriteId={params.favoriteId}
                 />

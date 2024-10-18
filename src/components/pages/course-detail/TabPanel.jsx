@@ -25,7 +25,7 @@ const TabPanel = ({
                             titleOverView={'CourseOverView'}
                             titleLearning={'LearnCourse'}
                             variant={variant} />
-                        <FeedbackSection params={params} />
+                        <FeedbackSection params={params} variant={variant} />
                     </>
                 </Tab>
                 <Tab label="Study program">Study program </Tab>

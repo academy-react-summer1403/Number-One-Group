@@ -31,7 +31,7 @@ const LastBlogs = () => {
           }}
           modules={[Autoplay]}
         >
-          {isSuccess && data.news.map(item => (
+          {isSuccess && data.news?.map(item => (
             <SwiperSlide key={item.id}>
               <BlogCard item={item} />
             </SwiperSlide>

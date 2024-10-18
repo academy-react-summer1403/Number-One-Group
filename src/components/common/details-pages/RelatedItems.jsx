@@ -15,7 +15,7 @@ const maxWidthVariant = {
   "news": "1024px"
 }
 
-const RelatedItems = ({ category, params, apiFunction, variant, RenderItem, addFavorite, deleteFavorite }) => {
+const RelatedItems = ({ category, params, apiFunction, variant, RenderItem}) => {
 
 
   const { t, i18n } = useTranslation();
@@ -78,8 +78,6 @@ const RelatedItems = ({ category, params, apiFunction, variant, RenderItem, addF
                     item={item}
                     loading={isLoading}
                     refetch={refetch}
-                    addFavoriteAction={addFavorite}
-                    deleteFavoriteAction={deleteFavorite}
                   />
                 </SwiperSlide>
               ))}

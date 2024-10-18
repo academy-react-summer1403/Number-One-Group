@@ -44,12 +44,6 @@ const CourseDetails = () => {
     // Add Course Reserve in The Basket 
     const { mutate: reserveMutate } = useMutationWithoutRefetch("ADD_COURSE_RESERVE", AddCourseReserve);
 
-    // Add Course in the Favorite List
-    const { mutate: addFavorite } = useMutationWithRefetch("ADD_COURSE_FAVORITE", AddCourseFavorite, refetch);
-
-    // Delete Data with useMutation
-    const { mutate: deleteFavorite } = useMutationWithRefetch("DELETE_COURSE_FAVORITE", DeleteCourseFavorite, refetch);
-
     // Comment call api with react Query
     const { data: commentData, isSuccess: commentSuccess, refetch: refetchComment } = useQueryWithDependencies('GET_COMMENTS_COURSE', GetCoursesComments, null, id)
 
@@ -71,7 +65,7 @@ const CourseDetails = () => {
     const Params = {
         variant: 'courseDetails', userLikeId: userLikeId, likeNumber: likeCount, disLikeNumber: dissLikeCount,
         LikeStatus: currentUserLike, DissLikeStatus: currentUserDissLike, Id: id, favoriteId: userFavoriteId,
-        refetch: refetch, userFavorite: isUserFavorite, action: addFavorite, deleteAction: deleteFavorite,
+        refetch: refetch, userFavorite: isUserFavorite,
         favoriteText: 'CourseFavorite', refetchComment: refetchComment, commentSuccess: commentSuccess,
         commentData: commentData,
         Id: id,
@@ -118,8 +112,6 @@ const CourseDetails = () => {
                         apiFunction={GetAllCourseByPagination}
                         variant={'courseFilterDtos'}
                         RenderItem={CourseCard}
-                        addFavorite={addFavorite}
-                        deleteFavorite={deleteFavorite}
                     />
                 </div>
                 <MediaQuery minWidth={'1024px'}>
