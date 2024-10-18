@@ -126,7 +126,7 @@ i18n.use(initReactI18next)
                     comment: 'نظر', user_comment: 'نظرات کاربران', sendComment: 'ارسال نظر', titleComment: 'عنوان پیام',
                     descComment: 'توضیحات بیشتر', comment_text: 'متن خود را وارد کنید', ConfirmComment: 'نظر شما پس از تأیید توسط ادمین ثبت خواهد شد!',
                     commentAnswer: 'پاسخ', viewAnswers: 'مشاهده پاسخ ها',viewMore:'مشاهده بیشتر +',viewLess:'مشاهده کمتر -',
-                    notFoundComment: 'نظری وجود ندارد',
+                    notFoundComment: 'نظری وجود ندارد',noName:'بدون نام',
                     // Related titles
                     Related: 'مرتبط', Blogs: 'اخبار',Courses:'دوره های',
                     // Cart
@@ -268,7 +268,7 @@ i18n.use(initReactI18next)
                     comment: 'Comment', user_comment: 'User Comments', sendComment: 'Submit a comment', titleComment: 'Comment title',
                     descComment: 'More details', comment_text: 'Enter your text', ConfirmComment: 'Your comment will be registered after approval by the admin!',
                     commentAnswer: 'Answer', viewAnswers: 'View Answers',viewMore:'View More +',viewLess:'View Less -',
-                    notFoundComment: 'There is no comment!',
+                    notFoundComment: 'There is no comment!',noName:'No Name',
                     // Related titles
                     Related: 'Related', Blogs: 'Blogs',Courses:'Courses',
                     // Cart

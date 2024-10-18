@@ -1,13 +1,11 @@
 import { toast } from "react-toastify";
-import http from "../../interceptor";
+import http from "../../../interceptor";
 
-const DeleteBlogLike = async (param, refetch) => {
+const DeleteBlogCommentLike = async (param, refetch) => {
   try {
-    const obj ={
-      deleteEntityId: param
-    }
-    const response = await http.delete("/News/DeleteLikeNews", {
-      data: obj,
+    const response = await http.delete("/News/DeleteCommentLikeNews", {
+      data: { deleteEntityId: param },
+      headers: { "Content-Type": "application/json" },
     });
 
     if (response.success) {
@@ -21,4 +19,4 @@ const DeleteBlogLike = async (param, refetch) => {
   }
 };
 
-export default DeleteBlogLike;
+export default DeleteBlogCommentLike;

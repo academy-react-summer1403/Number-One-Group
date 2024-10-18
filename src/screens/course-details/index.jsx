@@ -103,7 +103,7 @@ const CourseDetails = () => {
                         overView={describe}
                         training={miniDescribe}
                         MajorElements={MajorElements}
-                        variant={'course'}
+                        variant={'courseComment'}
                         params={Params}
                     />
                     <RelatedItems

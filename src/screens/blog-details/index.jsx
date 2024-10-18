@@ -34,7 +34,6 @@ const BlogDetails = () => {
         refetch: refetch, userFavorite: isCurrentUserFavorite,
         favoriteText: 'CourseFavorite'
     }
-
     return (
         <>
             <TitleSection title={title} >
@@ -66,14 +65,14 @@ const BlogDetails = () => {
                         titleLearning={'LearnBlog'}
                         ElementClass={'hidden'}
                     />
-                    <FeedbackSection params={feedBackParams} variant={'blog'} />
+                    <FeedbackSection params={feedBackParams} />
                     <CommentSection
                         Id={id}
                         apiFunction={AddBlogComment}
-                        // variant={params.variant}
+                        variant={'blogDetails'}
                         // replayComment={AddReplyCourseComment}
                         data={commentData}
-                        // commentSuccess={params.commentSuccess}
+                        commentSuccess={commentSuccess}
                         refetch={refetchComment}
                     />
                 </div>

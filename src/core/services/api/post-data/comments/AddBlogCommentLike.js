@@ -1,12 +1,11 @@
 import { toast } from "react-toastify";
 import Http from "../../../interceptor";
 
-const AddCourseCommentLike = async (ParamsId, refetch) => {
-  console.log(ParamsId)
-  alert()
+const AddBlogCommentLike = async (ParamsId, likeType,refetch) => {
+  console.log(likeType,ParamsId)
   try {
     const result = await Http.post(
-      `/Course/AddCourseCommentLike?CourseCommandId=${ParamsId}`
+      `/News/CommentLike/${ParamsId}?LikeType=${likeType}`,
     );
     if (result.success) {
       toast.success("کامنت مورد نظر لایک شد");
@@ -15,8 +14,8 @@ const AddCourseCommentLike = async (ParamsId, refetch) => {
       toast.error("لطفا دوباره تلاش کنید");
     }
   } catch (error) {
-    console.log(error);
+    toast.error("مشکلی پیش آمده لطفا دوباره تلاش کنید");
   }
 };
 
-export default AddCourseCommentLike;
+export default AddBlogCommentLike;

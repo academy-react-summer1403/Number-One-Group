@@ -1,7 +1,6 @@
 import http from "../../../interceptor";
 
 const GetReplayCourseComment = async (courseId, commentId) => {
-  console.log(commentId)
   try {
     // alert()
     const result = await http.get(

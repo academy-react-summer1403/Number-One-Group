@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next"
 import OptionParts from "../OptionParts"
 
 export const BorderStyleVariant = {
-    "course": "Box-shadow1 p-5 bg-MainBg rounded-lg border border-LightLavender",
+    "courseDetails": "Box-shadow1 p-5 bg-MainBg rounded-lg border border-LightLavender",
 }
 
 

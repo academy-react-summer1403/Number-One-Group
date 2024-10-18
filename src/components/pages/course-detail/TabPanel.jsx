@@ -24,8 +24,8 @@ const TabPanel = ({
                             ElementClass={'hidden'}
                             titleOverView={'CourseOverView'}
                             titleLearning={'LearnCourse'}
-                            variant={variant} />
-                        <FeedbackSection params={params} variant={variant} />
+                            variant={params.variant} />
+                        <FeedbackSection params={params}/>
                     </>
                 </Tab>
                 <Tab label="Study program">Study program </Tab>
@@ -33,7 +33,7 @@ const TabPanel = ({
                     <CommentSection
                         Id={params.Id}
                         apiFunction={AddCourseComment}
-                        variant={params.variant} 
+                        variant={variant} 
                         replayComment={AddReplyCourseComment} 
                         data={params.commentData}
                         commentSuccess={params.commentSuccess}

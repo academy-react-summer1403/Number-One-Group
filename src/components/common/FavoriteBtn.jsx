@@ -9,7 +9,7 @@ import { DeleteBlogFavorite, DeleteCourseFavorite } from "../../core/services/ap
 const FavoriteBtn = ({ isLoading, variantStyle, variantApi, userFavorite, refetch, Id, favoriteId }) => {
     const isTabletOrLapTop = useMediaQuery({ query: '(min-width: 768px)' })
     const variantAction = {
-        'course': [AddCourseFavorite, DeleteCourseFavorite],
+        'courseDetails': [AddCourseFavorite, DeleteCourseFavorite],
         'blog': [AddBlogFavorite, DeleteBlogFavorite]
     }
     const handleFavorite = (action, deleteAction) => {
