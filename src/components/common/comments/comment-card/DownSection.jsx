@@ -19,6 +19,7 @@ const DownSection = ({
   replayComment,
   itemId,
   commentId,
+  parentId,
   refetchReplay,
   refetch,
   variant
@@ -41,13 +42,14 @@ const DownSection = ({
           <div onClick={onClose} className="closeButton_modal bg-neutral-200/65 top-2 left-2">
             <CloseIcon />
           </div>
-          {/* <AddReplay_Comment
-            courseId={courseId}
+          <AddReplay_Comment
+            itemId={itemId}
             commentId={commentId}
+            parentId={parentId}
             replayComment={replayComment}
             refetch={refetchReplay}
             closeModal={onClose}
-          /> */}
+          />
         </CreateModal>
         {ArrayLength !== 0 &&
           <button onClick={() => { setReplayStatus(!replayStatus) }} className="bg-LavenderMist py-1 px-3 mt-3 sm:mt-0 text-gray-500 flex gap-2 items-center rounded-lg text-sm">

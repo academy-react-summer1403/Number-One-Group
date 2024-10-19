@@ -16,6 +16,7 @@ import CourseCommentDisLike from "./comments/CourseCommentDisLike";
 import AddBlogFavorite from "./AddBlogFavorite";
 import AddBlogComment from "./comments/AddBlogComment";
 import AddBlogCommentLike from "./comments/AddBlogCommentLike";
+import AddReplayBlogComment from "./comments/ReplayBlogComment";
 
 export {
   ForgetPass,
@@ -36,4 +37,5 @@ export {
   AddBlogFavorite,
   AddBlogComment,
   AddBlogCommentLike,
+  AddReplayBlogComment,
 };

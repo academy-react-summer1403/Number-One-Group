@@ -22,9 +22,10 @@ const CommentSection = ({ Id, replayComment,getReplay, apiFunction, data, refetc
               date={variant === 'courseComment' ? item.insertDate : item.inserDate}
               disLikeCount={variant === 'courseComment' ? item.disslikeCount : item.dissLikeCount}
               likeStatus={variant === 'courseComment' ? item.currentUserEmotion : item.currentUserIsLike}
+              // parentId={variant === 'courseComment' ? item.id : item.parentId}
               variant={variant}
               getReplay={getReplay}
-              // replayComment={replayComment}
+              replayComment={replayComment}
               refetch={refetch}
               itemId={Id} />
           ))

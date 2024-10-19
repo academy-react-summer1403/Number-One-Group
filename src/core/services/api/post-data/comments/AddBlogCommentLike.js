@@ -2,6 +2,7 @@ import { toast } from "react-toastify";
 import Http from "../../../interceptor";
 
 const AddBlogCommentLike = async (ParamsId, likeType,refetch) => {
+  alert()
   console.log(likeType,ParamsId)
   try {
     const result = await Http.post(

@@ -8,11 +8,13 @@ import { BlogCard } from "../../components/pages/blog";
 import NotFoundImg from "../../assets/images/image-not-found.png"
 import { BlogBiography, DetailsSection } from "../../components/pages/blog-details";
 import { MajorElements } from "../../core/constants/test-text/MajorElements";
-import { AddBlogComment } from "../../core/services/api/post-data";
+import { AddBlogComment, AddReplayBlogComment } from "../../core/services/api/post-data";
+import { useTranslation } from "react-i18next";
 
 
 const BlogDetails = () => {
     const { id } = useParams();
+    const {i18n} = useTranslation()
 
     // Getting Blog Data from api with use Query
     const { data: blogData, isSuccess, refetch } = useQueryWithDependencies('GET_BLOG_DETAILS', GetBlogWithId, null, id)
@@ -41,7 +43,8 @@ const BlogDetails = () => {
                 <BreadCrumb type="Div" text={title} />
             </TitleSection>
             <div className="main-container lg:flex lg:flex-row-reverse gap-7 my-28">
-                <div className="lg:w-[915px] sm:w-full mobile:w-full mx-auto">
+                <div data-aos={`fade-${i18n.language === 'fa' ? 'right' : 'left'}`} data-aos-duration="700" 
+                className="lg:w-[915px] sm:w-full mobile:w-full mx-auto">
                     <ImageFallBack
                         src={currentImageAddress} alt={'blog-picture'} fallback={NotFoundImg}
                         className="h-[420px] w-full rounded-xl"
@@ -70,7 +73,7 @@ const BlogDetails = () => {
                         Id={id}
                         apiFunction={AddBlogComment}
                         variant={'blogDetails'}
-                        // replayComment={AddReplyCourseComment}
+                        replayComment={AddReplayBlogComment}
                         getReplay={GetReplayCourseComment}
                         data={commentData}
                         commentSuccess={commentSuccess}

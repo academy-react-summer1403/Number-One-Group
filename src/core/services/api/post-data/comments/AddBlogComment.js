@@ -5,7 +5,7 @@ const AddBlogComment = async (newsId, data, refetch, user) => {
   try {
     const obj = {
       newsId: newsId,
-      userIpAddress: '',
+      userIpAddress: user?.latitude,
       title: data.description,
       describe: data.description,
       userId: user?.userImage[0]?.userProfileId,

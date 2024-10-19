@@ -37,7 +37,8 @@ const RelatedItems = ({ category, params, apiFunction, variant, RenderItem}) => 
       {/* Side related blogs for laptop mode */}
       {titleVariant?.[variant] === 'Blogs' &&
         <MediaQuery minWidth={'1024px'}>
-          <div className="bg-LightGray min-h-[300px] h-fit lg:min-w-[315px] p-5 rounded-lg">
+          <div data-aos={`fade-${i18n.language === 'fa' ? 'left' : 'right'}`} data-aos-duration="700"  
+          className="bg-LightGray min-h-[300px] h-fit lg:min-w-[315px] p-5 rounded-lg">
             <h1 className="boldStyle_text text-xl">{t('Blogs')} {t('Related')}</h1>
             {isSuccess && data.news?.length > 0 ? data.news?.map((item) => (
               <Link key={item.id} to={`/BlogDetails/${item.id}`}>

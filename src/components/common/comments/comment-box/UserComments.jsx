@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react'
 import { DownSection, TopSection } from '../comment-card';
 import ReplayComments from './ReplayComments';
 import { GetReplayCourseComment } from '../../../../core/services/api/get-data';
-const UserComments = ({ commentData, date, disLikeCount, likeStatus, variant, getReplay, replayComment, refetch, itemId }) => {
+const UserComments = ({ commentData, date, disLikeCount, 
+  likeStatus, variant, getReplay, replayComment, refetch, itemId }) => {
   const [replayStatus, setReplayStatus] = useState(false);
   const [replayComments, setReplayComments] = useState([]);
   const [reload, setReload] = useState(false);
@@ -16,6 +17,7 @@ const UserComments = ({ commentData, date, disLikeCount, likeStatus, variant, ge
     currentUserLikeId,
     currentUserIsDissLike,
     author,
+    parentId
   } = commentData
 
   // Getting Replay course Comment from api
@@ -50,9 +52,10 @@ const UserComments = ({ commentData, date, disLikeCount, likeStatus, variant, ge
             LikeStatus={likeStatus}
             disLikeStatus={currentUserIsDissLike}
             userLikeId={currentUserLikeId}
-            // replayComment={replayComment}
+            replayComment={replayComment}
             itemId={itemId}
             commentId={id}
+            parentId={parentId}
             refetchReplay={refetchCallReplay}
             refetch={refetch}
             variant={variant}
