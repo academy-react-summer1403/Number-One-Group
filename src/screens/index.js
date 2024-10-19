@@ -15,6 +15,7 @@ import MyCourses from "./user-panel/MyCourses";
 import MyViews from "./user-panel/MyViews";
 import Reserved from "./user-panel/Reserved";
 import Security from "./user-panel/Security";
+import Error404 from "./error-page/Error404";
 
 export {
   Landing,
@@ -34,4 +35,5 @@ export {
   MyViews,
   Reserved,
   Security,
+  Error404,
 };
