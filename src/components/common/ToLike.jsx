@@ -18,7 +18,7 @@ const ToLike = ({
     style,
 }) => {
     const UserInfo = useSelector(state => state.UserInfo.info)
-    console.log(variant)
+    console.log(LikeStatus,DissLikeStatus)
     // Variants
     const ApiVariant = {
         'course': [AddCourseLike, AddCourseDisLike, DeleteCourseLike],

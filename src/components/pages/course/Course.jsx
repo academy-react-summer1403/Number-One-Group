@@ -46,7 +46,7 @@ const CourseCard = ({ loading, refetch, item }) => {
                     <div className="flex justify-center gap-8 my-3">
                         <FavoriteBtn isLoading={loading}
                             variantStyle={"card"}
-                            variantApi={'course'}
+                            variantApi={'courseDetails'}
                             Id={id}
                             userFavorite={userFavorite}
                             favoriteId={userFavoriteId}

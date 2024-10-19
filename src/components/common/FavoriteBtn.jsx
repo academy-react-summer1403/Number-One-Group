@@ -5,19 +5,25 @@ import tooltipStyle from "../../core/constants/tooltip-style"
 import { useTranslation } from "react-i18next";
 import { AddBlogFavorite, AddCourseFavorite } from "../../core/services/api/post-data";
 import { DeleteBlogFavorite, DeleteCourseFavorite } from "../../core/services/api/delete-data";
+import { useSelector } from "react-redux";
+import { toast } from "react-toastify";
 
 const FavoriteBtn = ({ isLoading, variantStyle, variantApi, userFavorite, refetch, Id, favoriteId }) => {
     const isTabletOrLapTop = useMediaQuery({ query: '(min-width: 768px)' })
+    const UserInfo = useSelector(state => state.UserInfo.info)
     const variantAction = {
         'courseDetails': [AddCourseFavorite, DeleteCourseFavorite],
         'blog': [AddBlogFavorite, DeleteBlogFavorite]
     }
     const handleFavorite = (action, deleteAction) => {
-        console.log(userFavorite)
-        if (userFavorite === false) {
-            action(Id, refetch)
+        if (UserInfo == false) {
+            toast.error('لطفا لاگین کنید')
+        } else {
+            if (userFavorite === false) {
+                action(Id, refetch)
+            }
+            else deleteAction(favoriteId, refetch)
         }
-        else deleteAction(favoriteId, refetch)
     }
 
     const variant = {

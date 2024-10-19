@@ -4,7 +4,7 @@ import { GetListNewsCategory } from "../../../core/services/api/get-data"
 import { useQueryWithoutDependencies } from "../../../core/hooks/react-query"
 
 const FilterSide_Blogs = () => {
-    const { data: newsCategory } = useQueryWithoutDependencies("GET_NEW_CATEGORY", GetListNewsCategory)
+    const { data: newsCategory,isRefetching ,refetch} = useQueryWithoutDependencies("GET_NEW_CATEGORY", GetListNewsCategory)
 
     return (
         <div className='h-fit lg:w-72'>
@@ -14,6 +14,8 @@ const FilterSide_Blogs = () => {
                 setInputID={setNewsCategoryId}
                 inputData={newsCategory}
                 titleKey={"categoryName"}
+                fetchStatus={isRefetching}
+                refetch={refetch}
             />
         </div>
     )

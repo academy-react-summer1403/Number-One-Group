@@ -3,7 +3,6 @@ import Http from "../../interceptor";
 import useFormData from "../../../hooks/form-data";
 
 const DeleteCourseFavorite = async (ParamsId,refetch) => {
-  console.log(ParamsId)
   try {
     const obj = {
       CourseFavoriteId: ParamsId,

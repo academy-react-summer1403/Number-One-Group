@@ -21,6 +21,7 @@ const AddCourseComment = async (CourseId, data, refetch) => {
       toast.error("لطفا دوباره تلاش کنید");
     }
   } catch (error) {
+    toast.error("مشکلی پیش آمده لطفا دوباره تلاش کنید");
     console.log(error);
   }
 };

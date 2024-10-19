@@ -11,7 +11,7 @@ const LastBlogs = () => {
   const { t } = useTranslation()
   const theme = useSelector(state => state.DarkMode)
 
-  const { data, isSuccess } = useQueryWithoutDependencies("GET_BLOG_LIST", GetNewsFilterPage)
+  const { data, isSuccess ,refetch} = useQueryWithoutDependencies("GET_BLOG_LIST", GetNewsFilterPage)
 
   return (
     <div className={`w-full py-28 lg:px-44 sm:px-16 px-8 flex flex-wrap gap-y-4 justify-center ${theme ? "bg-gradientBackgroundDark" : "bg-gradientBackground"} bg-cover bg-center bg-no-repeat`}>
@@ -33,7 +33,7 @@ const LastBlogs = () => {
         >
           {isSuccess && data.news?.map(item => (
             <SwiperSlide key={item.id}>
-              <BlogCard item={item} />
+              <BlogCard item={item} refetch={refetch}/>
             </SwiperSlide>
           ))}
         </SwiperSlider>

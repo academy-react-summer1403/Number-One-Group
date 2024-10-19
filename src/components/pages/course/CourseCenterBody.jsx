@@ -15,8 +15,6 @@ const CourseCenterBody = ({
     isLoaded,
     refetch,
 }) => {
-    console.log(DissLikeStatus)
-
     const Data = [
         { icon: <StudentIcon stroke={"gray"} />, title: studentsNumber ?? "" },
         { icon: <LevelIcon stroke={"gray"} />, title: level ?? "", justify: "justify-end" },

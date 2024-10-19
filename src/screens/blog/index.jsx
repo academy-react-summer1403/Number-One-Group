@@ -56,8 +56,8 @@ const Blog = () => {
                         </CreateModal>
                     </MediaQuery>
                     <SectionTop
-                        lengthAllData={blogLengthFinished && blogLength.totalCount}
-                        lengthFilteredData={isSuccess && blogData.news.length}
+                        lengthAllData={blogLengthFinished && blogLength?.totalCount}
+                        lengthFilteredData={isSuccess && blogData?.news?.length}
                         setShowGrid={setShowGrid}
                     >
                         <SortBoxHolder>
