@@ -1,6 +1,6 @@
 const ImageFallBack = ({ src, alt, fallback, ...props }) => {
 
-    if (src == null) { src = fallback }
+    if (src == null || src == "Not-set") { src = fallback }
 
     return (
         <img

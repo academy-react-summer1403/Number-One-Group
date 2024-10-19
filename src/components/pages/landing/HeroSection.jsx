@@ -44,7 +44,7 @@ const HeroSection = () => {
                                 src={item.pictureAddress}
                                 fallback={Profile}
                             />
-                            <h1>{item.fullName}</h1>
+                            <h1 className="line-clamp-1">{item.fullName}</h1>
                         </div>
                     ))}
                 </div>

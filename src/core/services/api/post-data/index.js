@@ -7,6 +7,10 @@ import AddCourseLike from "./addCourseLike";
 import AddCourseDisLike from "./AddCourseDisLike";
 import AddBlogLike from "./AddBlogLike";
 import AddBlogDisLike from "./AddBlogDisLike";
+import AddProfileImage from "./AddProfileImage";
+import SelectProfileImage from "./SelectProfileImage";
+import LoginTwoStep from "./LoginTwoStep";
+import ChangeUserPassword from "./ChangeUserPassword";
 
 export {
   ForgetPass,
@@ -18,4 +22,8 @@ export {
   AddCourseDisLike,
   AddBlogLike,
   AddBlogDisLike,
+  AddProfileImage,
+  SelectProfileImage,
+  LoginTwoStep,
+  ChangeUserPassword
 };

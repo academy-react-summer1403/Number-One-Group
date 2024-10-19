@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react'
 import Vector from "../../assets/images/SignIn.svg"
 import { Stepper, GetCode, GetPhoneNumber, GetUserInfo } from '../../components/pages/authorize'
 import { useOutletContext } from 'react-router-dom'
+import { VerifyMessage } from '../../core/services/api/post-data'
+import { useDispatch } from 'react-redux'
 
 const Register = () => {
     const context = useOutletContext()
@@ -10,6 +12,14 @@ const Register = () => {
     const { t, i18n } = useTranslation()
     const stepsFa = ["شماره تماس", "دریافت کد", "مشخصات کاربری"]
     const stepsEn = ["Phone", "Code", "Information"]
+    const dispatch = useDispatch()
+
+    const handleClick = (event) => {
+        const body = { phoneNumber: phone, verifyCode: event.verifyCode };
+        const api = "/Sign/VerifyMessage";
+        VerifyMessage(api, body, dispatch)
+    }
+
     const displayStep = (step) => {
         switch (step) {
             case 1:
@@ -22,7 +32,7 @@ const Register = () => {
                     />
                 )
             case 2:
-                return <GetCode phone={phone} />
+                return <GetCode phone={phone} handleClick={handleClick} />
             case 3:
                 return <GetUserInfo phone={phone} />
         }

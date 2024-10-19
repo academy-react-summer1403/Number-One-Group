@@ -33,7 +33,7 @@ const HeaderButtons = ({ setVisibleSearch, visibleSearch, basketItems }) => {
                         text={'Login'}
                     /> :
                     <Tooltip {...tooltipStyle} content={`${userInfo.lName} ${userInfo.fName}`}>
-                        <Link>
+                        <Link to={"/userPanel"}>
                             <ImageFallBack
                                 alt={"Profile"}
                                 fallback={fallback}

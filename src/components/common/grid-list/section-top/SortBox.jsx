@@ -4,17 +4,17 @@ import { useTranslation } from 'react-i18next';
 import { Select, SelectItem } from '@nextui-org/react';
 import { useDispatch } from 'react-redux';
 
-const SortBox = ({ options, placeholder, setState, ...props }) => {
+const SortBox = ({ options, defaultKey, placeholder, setState, ...props }) => {
     const [selectedOption, SetSelectedOption] = useState(null);
     const dispatch = useDispatch()
 
     const handleChange = (selected) => {
-        let findKey = options.find(obj => obj.id == selected)
+        var findKey = options.find(obj => obj.id == selected)
         SetSelectedOption(findKey)
         dispatch(setState(findKey.value))
     }
 
-    const { i18n,} = useTranslation()
+    const { i18n, } = useTranslation()
 
     return (
         <Select
@@ -24,6 +24,7 @@ const SortBox = ({ options, placeholder, setState, ...props }) => {
             placeholder={placeholder}
             className="w-[150px]"
             onChange={(e) => { handleChange(e.target.value) }}
+            defaultSelectedKeys={defaultKey ? [defaultKey] : null}
             classNames={{
                 trigger: "bg-transparent border border-LightGrayish hover:!bg-transparent duration-500",
                 selectorIcon: "stroke-[#5751E1]",
@@ -32,7 +33,7 @@ const SortBox = ({ options, placeholder, setState, ...props }) => {
             }}
             {...props}
         >
-            {(options) => <SelectItem>{options.label}</SelectItem>}
+            {(selectedOption) => <SelectItem>{selectedOption.label}</SelectItem>}
         </Select>
     )
 }

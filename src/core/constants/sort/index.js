@@ -31,3 +31,29 @@ export const sortOptionCal_En = [
   { id: 1, value: "DESC", label: "Descending" },
   { id: 2, value: "ASC", label: "Ascending" },
 ];
+
+export const sortColOptions_MyCourses_En = [
+  { id: 1, value: "lastUpdate", label: "Latest" },
+  { id: 2, value: "isActive", label: "Active" },
+];
+
+export const sortColOptions_MyCourses_Fa = [
+  { id: 1, value: "lastUpdate", label: "جدید ترین" },
+  { id: 2, value: "isActive", label: "دوره های فعال" },
+];
+
+export const sortCurrentOffset = [
+  { id: 1, value: 3, label: "3" },
+  { id: 2, value: 6, label: "6" },
+  { id: 3, value: 8, label: "8" },
+];
+
+export const sortOptionChooseList_Fa = [
+  { id: 1, value: "course", label: "دوره های آموزشی" },
+  { id: 2, value: "blog", label: "وبلاگ" },
+];
+
+export const sortOptionChooseList_En = [
+  { id: 1, value: "course", label: "Course" },
+  { id: 2, value: "blog", label: "Blog" },
+];

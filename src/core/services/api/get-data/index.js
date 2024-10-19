@@ -8,6 +8,14 @@ import GetCourseLevel from "./GetCourseLevel";
 import GetCourseType from "./GetCourseType";
 import GetNewsFilterPage from "./GetNewsFilter";
 import GetListNewsCategory from "./GetListNewsCategory";
+import GetMyBlogViews from "./GetMyBlogViews";
+import GetMyCourses from "./GetMyCourses";
+import GetMyCoursesReserve from "./GetMyCoursesReserve";
+import GetMyCourseViews from "./GetMyCourseViews";
+import GetMyFavoriteBlogs from "./GetMyFavoriteBlogs";
+import GetMyFavoriteCourses from "./GetMyFavoriteCourses";
+import GetCoursesTop from "./GetCoursesTop";
+import GetSecurityInfo from "./GetSecurityInfo";
 
 export {
   GetAllTeachers,
@@ -20,4 +28,12 @@ export {
   GetCourseType,
   GetNewsFilterPage,
   GetListNewsCategory,
+  GetMyBlogViews,
+  GetMyCourses,
+  GetMyCoursesReserve,
+  GetMyCourseViews,
+  GetMyFavoriteBlogs,
+  GetMyFavoriteCourses,
+  GetCoursesTop,
+  GetSecurityInfo,
 };

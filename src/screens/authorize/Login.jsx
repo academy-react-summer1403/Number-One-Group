@@ -1,10 +1,12 @@
 import { FormInput, FormHolder, Button } from '../../components/common'
-import { Link, useOutletContext } from 'react-router-dom'
+import { Link, useNavigate, useOutletContext } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import Vector from '../../assets/images/SignIn.svg'
 import { loginValidation } from "../../core/validations/Auth.Validations"
 import { UserLogin } from '../../core/services/api/post-data'
 import { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+import { setKeys } from '../../redux/slices/LoginInfo'
 
 const Login = () => {
     const context = useOutletContext()
@@ -14,10 +16,15 @@ const Login = () => {
         { id: 1, type: "email", certificate: "phoneOrGmail", variant: "simple", placeholder: t("emailPlaceholder") },
         { id: 2, certificate: "password", variant: "password", placeholder: t("passwordPlaceholder"), eyeStyle: `bottom-4 ${i18n.language == "en" ? "" : "left-4 right-auto"}` },
     ]
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     useEffect(() => { context.setVector(Vector) }, [])
 
-    const handleUserLogin = async (user) => UserLogin(user)
+    const handleUserLogin = (user) => {
+        UserLogin(user, navigate)
+        dispatch(setKeys(user))
+    }
 
     return (
         <FormHolder

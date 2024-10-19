@@ -19,6 +19,7 @@ import PaginatedItems from "./pagination/Paginate";
 import PaginateHolderItems from "./pagination/PaginateHolderItems";
 import CreateModal from "./CreateModal";
 import FavoriteBtn from "./FavoriteBtn.jsx";
+import OfflineWarning from "./OfflineWarning.jsx";
 import {
   FilterRadio,
   ChangeView,
@@ -66,4 +67,5 @@ export {
   FilterRange,
   FilterSearch,
   FilterStars,
+  OfflineWarning,
 };

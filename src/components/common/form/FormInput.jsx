@@ -1,11 +1,9 @@
 import { useState } from "react"
 import { ErrorMessage, Field } from "formik"
 import { UnEyeIcon, EyeIcon } from "../../../core/icon"
-import persian from "react-date-object/calendars/persian"
-import persian_fa from "react-date-object/locales/persian_fa"
-import DatePicker from "react-multi-date-picker"
 import "./FormDate.css"
 import { useTranslation } from "react-i18next"
+import CustomDatePicker from "../../../core/utility/moment/CustomDatePicker"
 
 const FormInput = ({ sectionName, certificate, type, options, fullSize, dir, style, variants, fieldStyle, eyeStyle, placeholder,errorStyleComment }) => {
     const [visible, setVisible] = useState(false)
@@ -31,10 +29,10 @@ const FormInput = ({ sectionName, certificate, type, options, fullSize, dir, sty
             <Field as="textarea" placeholder={t(placeholder)} name={certificate} id={certificate} className={`fieldsStyle w-full min-h-10 max-h-64 h-36 ${fieldStyle}`} />
         ),
         date: (
-            <DatePicker
-                calendar={persian}
-                locale={persian_fa}
-                containerStyle={{ width: "100%", direction: i18n.language == "en" ? "ltr" : "ltr" }}
+            <Field
+                name={certificate}
+                id={certificate}
+                component={CustomDatePicker}
             />
         ),
         checkbox: (
