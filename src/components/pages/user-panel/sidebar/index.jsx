@@ -5,14 +5,19 @@ import { ImageFallBack } from "../../../common"
 import fallback from "../../../../assets/images/user-circle-icon.png"
 import { ExitBtnPanelIcon } from "../../../../core/icon"
 import sidebarBtns from "../../../../core/constants/user-panel/SidebarBtns"
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
+import { removeItem } from "../../../../core/hooks/local-storage"
 
 const SidebarUserPanel = () => {
     const { t, i18n } = useTranslation()
     const userInfo = useSelector(state => state.UserInfo.info)
     const { fName, lName, } = userInfo && userInfo
+    const dispatch = useDispatch()
 
-    console.log(userInfo.currentPictureAddress)
+    const handleExit = () => {
+        removeItem("token")
+        dispatch(setInfo(false))
+    }
 
     return (
         <>
@@ -27,7 +32,7 @@ const SidebarUserPanel = () => {
             <div className={`w-full h-[379px] mt-5 ${i18n.language == "en" ? "pl-8" : "pr-8"} flex flex-wrap`}>
                 {sidebarBtns.map(item => <SidebarButtons key={item.id} Icon={item.icon} href={item.href} name={i18n.language != "en" ? item.name[0] : item.name[1]} />)}
             </div>
-            <Link to="/" className="text-white flex items-center gap-x-3">
+            <Link onClick={handleExit} to="/" className="text-white flex items-center gap-x-3">
                 <ExitBtnPanelIcon />
                 <span>{t("exitFromAccount")}</span>
             </Link>
