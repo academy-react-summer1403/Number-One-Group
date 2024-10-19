@@ -56,8 +56,8 @@ const Blog = () => {
                         </CreateModal>
                     </MediaQuery>
                     <SectionTop
-                        lengthAllData={blogLengthFinished && blogLength.totalCount}
-                        lengthFilteredData={isSuccess && blogData.news.length}
+                        lengthAllData={blogLengthFinished && blogLength?.totalCount}
+                        lengthFilteredData={isSuccess && blogData?.news?.length}
                         setShowGrid={setShowGrid}
                     >
                         <SortBoxHolder>
@@ -70,14 +70,14 @@ const Blog = () => {
                         <ChangeView setShowGrid={setShowGrid} />
                     </SectionTop>
                     <PaginateHolderItems style="justify-center">
-                        <PaginatedItems setPage={setPageNumber} currentData={isSuccess && blogData.totalCount} currentDataInOnePage={currentBlog}>
+                        <PaginatedItems setPage={setPageNumber} currentData={isSuccess && blogData?.totalCount} currentDataInOnePage={currentBlog}>
                             <div className={`flex flex-wrap relative gap-x-1 justify-around gap-y-5 w-full m-auto my-2 ${showGrid && isTabletOrLapTop ? "grid-list" : ""}`}>
                                 <RenderItemsList
                                     RenderComponent={BlogCard}
                                     isLoading={isLoading}
                                     isSuccess={isSuccess}
                                     isError={isError}
-                                    originalData={isSuccess && blogData.news}
+                                    originalData={isSuccess && blogData?.news}
                                     skeletonData={skeletonData}
                                     notFoundText={i18n.language != "en" ? "متاسفانه وبلاگی موجود نیست!" : "Unfortunately, there is no blog available!"}
                                     refetchData={refetch}

@@ -2,7 +2,7 @@ import React from 'react'
 import { useParams } from 'react-router-dom';
 import TitleSection from '../../components/partials/title-section/TitleSection';
 import { useMutationWithoutRefetch, useMutationWithRefetch, useQueryWithDependencies, useQueryWithoutDependencies } from '../../core/hooks/react-query';
-import { GetAllCourseByPagination, GetCourseDetails, GetCoursesComments, GetTechnologies } from '../../core/services/api/get-data';
+import { GetAllCourseByPagination, GetCourseDetails, GetCoursesComments, GetReplayCourseComment, GetTechnologies } from '../../core/services/api/get-data';
 import { BreadCrumb } from '../../components/partials/title-section';
 import MediaQuery from 'react-responsive';
 import { AddCourseFavorite, AddCourseReserve } from '../../core/services/api/post-data';
@@ -17,6 +17,7 @@ import TabPanel from '../../components/pages/course-detail/TabPanel';
 import { DeleteCourseFavorite } from '../../core/services/api/delete-data';
 import { CourseCard } from '../../components/pages/course';
 import { useTranslation } from 'react-i18next';
+import { MajorElements } from '../../core/constants/test-text/MajorElements';
 
 const CourseDetails = () => {
     const { i18n } = useTranslation()
@@ -43,12 +44,6 @@ const CourseDetails = () => {
     // Add Course Reserve in The Basket 
     const { mutate: reserveMutate } = useMutationWithoutRefetch("ADD_COURSE_RESERVE", AddCourseReserve);
 
-    // Add Course in the Favorite List
-    const { mutate: addFavorite } = useMutationWithRefetch("ADD_COURSE_FAVORITE", AddCourseFavorite, refetch);
-
-    // Delete Data with useMutation
-    const { mutate: deleteFavorite } = useMutationWithRefetch("DELETE_COURSE_FAVORITE", DeleteCourseFavorite, refetch);
-
     // Comment call api with react Query
     const { data: commentData, isSuccess: commentSuccess, refetch: refetchComment } = useQueryWithDependencies('GET_COMMENTS_COURSE', GetCoursesComments, null, id)
 
@@ -70,7 +65,7 @@ const CourseDetails = () => {
     const Params = {
         variant: 'courseDetails', userLikeId: userLikeId, likeNumber: likeCount, disLikeNumber: dissLikeCount,
         LikeStatus: currentUserLike, DissLikeStatus: currentUserDissLike, Id: id, favoriteId: userFavoriteId,
-        refetch: refetch, userFavorite: isUserFavorite, action: addFavorite, deleteAction: deleteFavorite,
+        refetch: refetch, userFavorite: isUserFavorite,
         favoriteText: 'CourseFavorite', refetchComment: refetchComment, commentSuccess: commentSuccess,
         commentData: commentData,
         Id: id,
@@ -107,8 +102,9 @@ const CourseDetails = () => {
                     <TabPanel
                         overView={describe}
                         training={miniDescribe}
-                        MajorElements={["", "", "", ""]}
-                        variant={'course'}
+                        MajorElements={MajorElements}
+                        variant={'courseComment'}
+                        getReplay={GetReplayCourseComment}
                         params={Params}
                     />
                     <RelatedItems
@@ -117,8 +113,6 @@ const CourseDetails = () => {
                         apiFunction={GetAllCourseByPagination}
                         variant={'courseFilterDtos'}
                         RenderItem={CourseCard}
-                        addFavorite={addFavorite}
-                        deleteFavorite={deleteFavorite}
                     />
                 </div>
                 <MediaQuery minWidth={'1024px'}>

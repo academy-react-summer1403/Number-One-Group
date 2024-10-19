@@ -14,16 +14,18 @@ const DownSection = ({
   like,
   disLike,
   LikeStatus,
+  disLikeStatus,
   userLikeId,
   replayComment,
-  courseId,
+  itemId,
   commentId,
+  parentId,
   refetchReplay,
   refetch,
+  variant
 }) => {
   const { t } = useTranslation();
   const { isOpen, onOpen, onClose } = useDisclosure();
-  console.log(refetch)
 
   return (
     <div className='flex justify-between items-center mt-3'>
@@ -41,8 +43,9 @@ const DownSection = ({
             <CloseIcon />
           </div>
           <AddReplay_Comment
-            courseId={courseId}
+            itemId={itemId}
             commentId={commentId}
+            parentId={parentId}
             replayComment={replayComment}
             refetch={refetchReplay}
             closeModal={onClose}
@@ -61,8 +64,9 @@ const DownSection = ({
           likeNumber={like}
           disLikeNumber={disLike}
           LikeStatus={LikeStatus}
+          DissLikeStatus={disLikeStatus}
           Id={commentId}
-          variant={'courseComment'}
+          variant={variant}
           refetch={refetch}
         />
       </div>

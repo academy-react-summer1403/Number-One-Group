@@ -10,6 +10,7 @@ const FilterRadio = ({
   fetchStatus,
   titleKey,
 }) => {
+  console.log(fetchStatus)
   const { t } = useTranslation();
   const [checkedData, SetCheckedData] = useState(false);
   const dispatch = useDispatch()
@@ -43,7 +44,8 @@ const FilterRadio = ({
           key={index}
           className="text-sm flex items-center gap-2 mediumStyle_text w-fit cursor-pointer mt-1"
         >
-          <input type="radio" checked={fetchStatus ? false : null} id={title + index} name={title} className="w-4 h-4 rounded-[4px] checked:bg-[url('../icons/true.PNG')] bg-cover checked:border-none border border-gray-500 bg-white dark:bg-gray-950 appearance-none" />
+          <input type="radio" checked={fetchStatus ? false : null} id={title + index} name={title} 
+          className="w-4 h-4 rounded-[4px] checked:bg-[url('../../../../../public/true.png')] bg-cover checked:border-none border border-gray-500 bg-white dark:bg-gray-950 appearance-none" />
           <label className="cursor-pointer line-clamp-1" htmlFor={title + index}>{item?.[titleKey]}</label>
         </div>
       ))}

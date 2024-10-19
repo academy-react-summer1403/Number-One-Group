@@ -25,7 +25,8 @@ const Title_details = ({
 }) => {
     const { t, i18n } = useTranslation();
     return (
-        <div  className={`my-4 py-4  ${boxTitle_variant?.[variant]}`}>
+        <div data-aos={`fade-${i18n.language === 'fa' ? 'left' : 'right'}`} data-aos-duration="500"  
+        className={`my-4 py-4  ${boxTitle_variant?.[variant]}`}>
             <div className=" flex max-sm:justify-between flex-wrap gap-2 items-center ">
                 {/* Category Box */}
                 <div className="flex gap-2 max-sm:mx-auto">

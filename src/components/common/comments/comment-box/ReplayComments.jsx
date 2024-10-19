@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next"
 import { DownSection, TopSection } from "../comment-card";
 
-const ReplayComments = ({ item, refetch }) => {
+const ReplayComments = ({ item, refetch ,variant}) => {
     const { i18n } = useTranslation();
     const {
         author: name,
@@ -18,7 +18,7 @@ const ReplayComments = ({ item, refetch }) => {
     return (
         <div data-aos="fade-up" ata-aos-duration="200" dir={i18n.language === 'fa' ? "ltr" : 'rtl'} className="border-t-2 border-gray-100 py-4">
             <div dir={i18n.language === 'fa' ? "rtl" : 'ltr'} className="flex gap-4 w-11/12">
-                <img src={pictureAddress} className='sm:w-24 w-16 sm:h-24 h-16  rounded-full' />
+                <img src={pictureAddress} className='sm:w-28 w-16 sm:h-24 h-16  rounded-full bg-VioletBlue' />
                 <div className='w-full'>
                     <TopSection
                         Style={'hidden'}
@@ -33,6 +33,7 @@ const ReplayComments = ({ item, refetch }) => {
                         LikeStatus={currentUserEmotion}
                         commentId={id}
                         refetch={refetch}
+                        variant={variant}
                     />
                 </div>
             </div>

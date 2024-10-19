@@ -6,6 +6,7 @@ import TowStepLogin from "./authorize/TowStep";
 import Courses from "./courses";
 import Blog from "./blog";
 import CourseDetails from "./course-details";
+import BlogDetails from "./blog-details";
 export {
   Landing,
   ForgetPasswordLogin,
@@ -15,4 +16,5 @@ export {
   Blog,
   Courses,
   CourseDetails,
+  BlogDetails,
 };

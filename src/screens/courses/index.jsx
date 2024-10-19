@@ -12,9 +12,7 @@ import { CloseIcon } from "../../core/icon";
 import { useEffect, useState } from "react";
 import tooltipStyle from "../../core/constants/tooltip-style";
 import { sortingOptionsType_Course_Fa, sortingOptionsType_Course_En, sortOptionCal_Fa, sortOptionCal_En } from "../../core/constants/sort";
-import { useMutationWithRefetch, useQueryWithDependencies, useQueryWithoutDependencies } from "../../core/hooks/react-query";
-import { DeleteCourseFavorite } from "../../core/services/api/delete-data";
-import { AddCourseFavorite } from "../../core/services/api/post-data";
+import { useQueryWithDependencies, useQueryWithoutDependencies } from "../../core/hooks/react-query";
 
 const Courses = () => {
     const { t, i18n } = useTranslation();
@@ -39,12 +37,6 @@ const Courses = () => {
     // data courses from api
     const { data: coursesData, isSuccess, isError, isLoading, refetch } = useQueryWithDependencies("GET_COURSES", GetAllCourseByPagination, filterObj_Courses, filterObj_Courses);
     const { data: coursesLength, isSuccess: coursesLengthFinished } = useQueryWithoutDependencies("GET_COURSES_LENGTH", GetAllCourseByPagination)
-    
-    // Add Course in the Favorite List
-    const { mutate: addFavorite } = useMutationWithRefetch("ADD_COURSE_FAVORITE", AddCourseFavorite,refetch);
-
-    // Delete Data with useMutation
-    const { mutate: deleteFavorite } = useMutationWithRefetch("DELETE_COURSE_FAVORITE", DeleteCourseFavorite, refetch);
 
     return (
         <>
@@ -98,8 +90,6 @@ const Courses = () => {
                                     skeletonData={skeletonData}
                                     notFoundText={i18n.language != "en" ? 'دوره ای یافت نشد' : "Course not found"}
                                     refetchData={refetch}
-                                    addFavoriteAction={addFavorite}
-                                    deleteFavoriteAction={deleteFavorite}
                                 />
                             </div>
                         </PaginatedItems>

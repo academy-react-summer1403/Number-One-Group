@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import AddComments from "./add-comments/AddComments";
 import UserComments from "./comment-box/UserComments";
 
-const CommentSection = ({ Id, replayComment, apiFunction, data, refetch, variant }) => {
+const CommentSection = ({ Id, replayComment,getReplay, apiFunction, data, refetch, variant }) => {
   const { t } = useTranslation();
   const [viewMore, setViewMore] = useState(false);
   const dataRender = viewMore ? data : data?.slice(0, 3);
@@ -19,10 +19,15 @@ const CommentSection = ({ Id, replayComment, apiFunction, data, refetch, variant
             <UserComments
               key={index}
               commentData={item}
+              date={variant === 'courseComment' ? item.insertDate : item.inserDate}
+              disLikeCount={variant === 'courseComment' ? item.disslikeCount : item.dissLikeCount}
+              likeStatus={variant === 'courseComment' ? item.currentUserEmotion : item.currentUserIsLike}
+              // parentId={variant === 'courseComment' ? item.id : item.parentId}
               variant={variant}
+              getReplay={getReplay}
               replayComment={replayComment}
               refetch={refetch}
-              courseId={Id} />
+              itemId={Id} />
           ))
         ) : (
           <h1 className="mx-auto w-fit font-semibold text-xl">* {t('notFoundComment')} *</h1>

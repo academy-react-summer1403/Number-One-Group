@@ -1,7 +1,7 @@
 import { toast } from "react-toastify";
 import Http from "../../interceptor";
 
-const AddCourseFavorite = async (ParamsId) => {
+const AddCourseFavorite = async (ParamsId,refetch) => {
   try {
     console.log(ParamsId)
     const result = await Http.post(`/Course/AddCourseFavorite`, {
@@ -10,6 +10,7 @@ const AddCourseFavorite = async (ParamsId) => {
     });
     if (result.success) {
       toast.success(" دوره به لیست علاقه مندی ها اضافه شد");
+      refetch()
     } else {
       toast.error("دوباره تلاش کنید");
     }

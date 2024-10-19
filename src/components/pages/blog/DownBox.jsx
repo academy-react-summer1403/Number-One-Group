@@ -26,8 +26,8 @@ const DownBox = ({
           <ToLike
             variant={'blog'}
             userLikeId={likeId}
-            disLikeStatus={disLikeStatus}
-            likeStatus={likeStatus}
+            DissLikeStatus={disLikeStatus}
+            LikeStatus={likeStatus}
             refetch={refetch}
             Id={id}
             likeNumber={like}

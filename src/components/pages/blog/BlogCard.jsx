@@ -20,7 +20,6 @@ const BlogCard = ({ item, loading, refetch }) => {
         currentUserIsLike: likeStatus,
         currentUserIsDissLike: disLikeStatus,
     } = item;
-
     return (
         <div data-aos="fade-up" className="border border-LightGrayish p-5 grid-item w-[300px] rounded-lg hover:shadow-lg duration-200 relative m-auto">
             <Skeleton isLoaded={!loading} className="rounded-xl">

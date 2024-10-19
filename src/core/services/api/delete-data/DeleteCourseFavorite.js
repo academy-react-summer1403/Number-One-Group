@@ -2,8 +2,7 @@ import { toast } from "react-toastify";
 import Http from "../../interceptor";
 import useFormData from "../../../hooks/form-data";
 
-const DeleteCourseFavorite = async (ParamsId) => {
-  console.log(ParamsId)
+const DeleteCourseFavorite = async (ParamsId,refetch) => {
   try {
     const obj = {
       CourseFavoriteId: ParamsId,
@@ -15,6 +14,7 @@ const DeleteCourseFavorite = async (ParamsId) => {
     });
     if (result.success) {
       toast.success("دوره مورد نظر از لیست علاقمندی ها حذف شد");
+      refetch()
     } else {
       toast.error("لطفا دوباره تلاش کنید");
     }
