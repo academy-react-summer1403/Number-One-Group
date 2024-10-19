@@ -1,7 +1,7 @@
 import { toast } from "react-toastify";
 import Http from "../../interceptor";
 
-const DeleteBlogFavorite = async (ParamsId,refetch) => {
+const DeleteBlogFavorite = async (ParamsId, refetch) => {
   try {
     const obj = {
       deleteEntityId: ParamsId,
@@ -12,7 +12,7 @@ const DeleteBlogFavorite = async (ParamsId,refetch) => {
     });
     if (!result.success) {
       toast.success("وبلاگ مورد نظر از لیست علاقمندی ها حذف شد");
-      refetch()
+      refetch();
     } else if (result.error) {
       toast.error("لطفا دوباره تلاش کنید");
     }

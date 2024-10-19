@@ -10,6 +10,7 @@ import { BlogBiography, DetailsSection } from "../../components/pages/blog-detai
 import { MajorElements } from "../../core/constants/test-text/MajorElements";
 import { AddBlogComment, AddReplayBlogComment } from "../../core/services/api/post-data";
 import { useTranslation } from "react-i18next";
+import ChangeMoment from "../../core/utility/moment";
 
 
 const BlogDetails = () => {
@@ -36,6 +37,7 @@ const BlogDetails = () => {
         refetch: refetch, userFavorite: isCurrentUserFavorite,
         favoriteText: 'CourseFavorite'
     }
+
     return (
         <>
             <TitleSection title={title} >
@@ -51,7 +53,7 @@ const BlogDetails = () => {
                     />
                     <DetailsSection
                         category={newsCatregoryName}
-                        date={updateDate && updateDate.slice(0, 10)}
+                        date={updateDate && ChangeMoment(updateDate, "YYYY/MM/DD", "persian")}
                         view={currentView}
                         studyTime={5}
                         commentsNumber={commentsCount}

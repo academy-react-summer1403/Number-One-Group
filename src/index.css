@@ -23,7 +23,7 @@ body {
   }
 
   @font-face {
-    font-family: Mitra;
+    font-family: "Mitra";
     src: url(./assets/fonts/Mitra.ttf);
   }
 }
@@ -223,5 +223,40 @@ body {
         }
       }
     }
+  }
+
+  .borderButton_sidebar_userPanel {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      #ffc224 50%,
+      transparent 100%
+    );
+  }
+
+  .userPanel_holder_shadow {
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.25);
+  }
+
+  .userPanel_icons {
+    @apply w-12 h-12 rounded-xl bg-VioletBlue absolute flex justify-center items-center;
+    box-shadow: 4px 3px 0px rgba(0, 0, 0, 0.25);
+  }
+
+  .borderTable_header_userPanel {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      #ffc224 50%,
+      transparent 100%
+    );
+  }
+
+  .itemsTable_userPanel_holder {
+    @apply w-full h-fit flex flex-wrap gap-y-4;
+  }
+
+  .closeButton_modal {
+    @apply w-6 h-6 hover:scale-110 flex justify-center items-center cursor-pointer absolute rounded-full;
   }
 }

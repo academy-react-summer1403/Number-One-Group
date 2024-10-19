@@ -10,7 +10,7 @@ import { LevelIcon } from '../../core/icon';
 import { FaHourglassStart, FaUsers } from "react-icons/fa6";
 import { SiStatuspage } from "react-icons/si";
 import { FaRegIdCard } from "react-icons/fa";
-import ChangeMoment from '../../core/utility/moment/ChangeMoment';
+import ChangeMoment from '../../core/utility/moment';
 import { DetailsBox, ImageFallBack, RelatedItems, Title_details } from '../../components/common';
 import NotFoundImg from "../../assets/images/image-not-found.png"
 import TabPanel from '../../components/pages/course-detail/TabPanel';
@@ -30,8 +30,8 @@ const CourseDetails = () => {
 
     } = isSuccess && courseData
     // details Box data
-    const startT = ChangeMoment(startTime?.split("T"));
-    const endT = ChangeMoment(endTime?.split("T"));
+    const startT = ChangeMoment(startTime, "YYYY/MM/DD", "persian");
+    const endT = ChangeMoment(endTime, "YYYY/MM/DD", "persian");
     const DetailsCourse = [
         { titleDetail: "level", countDetail: courseLevelName, iconDetail: <LevelIcon /> },
         { titleDetail: "startTime", countDetail: endT, iconDetail: <FaHourglassStart color="gray" /> },

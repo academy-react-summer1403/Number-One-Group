@@ -14,6 +14,14 @@ import GetReplayCourseComment from "./comments/GetReplayCourseComment";
 import GetBlogWithId from "./GetBlogWithId";
 import GetBlogsComments from "./comments/GetBlogsComments";
 import GetReplayBlogComment from "./comments/GetReplayBlogComment";
+import GetMyBlogViews from "./GetMyBlogViews";
+import GetMyCourses from "./GetMyCourses";
+import GetMyCoursesReserve from "./GetMyCoursesReserve";
+import GetMyCourseViews from "./GetMyCourseViews";
+import GetMyFavoriteBlogs from "./GetMyFavoriteBlogs";
+import GetMyFavoriteCourses from "./GetMyFavoriteCourses";
+import GetCoursesTop from "./GetCoursesTop";
+import GetSecurityInfo from "./GetSecurityInfo";
 
 export {
   GetAllTeachers,
@@ -32,4 +40,12 @@ export {
   GetBlogWithId,
   GetBlogsComments,
   GetReplayBlogComment,
+  GetMyBlogViews,
+  GetMyCourses,
+  GetMyCoursesReserve,
+  GetMyCourseViews,
+  GetMyFavoriteBlogs,
+  GetMyFavoriteCourses,
+  GetCoursesTop,
+  GetSecurityInfo,
 };

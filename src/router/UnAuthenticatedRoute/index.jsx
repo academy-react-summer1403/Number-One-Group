@@ -30,7 +30,7 @@ const routerPublic = [
                 path: "/authorize/login",
                 children: [
                     { index: true, element: <Login /> },
-                    { path: "/authorize/login/twoStep", element: <TowStepLogin /> },
+                    { path: "twoStep", element: <TowStepLogin /> },
                 ]
             },
             { path: "/authorize/register", element: <Register /> },

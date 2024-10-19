@@ -17,6 +17,10 @@ import AddBlogFavorite from "./AddBlogFavorite";
 import AddBlogComment from "./comments/AddBlogComment";
 import AddBlogCommentLike from "./comments/AddBlogCommentLike";
 import AddReplayBlogComment from "./comments/ReplayBlogComment";
+import AddProfileImage from "./AddProfileImage";
+import SelectProfileImage from "./SelectProfileImage";
+import LoginTwoStep from "./LoginTwoStep";
+import ChangeUserPassword from "./ChangeUserPassword";
 
 export {
   ForgetPass,
@@ -38,4 +42,8 @@ export {
   AddBlogComment,
   AddBlogCommentLike,
   AddReplayBlogComment,
+  AddProfileImage,
+  SelectProfileImage,
+  LoginTwoStep,
+  ChangeUserPassword
 };

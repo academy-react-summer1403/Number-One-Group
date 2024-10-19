@@ -7,6 +7,15 @@ import Courses from "./courses";
 import Blog from "./blog";
 import CourseDetails from "./course-details";
 import BlogDetails from "./blog-details";
+import Dashboard from "./user-panel/Dashboard";
+import EditInformation from "./user-panel/EditInformation";
+import Favorites from "./user-panel/Favorites";
+import Information from "./user-panel/Information";
+import MyCourses from "./user-panel/MyCourses";
+import MyViews from "./user-panel/MyViews";
+import Reserved from "./user-panel/Reserved";
+import Security from "./user-panel/Security";
+
 export {
   Landing,
   ForgetPasswordLogin,
@@ -17,4 +26,12 @@ export {
   Courses,
   CourseDetails,
   BlogDetails,
+  Dashboard,
+  EditInformation,
+  Favorites,
+  Information,
+  MyCourses,
+  MyViews,
+  Reserved,
+  Security,
 };

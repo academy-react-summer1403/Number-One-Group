@@ -1,6 +1,7 @@
 import { Skeleton } from "@nextui-org/react"
 import { DateIcon } from "../../../core/icon"
 import { Label } from "../../common"
+import ChangeMoment from "../../../core/utility/moment"
 
 const CenterBox = ({
   title,
@@ -9,7 +10,7 @@ const CenterBox = ({
   bio,
   isLoading,
 }) => {
-  const newDate = date && date.slice(0, 10)
+  const newDate = date && ChangeMoment(date, "YYYY/MM/DD", "persian")
 
   return (
     <div className="my-2 pb-2  cursor-pointer">

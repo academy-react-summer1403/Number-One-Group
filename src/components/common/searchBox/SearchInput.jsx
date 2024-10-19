@@ -3,8 +3,9 @@ import SearchBtn from "./SearchBtn";
 import { CategoryIcon, EventIcon, ShopIcon, TopicsIcon } from "../../../core/icon";
 import { Select, SelectItem, } from "@nextui-org/react";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 
-const SearchInput = ({ showSearchFilter = true, inputStyle, holderStyle }) => {
+const SearchInput = ({ showSearchFilter = true, inputStyle, holderStyle, setQuery }) => {
     const { t, i18n } = useTranslation();
     const selectItems = [
         { id: 1, label: "دوره ها", value: "course", icon: CategoryIcon },
@@ -14,6 +15,12 @@ const SearchInput = ({ showSearchFilter = true, inputStyle, holderStyle }) => {
     ]
 
     const [SearchValue, setSearchValue] = useState("1")
+    const dispatch = useDispatch()
+
+    const SetFilterQuery = (e) => {
+        if (e.target.value !== "") dispatch(setQuery(e.target.value))
+        else dispatch(setQuery(undefined))
+    }
 
     return (
         <div className={`w-fit border border-LightGrayish py-0.5 overflow-hidden px-px text-sm flex justify-between items-center rounded-full ${holderStyle}`}>
@@ -47,7 +54,7 @@ const SearchInput = ({ showSearchFilter = true, inputStyle, holderStyle }) => {
                     </Select>
                 )}
                 {/* Search Input */}
-                <input type="text" placeholder={t('PlaceHolder_Courses')} className={`w-[200px] h-fit outline-none px-4 ${inputStyle} bg-transparent`} />
+                <input onChange={(e) => SetFilterQuery(e)} type="text" placeholder={t('PlaceHolder_Courses')} className={`w-[200px] h-fit outline-none px-4 ${inputStyle} bg-transparent`} />
             </div>
             <SearchBtn />
         </div>

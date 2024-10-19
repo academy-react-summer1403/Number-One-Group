@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { useDispatch, useSelector } from 'react-redux'
 import { decreaseAction } from '../../../redux/slices/StepStatus'
 
-const Stepper = ({ contents, steps }) => {
+const Stepper = ({ contents, steps, showSteps = true }) => {
     const active = useSelector(state => state.StepStatus.value)
     const dispatch = useDispatch()
     const { i18n } = useTranslation()
@@ -14,8 +14,8 @@ const Stepper = ({ contents, steps }) => {
     return (
         <>
             <div className='w-full sm:h-[150px] mb-10'>{contents(active)}</div>
-            <div className="flex justify-center w-full">
-                {steps.map((step, index) => (
+            <div className="justify-center w-full flex">
+                {showSteps && steps.map((step, index) => (
                     <div
                         key={index}
                         className={`

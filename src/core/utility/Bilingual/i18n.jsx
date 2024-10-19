@@ -119,7 +119,7 @@ i18n.use(initReactI18next)
                     CourseOverView: "شرح دوره", LearnCourse: 'در این دوره چه چیزی یاد خواهید گرفت؟',
                     CourseInfo: 'دوره شامل', CoursePrice: 'هزینه دوره',CourseFavorite:'آیا از این دوره راضی بودید؟',
                     // Dashboard
-                    exitFromAccount: "خروج از حساب", welcome: "خوش آمدید", progressTip: "برای شرکت در دوره ها باید حداقل ٪ ۸۰ از پروفایل خود را تکمیل کنید.",
+                    exitFromAccount: "خروج از حساب", welcome: "خوش آمدید", progressTipFalse: "برای شرکت در دوره ها باید حداقل ٪ ۸۰ از پروفایل خود را تکمیل کنید.", progressTipTrue: "پروفایل شما تکمیل است",
                     latestNewsAndBlogs: "جدید ترین اخبار و مقالات", currentCourses: "دوره های در حال برگزاری:", suggestedCourses: "دوره های پیشنهادی:", changePassword: "تغییر رمز عبور", twoStep: "تایید ورود دو مرحله ای", emailRecovery: "ایمیل بازیابی",
                     SecuritySettings: "تنظیمات امنیتی", saveChanges: "ذخیره تغییرات", newEmail: "ایمیل جدید", editInformationTitle: "ویرایش اطلاعات کاربری", participateInCourse: "شرکت کرده اید", reservationInCourse: "رزرو کرده اید",
                     // Comments
@@ -148,6 +148,8 @@ i18n.use(initReactI18next)
                     Popularity: "محبوبیت", MostPopular: "محبوب ترین ها", Latest: "جدید ترین ها", MostVisited: "پربازدیدترین ها",
                     // NotFound
                     course_NotFound: "دوره ای یافت نشد", blog_NotFound: "وبلاگی یافت نشد",
+                    // Two Step
+                    twoStepBtn: "مایل به ورود دو مرحله ای هستم",
 
                 },
             },
@@ -261,7 +263,7 @@ i18n.use(initReactI18next)
                     CourseOverView: "Course Overview", LearnCourse: 'What will you learn in this course?',
                     CourseInfo: 'Course Information', CoursePrice: 'Course Fee',CourseFavorite:'What will I learn in this course?',
                     // Dashboard
-                    exitFromAccount: "Exit", welcome: "welcome", progressTip: "To participate in the courses, you must complete at least 80% of your profile.",
+                    exitFromAccount: "Exit", welcome: "welcome", progressTipFalse: "To participate in the courses, you must complete at least 80% of your profile.", progressTipTrue: "Your profile is complete",
                     latestNewsAndBlogs: "The latest news and Blogs", currentCourses: "Current courses:", suggestedCourses: "Suggested courses:", changePassword: "Change password", twoStep: "Two-step login verification", emailRecovery: "Email recovery",
                     SecuritySettings: "Security settings", saveChanges: "Save changes", newEmail: "New email", editInformationTitle: "Edit user information", participateInCourse: "Participate", reservationInCourse: "Reserved",
                     // Comments
@@ -290,6 +292,8 @@ i18n.use(initReactI18next)
                     Popularity: "Popularity", MostPopular: "Most Popular", Latest: "Latest", MostVisited: "Most Visited",
                     // NotFound
                     course_NotFound: "Course not found", blog_NotFound: "Blog not found",
+                    // Two Step
+                    twoStepBtn: "I would like two-step login",
                 },
             },
         },

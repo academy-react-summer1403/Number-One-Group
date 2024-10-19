@@ -5,6 +5,7 @@ import MediaQuery from "react-responsive";
 import SwiperSlider from "../../common/swiper/SwiperSlider";
 import { SwiperSlide } from "swiper/react";
 import { useQueryWithDependencies } from "../../../core/hooks/react-query";
+import ChangeMoment from "../../../core/utility/moment";
 
 const titleVariant = {
   "courseFilterDtos": 'Courses',
@@ -47,7 +48,7 @@ const RelatedItems = ({ category, params, apiFunction, variant, RenderItem}) => 
                   <div>
                     <div className="flex gap-2">
                       <DateIcon fill="#5751E1" height={14} width={14} />
-                      <p className="mediumStyle_text text-xs">{item.updateDate.slice(0, 10)}</p>
+                      <p className="mediumStyle_text text-xs">{ChangeMoment(item.updateDate, "YYYY/MM/DD", "persian")}</p>
                     </div>
                     <p className="mediumStyle_text max-w-32 text-sm line-clamp-2">{item.title}</p>
                   </div>
