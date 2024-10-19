@@ -2,6 +2,7 @@ import { toast } from "react-toastify";
 import http from "../../interceptor";
 
 const DeleteBlogLike = async (param, refetch) => {
+  console.log(param)
   try {
     const obj ={
       deleteEntityId: param
