@@ -51,8 +51,8 @@ const MyViews = () => {
   }, [sortingCol, courseSuccess, blogSuccess, filteredData])
 
   const sortBox = [
-    { defaultKey: 1, setState: setSortingCol, sortItem: i18n.language == "fa" ? sortOptionChooseList_Fa : sortOptionChooseList_En },
-    { setState: setSortingCurrent, sortItem: sortCurrentOffset, }
+    { defaultKey: 1, setState: setSortingCol, sortItem: i18n.language == "fa" ? sortOptionChooseList_Fa : sortOptionChooseList_En, label: "بخش مورد نظر" },
+    { setState: setSortingCurrent, sortItem: sortCurrentOffset, label: "تعداد سطر" }
   ]
 
   return (
