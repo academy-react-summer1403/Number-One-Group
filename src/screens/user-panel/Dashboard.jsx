@@ -8,7 +8,6 @@ const Dashboard = () => {
 
     // Get my course list
     const { data: myCourseList, isSuccess: myCourseSuccess } = useQueryWithDependencies("MY_COURSE_LIST", GetMyCourses, null, { PageNumber: 1, RowsOfPage: 10 })
-    console.log(myCourseList)
 
     // Get suggestion course list
     const { data: suggestionCourse, isSuccess: suggestionCourseSuccess } = useQueryWithDependencies("SUGGESTION_COURSE_LIST", GetCoursesTop, null, 2)
