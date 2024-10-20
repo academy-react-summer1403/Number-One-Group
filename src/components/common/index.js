@@ -40,6 +40,7 @@ import {
   SortBox,
   SortBoxHolder,
 } from "./grid-list";
+import PageTransition from "./PageTransition.jsx";
 
 export {
   HowToStart,
@@ -82,4 +83,5 @@ export {
   CommentSection,
   RelatedItems,
   OfflineWarning,
+  PageTransition,
 };
