@@ -12,7 +12,7 @@ const CustomButton = ({ text, arrowColor, vStyle, style, Icon, href, vType, isCl
     const variantType = {
         link: (
             <Link to={href}>
-                <Button radius="full" className={`bg-VioletBlue text-white buttonPurple_shadow pb-3 pt-1.5 duration-200 group px-5 ${variantStyle?.[vStyle]} ${style}`}>
+                <Button radius="full" className={`bg-VioletBlue text-white pb-3 pt-1.5 duration-200 group px-5 ${variantStyle?.[vStyle]} ${style}`}>
                     {t(text)}
                     <div className={`group-hover:ms-2 duration-200 ${i18n.language === "en" ? "reverse-img" : ""} ${disableArrow}`}>
                         {Icon ? <Icon /> : <ArrowLeftIcon stroke={arrowColor} height="12px" />}
@@ -21,7 +21,7 @@ const CustomButton = ({ text, arrowColor, vStyle, style, Icon, href, vType, isCl
             </Link>
         ),
         button: (
-            <Button onClick={isClick} type='submit' radius="full" className={`bg-VioletBlue text-white buttonPurple_shadow pb-3 pt-1.5 duration-200 group px-5 ${style}`}>
+            <Button onClick={isClick} type='submit' radius="full" className={`bg-VioletBlue text-white pb-3 pt-1.5 duration-200 group px-5 ${variantStyle?.[vStyle]} ${style}`}>
                 {t(text)}
                 <div className={`group-hover:ms-2 duration-200 ${i18n.language === "en" ? "reverse-img" : ""}`}>
                     {Icon ? <Icon /> : <ArrowLeftIcon stroke={arrowColor} height="12px" />}
