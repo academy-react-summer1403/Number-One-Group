@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next"
-import { Label, SwiperSlider } from "../../common"
+import { Label, SwiperSlider, Button } from "../../common"
 import Tab from "./tab"
 import { useSelector } from "react-redux"
 import { useState } from "react"
@@ -8,6 +8,7 @@ import { GetAllCourseByPagination, GetTechnologies } from "../../../core/service
 import { useQueryWithDependencies, useQueryWithoutDependencies } from "../../../core/hooks/react-query"
 import { Autoplay } from 'swiper/modules';
 import { CourseCard } from "../course"
+import { motion } from "framer-motion";
 
 const TopCourses = () => {
     const { t, i18n } = useTranslation()
@@ -27,7 +28,7 @@ const TopCourses = () => {
 
 
     return (
-        <div className={`w-full py-28 lg:px-44 sm:px-16 px-8 flex flex-wrap gap-y-4 justify-center ${theme ? "bg-gradientBackgroundDark" : "bg-gradientBackground"} bg-cover bg-center bg-no-repeat`}>
+        <div className={`relative w-full py-28 lg:px-44 sm:px-16 px-8 flex flex-wrap gap-y-4 justify-center ${theme ? "bg-gradientBackgroundDark" : "bg-gradientBackground"} bg-cover bg-center bg-no-repeat`}>
             <Label text={t("topCoursesLabel")} variant="bgGray" />
             <h1 className="boldStyle_text w-full text-center">{t("topCoursesTitle")}</h1>
             <p className="mediumStyle_text w-full text-center">{t("topCoursesDescription")}</p>
@@ -56,6 +57,7 @@ const TopCourses = () => {
                     ))}
                 </SwiperSlider>
             </div>
+            <Button href="/courses?V=1" text={t("viewAll")} style="mt-10" vType={"link"} vStyle={"purple"} arrowColor="#fff" />
         </div>
     )
 }
