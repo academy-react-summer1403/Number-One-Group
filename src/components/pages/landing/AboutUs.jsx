@@ -5,6 +5,7 @@ import { PlayIcon } from "../../../core/icon"
 import { useTranslation } from "react-i18next"
 import { aboutUsOptions } from "../../../core/constants/landing/aboutUs"
 import { useSelector } from "react-redux"
+import { Avatar, AvatarGroup } from "@nextui-org/react";
 
 const AboutUs = () => {
   const { t, i18n } = useTranslation()
@@ -18,11 +19,16 @@ const AboutUs = () => {
           <PlayIcon width="55px" />
         </button>
         <img className="w-[400px] h-[400px]" src={aboutUs_poster} alt="Poster" />
-        <div className={`${i18n.language == "en" ? "-left-48" : "-right-48"} w-44 p-2 h-24 rounded-lg bg-MainBg relative bottom-28 border-2 border-LightGray drop-shadow-xl`}>
+        <div className={`${i18n.language == "en" ? "-left-48" : "-right-48"} w-44 p-2 h-24 flex flex-wrap justify-center rounded-lg bg-MainBg relative bottom-28 border-2 border-LightGray drop-shadow-xl`}>
           <h1 className="text-center text-DarkBlue text-sm">{t("boardText")}</h1>
-          <ul className="w-full h-1/2 flex justify-center items-end">
-            <li className={`bg-yellow-100 min-w-9 h-9 rounded-full -mr-4`}></li>
-          </ul>
+          <AvatarGroup isBordered max={3}>
+            <Avatar src="https://i.pravatar.cc/150?u=a042581f4e29026024d" />
+            <Avatar src="https://i.pravatar.cc/150?u=a04258a2462d826712d" />
+            <Avatar src="https://i.pravatar.cc/150?u=a042581f4e29026704d" />
+            <Avatar src="https://i.pravatar.cc/150?u=a04258114e29026302d" />
+            <Avatar src="https://i.pravatar.cc/150?u=a04258114e29026702d" />
+            <Avatar src="https://i.pravatar.cc/150?u=a04258114e29026708c" />
+          </AvatarGroup>
         </div>
       </div>
       <div data-aos="fade-right" data-aos-duration="1500" className="w-full lg:w-3/5 xl:w-2/5 h-fit flex lg:justify-start justify-center flex-wrap gap-y-3">
