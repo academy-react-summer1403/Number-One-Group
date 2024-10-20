@@ -18,20 +18,17 @@ const Dashboard = () => {
             <StatisticsUser />
             <LatestBlogs />
             <div className='w-full border-t border-neutral-200 dark:border-gray-400/30 py-8 mt-8 flex flex-wrap lg:flex-nowrap gap-x-14 gap-y-10 lg:gap-y-0'>
-                {
-                    myCourseList?.listOfMyCourses.length > 0 &&
-                    <UserCourseSection sectionName={t("currentCourses")}>
-                        {myCourseList.listOfMyCourses.map((item, index) => (
-                            <CreateCourseCard
-                                key={index}
-                                picture={item.tumbImageAddress}
-                                price={item.cost}
-                                teacher={item.fullName}
-                                title={item.courseTitle}
-                            />
-                        ))}
-                    </UserCourseSection>
-                }
+                <UserCourseSection sectionName={t("currentCourses")}>
+                    {myCourseList?.length > 0 ? myCourseList?.listOfMyCourses.map((item, index) => (
+                        <CreateCourseCard
+                            key={index}
+                            picture={item.tumbImageAddress}
+                            price={item.cost}
+                            teacher={item.fullName}
+                            title={item.courseTitle}
+                        />
+                    )) : <h1 className='w-full text-center mt-16 text-neutral-400'>موردی یافت نشد</h1>}
+                </UserCourseSection>
                 <UserCourseSection href={"/course?V=1"} sectionName={t("suggestedCourses")}>
                     {suggestionCourseSuccess && suggestionCourse.map((item, index) => (
                         <CreateCourseCard
