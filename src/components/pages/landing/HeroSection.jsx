@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { Button } from "../../common"
+import { CustomButton } from "../../common"
 import Typewriter from 'typewriter-effect';
 import mannequin_heroSection from "../../../assets/images/mannequin-heroSection.png"
 import { useSelector } from "react-redux";
@@ -44,7 +44,7 @@ const HeroSection = () => {
                 </div>
                 <h1 className='boldStyle_text md:text-start text-center'>{t("heroSectionTitle2")}</h1>
                 <p className='mediumStyle_text md:text-start text-center'>{t("heroSectionDescription")}</p>
-                <Button text={t("heroSectionBtn")} style="mt-5" vType={"link"} vStyle={"purple"} arrowColor="#fff" />
+                <CustomButton text={t("heroSectionBtn")} style="mt-5" vType={"button"} vStyle={"purple"} arrowColor="#fff" />
             </motion.div>
             <div className="w-[600px] h-full hidden md:flex justify-center items-end relative">
                 <motion.div

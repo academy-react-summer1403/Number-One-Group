@@ -1,5 +1,5 @@
 import { CancelIcon, SaveIcon, UserIcon } from "../../core/icon"
-import { Button, FormHolder, FormInput } from "../../components/common"
+import { CustomButton, FormHolder, FormInput } from "../../components/common"
 import { useTranslation } from "react-i18next"
 import { useSelector } from "react-redux"
 import { useMutation } from "@tanstack/react-query"
@@ -55,8 +55,8 @@ const EditInformation = () => {
           </div>
         </div>
         <div className="flex gap-x-4 mt-4 mobile:flex-wrap mobile:justify-center mobile:gap-y-4">
-          <Button Icon={SaveIcon} vStyle="yellow" vType="button" text="saveChanges" />
-          <Button Icon={CancelIcon} vType="link" text="cancel" style="bg-neutral-200 text-[#161439]" href="/userPanel/information" />
+          <CustomButton Icon={SaveIcon} vStyle="yellow" vType="button" text="saveChanges" />
+          <CustomButton Icon={CancelIcon} vType="link" text="cancel" style="bg-neutral-200 text-[#161439]" href="/userPanel/information" />
         </div>
       </FormHolder>
     </div>

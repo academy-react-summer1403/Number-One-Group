@@ -1,4 +1,4 @@
-import { Button, Label, TeacherCard, SwiperSlider } from "../../common"
+import { CustomButton, Label, TeacherCard, SwiperSlider } from "../../common"
 import { SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import MediaQuery from "react-responsive";
@@ -17,7 +17,7 @@ const SkilledTeachers = () => {
                 <Label text={t("skilledTeachersLabel")} variant="bgGray" />
                 <h1 className="w-full text-center xl:text-start boldStyle_text">{t("skilledTeachersTitle")}</h1>
                 <p className="w-full text-center xl:text-start text-neutral-400">{t("skilledTeachersDesc")}</p>
-                <Button text={t("skilledTeachersBtn")} style="mt-5" vStyle={"purple"} vType={"link"} arrowColor="#fff" />
+                <CustomButton text={t("skilledTeachersBtn")} style="mt-5" vStyle={"purple"} vType={"link"} arrowColor="#fff" />
             </div>
             <div className="w-full xl:w-[640px] h-fit flex flex-wrap justify-between gap-y-10 relative">
                 <MediaQuery minWidth={"700px"}>

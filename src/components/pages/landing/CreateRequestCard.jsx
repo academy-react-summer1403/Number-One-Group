@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next"
-import { Button } from "../../common"
+import { CustomButton } from "../../common"
 
 const CreateRequestCard = ({ title, picture, paragraph, buttonValue }) => {
     const { i18n } = useTranslation()
@@ -12,7 +12,7 @@ const CreateRequestCard = ({ title, picture, paragraph, buttonValue }) => {
             <p className="mediumStyle_text w-full mobile:text-start text-center md:text-start">
                 {paragraph}
             </p>
-            <Button text={buttonValue} arrowColor="#fff" vStyle={"purple"} vType="link" />
+            <CustomButton text={buttonValue} arrowColor="#fff" vStyle={"purple"} vType="link" />
         </div>
     )
 }

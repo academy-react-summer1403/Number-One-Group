@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next"
-import { Button } from "../../../common"
+import { CustomButton } from "../../../common"
 
 const GoToGmail = ({ userEmail }) => {
     const { t } = useTranslation()
@@ -11,7 +11,7 @@ const GoToGmail = ({ userEmail }) => {
                 <span className="text-VioletBlue"> {userEmail} </span>
                 {t("GoToEmailDesc2")}
             </p>
-            <Button vType="link" href={"https://mail.google.com/"} vStyle="yellow" text="GoToEmailBtn" style="w-full mb-5 justify-center !py-2.5 h-auto" />
+            <CustomButton vType="link" href={"https://mail.google.com/"} vStyle="yellow" text="GoToEmailBtn" style="w-full mb-5 justify-center !py-2.5 h-auto" />
         </>
     )
 }

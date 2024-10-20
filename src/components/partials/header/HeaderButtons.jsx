@@ -1,7 +1,7 @@
 import React from 'react'
 import MediaQuery from 'react-responsive'
 import SearchBtn from '../../common/searchBox/SearchBtn'
-import { Button, ImageFallBack, SearchModal } from '../../common'
+import { CustomButton, ImageFallBack, SearchModal } from '../../common'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import fallback from "../../../assets/images/user-circle-icon.png"
@@ -24,7 +24,7 @@ const HeaderButtons = ({ setVisibleSearch, visibleSearch, basketItems }) => {
             </MediaQuery>
             {
                 userInfo == false ?
-                    <Button
+                    <CustomButton
                         href={"/authorize/login"}
                         disableArrow={'hidden'}
                         vType={'link'}

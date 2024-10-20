@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next"
-import { Label, SwiperSlider, Button } from "../../common"
+import { Label, SwiperSlider, CustomButton } from "../../common"
 import Tab from "./tab"
 import { useSelector } from "react-redux"
 import { useState } from "react"
@@ -57,7 +57,7 @@ const TopCourses = () => {
                     ))}
                 </SwiperSlider>
             </div>
-            <Button href="/courses?V=1" text={t("viewAll")} style="mt-10" vType={"link"} vStyle={"purple"} arrowColor="#fff" />
+            <CustomButton href="/courses?V=1" text={t("viewAll")} style="mt-10" vType={"link"} vStyle={"purple"} arrowColor="#fff" />
         </div>
     )
 }

@@ -1,6 +1,6 @@
 import HowToStart from "./howToStart";
 import InformedPoster from "./informedPoster";
-import Button from "./Button";
+import CustomButton from "./Button.jsx";
 import CreateSocialMediaItems from "./CreateSocialMediaItems.jsx";
 import Label from "./Label";
 import OptionParts from "./OptionParts";
@@ -44,7 +44,7 @@ import {
 export {
   HowToStart,
   InformedPoster,
-  Button,
+  CustomButton,
   CreateSocialMediaItems,
   Label,
   OptionParts,

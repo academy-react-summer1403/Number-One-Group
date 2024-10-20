@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import mannequin from "../../assets/images/mannequin-informedPoster.png";
-import { Button } from "./index"
+import { CustomButton } from "./index"
 import MediaQuery from "react-responsive";
 
 const InformedPoster = () => {
@@ -16,7 +16,7 @@ const InformedPoster = () => {
                 <h1 className="w-full xl:w-2/3 boldStyle_text text-center xl:text-start text-white">{t("informedWord1")} <span className="text-3xl sm:text-4xl">{t("informedImportantWord1")}</span> {t("informedWord3")} <span className="text-3xl sm:text-4xl">{t("informedImportantWord2")}</span></h1>
                 <div className="w-full flex flex-wrap justify-center xl:justify-start xl:flex-nowrap gap-y-6 gap-x-2">
                     <input className="w-full xl:w-2/3 rounded-full px-4 py-3 bg-[#4A44D1]" placeholder={t("informedPlaceholder")} type="email" />
-                    <Button text={t("informedBtn")} vType="button" vStyle="yellow" arrowColor="#000" />
+                    <CustomButton text={t("informedBtn")} vType="button" vStyle="yellow" arrowColor="#000" />
                 </div>
             </div>
         </div>

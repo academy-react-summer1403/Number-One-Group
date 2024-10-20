@@ -1,4 +1,4 @@
-import { FormInput, FormHolder, Button } from '../../components/common'
+import { FormInput, FormHolder, CustomButton } from '../../components/common'
 import { Link, useNavigate, useOutletContext } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import Vector from '../../assets/images/SignIn.svg'
@@ -52,7 +52,7 @@ const Login = () => {
                     <FormInput certificate="twoStep" variants="checkbox" placeholder={t("RememberMe")} />
                     <Link to="/authorize/forgetPassword">{t("ForgetPassword")}</Link>
                 </div>
-                <Button vType="button" vStyle="yellow" text={t("loginBtn")} style="w-full justify-center !py-2.5 h-auto" />
+                <CustomButton vType="button" vStyle="yellow" text={t("loginBtn")} style="w-full justify-center !py-2.5 h-auto" />
                 <div className='w-full flex gap-x-2 justify-center'>
                     <span className='text-DarkBlue'>{t("HaveAccount2")}</span>
                     <Link to="/authorize/register" className='text-[#5751E1] underline'>{t("signUp")}</Link>

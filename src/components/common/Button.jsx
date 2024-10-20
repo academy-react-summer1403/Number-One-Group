@@ -1,8 +1,9 @@
 import { useTranslation } from "react-i18next";
 import { ArrowLeftIcon } from "../../core/icon";
 import { Link } from "react-router-dom";
+import { Button } from "@nextui-org/react";
 
-const Button = ({ text, arrowColor, vStyle, style, Icon, href, vType, isClick, disableArrow }) => {
+const CustomButton = ({ text, arrowColor, vStyle, style, Icon, href, vType, isClick, disableArrow }) => {
     const { t, i18n } = useTranslation();
     const variantStyle = {
         "purple": "bg-VioletBlue text-white buttonPurple_shadow",
@@ -10,23 +11,25 @@ const Button = ({ text, arrowColor, vStyle, style, Icon, href, vType, isClick, d
     }
     const variantType = {
         link: (
-            <Link to={href} className={`rounded-3xl pb-3 pt-1.5 px-5 flex items-center gap-x-2 duration-200 ${variantStyle?.[vStyle]} ${style}`}>
-                <span className="text-sm">{t(text)}</span>
-                <div className={`${i18n.language === "en" ? "reverse-img" : ""} ${disableArrow}`}>
-                    {Icon ? <Icon /> : <ArrowLeftIcon stroke={arrowColor} height="12px" />}
-                </div>
+            <Link to={href}>
+                <Button radius="full" className={`bg-VioletBlue text-white buttonPurple_shadow pb-3 pt-1.5 duration-200 group px-5 ${variantStyle?.[vStyle]} ${style}`}>
+                    {t(text)}
+                    <div className={`group-hover:ms-2 duration-200 ${i18n.language === "en" ? "reverse-img" : ""} ${disableArrow}`}>
+                        {Icon ? <Icon /> : <ArrowLeftIcon stroke={arrowColor} height="12px" />}
+                    </div>
+                </Button>
             </Link>
         ),
         button: (
-            <button onClick={isClick} type='submit' className={`pb-3 pt-1.5 border-2 border-black px-5 flex items-center gap-x-2 rounded-full duration-200 ${variantStyle?.[vStyle]} ${style}`}>
+            <Button onClick={isClick} type='submit' radius="full" className={`bg-VioletBlue text-white buttonPurple_shadow pb-3 pt-1.5 duration-200 group px-5 ${style}`}>
                 {t(text)}
-                <div className={i18n.language === "en" ? "reverse-img" : ""}>
+                <div className={`group-hover:ms-2 duration-200 ${i18n.language === "en" ? "reverse-img" : ""}`}>
                     {Icon ? <Icon /> : <ArrowLeftIcon stroke={arrowColor} height="12px" />}
                 </div>
-            </button>
+            </Button>
         )
     }
     return variantType?.[vType]
 }
 
-export default Button
+export default CustomButton

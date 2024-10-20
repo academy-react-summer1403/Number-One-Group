@@ -1,4 +1,4 @@
-import Button from "../../Button"
+import CustomButton from "../../Button"
 import FormHolder from "../../form/FormHolder"
 import FormInput from "../../form/FormInput"
 import { useTranslation } from "react-i18next";
@@ -14,7 +14,7 @@ const AddReplay_Comment = ({ itemId, commentId, replayComment, refetch, closeMod
       alert('لطفا لاگین کنید')
     }
     else {
-      replayComment(values, commentId, itemId, refetch, closeModal, userInfo,parentId)
+      replayComment(values, commentId, itemId, refetch, closeModal, userInfo, parentId)
     }
   }
   return (
@@ -34,7 +34,7 @@ const AddReplay_Comment = ({ itemId, commentId, replayComment, refetch, closeMod
           errorStyleComment={"text-end !bg-transparent"}
         />
         <p className="text-sm text-white">{t('ConfirmComment')}</p>
-        <Button vType="button" arrowColor={"#000"} vStyle="yellow" text="sendComment" style="border w-fit !px-10  my-4 justify-center !py-1.5 h-auto" />
+        <CustomButton vType="button" arrowColor={"#000"} vStyle="yellow" text="sendComment" style="border w-fit !px-10  my-4 justify-center !py-1.5 h-auto" />
       </FormHolder>
     </div>
   )

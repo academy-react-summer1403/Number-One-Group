@@ -1,6 +1,6 @@
 import aboutUs_poster from "../../../assets/images/aboutus_landing.png"
 import liveClass_icon from "../../../assets/images/liveClass.png"
-import { Button, Label, OptionParts } from "../../common"
+import { CustomButton, Label, OptionParts } from "../../common"
 import { PlayIcon } from "../../../core/icon"
 import { useTranslation } from "react-i18next"
 import { aboutUsOptions } from "../../../core/constants/landing/aboutUs"
@@ -42,7 +42,7 @@ const AboutUs = () => {
         <ul className="w-full flex flex-wrap gap-y-3">
           {aboutUsOptions.map(item => (<OptionParts key={item.id} text={i18n.language === "en" ? item.text[1] : item.text[0]} holderStyle="justify-center lg:justify-start" disableIconIn="1024px" />))}
         </ul>
-        <Button text={t("aboutBtn")} style="mt-5" variant={"purple"} arrowColor="#fff" />
+        <CustomButton text={t("aboutBtn")} style="mt-5" variant={"purple"} arrowColor="#fff" />
       </div>
     </div>
   )

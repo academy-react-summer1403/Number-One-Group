@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next"
-import { Label, SwiperSlider, Button } from "../../common"
+import { Label, SwiperSlider, CustomButton } from "../../common"
 import { useSelector } from "react-redux"
 import { GetNewsFilterPage } from "../../../core/services/api/get-data"
 import { useQueryWithoutDependencies } from "../../../core/hooks/react-query"
@@ -38,7 +38,7 @@ const LastBlogs = () => {
           ))}
         </SwiperSlider>
       </div>
-      <Button href="/Blog?V=1" text={t("viewAll")} style="mt-10" vType={"link"} vStyle={"purple"} arrowColor="#fff" />
+      <CustomButton href="/Blog?V=1" text={t("viewAll")} style="mt-10" vType={"link"} vStyle={"purple"} arrowColor="#fff" />
     </div>
   )
 }
