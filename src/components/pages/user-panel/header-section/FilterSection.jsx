@@ -6,7 +6,7 @@ const FilterSection = ({ boxs, query }) => {
 
     return (
         <div className='w-full flex justify-between'>
-            <SearchInput setQuery={query} maxResponsiveValue={709} minResponsiveValue={710} showSearchFilter={false} inputStyle="py-2.5 w-72 lg:w-[400px]" />
+            <SearchInput setQueryProp={query} maxResponsiveValue={709} minResponsiveValue={710} showSearchFilter={false} inputStyle="py-2.5 w-72 lg:w-[400px]" />
             <div className="flex gap-x-2">
                 {boxs.map((item, index) => (
                     <SortBox
