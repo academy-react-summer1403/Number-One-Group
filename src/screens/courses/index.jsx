@@ -13,6 +13,7 @@ import { useEffect, useState } from "react";
 import tooltipStyle from "../../core/constants/tooltip-style";
 import { sortingOptionsType_Course_Fa, sortingOptionsType_Course_En, sortOptionCal_Fa, sortOptionCal_En } from "../../core/constants/sort";
 import { useQueryWithDependencies, useQueryWithoutDependencies } from "../../core/hooks/react-query";
+import { motion } from "framer-motion";
 
 const Courses = () => {
     const { t, i18n } = useTranslation();
@@ -39,7 +40,17 @@ const Courses = () => {
     const { data: coursesLength, isSuccess: coursesLengthFinished } = useQueryWithoutDependencies("GET_COURSES_LENGTH", GetAllCourseByPagination)
 
     return (
-        <>
+        <motion.div
+            initial={{ x: "100vw" }}
+            animate={{ x: "0" }}
+            exit={{ x: "-100vw" }}
+            transition={{
+                ease: "linear",
+                duration: 0.8,
+                stiffness: 100,
+                type: "spring"
+            }}
+        >
             <TitleSection title={'CoursesTitle'} >
                 <BreadCrumb type="Div" text={'CoursesTitle'} />
             </TitleSection>
@@ -96,7 +107,7 @@ const Courses = () => {
                     </PaginateHolderItems>
                 </div>
             </div>
-        </>
+        </motion.div>
     )
 }
 

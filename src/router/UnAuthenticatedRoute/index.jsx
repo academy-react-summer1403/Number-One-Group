@@ -1,44 +1,23 @@
 import { Navigate } from "react-router-dom"
 import { MainLayouts, AuthorizeLayout } from "../../components/layouts"
 import { Landing, ForgetPasswordLogin, Login, Register, TowStepLogin, Courses, Blog, CourseDetails, BlogDetails, Error404 } from "../../screens"
-import { PageTransition } from "../../components/common"
 
 const routerPublic = [
     {
         element: <MainLayouts />,
         children: [
-            {
-                path: '/',
-                element: <PageTransition name="صفحه اصلی">
-                    <Landing />
-                </PageTransition>
-
-            },
+            { path: '/', element: <Landing /> },
             { path: '/home', element: <Navigate to="/" /> },
-            {
-                path: '/Courses',
-                element: <PageTransition name="دوره های آموزشی">
-                    <Courses />
-                </PageTransition>
-            },
+            { path: '/Courses', element: <Courses /> },
             {
                 path: '/CourseDetails',
-                element: <PageTransition name="دوره های آموزشی">
-                    <CourseDetails />
-                </PageTransition>,
+                element: <CourseDetails />,
                 children: [{ path: '/CourseDetails/:id', element: <CourseDetails /> }]
             },
-            {
-                path: '/Blog',
-                element: <PageTransition name="وبلاگ ها">
-                    <Blog />
-                </PageTransition>
-            },
+            { path: '/Blog', element: <Blog /> },
             {
                 path: '/BlogDetails',
-                element: <PageTransition name="وبلاگ ها">
-                    <BlogDetails />
-                </PageTransition>,
+                element: <BlogDetails />,
                 children: [{ path: '/BlogDetails/:id', element: <BlogDetails /> }]
             },
             { path: '/*', element: <Error404 /> },
@@ -51,26 +30,14 @@ const routerPublic = [
             {
                 path: "/authorize/login",
                 children: [
-                    {
-                        index: true,
-                        element: <PageTransition name="ورود">
-                            <Login />
-                        </PageTransition>
-                    },
+                    { index: true, element: <Login />, },
                     { path: "twoStep", element: <TowStepLogin /> },
                 ]
             },
-            {
-                path: "/authorize/register",
-                element: <PageTransition name="ثبت نام">
-                    <Register />
-                </PageTransition>
-            },
+            { path: "/authorize/register", element: <Register />, },
             {
                 path: "/authorize/forgetPassword",
-                element: <PageTransition name="فراموشی پسورد">
-                    <ForgetPasswordLogin />
-                </PageTransition>,
+                element: <ForgetPasswordLogin />,
                 children: [
                     { path: "/authorize/forgetPassword/:config", element: <ForgetPasswordLogin /> },
                 ]
