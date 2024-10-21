@@ -11,11 +11,12 @@ import { MajorElements } from "../../core/constants/test-text/MajorElements";
 import { AddBlogComment, AddReplayBlogComment } from "../../core/services/api/post-data";
 import { useTranslation } from "react-i18next";
 import ChangeMoment from "../../core/utility/moment";
-
+import { motion } from "framer-motion";
+import configVariants from "../../config/page-transition";
 
 const BlogDetails = () => {
     const { id } = useParams();
-    const {i18n} = useTranslation()
+    const { i18n } = useTranslation()
 
     // Getting Blog Data from api with use Query
     const { data: blogData, isSuccess, refetch } = useQueryWithDependencies('GET_BLOG_DETAILS', GetBlogWithId, null, id)
@@ -39,14 +40,19 @@ const BlogDetails = () => {
     }
 
     return (
-        <>
+        <motion.div
+            variants={configVariants}
+            initial={"initial"}
+            animate={"animate"}
+            exit={"exit"}
+        >
             <TitleSection title={title} >
                 <BreadCrumb href={'/Blog'} text="BlogSection" />
                 <BreadCrumb type="Div" text={title} />
             </TitleSection>
             <div className="main-container lg:flex lg:flex-row-reverse gap-7 my-28">
-                <div data-aos={`fade-${i18n.language === 'fa' ? 'right' : 'left'}`} data-aos-duration="700" 
-                className="lg:w-[915px] sm:w-full mobile:w-full mx-auto">
+                <div data-aos={`fade-${i18n.language === 'fa' ? 'right' : 'left'}`} data-aos-duration="700"
+                    className="lg:w-[915px] sm:w-full mobile:w-full mx-auto">
                     <ImageFallBack
                         src={currentImageAddress} alt={'blog-picture'} fallback={NotFoundImg}
                         className="h-[420px] w-full rounded-xl"
@@ -91,7 +97,7 @@ const BlogDetails = () => {
                 />
             </div>
 
-        </>
+        </motion.div>
     )
 }
 

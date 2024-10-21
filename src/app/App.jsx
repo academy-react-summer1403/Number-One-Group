@@ -21,7 +21,7 @@ const App = () => {
 
   return (
     <main dir={i18n.language === 'fa' ? 'rtl' : 'ltr'} className={`bg-MainBg  ${i18n.language === 'fa' ? 'font-IranSans' : 'font-Pop_Med'}`}>
-      <AnimatePresence mode="wait">
+      <AnimatePresence>
         <Routes location={location} key={location.pathname}>
           {router.map((item, index) => (
             <Route key={index + item.path} {...item}>

@@ -1,4 +1,4 @@
-import { HowToStart, InformedPoster } from "../../components/common";
+import { HowToStart, InformedPoster, LoadingSpinner } from "../../components/common";
 import {
     AboutUs,
     Categories,
@@ -10,19 +10,15 @@ import {
     TopCourses
 } from "../../components/pages/landing";
 import { motion } from "framer-motion";
+import configVariants from "../../config/page-transition";
 
 const Landing = () => {
     return (
         <motion.div
-            initial={{ x: "100vw" }}
-            animate={{ x: "0" }}
-            exit={{ x: "-100vw" }}
-            transition={{
-                ease: "linear",
-                duration: 0.8,
-                stiffness: 100,
-                type: "spring"
-            }}
+            variants={configVariants}
+            initial={"initial"}
+            animate={"animate"}
+            exit={"exit"}
         >
             <HeroSection />
             <Categories />

@@ -11,6 +11,8 @@ import { setPageNumber, setSortingCol, setRowsOfPage } from "../../redux/slices/
 import { useQueryWithDependencies, useQueryWithoutDependencies } from "../../core/hooks/react-query";
 import { GetNewsFilterPage } from "../../core/services/api/get-data";
 import { BreadCrumb, TitleSection } from "../../components/partials/title-section";
+import { motion } from "framer-motion";
+import configVariants from "../../config/page-transition";
 
 const Blog = () => {
     const { t, i18n } = useTranslation();
@@ -39,7 +41,12 @@ const Blog = () => {
     const { data: blogLength, isSuccess: blogLengthFinished } = useQueryWithoutDependencies("GET_BLOG-LENGTH", GetNewsFilterPage)
 
     return (
-        <>
+        <motion.div
+            variants={configVariants}
+            initial={"initial"}
+            animate={"animate"}
+            exit={"exit"}
+        >
             <TitleSection title={'BlogSection'} >
                 <BreadCrumb type="Div" text="BlogSection" />
             </TitleSection>
@@ -87,7 +94,7 @@ const Blog = () => {
                     </PaginateHolderItems>
                 </div>
             </div>
-        </>
+        </motion.div>
     )
 }
 

@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { CourseCard, FilterSide_Courses } from "../../components/pages/course"
 import { setPageNumber, setRowsOfPage, setSortCal, setSortType } from "../../redux/slices/filter-box-slices/FilterCourses"
 import MediaQuery, { useMediaQuery } from "react-responsive";
-import { ChangeView, CreateModal, SectionTop, SortBox, SortBoxHolder, RenderItemsList, PaginatedItems, PaginateHolderItems } from "../../components/common";
+import { ChangeView, CreateModal, SectionTop, SortBox, SortBoxHolder, RenderItemsList, PaginatedItems, PaginateHolderItems, LoadingSpinner } from "../../components/common";
 import { IoFilter } from "react-icons/io5"
 import { Tooltip, useDisclosure } from "@nextui-org/react";
 import { CloseIcon } from "../../core/icon";
@@ -14,6 +14,7 @@ import tooltipStyle from "../../core/constants/tooltip-style";
 import { sortingOptionsType_Course_Fa, sortingOptionsType_Course_En, sortOptionCal_Fa, sortOptionCal_En } from "../../core/constants/sort";
 import { useQueryWithDependencies, useQueryWithoutDependencies } from "../../core/hooks/react-query";
 import { motion } from "framer-motion";
+import configVariants from "../../config/page-transition";
 
 const Courses = () => {
     const { t, i18n } = useTranslation();
@@ -41,15 +42,10 @@ const Courses = () => {
 
     return (
         <motion.div
-            initial={{ x: "100vw" }}
-            animate={{ x: "0" }}
-            exit={{ x: "-100vw" }}
-            transition={{
-                ease: "linear",
-                duration: 0.8,
-                stiffness: 100,
-                type: "spring"
-            }}
+            variants={configVariants}
+            initial={"initial"}
+            animate={"animate"}
+            exit={"exit"}
         >
             <TitleSection title={'CoursesTitle'} >
                 <BreadCrumb type="Div" text={'CoursesTitle'} />
