@@ -12,8 +12,8 @@ const AboutUs = () => {
 
   return (
     <div className={`w-full ${theme ? "bg-gradientBackgroundDark" : "bg-gradientBackground"} lg:bg-none flex justify-center gap-x-12 max-lg:py-28 lg:px-44 sm:px-16 px-8`}>
-      <div className=" w-[400px] hidden h-fit relative lg:flex flex-wrap justify-center">
-        <img className="w-20 absolute left-28 top-10 transition-all duration-200" src={liveClass_icon} alt="Live Class" />
+      <div data-aos="fade-left" data-aos-duration="1500" className="w-[400px] hidden h-fit relative lg:flex flex-wrap justify-center">
+        <img data-aos="fade-down"  data-aos-delay="800" data-aos-duration="1500" className="w-20 absolute left-28 top-10 transition-all duration-200" src={liveClass_icon} alt="Live Class" />
         <button className="playButton top-[40%]">
           <PlayIcon width="55px" />
         </button>
@@ -25,7 +25,7 @@ const AboutUs = () => {
           </ul>
         </div>
       </div>
-      <div data-aos="fade-right" data-aos-duration="1500" className="w-full lg:w-3/5 xl:w-2/5 h-fit flex lg:justify-start justify-center flex-wrap gap-y-3">
+      <div data-aos="fade-right" data-aos-duration="1500" className=" w-full lg:w-3/5 xl:w-2/5 h-fit flex lg:justify-start justify-center flex-wrap gap-y-3">
         <Label text={t("aboutLabel")} variant="bgGray" />
         <div className="w-full flex flex-wrap justify-center lg:justify-start h-fit gap-x-3 items-end">
           <h1 className="boldStyle_text w-auto">{t("aboutTitle1")}</h1>

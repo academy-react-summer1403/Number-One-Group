@@ -39,9 +39,9 @@ const Categories = () => {
 
     return (
         <div className="w-full flex flex-wrap gap-y-4 justify-center py-28 lg:px-44 sm:px-16 px-8">
-            <Label text={t("categoryLabel")} variant="bgGray" />
-            <h1 className="boldStyle_text w-full text-center">{t("categoryTitle")}</h1>
-            <p className="mediumStyle_text text-center">{t("categoryDescription")}</p>
+            <Label data-aos="fade-left" data-aos-duration="300" text={t("categoryLabel")} variant="bgGray" />
+            <h1 data-aos="fade-right" data-aos-duration="500" className="boldStyle_text w-full text-center">{t("categoryTitle")}</h1>
+            <p data-aos="fade-left" data-aos-duration="700" className="mediumStyle_text text-center">{t("categoryDescription")}</p>
             {newTechnologies.length > 6 ? (
                 <div className="w-full relative bg-LightGray mt-5 flex justify-center items-center px-20 xl:px-28 py-8 rounded-full">
                     <SwiperSlider
@@ -56,7 +56,7 @@ const Categories = () => {
                     </SwiperSlider>
                 </div>
             ) : (
-                <div className="w-full relative bg-LightGray mt-5 flex justify-evenly items-center px-20 xl:px-28 py-8 rounded-full">
+                <div data-aos="flip-up" data-aos-easing="linear" data-aos-duration="500" className="w-full  relative bg-LightGray mt-5 flex justify-evenly items-center px-20 xl:px-28 py-8 rounded-full">
                     {newTechnologies.map(item => <CategoryItem key={item.id} amount={item.amount} title={item.techName} />)}
                 </div>
             )}
