@@ -10,15 +10,16 @@ const AddCourseComment = async (CourseId, data, refetch) => {
       Describe: data.description,
     };
     const formData = useFormData(obj);
-    console.log(formData);
-
-    const result = await Http.post(`/Course/AddCommentCourse`, formData);
+    const result = await toast.promise(
+      Http.post(`/Course/AddCommentCourse`, formData),
+      {
+        pending: "درحال ثبت شدن...",
+        success: "نظر شما پس از تایید ادمین ثبت خواهد شد",
+        error: "دوباره تلاش کنید",
+      }
+    );
     if (result.success) {
-      toast.success("نظر شما پس از تأیید توسط ادمین ثبت خواهد شد");
-      // Accept();
       refetch();
-    } else if(result.error) {
-      toast.error("لطفا دوباره تلاش کنید");
     }
   } catch (error) {
     toast.error("مشکلی پیش آمده لطفا دوباره تلاش کنید");

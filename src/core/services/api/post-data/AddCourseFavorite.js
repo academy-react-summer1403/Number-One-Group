@@ -1,21 +1,26 @@
 import { toast } from "react-toastify";
 import Http from "../../interceptor";
 
-const AddCourseFavorite = async (ParamsId,refetch) => {
+const AddCourseFavorite = async (ParamsId, refetch) => {
   try {
-    console.log(ParamsId)
-    const result = await Http.post(`/Course/AddCourseFavorite`, {
-      courseId: ParamsId,
-      Headers: { "Content-Type": "application/json" }
-    });
+    const result = await toast.promise(
+      Http.post(`/Course/AddCourseFavorite`, {
+        courseId: ParamsId,
+        Headers: { "Content-Type": "application/json" },
+      }),
+      {
+        pending: "درحال ثبت شدن...",
+        success: "دوره به لیست علاقه مندی ها اضافه شد",
+        error: "دوباره تلاش کنید",
+      }
+    );
     if (result.success) {
-      toast.success(" دوره به لیست علاقه مندی ها اضافه شد");
-      refetch()
-    } else {
-      toast.error("دوباره تلاش کنید");
+      refetch();
     }
   } catch (error) {
+    toast.error("مشکلی پیش آمده لطفا دوباره تلاش کنید");
     console.log(error);
+
   }
 };
 

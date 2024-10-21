@@ -3,15 +3,17 @@ import http from "../../interceptor";
 
 const AddCourseLike = async (ParamsId, refetch) => {
   try {
-    const result = await http.post(
-      `/Course/AddCourseLike?CourseId=${ParamsId}`
+    const result = await toast.promise(
+      http.post(`/Course/AddCourseLike?CourseId=${ParamsId}`),
+      {
+        pending: "درحال ثبت شدن...",
+        success: "دوره مورد نظر لایک شد",
+        error: "دوباره تلاش کنید",
+      }
     );
     if (result.success) {
-      toast.success("دوره مورد نظر لایک شد");
       refetch();
-    } else {
-      toast.error("دوباره تلاش کنید");
-    }
+    } 
   } catch (error) {
     console.log(error);
     toast.error("مشکلی پیش آمده لطفا بعدا امتحان کنید");
