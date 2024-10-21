@@ -26,6 +26,7 @@ const SkilledTeachers = () => {
                             key={item.teacherId}
                             name={item.fullName}
                             picture={item.pictureAddress}
+                            courseCount={item.courseCounts}
                         />
                     ))}
                 </MediaQuery>

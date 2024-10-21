@@ -7,7 +7,7 @@ import CreateSocialMediaItems from "./CreateSocialMediaItems"
 import ImageFallBack from "./ImageFallBack"
 import fallback from "../../assets/images/user-circle-icon.png"
 
-const TeacherCard = ({ name, skill, picture, href }) => {
+const TeacherCard = ({ name, courseCount, picture, href }) => {
     const socialMedia = [
         { icon: <InstagramIcon /> },
         { icon: <WhatsAppIcon /> },
@@ -25,8 +25,8 @@ const TeacherCard = ({ name, skill, picture, href }) => {
                 />
             </Link>
             <Link to={href} className="h-fit -mt-8">
-                <h1 className="text-lg text-DarkBlue">{name}</h1>
-                <span className="text-sm text-VioletBlue">{skill}</span>
+                <h1 className="text-lg text-DarkBlue line-clamp-1">{name}</h1>
+                <span className="text-sm text-VioletBlue">برنامه نویس</span>
                 <div className="w-full flex gap-x-2">
                     {socialMedia.map((item, index) => <CreateSocialMediaItems key={index} Icon={item.icon} />)}
                 </div>

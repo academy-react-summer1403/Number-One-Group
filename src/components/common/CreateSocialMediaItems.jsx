@@ -1,10 +1,17 @@
-import React from 'react'
+import { motion } from "framer-motion"
 
 const CreateSocialMediaItems = ({ Icon, style }) => {
     return (
-        <div className={`mt-2 w-8 h-8 rounded-full border border-neutral-500 flex justify-center items-center ${style}`}>
+        <motion.div
+            whileHover={{
+                marginLeft: 5,
+                marginRight: 5,
+                scale: 1.2,
+            }}
+            className={`mt-2 w-8 h-8 rounded-full border border-neutral-500 flex justify-center items-center ${style}`}
+        >
             {Icon}
-        </div>
+        </motion.div>
     )
 }
 
