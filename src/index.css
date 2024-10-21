@@ -24,7 +24,7 @@ body {
 
   @font-face {
     font-family: "Mitra";
-    src: url(./assets/fonts/Mitra.ttf);
+    src: url(./assets/fonts/Shabnam-FD.ttf);
   }
 }
 
@@ -89,6 +89,14 @@ body {
 
   .med_box-shadow {
     box-shadow: 0px 0px 30px 3px #00000076;
+  }
+
+  .gradientBackgroundDark {
+    background-image: url(./assets/images/gradientBackgroundDark.jpg);
+  }
+
+  .gradientBackground {
+    background-image: url(./assets/images/gradientBackground.jpg);
   }
 
   .bgGradient_menu {

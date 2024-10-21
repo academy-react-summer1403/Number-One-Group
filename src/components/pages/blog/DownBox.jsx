@@ -6,7 +6,7 @@ const DownBox = ({
   like,
   disLike,
   view,
-  isLoading,
+  loading,
   refetch,
   likeId,
   disLikeStatus,
@@ -15,13 +15,13 @@ const DownBox = ({
 }) => {
   return (
     <div className=" pt-5 border-t-2 border-gray-400/30 flex justify-between">
-      <Skeleton isLoaded={!isLoading}>
+      <Skeleton isLoaded={loading} className="rounded-md">
         <div className="flex items-center gap-1.5">
           <BsEyeFill color="gray" />
           <span className="text-gray-500">{view}</span>
         </div>
       </Skeleton>
-      <Skeleton isLoaded={!isLoading}>
+      <Skeleton isLoaded={loading} className="rounded-md">
         <div className="flex items-center gap-1.5">
           <ToLike
             variant={'blog'}

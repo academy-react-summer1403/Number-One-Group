@@ -37,7 +37,7 @@ const BlogCard = ({ item, loading, refetch }) => {
                         category={category}
                         date={date}
                         bio={bio}
-                        loading={loading}
+                        loading={!loading}
                     />
                 </Link >
                 <DownBox
@@ -47,7 +47,7 @@ const BlogCard = ({ item, loading, refetch }) => {
                     disLikeStatus={disLikeStatus}
                     likeStatus={likeStatus}
                     view={view}
-                    loading={loading}
+                    loading={!loading}
                     refetch={refetch && refetch}
                     id={id}
                 />

@@ -11,7 +11,7 @@ const OptionParts = ({ text, holderStyle, disableIconIn }) => {
                     <OptionIcon fill="#1c1A4A" />
                 </div>
             </MediaQuery>
-            <h4 className="w-full font-IranSans font-semibold lg:text-start text-center mobile:text-base ">{text}</h4>
+            <h4 className="w-full font-IranSans text-lg lg:text-start text-center mobile:text-base ">{text}</h4>
         </li>
     )
 }

@@ -1,5 +1,5 @@
 import { ImageFallBack } from "../../common"
-import fallback from "../../../assets/images/mannequin-faqPoster.png"
+import fallback from "../../../assets/images/CategoryDefaultIcon.png"
 
 const CategoryItem = ({ title, amount, icon }) => {
     return (
