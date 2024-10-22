@@ -6,17 +6,22 @@ const DeleteBlogFavorite = async (ParamsId, refetch) => {
     const obj = {
       deleteEntityId: ParamsId,
     };
-    const result = await Http.delete(`/News/DeleteFavoriteNews`, {
-      data: obj,
-      headers: { "Content-Type": "application/json" },
-    });
+    const result = await toast.promise(
+      Http.delete(`/News/DeleteFavoriteNews`, {
+        data: obj,
+        headers: { "Content-Type": "application/json" },
+      }),
+      {
+        pending: "درحال ثبت شدن...",
+        success: "وبلاگ به لیست علاقه مندی ها اضافه شد",
+        error: "دوباره تلاش کنید",
+      }
+    );
     if (!result.success) {
-      toast.success("وبلاگ مورد نظر از لیست علاقمندی ها حذف شد");
-      refetch();
-    } else if (result.error) {
-      toast.error("لطفا دوباره تلاش کنید");
+      refetch && refetch();
     }
   } catch (error) {
+    toast.error("مشکلی پیش آمده لطفا دوباره تلاش کنید");
     console.log(error);
   }
 };

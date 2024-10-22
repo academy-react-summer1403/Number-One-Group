@@ -3,16 +3,20 @@ import http from "../../interceptor";
 
 const AddBlogDisLike = async (blogId, refetch) => {
   try {
-    const response = await http.post(`/News/NewsDissLike/${blogId}`);
-
+    const response = await toast.promise(
+      http.post(`/News/NewsDissLike/${blogId}`),
+      {
+        pending: "درحال ثبت شدن...",
+        success: "وبلاگ مورد نظر دیس لایک شد",
+        error: "دوباره تلاش کنید",
+      }
+    );
     if (response.success) {
-      toast.success("دوره مورد نظر دیس لایک شد");
       refetch();
-    } else {
-      toast.error("دوباره تلاش کنید");
-    }
+    } 
   } catch (error) {
     toast.error("مشکلی پیش آمده لطفا بعدا امتحان کنید");
+    console.log(error)
   }
 };
 

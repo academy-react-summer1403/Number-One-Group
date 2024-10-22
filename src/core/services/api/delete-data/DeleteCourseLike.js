@@ -8,17 +8,22 @@ const DeleteCourseLike = async (ParamsId, refetch) => {
       CourseLikeId: ParamsId,
     };
     const dataObj = useFormData(obj);
-    const result = await Http.delete(`/Course/DeleteCourseLike`, {
-      data: dataObj,
-      headers: { "Content-Type": "multipart/form-data" },
-    });
+    const result = await toast.promise(
+      Http.delete(`/Course/DeleteCourseLike`, {
+        data: dataObj,
+        headers: { "Content-Type": "multipart/form-data" },
+      }),
+      {
+        pending: "درحال ثبت شدن...",
+        success: "نظر شما برداشته شد",
+        error: "دوباره تلاش کنید",
+      }
+    );
     if (result.success) {
-      toast.success("نظر شما برداشته شد");
       refetch();
-    } else {
-      toast.error("لطفا دوباره تلاش کنید");
     }
   } catch (error) {
+    toast.error("مشکلی پیش آمده لطفا بعدا امتحان کنید");
     console.log(error);
   }
 };

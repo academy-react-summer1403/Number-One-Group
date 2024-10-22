@@ -1,3 +1,5 @@
+import { CategoryIcon, TopicsIcon } from "../../icon";
+
 export const sortingColOptions_Blog_Fa = [
   { id: 1, value: "currentLikeCount", label: "محبوب ترین" },
   { id: 2, value: "updateDate", label: "جدید ترین" },
@@ -56,4 +58,13 @@ export const sortOptionChooseList_Fa = [
 export const sortOptionChooseList_En = [
   { id: 1, value: "course", label: "Course" },
   { id: 2, value: "blog", label: "Blog" },
+];
+
+export const selectItems_FA = [
+  { id: 1, label: "دوره ها", value: "course", icon: CategoryIcon ,path:'/courses',placeHolder:'PlaceHolder_Courses'},
+  { id: 2, label: "وبلاگ ها", value: "blog", icon: TopicsIcon ,path:'/Blog',placeHolder:'PlaceHolder_Blogs' },
+];
+export const selectItems_EN = [
+  { id: 1, label: "Courses", value: "course", icon: CategoryIcon ,path:'/courses',placeHolder:'PlaceHolder_Courses'},
+  { id: 2, label: "Blogs", value: "blog", icon: TopicsIcon ,path:'/Blog',placeHolder:'PlaceHolder_Blogs' },
 ];

@@ -3,16 +3,19 @@ import Http from "../../../interceptor";
 
 const CourseCommentDisLike = async (ParamsId, refetch) => {
   try {
-    const result = await Http.post(
-      `/Course/AddCourseCommentDissLike?CourseCommandId=${ParamsId}`
+    const result = await toast.promise(
+      Http.post(`/Course/AddCourseCommentDissLike?CourseCommandId=${ParamsId}`),
+      {
+        pending: "درحال ثبت شدن...",
+        success: "کامنت مورد نظر لایک شد",
+        error: "دوباره تلاش کنید",
+      }
     );
     if (result.success) {
-      toast.success("کامنت مورد نظر دیس لایک شد");
       refetch();
-    } else {
-      toast.error("لطفا دوباره تلاش کنید");
     }
   } catch (error) {
+    toast.error("مشکلی پیش آمده لطفا بعدا امتحان کنید");
     console.log(error);
   }
 };

@@ -27,7 +27,7 @@ const FilterBlog = createSlice({
     setRowsOfPage(state, action) {
       state.RowsOfPage = action.payload;
     },
-    setQuery(state, action) {
+    setQueryBlog(state, action) {
       state.Query = action.payload;
     },
     setSortingCol(state, action) {
@@ -38,7 +38,7 @@ const FilterBlog = createSlice({
 
 export const {
   setSortingCol,
-  setQuery,
+  setQueryBlog,
   setNewsCategoryId,
   setPageNumber,
   setRowsOfPage,

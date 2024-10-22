@@ -1,29 +1,44 @@
 import { useTranslation } from "react-i18next";
 import SearchBtn from "./SearchBtn";
-import { CategoryIcon, EventIcon, ShopIcon, TopicsIcon } from "../../../core/icon";
-import { Select, SelectItem, } from "@nextui-org/react";
+import { Select, SelectItem} from "@nextui-org/react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { setQueryCourse } from "../../../redux/slices/filter-box-slices/FilterCourses";
+import { setQueryBlog } from "../../../redux/slices/filter-box-slices/FilterBlog";
+import { useLocation, useNavigate } from "react-router-dom";
+import { Popover, PopoverTrigger, PopoverContent } from "@nextui-org/react";
+import { selectItems_EN, selectItems_FA } from "../../../core/constants/sort";
 
 const SearchInput = ({ showSearchFilter = true, inputStyle, holderStyle, setQuery }) => {
     const { t, i18n } = useTranslation();
-    const selectItems = [
-        { id: 1, label: "دوره ها", value: "course", icon: CategoryIcon },
-        { id: 2, label: "وبلاگ ها", value: "blog", icon: TopicsIcon },
-        { id: 3, label: "فروشگاه", value: "shop", icon: ShopIcon },
-        { id: 4, label: "ایونت ها", value: "event", icon: EventIcon },
-    ]
-
-    const [SearchValue, setSearchValue] = useState("1")
     const dispatch = useDispatch()
+    const [SearchValue, setSearchValue] = useState("1")
+    const [statusSearch, setStatusSearch] = useState(false)
+    const Navigate = useNavigate()
+    const selectItems = i18n.language === 'fa' ? selectItems_FA : selectItems_EN
 
+    // Find the searched item
+    const location = useLocation()
+    const Path = SearchValue && selectItems.find(el => el.id == SearchValue)
+    const pageSearch = selectItems.find(el => el.path == location.pathname)
+
+    // Select the desired setQuery
+    const setHeaderQuery = SearchValue == 1 ? setQueryCourse : setQueryBlog;
+    const setQuerySel = setQuery ?? setHeaderQuery;
+    const [status, setStatus] = useState(false)
+
+
+    // Set the search input value to the desired query
     const SetFilterQuery = (e) => {
-        if (e.target.value !== "") dispatch(setQuery(e.target.value))
-        else dispatch(setQuery(undefined))
+        if (statusSearch) {
+            if (e.target.value !== "") { dispatch(setQuerySel(e.target.value)); setStatus(true) }
+            else { dispatch(setQuerySel(undefined)); setStatus(false) }
+        }
     }
 
     return (
-        <div className={`w-fit border border-LightGrayish py-0.5 overflow-hidden px-px text-sm flex justify-between items-center rounded-full ${holderStyle}`}>
+        <div className={`w-fit border border-LightGrayish py-0.5 overflow-hidden px-px text-sm 
+        flex justify-between items-center rounded-full ${holderStyle} ${pageSearch ? "hidden" : ""}`}>
             <div className="w-[90%] flex items-center">
                 {/* category Section */}
                 {showSearchFilter && (
@@ -54,9 +69,21 @@ const SearchInput = ({ showSearchFilter = true, inputStyle, holderStyle, setQuer
                     </Select>
                 )}
                 {/* Search Input */}
-                <input onChange={(e) => SetFilterQuery(e)} type="text" placeholder={t('PlaceHolder_Courses')} className={`w-[200px] h-fit outline-none px-4 ${inputStyle} bg-transparent`} />
+                <input onChange={(e) => SetFilterQuery(e)} defaultValue={''} type="text" placeholder={t(Path.placeHolder)} className={`w-[200px] h-fit outline-none px-4 ${inputStyle} bg-transparent`} />
             </div>
-            <SearchBtn />
+            <Popover placement="bottom" showArrow={true} className={`${status ? 'hidden' : ''}`}>
+                <PopoverTrigger>
+                    <button onClick={() => { if (status) Navigate(Path.path); setStatusSearch(true) }}>
+                        <SearchBtn />
+                    </button>
+                </PopoverTrigger>
+                <PopoverContent>
+                    <div className="px-1 py-2">
+                        <h1 className="font-semibold ">{t('headerSearchText')}</h1>
+                    </div>
+                </PopoverContent>
+            </Popover>
+
         </div>
     )
 }

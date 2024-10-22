@@ -3,16 +3,20 @@ import http from "../../interceptor";
 
 const AddBlogLike = async (blogId, refetch) => {
   try {
-    const response = await http.post(`/News/NewsLike/${blogId}`);
-
+    const response = await toast.promise(
+      http.post(`/News/NewsLike/${blogId}`),
+      {
+        pending: "درحال ثبت شدن...",
+        success: "وبلاگ مورد نظر لایک شد",
+        error: "دوباره تلاش کنید",
+      }
+    );
     if (response.success) {
-      toast.success("وبلاگ مورد نظر لایک شد");
       refetch();
-    } else {
-      toast.error("دوباره تلاش کنید");
     }
   } catch (error) {
     toast.error("مشکلی پیش آمده لطفا بعدا امتحان کنید");
+    console.log(error);
   }
 };
 

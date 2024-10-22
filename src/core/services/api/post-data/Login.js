@@ -4,7 +4,9 @@ import { setItem } from "../../../hooks/local-storage";
 
 const UserLogin = async (user, navigate) => {
   try {
-    const response = await http.post("/Sign/Login", user);
+    const response = await toast.promise(http.post("/Sign/Login", user), {
+      pending: "درحال پردازش...",
+    });
 
     if (response.success) {
       if (response?.token) {

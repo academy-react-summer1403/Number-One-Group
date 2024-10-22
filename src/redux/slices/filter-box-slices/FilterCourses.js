@@ -19,7 +19,7 @@ const FilterCourses = createSlice({
   name: "Filter_Courses",
   initialState,
   reducers: {
-    setQuery(state, action) {
+    setQueryCourse(state, action) {
       state.Query = action.payload;
     },
     setListTech(state, action) {
@@ -58,7 +58,7 @@ const FilterCourses = createSlice({
   },
 });
 export const {
-  setQuery,
+  setQueryCourse,
   setListTech,
   setTechCount,
   setSortCal,

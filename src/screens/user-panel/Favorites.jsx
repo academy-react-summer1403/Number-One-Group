@@ -4,7 +4,7 @@ import { useMutation, } from "@tanstack/react-query"
 import { setQuery, setSortingCol, setSortingCurrent } from "../../redux/slices/userPanel-filter-slices/MyFavorite"
 import { useSelector } from "react-redux"
 import { useEffect, useState } from "react"
-import { useQueryWithoutDependencies } from "../../core/hooks/react-query"
+import { useMutationWithRefetch, useQueryWithoutDependencies } from "../../core/hooks/react-query"
 import { GetMyFavoriteBlogs, GetMyFavoriteCourses } from "../../core/services/api/get-data"
 import { MyBlogFavoriteHeader, MyBlogFavoriteKey, MyCourseFavoriteHeader, MyCourseFavoriteKey } from "../../core/constants/user-panel/HeaderTables"
 import { DeleteBlogFavorite, DeleteCourseFavorite } from "../../core/services/api/delete-data"
@@ -39,17 +39,8 @@ const Favorites = () => {
   } = useQueryWithoutDependencies("GET_MY_FAVORITE_BLOG", GetMyFavoriteBlogs)
 
   // Delete Data with useMutation
-  const { mutate: courseMutate } = useMutation({
-    mutationKey: ['DELETE_COURSE_FAVORITE'],
-    mutationFn: (id) => { return DeleteCourseFavorite(id) },
-    onSuccess: courseRefetch()
-  })
-
-  const { mutate: blogMutate } = useMutation({
-    mutationKey: ['DELETE_BLOG_FAVORITE'],
-    mutationFn: (id) => { return DeleteBlogFavorite(id) },
-    onSuccess: blogRefetch()
-  })
+  const { mutate: courseMutate } = useMutationWithRefetch('DELETE_COURSE_FAVORITE',DeleteCourseFavorite,courseRefetch)
+  const { mutate: blogMutate } = useMutationWithRefetch('DELETE_BLOG_FAVORITE',DeleteBlogFavorite,blogRefetch)
 
   // handle search filter for myFavorite Items
   const myFavoriteData = sortingCol === 'course' ? myCoursesData?.favoriteCourseDto.slice(itemOffset, endOffset)
