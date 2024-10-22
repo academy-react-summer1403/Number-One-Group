@@ -19,17 +19,7 @@ const HeroSection = () => {
 
     return (
         <div className={`w-full h-[520px] flex justify-between items-center ${theme ? "gradientBackgroundDark" : "gradientBackground"} bg-cover lg:px-44 sm:px-16 px-8`}>
-            <motion.div
-                initial={{ x: "100vw" }}
-                animate={{ x: "0" }}
-                transition={{
-                    type: "spring",
-                    duration: 0.8,
-                    ease: "easeIn",
-                    stiffness: 55
-                }}
-                className="w-full md:w-[400px] h-fit flex flex-wrap justify-center md:justify-start gap-y-4"
-            >
+            <div className="w-full md:w-[400px] h-fit flex flex-wrap justify-center md:justify-start gap-y-4">
                 <div className="w-full flex justify-center md:justify-start flex-wrap h-fit gap-y-4 md:gap-x-3 items-end">
                     <h1 className='boldStyle_text w-full text-nowrap text-center md:w-auto'>{t("heroSectionTitle1")}</h1>
                     <h1 className="importantWord py-1.5">
@@ -45,36 +35,17 @@ const HeroSection = () => {
                 <h1 className='boldStyle_text md:text-start text-center'>{t("heroSectionTitle2")}</h1>
                 <p className='mediumStyle_text md:text-start text-center'>{t("heroSectionDescription")}</p>
                 <CustomButton text={t("heroSectionBtn")} style="mt-5" vType={"button"} vStyle={"purple"} arrowColor="#fff" />
-            </motion.div>
+            </div>
             <div className="w-[600px] h-full hidden md:flex justify-center items-end relative">
-                <motion.div
-                    initial={{ y: "-100vw" }}
-                    animate={{ y: "0" }}
-                    transition={{
-                        type: "spring",
-                        duration: 0.8,
-                        delay: 0.5,
-                        ease: "easeIn",
-                        stiffness: 55
-                    }}
-                    className={`${i18n.language === "en" ? "left-[50px]" : "right-[50px]"} w-44 h-fit flex flex-wrap  gap-y-3 rounded-lg top-[80px] p-4 heroSection_box_shadow bg-MainBg text-DarkBlue absolute z-10`}
-                >
+                <div className={`${i18n.language === "en" ? "left-[50px]" : "right-[50px]"} w-44 h-fit flex flex-wrap  gap-y-3 rounded-lg top-[80px] p-4 heroSection_box_shadow bg-MainBg text-DarkBlue absolute z-10`}>
                     <h1>بیش از 30 استاد برتر</h1>
                     <AvatarGroup isBordered max={3}>
                         {isSuccess && data.map((item) => (
                             <Avatar key={item.teacherId} src={item.pictureAddress} />
                         ))}
                     </AvatarGroup>
-                </motion.div>
-                <motion.img
-                    initial={{ x: "-100vw" }}
-                    animate={{ x: "0" }}
-                    transition={{
-                        type: "spring",
-                        duration: 0.8,
-                        ease: "easeIn",
-                        stiffness: 55
-                    }}
+                </div>
+                <img
                     className={`h-[450px] w-full ${i18n.language === "en" ? "reverse-img" : ""}`}
                     src={mannequin_heroSection}
                 />

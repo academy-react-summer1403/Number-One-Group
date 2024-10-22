@@ -1,5 +1,3 @@
-import { delay } from "framer-motion";
-
 const configVariants = {
   initial: { x: "100vw" },
   animate: {
