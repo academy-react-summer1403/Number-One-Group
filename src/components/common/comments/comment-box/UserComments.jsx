@@ -17,7 +17,6 @@ const UserComments = ({ commentData, date, disLikeCount,
     currentUserLikeId,
     currentUserIsDissLike,
     author,
-    parentId
   } = commentData
 
   // Getting Replay course Comment from api
@@ -55,7 +54,6 @@ const UserComments = ({ commentData, date, disLikeCount,
             replayComment={replayComment}
             itemId={itemId}
             commentId={id}
-            parentId={parentId}
             refetchReplay={refetchCallReplay}
             refetch={refetch}
             variant={variant}

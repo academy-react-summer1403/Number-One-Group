@@ -4,17 +4,16 @@ import FormInput from "../../form/FormInput"
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 
-const AddReplay_Comment = ({ itemId, commentId, replayComment, refetch, closeModal, parentId }) => {
+const AddReplay_Comment = ({ itemId, commentId, replayComment, refetch, closeModal}) => {
   const { t } = useTranslation();
   const userInfo = useSelector(state => state.UserInfo.info)
-  console.log(userInfo)
 
   const addReplayComment = (values) => {
     if (!userInfo) {
       alert('لطفا لاگین کنید')
     }
     else {
-      replayComment(values, commentId, itemId, refetch, closeModal, userInfo,parentId)
+      replayComment(values, commentId, itemId, refetch, closeModal, userInfo)
     }
   }
   return (
