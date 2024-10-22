@@ -11,10 +11,14 @@ import { setPageNumber, setSortingCol, setRowsOfPage } from "../../redux/slices/
 import { useQueryWithDependencies, useQueryWithoutDependencies } from "../../core/hooks/react-query";
 import { GetNewsFilterPage } from "../../core/services/api/get-data";
 import { BreadCrumb, TitleSection } from "../../components/partials/title-section";
+import { useSearchParams } from "react-router-dom";
+import { blogFilterParams } from "../../core/constants/filter-params";
+
 
 const Blog = () => {
     const { t, i18n } = useTranslation();
     const FilterBlogObj = useSelector(state => state.FilterBlog)
+    const [searchParams, setSearchParams] = useSearchParams();
     const dispatch = useDispatch()
 
     // MediaQueries
@@ -24,6 +28,17 @@ const Blog = () => {
     // View
     const skeletonData = [{}, {}, {}, {}, {}, {}, {}, {}, {}];
     const [showGrid, setShowGrid] = useState(false);
+
+    // Set the url filter parameters
+    useEffect(() => {
+        blogFilterParams.forEach(({ key, action }) => {
+            console.log(action)
+            const value = searchParams.get(key);
+            if (value) {
+                dispatch(action(value))
+            }
+        })
+    }, [])
 
     // Pagination
     const currentBlog = isTabletOrMobile ? 6 : 12

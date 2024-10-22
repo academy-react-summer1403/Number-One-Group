@@ -69,11 +69,11 @@ const SearchInput = ({ showSearchFilter = true, inputStyle, holderStyle, setQuer
                     </Select>
                 )}
                 {/* Search Input */}
-                <input onChange={(e) => SetFilterQuery(e)} defaultValue={''} type="text" placeholder={t(Path.placeHolder)} className={`w-[200px] h-fit outline-none px-4 ${inputStyle} bg-transparent`} />
+                <input onChange={(e) => SetFilterQuery(e)} type="text" placeholder={t(Path.placeHolder)} className={`w-[200px] h-fit outline-none px-4 ${inputStyle} bg-transparent`} />
             </div>
             <Popover placement="bottom" showArrow={true} className={`${status ? 'hidden' : ''}`}>
                 <PopoverTrigger>
-                    <button onClick={() => { if (status) Navigate(Path.path); setStatusSearch(true) }}>
+                    <button onClick={() => { if (status) Navigate(Path.path); setStatusSearch(true)}}>
                         <SearchBtn />
                     </button>
                 </PopoverTrigger>

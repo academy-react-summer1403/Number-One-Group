@@ -1,8 +1,11 @@
 import ReactPaginate from 'react-paginate';
 import { useDispatch } from 'react-redux';
+import { useSearchParams } from 'react-router-dom';
 
 function PaginatedItems({ children, currentData, currentDataInOnePage, setPage, setState }) {
     const dispatch = useDispatch()
+    const [searchParams, setSearchParams] = useSearchParams();
+
 
     // Create buttons
     const pageCount = Math.ceil(currentData / currentDataInOnePage);
@@ -11,6 +14,8 @@ function PaginatedItems({ children, currentData, currentDataInOnePage, setPage, 
     const handlePageChange = (event) => {
         if (setPage) {
             dispatch(setPage(++event.selected));
+            searchParams.set("pageNumber", event.selected)
+            setSearchParams(searchParams);
         } else {
             const newOffset = (event.selected * currentDataInOnePage) % currentData;
             setState(newOffset);
