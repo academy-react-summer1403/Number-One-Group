@@ -8,7 +8,7 @@ const CreateStatisticsItem = ({ Statistics, name, isBorder = false }) => {
                 <h1 className="w-full text-white sm:text-5xl max-sm:text-3xl text-center" dir="ltr">
                     <CountUp
                         end={Statistics}
-                        duration={20}
+                        duration={50}
                     />
                 </h1>
                 <p className="w-full text-center max-sm:text-sm text-white">{name}</p>

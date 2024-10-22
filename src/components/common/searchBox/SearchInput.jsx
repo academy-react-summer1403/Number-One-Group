@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import SearchBtn from "./SearchBtn";
-import { Select, SelectItem} from "@nextui-org/react";
-import { useState } from "react";
+import { Select, SelectItem } from "@nextui-org/react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { setQueryCourse } from "../../../redux/slices/filter-box-slices/FilterCourses";
 import { setQueryBlog } from "../../../redux/slices/filter-box-slices/FilterBlog";
@@ -13,8 +13,8 @@ const SearchInput = ({ showSearchFilter = true, inputStyle, holderStyle, setQuer
     const { t, i18n } = useTranslation();
     const dispatch = useDispatch()
     const [SearchValue, setSearchValue] = useState("1")
-    const [statusSearch, setStatusSearch] = useState(false)
     const Navigate = useNavigate()
+    const [initialSearchValue, setInitialSearchValue] = useState("")
     const selectItems = i18n.language === 'fa' ? selectItems_FA : selectItems_EN
 
     // Find the searched item
@@ -25,16 +25,18 @@ const SearchInput = ({ showSearchFilter = true, inputStyle, holderStyle, setQuer
     // Select the desired setQuery
     const setHeaderQuery = SearchValue == 1 ? setQueryCourse : setQueryBlog;
     const setQuerySel = setQuery ?? setHeaderQuery;
-    const [status, setStatus] = useState(false)
 
 
     // Set the search input value to the desired query
-    const SetFilterQuery = (e) => {
-        if (statusSearch) {
-            if (e.target.value !== "") { dispatch(setQuerySel(e.target.value)); setStatus(true) }
-            else { dispatch(setQuerySel(undefined)); setStatus(false) }
+    const SetFilterQuery = () => {
+        if (initialSearchValue != "") {
+            dispatch(setQuerySel(initialSearchValue));
+            Navigate(Path.path);
         }
+        else { dispatch(setQuerySel(undefined)); }
     }
+
+    useEffect(() => { console.log(initialSearchValue) }, [initialSearchValue])
 
     return (
         <div className={`w-fit border border-LightGrayish py-0.5 overflow-hidden px-px text-sm 
@@ -69,11 +71,11 @@ const SearchInput = ({ showSearchFilter = true, inputStyle, holderStyle, setQuer
                     </Select>
                 )}
                 {/* Search Input */}
-                <input onChange={(e) => SetFilterQuery(e)} defaultValue={''} type="text" placeholder={t(Path.placeHolder)} className={`w-[200px] h-fit outline-none px-4 ${inputStyle} bg-transparent`} />
+                <input onChange={(e) => setInitialSearchValue(e.target.value)} defaultValue={''} type="text" placeholder={t(Path.placeHolder)} className={`w-[200px] h-fit outline-none px-4 ${inputStyle} bg-transparent`} />
             </div>
-            <Popover placement="bottom" showArrow={true} className={`${status ? 'hidden' : ''}`}>
+            <Popover placement="bottom" showArrow={true} className={`${initialSearchValue != "" ? 'hidden' : ''}`}>
                 <PopoverTrigger>
-                    <button onClick={() => { if (status) Navigate(Path.path); setStatusSearch(true) }}>
+                    <button onClick={SetFilterQuery} >
                         <SearchBtn />
                     </button>
                 </PopoverTrigger>
@@ -83,7 +85,6 @@ const SearchInput = ({ showSearchFilter = true, inputStyle, holderStyle, setQuer
                     </div>
                 </PopoverContent>
             </Popover>
-
         </div>
     )
 }
