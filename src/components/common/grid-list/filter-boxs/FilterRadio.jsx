@@ -12,7 +12,6 @@ const FilterRadio = ({
   fetchStatus,
   titleKey,
 }) => {
-  console.log(fetchStatus)
   const { t } = useTranslation();
   const [checkedData, SetCheckedData] = useState(false);
   const dispatch = useDispatch()

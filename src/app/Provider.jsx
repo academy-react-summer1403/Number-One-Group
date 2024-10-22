@@ -3,6 +3,7 @@ import { Provider } from "react-redux";
 import store from "../redux/store";
 import { reactQueryConfig } from "../config/react-query";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { BrowserRouter } from "react-router-dom";
 
 const ProviderApp = ({ children }) => {
     const queryClient = new QueryClient(reactQueryConfig);
@@ -11,7 +12,9 @@ const ProviderApp = ({ children }) => {
         <Provider store={store}>
             <NextUIProvider>
                 <QueryClientProvider client={queryClient}>
-                    {children}
+                    <BrowserRouter>
+                        {children}
+                    </BrowserRouter>
                 </QueryClientProvider>
             </NextUIProvider>
         </Provider>

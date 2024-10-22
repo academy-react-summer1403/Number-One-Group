@@ -40,6 +40,7 @@ import {
   SortBox,
   SortBoxHolder,
 } from "./grid-list";
+import LoadingSpinner from "./LoadingSpinner.jsx";
 
 export {
   HowToStart,
@@ -82,4 +83,5 @@ export {
   CommentSection,
   RelatedItems,
   OfflineWarning,
+  LoadingSpinner,
 };

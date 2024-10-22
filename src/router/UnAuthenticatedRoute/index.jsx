@@ -7,14 +7,14 @@ const routerPublic = [
         element: <MainLayouts />,
         children: [
             { path: '/', element: <Landing /> },
-            { path: '/home', element: <Navigate to={"/"} /> },
+            { path: '/home', element: <Navigate to="/" /> },
             { path: '/Courses', element: <Courses /> },
-            { path: '/Blog', element: <Blog /> },
             {
                 path: '/CourseDetails',
                 element: <CourseDetails />,
                 children: [{ path: '/CourseDetails/:id', element: <CourseDetails /> }]
             },
+            { path: '/Blog', element: <Blog /> },
             {
                 path: '/BlogDetails',
                 element: <BlogDetails />,
@@ -30,11 +30,11 @@ const routerPublic = [
             {
                 path: "/authorize/login",
                 children: [
-                    { index: true, element: <Login /> },
+                    { index: true, element: <Login />, },
                     { path: "twoStep", element: <TowStepLogin /> },
                 ]
             },
-            { path: "/authorize/register", element: <Register /> },
+            { path: "/authorize/register", element: <Register />, },
             {
                 path: "/authorize/forgetPassword",
                 element: <ForgetPasswordLogin />,
