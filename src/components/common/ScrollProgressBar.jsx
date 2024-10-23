@@ -4,8 +4,6 @@ const ScrollProgressBar = () => {
     const { scrollYProgress } = useScroll(); // Track scroll progress
     const scaleX = useTransform(scrollYProgress, [0, 1], [0, 1]); // Transform scroll progress to scale
 
-    console.log(scaleX)
-
     return (
         <motion.div
             style={{

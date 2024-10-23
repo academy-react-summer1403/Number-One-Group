@@ -15,7 +15,6 @@ const HeroSection = () => {
     const theme = useSelector(state => state.DarkMode)
 
     const { data, isSuccess } = useQueryWithoutDependencies("GET_TEACHERS", GetAllTeachers)
-    console.log(data)
 
     return (
         <div className={`w-full h-[520px] flex justify-between items-center ${theme ? "gradientBackgroundDark" : "gradientBackground"} bg-cover lg:px-44 sm:px-16 px-8`}>

@@ -21,8 +21,8 @@ const Landing = () => {
             exit={"exit"}
         >
             <HeroSection />
-            <Categories />
             <AboutUs />
+            <Categories />
             <TopCourses />
             <InformedPoster />
             <SkilledTeachers />
