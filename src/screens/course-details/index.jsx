@@ -5,7 +5,7 @@ import { useMutationWithoutRefetch, useMutationWithRefetch, useQueryWithDependen
 import { GetAllCourseByPagination, GetCourseDetails, GetCoursesComments, GetReplayCourseComment, GetTechnologies } from '../../core/services/api/get-data';
 import { BreadCrumb } from '../../components/partials/title-section';
 import MediaQuery from 'react-responsive';
-import { AddCourseFavorite, AddCourseReserve } from '../../core/services/api/post-data';
+import { AddCourseFavorite, AddCourseRate, AddCourseReserve } from '../../core/services/api/post-data';
 import { LevelIcon } from '../../core/icon';
 import { FaHourglassStart, FaUsers } from "react-icons/fa6";
 import { SiStatuspage } from "react-icons/si";
@@ -25,8 +25,8 @@ const CourseDetails = () => {
     const { data: courseData, isSuccess, refetch } = useQueryWithDependencies('GET_COURSE_DETAILS', GetCourseDetails, null, id)
     const {
         courseId, title, imageAddress, cost, isCourseReseve, courseLevelName, startTime, endTime, capacity, currentRegistrants,
-        courseStatusName, teacherName, currentRate, techs, describe, miniDescribe, userLikeId,
-        likeCount, dissLikeCount, currentUserLike, currentUserDissLike, userFavoriteId, isUserFavorite,
+        courseStatusName, teacherName, currentRate, techs, describe, miniDescribe, userLikeId, currentUserSetRate,
+        likeCount, dissLikeCount, currentUserLike, currentUserDissLike, userFavoriteId, isUserFavorite,courseRate
 
     } = isSuccess && courseData
     // details Box data
@@ -67,7 +67,7 @@ const CourseDetails = () => {
         LikeStatus: currentUserLike, DissLikeStatus: currentUserDissLike, Id: id, favoriteId: userFavoriteId,
         refetch: refetch, userFavorite: isUserFavorite,
         favoriteText: 'CourseFavorite', refetchComment: refetchComment, commentSuccess: commentSuccess,
-        commentData: commentData,
+        commentData: commentData, actionRate: AddCourseRate, rateStatus: currentUserSetRate, rateNumber: currentRate,
         Id: id,
     }
     // Find related courses based on technology

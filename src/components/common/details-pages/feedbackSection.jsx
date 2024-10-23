@@ -1,9 +1,11 @@
 import { useTranslation } from "react-i18next"
 import ToLike from "../ToLike"
 import FavoriteBtn from "../FavoriteBtn"
+import SetRate from "../SetRate"
 
-const FeedbackSection = ({ params}) => {
+const FeedbackSection = ({ params }) => {
     const { t } = useTranslation()
+
     return (
         <div data-aos="fade-right" ata-aos-duration="700" className="border-y-2 my-7 py-3 flex items-center max-sm:justify-around gap-5">
             <div className="flex items-center gap-8 w-fit h-fit">
@@ -32,8 +34,11 @@ const FeedbackSection = ({ params}) => {
                     favoriteId={params.favoriteId}
                 />
             </div>
+            <SetRate action={params.actionRate} Id={params.Id} status={params.rateStatus} rateNumber={params.rateNumber} />
+
         </div>
     )
 }
+
 
 export default FeedbackSection

@@ -8,7 +8,7 @@ import { BlogCard } from "../../components/pages/blog";
 import NotFoundImg from "../../assets/images/image-not-found.png"
 import { BlogBiography, DetailsSection } from "../../components/pages/blog-details";
 import { MajorElements } from "../../core/constants/test-text/MajorElements";
-import { AddBlogComment, AddReplayBlogComment } from "../../core/services/api/post-data";
+import { AddBlogComment, AddBlogRate, AddReplayBlogComment } from "../../core/services/api/post-data";
 import { useTranslation } from "react-i18next";
 import ChangeMoment from "../../core/utility/moment";
 
@@ -27,15 +27,15 @@ const BlogDetails = () => {
     const {
         title, newsCatregoryId, currentImageAddress, newsCatregoryName, updateDate, currentView, commentsCount,
         googleDescribe, miniDescribe, currentUserLikeId, likeCount, dissLikeCount, currentUserIsLike,
-        currentUserIsDissLike, currentUserFavoriteId, isCurrentUserFavorite
+        currentUserIsDissLike, currentUserFavoriteId, isCurrentUserFavorite,currentUserSetRate,currentUserRateNumber
     } = isSuccess && blogData.detailsNewsDto
 
     // to like params
     const feedBackParams = {
         variant: 'blog', userLikeId: currentUserLikeId, likeNumber: likeCount, disLikeNumber: dissLikeCount,
         LikeStatus: currentUserIsLike, DissLikeStatus: currentUserIsDissLike, Id: id, favoriteId: currentUserFavoriteId,
-        refetch: refetch, userFavorite: isCurrentUserFavorite,
-        favoriteText: 'CourseFavorite'
+        refetch: refetch, userFavorite: isCurrentUserFavorite,actionRate:AddBlogRate,rateStatus: currentUserSetRate,
+        favoriteText: 'CourseFavorite',rateNumber:currentUserRateNumber
     }
 
     return (
