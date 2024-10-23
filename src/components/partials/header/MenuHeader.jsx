@@ -8,8 +8,8 @@ const MenuHeader = ({ title, href }) => {
 
   return (
     <div className="relative text-center cursor-pointer lg:text-sm md:hover:text-VioletBlue hover:text-SunshineYellow duration-200 text-DarkBlue max-lg:my-6">
-      <NavLink to={href} style={({ isActive }) => ({ color: isActive && `${mobileOrTablet ? "#5751E1" : "#FFC224"}` })}>{t(title)}</NavLink>
-      <NavLink to={href} style={({ isActive }) => ({ display: isActive ? "block" : "none" })} className="w-full h-1 lg:bgGradient_menu borderButton_sidebar_userPanel absolute -bottom-2 right-0"></NavLink>
+      <NavLink to={href} style={({ isActive }) => ({ color: isActive && `${mobileOrTablet ? "#5751E1" : "#FFC224"}`, pointerEvents: isActive && "none" })}>{t(title)}</NavLink>
+      <NavLink to={href} style={({ isActive }) => ({ display: isActive ? "block" : "none", pointerEvents: isActive && "none" })} className="w-full h-1 lg:bgGradient_menu borderButton_sidebar_userPanel absolute -bottom-2 right-0"></NavLink>
     </div>
   )
 }

@@ -7,10 +7,12 @@ import { AddBlogFavorite, AddCourseFavorite } from "../../core/services/api/post
 import { DeleteBlogFavorite, DeleteCourseFavorite } from "../../core/services/api/delete-data";
 import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
+import { useSearchParams } from "react-router-dom";
 
 const FavoriteBtn = ({ isLoading, variantStyle, variantApi, userFavorite, refetch, Id, favoriteId }) => {
     const isTabletOrLapTop = useMediaQuery({ query: '(min-width: 768px)' })
     const UserInfo = useSelector(state => state.UserInfo.info)
+    const [searchParams, setSearchParams] = useSearchParams()
     const variantAction = {
         'courseDetails': [AddCourseFavorite, DeleteCourseFavorite],
         'blog': [AddBlogFavorite, DeleteBlogFavorite]
@@ -28,7 +30,7 @@ const FavoriteBtn = ({ isLoading, variantStyle, variantApi, userFavorite, refetc
 
     const variant = {
         card: (
-            <Skeleton isLoaded={!isLoading} className={`rounded-lg ${location.search === '?V=2' && isTabletOrLapTop ? "" : "absolute left-6 top-6"}`}>
+            <Skeleton isLoaded={!isLoading} className={`rounded-lg ${searchParams.get('V') == 2 && isTabletOrLapTop ? "" : "absolute left-6 top-6"}`}>
                 <div onClick={() => handleFavorite(variantAction?.[variantApi][0], variantAction?.[variantApi][1])}
                     className={`w-[35px] h-[35px] flex justify-center items-center cursor-pointer favorite-btn bg-LightLavender rounded-xl`}>
                     {userFavorite ? <CheckedHeartIcon width="25px" height="25px" /> : <UnCheckedHeartIcon width="25px" height="25px" fill="#555555" />}
