@@ -5,6 +5,7 @@ import { toast } from "react-toastify"
 
 const SetRate = ({ action, Id, status, rateNumber }) => {
     const userInfo = useSelector(state => state.UserInfo.info)
+    
     // Catch Rating value
     const handleRating = (rate) => {
         if (userInfo) {

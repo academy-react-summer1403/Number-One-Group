@@ -35,7 +35,7 @@ const BlogDetails = () => {
         variant: 'blog', userLikeId: currentUserLikeId, likeNumber: likeCount, disLikeNumber: dissLikeCount,
         LikeStatus: currentUserIsLike, DissLikeStatus: currentUserIsDissLike, Id: id, favoriteId: currentUserFavoriteId,
         refetch: refetch, userFavorite: isCurrentUserFavorite,actionRate:AddBlogRate,rateStatus: currentUserSetRate,
-        favoriteText: 'CourseFavorite',rateNumber:currentUserRateNumber
+        favoriteText: 'blogFavorite',rateNumber:currentUserRateNumber
     }
 
     return (
