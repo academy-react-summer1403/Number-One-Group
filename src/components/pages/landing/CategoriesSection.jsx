@@ -38,7 +38,7 @@ const Categories = () => {
     useEffect(() => { setAmount() }, [technologies])
 
     return (
-        <div className="w-full flex flex-wrap gap-y-4 justify-center py-28 lg:px-44 sm:px-16 px-8">
+        <div className="w-full flex flex-wrap gap-y-4 justify-center pb-28 lg:px-44 sm:px-16 px-8">
             <Label data-aos="fade-left" data-aos-duration="300" text={t("categoryLabel")} variant="bgGray" />
             <h1 data-aos="fade-right" data-aos-duration="500" className="boldStyle_text w-full text-center">{t("categoryTitle")}</h1>
             <p data-aos="fade-left" data-aos-duration="700" className="mediumStyle_text text-center">{t("categoryDescription")}</p>

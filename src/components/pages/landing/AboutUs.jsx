@@ -12,7 +12,7 @@ const AboutUs = () => {
   const theme = useSelector(state => state.DarkMode)
 
   return (
-    <div className={`w-full ${theme ? "bg-gradientBackgroundDark" : "bg-gradientBackground"} lg:bg-none flex justify-center gap-x-12 max-lg:py-28 lg:px-44 sm:px-16 px-8`}>
+    <div className={`w-full ${theme ? "bg-gradientBackgroundDark" : "bg-gradientBackground"} lg:bg-none flex justify-center gap-x-12 pt-28 lg:px-44 sm:px-16 px-8`}>
       <div data-aos="fade-left" data-aos-duration="1500" className="w-[400px] hidden h-fit relative lg:flex flex-wrap justify-center">
         <img data-aos="fade-down"  data-aos-delay="1" data-aos-duration="1500" className="w-20 absolute left-28 top-10 transition-all duration-200" src={liveClass_icon} alt="Live Class" />
         <button className="playButton top-[40%]">
