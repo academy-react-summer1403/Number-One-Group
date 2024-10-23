@@ -57,5 +57,6 @@ export const encouragementItems = [
       "Email marketing is an effective tool to communicate with customers and increase sales.",
     ],
     icon: EmailMarketing,
+    arrow: false,
   },
 ];

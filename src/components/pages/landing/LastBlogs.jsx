@@ -38,7 +38,7 @@ const LastBlogs = () => {
           ))}
         </SwiperSlider>
       </div>
-      <CustomButton href="/Blog?V=1" text={t("viewAll")} style="mt-10" vType={"link"} vStyle={"purple"} arrowColor="#fff" />
+      <CustomButton href="/Blog?V=1" text={t("viewAll")} style="mt-5" vType={"link"} vStyle={"purple"} arrowColor="#fff" />
     </div>
   )
 }

@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next"
 import CreateStatisticsItem from "./createStatisticsItem"
 import { useQueryWithoutDependencies } from "../../../core/hooks/react-query"
 import { GetLandingReports } from "../../../core/services/api/get-data"
+import { motion } from "framer-motion"
 
 const Statistics = () => {
     const { i18n } = useTranslation()

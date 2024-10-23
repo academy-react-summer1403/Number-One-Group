@@ -22,7 +22,7 @@ const CustomButton = ({ text, arrowColor, vStyle, style, Icon, href, vType, isCl
             </Button>
         ),
         button: (
-            <Button onClick={isClick} type='submit' radius="full" className={`bg-VioletBlue text-white pb-3 pt-1.5 duration-200 group px-5 ${variantStyle?.[vStyle]} ${style}`}>
+            <Button onClick={isClick} type='submit' radius="full" className={`bg-VioletBlue text-white pb-1.5 pt-1.5 duration-200 group px-5 ${variantStyle?.[vStyle]} ${style}`}>
                 {t(text)}
                 <div className={`group-hover:ms-2 duration-200 ${i18n.language === "en" ? "reverse-img" : ""}`}>
                     {Icon ? <Icon /> : <ArrowLeftIcon stroke={arrowColor} height="12px" />}
