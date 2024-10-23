@@ -18,14 +18,13 @@ const SearchInput = ({ showSearchFilter = true, inputStyle, holderStyle, setQuer
     const selectItems = i18n.language === 'fa' ? selectItems_FA : selectItems_EN
 
     // Find the searched item
-    const location = useLocation()
+    const { pathname } = useLocation()
     const Path = SearchValue && selectItems.find(el => el.id == SearchValue)
-    const pageSearch = selectItems.find(el => el.path == location.pathname)
+    // const pageSearch = selectItems.find(el => el.path == location.pathname)
 
     // Select the desired setQuery
     const setHeaderQuery = SearchValue == 1 ? setQueryCourse : setQueryBlog;
     const setQuerySel = setQuery ?? setHeaderQuery;
-
 
     // Set the search input value to the desired query
     const SetFilterQuery = () => {
@@ -36,17 +35,23 @@ const SearchInput = ({ showSearchFilter = true, inputStyle, holderStyle, setQuer
         else { dispatch(setQuerySel(undefined)); }
     }
 
-    useEffect(() => { console.log(initialSearchValue) }, [initialSearchValue])
+    const handleDisabledKeys = () => {
+        if (pathname == "/courses") setSearchValue("2")
+        if (pathname == "/blog") setSearchValue("1")
+    }
+
+    useEffect(() => { handleDisabledKeys() }, [pathname])
 
     return (
         <div className={`w-fit border border-LightGrayish py-0.5 overflow-hidden px-px text-sm 
-        flex justify-between items-center rounded-full ${holderStyle} ${pageSearch ? "hidden" : ""}`}>
+        flex justify-between items-center rounded-full ${holderStyle}`}>
             <div className="w-[90%] flex items-center">
                 {/* category Section */}
                 {showSearchFilter && (
                     <Select
                         radius="none"
                         items={selectItems}
+                        disabledKeys={pathname == "/courses" ? ["1"] : null || pathname == "/Blog" ? ["2"] : null}
                         selectedKeys={[SearchValue]}
                         className={`w-[130px] ${i18n.language == "en" ? "border-r-2" : "border-l-2"} border-LightGrayish h-[25px] flex items-center`}
                         classNames={{

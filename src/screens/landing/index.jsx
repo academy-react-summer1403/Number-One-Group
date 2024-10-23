@@ -1,4 +1,4 @@
-import { HowToStart, InformedPoster, LoadingSpinner } from "../../components/common";
+import { HowToStart, InformedPoster } from "../../components/common";
 import {
     AboutUs,
     Categories,

@@ -6,7 +6,7 @@ const LoadingSpinner = () => {
 
     useLayoutEffect(() => {
         setLoading(true)
-        setTimeout(() => setLoading(false), 3000)
+        setTimeout(() => setLoading(false), 1500)
     }, [])
 
     const backgroundStyle = {
@@ -18,12 +18,14 @@ const LoadingSpinner = () => {
             style={backgroundStyle}
             className="w-svw h-svh bg-black/50 fixed top-0 left-0 z-50 items-center flex-wrap justify-center"
         >
-            <SyncLoader
-                color="#5751E1"
-                loading
-                size={20}
-                className="mx-auto"
-            />
+            <div className="py-10 px-5 rounded-xl bg-MainBg">
+                <SyncLoader
+                    color="#5751E1"
+                    loading
+                    size={20}
+                    className="mx-auto"
+                />
+            </div>
         </div>
 
     )

@@ -4,10 +4,10 @@ const configVariants = {
     x: "0",
     transition: {
       ease: "easeIn",
-      duration: 1,
+      duration: 0.5,
       stiffness: 100,
       type: "spring",
-      delay: 2,
+      delay: 1,
     },
   },
   exit: {

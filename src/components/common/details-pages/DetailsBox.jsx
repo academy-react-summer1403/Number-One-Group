@@ -8,11 +8,12 @@ import {
 } from "../../../core/icon";
 // import { CustomButton, CreateSocialMediaItems } from ".";
 import { UnitPrice } from "../../../core/utility/SeparationPrice";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import CustomButton from "../Button";
 import CreateSocialMediaItems from "../CreateSocialMediaItems";
 import paymentIcon from '../../../assets/images/payment.png'
+import { setStatusModal } from "../../../redux/slices/LoginPopup";
 
 export const detailVariant = {
   "course-detail": "lg:w-72 mb-8",
@@ -39,7 +40,7 @@ const DetailsBox = ({
   reserveStatus,
 }) => {
   const userInfo = useSelector(state => state.UserInfo.info);
-
+  const dispatch = useDispatch()
   // Add course reserve function
   const itemReserve = () => {
     if (userInfo) {
@@ -51,7 +52,10 @@ const DetailsBox = ({
         actionReserve(id);
       }
     }
-    else { alert('لطفا لاگین کنید!') }
+    else {
+      toast.error('لطفا لاگین کنید!')
+      dispatch(setStatusModal(true));
+    }
   }
 
   const { t, i18n } = useTranslation();

@@ -11,12 +11,10 @@ import { GetProfileInfo } from '../../core/services/api/get-data'
 import { useQueryWithDependencies } from '../../core/hooks/react-query'
 import UserPanelHeader from '../partials/user-panel-header'
 import { SidebarUserPanel } from '../pages/user-panel'
-import { HomeBtnPanelIcon } from '../../core/icon'
 import { HamburgerMenu } from '../common'
 
 const UserPanelLayout = () => {
     const [visibleMenu, setVisibleMenu] = useState(false)
-    const { i18n } = useTranslation()
     const dispatch = useDispatch()
     const location = useLocation()
 

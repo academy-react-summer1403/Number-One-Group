@@ -5,6 +5,7 @@ import GetPhoneNumber from "./steps/GetPhoneNumber";
 import GetUserInfo from "./steps/GetUserInfo";
 import FirstStepPassword from "./steps/FirstStepPassword";
 import GoToGmail from "./steps/GoToGmail";
+import ExitAccount from "./ExitAccount";
 
 export {
   Stepper,
@@ -14,4 +15,5 @@ export {
   GetUserInfo,
   FirstStepPassword,
   GoToGmail,
+  ExitAccount,
 };

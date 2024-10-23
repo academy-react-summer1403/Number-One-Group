@@ -2,7 +2,7 @@ import { Outlet, useLocation } from "react-router-dom"
 import Header from "../partials/header";
 import Footer from "../partials/footer";
 import { useEffect } from "react";
-import { LoadingSpinner } from "../common";
+import { LoadingSpinner, ScrollProgressBar } from "../common";
 
 const MainLayouts = () => {
   const { pathname } = useLocation()

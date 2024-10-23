@@ -41,6 +41,8 @@ import {
   SortBoxHolder,
 } from "./grid-list";
 import LoadingSpinner from "./LoadingSpinner.jsx";
+import PopupLoginWrapper from "./popupLogin";
+import ScrollProgressBar from "./ScrollProgressBar.jsx";
 
 export {
   HowToStart,
@@ -84,4 +86,6 @@ export {
   RelatedItems,
   OfflineWarning,
   LoadingSpinner,
+  PopupLoginWrapper,
+  ScrollProgressBar,
 };

@@ -1,6 +1,6 @@
 import { menuItem } from "../../../core/constants/Header/headerData"
 import MenuHeader from "./MenuHeader"
-import { HamburgerMenu, LogoGroup, SearchInput } from "../../common"
+import { HamburgerMenu, LogoGroup, ScrollProgressBar, SearchInput } from "../../common"
 import { CartIcon, FavoriteIcon } from "../../../core/icon"
 import MediaQuery from "react-responsive"
 import BasketItems from "./BasketItem"
@@ -22,12 +22,12 @@ const Header = () => {
   const dispatch = useDispatch()
   const location = useLocation()
 
-   // basket and favoriteBox number
-   const { data: myFavoriteData } = useQueryWithoutDependencies("GET_MY_COURSES", null )
-   const { data: myCourseReserve } = useQueryWithoutDependencies('MY_RESERVED_LIST',null )
+  // basket and favoriteBox number
+  const { data: myFavoriteData } = useQueryWithoutDependencies("GET_MY_COURSES", null)
+  const { data: myCourseReserve } = useQueryWithoutDependencies('MY_RESERVED_LIST', null)
   const baskets = [
     { icon: CartIcon, number: myCourseReserve?.length, href: "/cart", tooltip: ["سبد خرید", "Cart"] },
-    { icon: FavoriteIcon, number:  myFavoriteData?.favoriteCourseDto.length, href: "", tooltip: ["لیست علاقه مندی", "Favorite List"] },
+    { icon: FavoriteIcon, number: myFavoriteData?.favoriteCourseDto.length, href: "", tooltip: ["لیست علاقه مندی", "Favorite List"] },
   ];
 
   const menuItems = menuItem.map((item, index) => {
@@ -43,44 +43,47 @@ const Header = () => {
 
   const token = getItem('token')
 
-  const {data: userInfo, isSuccess} = useQuery({
+  const { data: userInfo, isSuccess } = useQuery({
     queryKey: ["GET-USER-PROFILE", location],
     queryFn: GetProfileInfo,
     enabled: token ? true : false
   })
-  
+
   if (isSuccess) { dispatch(setInfoAction(userInfo)) }
 
   return (
-    <Navbar
-      shouldHideOnScroll={visibleMenu || visibleSearch ? false : true}
-      className="flex gap-x-10 items-center justify-between min-[1360px]:px-20 sm:px-10 px-3 py-3"
-      maxWidth="full"
-    >
-      <div className="w-fit flex gap-x-6 items-center">
-        <LogoGroup color={'text-VioletBlue'} />
-        <MediaQuery minWidth={"1024px"}>
-          <div className="w-fit flex gap-x-6 items-center">
-            {menuItems}
-          </div>
-        </MediaQuery>
-        <MediaQuery maxWidth={"1024px"}>
-          <HamburgerMenu setVisible={setVisibleMenu} visible={visibleMenu} style={'bg-VioletBlue dark:bg-LightLavender z-50 p-8'}>
-            <SideBarMenu basketItems={basketItems} menuItems={menuItems} />
-          </HamburgerMenu >
-        </MediaQuery>
-      </div>
-      <div className="w-fit h-[42px] flex gap-x-3 justify-end items-center ">
-        <MediaQuery minWidth={"1285px"}>
-          <SearchInput />
-        </MediaQuery>
-        <HeaderButtons
-          setVisibleSearch={setVisibleSearch}
-          visibleSearch={visibleSearch}
-          basketItems={basketItems}
-        />
-      </div>
-    </Navbar>
+    <>
+      <Navbar
+        shouldHideOnScroll={visibleMenu || visibleSearch ? false : true}
+        className="flex gap-x-10 items-center justify-between py-3"
+        maxWidth="full"
+      >
+        <div className="w-fit flex gap-x-6 items-center min-[1360px]:px-20 sm:px-10 px-3">
+          <LogoGroup color={'text-VioletBlue'} />
+          <MediaQuery minWidth={"1024px"}>
+            <div className="w-fit flex gap-x-6 items-center">
+              {menuItems}
+            </div>
+          </MediaQuery>
+          <MediaQuery maxWidth={"1024px"}>
+            <HamburgerMenu setVisible={setVisibleMenu} visible={visibleMenu} style={'bg-VioletBlue dark:bg-LightLavender z-50 p-8'}>
+              <SideBarMenu basketItems={basketItems} menuItems={menuItems} />
+            </HamburgerMenu >
+          </MediaQuery>
+        </div>
+        <div className="w-fit h-[42px] flex gap-x-3 justify-end items-center min-[1360px]:px-20 sm:px-10 px-3">
+          <MediaQuery minWidth={"1285px"}>
+            <SearchInput />
+          </MediaQuery>
+          <HeaderButtons
+            setVisibleSearch={setVisibleSearch}
+            visibleSearch={visibleSearch}
+            basketItems={basketItems}
+          />
+        </div>
+        <ScrollProgressBar />
+      </Navbar>
+    </>
   )
 }
 

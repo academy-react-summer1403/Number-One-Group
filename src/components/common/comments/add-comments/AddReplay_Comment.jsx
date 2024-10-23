@@ -1,17 +1,21 @@
+import { toast } from "react-toastify";
+import { setStatusModal } from "../../../../redux/slices/LoginPopup";
 import CustomButton from "../../Button"
 import FormHolder from "../../form/FormHolder"
 import FormInput from "../../form/FormInput"
 import { useTranslation } from "react-i18next";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const AddReplay_Comment = ({ itemId, commentId, replayComment, refetch, closeModal, parentId }) => {
   const { t } = useTranslation();
   const userInfo = useSelector(state => state.UserInfo.info)
   console.log(userInfo)
+  const dispatch = useDispatch()
 
   const addReplayComment = (values) => {
     if (!userInfo) {
-      alert('لطفا لاگین کنید')
+      dispatch(setStatusModal(true));
+      toast.error('لطفا لاگین کنید')
     }
     else {
       replayComment(values, commentId, itemId, refetch, closeModal, userInfo, parentId)

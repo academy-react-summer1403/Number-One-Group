@@ -5,8 +5,9 @@ import tooltipStyle from "../../core/constants/tooltip-style"
 import { useTranslation } from "react-i18next";
 import { AddBlogFavorite, AddCourseFavorite } from "../../core/services/api/post-data";
 import { DeleteBlogFavorite, DeleteCourseFavorite } from "../../core/services/api/delete-data";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
+import { setStatusModal } from "../../redux/slices/LoginPopup";
 
 const FavoriteBtn = ({ isLoading, variantStyle, variantApi, userFavorite, refetch, Id, favoriteId }) => {
     const isTabletOrLapTop = useMediaQuery({ query: '(min-width: 768px)' })
@@ -15,8 +16,11 @@ const FavoriteBtn = ({ isLoading, variantStyle, variantApi, userFavorite, refetc
         'courseDetails': [AddCourseFavorite, DeleteCourseFavorite],
         'blog': [AddBlogFavorite, DeleteBlogFavorite]
     }
+    const dispatch = useDispatch()
+
     const handleFavorite = (action, deleteAction) => {
         if (UserInfo == false) {
+            dispatch(setStatusModal(true))
             toast.error('لطفا لاگین کنید')
         } else {
             if (userFavorite === false) {

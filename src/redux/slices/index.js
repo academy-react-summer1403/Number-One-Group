@@ -8,6 +8,7 @@ import MyFavorite from "./userPanel-filter-slices/MyFavorite";
 import MyReserved from "./userPanel-filter-slices/MyReserved";
 import MyViews from "./userPanel-filter-slices/MyViews";
 import LoginInfo from "./LoginInfo";
+import LoginPopup from "./LoginPopup";
 
 export {
   StepStatus,
@@ -20,4 +21,5 @@ export {
   MyReserved,
   MyViews,
   LoginInfo,
+  LoginPopup,
 };

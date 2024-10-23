@@ -9,16 +9,17 @@ const CustomButton = ({ text, arrowColor, vStyle, style, Icon, href, vType, isCl
         "purple": "bg-VioletBlue text-white buttonPurple_shadow",
         "yellow": "bg-SunshineYellow text-black buttonYellow_shadow",
     }
+
     const variantType = {
         link: (
-            <Link to={href}>
-                <Button radius="full" className={`bg-VioletBlue text-white pb-3 pt-1.5 duration-200 group px-5 ${variantStyle?.[vStyle]} ${style}`}>
+            <Button radius="full" className={`bg-VioletBlue text-white duration-200 group px-0 py-0 ${variantStyle?.[vStyle]} ${style}`}>
+                <Link to={href} className="flex items-center gap-x-2 w-full h-full pb-3 pt-1.5 px-5">
                     {t(text)}
                     <div className={`group-hover:ms-2 duration-200 ${i18n.language === "en" ? "reverse-img" : ""} ${disableArrow}`}>
                         {Icon ? <Icon /> : <ArrowLeftIcon stroke={arrowColor} height="12px" />}
                     </div>
-                </Button>
-            </Link>
+                </Link>
+            </Button>
         ),
         button: (
             <Button onClick={isClick} type='submit' radius="full" className={`bg-VioletBlue text-white pb-3 pt-1.5 duration-200 group px-5 ${variantStyle?.[vStyle]} ${style}`}>
@@ -29,6 +30,7 @@ const CustomButton = ({ text, arrowColor, vStyle, style, Icon, href, vType, isCl
             </Button>
         )
     }
+    
     return variantType?.[vType]
 }
 
