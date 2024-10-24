@@ -14,12 +14,12 @@ const AddComments = ({ apiFunction, Id, refetch }) => {
 
   // Providing field information
   const fields = [
-    { id: 1, sectionName: 'titleComment', certificate: "title", type: "text", variant: "simple", errorStyle: "text-end !bg-transparent", fieldStyle: 'rounded-lg py-2 bg-whiteBlack h-auto mt-0.5' },
-    { id: 2, sectionName: 'descComment', certificate: "description", type: "text", variant: "area", errorStyle: "text-end !bg-transparent", fieldStyle: 'rounded-lg pb-28 bg-whiteBlack h-auto line-clamp-4 mt-0.5' }
+    { id: 1, sectionName: 'titleComment', certificate: "title", type: "text", variant: "simple", fieldStyle: 'rounded-lg py-2 bg-whiteBlack h-auto mt-0.5' },
+    { id: 2, sectionName: 'descComment', certificate: "description", type: "text", variant: "area", fieldStyle: 'rounded-lg pb-28 bg-whiteBlack h-auto line-clamp-4 mt-0.5' }
   ]
   const handleApi = (Id, values, refetch) => {
     if (!userInfo) toast.error('لطفا لاگین کنید')
-    else apiFunction(Id, values, refetch,userInfo)
+    else apiFunction(Id, values, refetch, userInfo)
   }
 
   return (
@@ -42,8 +42,6 @@ const AddComments = ({ apiFunction, Id, refetch }) => {
               sectionName={field.sectionName}
               placeholder={'comment_text'}
               style={'mb-4'}
-              errorStyleComment={field.errorStyle}
-              
             />
           )
         })}

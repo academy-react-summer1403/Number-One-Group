@@ -42,6 +42,6 @@ export const CommentValid = yup.object().shape({
   title: yup
     .string()
     .max(80, "طول نویسه بیش از حد مجاز")
-    .required("فیلد نمی تواند خالی باشد"),
-  description: yup.string().required("فیلد نمی تواند خالی باشد"),
+    .required("فیلد نمی تواند خالی باشد!"),
+  description: yup.string().required("فیلد نمی تواند خالی باشد!"),
 });
