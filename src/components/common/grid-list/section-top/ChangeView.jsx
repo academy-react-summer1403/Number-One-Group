@@ -26,7 +26,7 @@ const ChangeView = ({ setShowGrid }) => {
         <div className="md:flex hidden gap-2">
             {ButtonData.map((Button, index) => (
                 <Tooltip key={index} {...toolTipStyle} content={i18n.language == "en" ? Button.tooltip[1] : Button.tooltip[0]}>
-                    <div onClick={() => handleSearchParams(Button.id)} className={`${searchParams.get('V') == Button.id ? "bg-VioletBlue" : "bg-transparent"} cursor-pointer border border-VioletBlue p-2 rounded-md`}>
+                    <div onClick={() => handleSearchParams(Button.id)} className={`${searchParams.get('V') == Button.id ? "bg-VioletBlue" : "bg-transparent"} cursor-pointer border border-VioletBlue p-2 rounded-lg`}>
                         <Button.icon stroke={searchParams.get('V') == Button.id ? "#fff" : "#5751E1"} />
                     </div>
                 </Tooltip>

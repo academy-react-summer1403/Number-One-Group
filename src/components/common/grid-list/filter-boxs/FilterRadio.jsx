@@ -70,7 +70,7 @@ const FilterRadio = ({
               value={title + index}
               classNames={{
                 base: "w-full",
-                label: "text-GrayishPurple text-base line-clamp-1",
+                label: "text-GrayishPurple lg:text-base text-lg line-clamp-1",
                 wrapper: "w-4 h-4"
               }}
             >

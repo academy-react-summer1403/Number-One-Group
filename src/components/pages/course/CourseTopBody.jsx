@@ -14,7 +14,7 @@ const CourseTopBody = ({
 
   return (
     <div>
-      <Skeleton isLoaded={!isLoaded} className="h-8 rounded-lg">
+      <Skeleton isLoaded={!isLoaded} className="h-8 rounded-lg w-fit">
         <h1 className='text-lg line-clamp-1 mt-2 course-title text-DarkBlue group-hover/item:text-VioletBlue duration-150'>{title && title}</h1>
       </Skeleton>
       <div className='flex items-center justify-between my-2 '>

@@ -96,7 +96,7 @@ const FilterCheckBox = ({
               onChange={(e) => selectBtn(e, item)}
               classNames={{
                 base: "w-full",
-                label: "text-GrayishPurple text-base",
+                label: "text-GrayishPurple lg:text-base text-lg",
                 wrapper: "w-4 h-4"
               }}
               radius="sm"

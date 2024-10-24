@@ -5,8 +5,8 @@ const FilterSection = ({ boxs, query }) => {
     const { i18n } = useTranslation()
 
     return (
-        <div className='w-full flex justify-between'>
-            <SearchInput setQueryProp={query} maxResponsiveValue={709} minResponsiveValue={710} showSearchFilter={false} inputStyle="py-2.5 w-72 lg:w-[400px]" />
+        <div className='w-full md:flex justify-between py-4'>
+            <SearchInput setQueryProp={query} maxResponsiveValue={709} minResponsiveValue={710} showSearchFilter={false} inputStyle="py-2.5 md:w-44 lg:w-72 w-auto" holderStyle={'max-md:w-4/5 max-md:mx-auto max-md:mb-4'} />
             <div className="flex gap-x-2">
                 {boxs.map((item, index) => (
                     <SortBox
