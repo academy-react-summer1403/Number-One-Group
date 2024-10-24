@@ -13,6 +13,7 @@ const FilterSection = ({ boxs, query }) => {
                         key={index}
                         radius="full"
                         aria-label="select"
+                        label={item.label}
                         setState={item.setState}
                         options={item.sortItem}
                         placeholder={i18n.language == "en" ? "Choose" : "انتخاب کنید"}

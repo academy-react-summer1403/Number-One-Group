@@ -18,6 +18,8 @@ import { DeleteCourseFavorite } from '../../core/services/api/delete-data';
 import { CourseCard } from '../../components/pages/course';
 import { useTranslation } from 'react-i18next';
 import { MajorElements } from '../../core/constants/test-text/MajorElements';
+import { motion } from 'framer-motion';
+import configVariants from '../../config/page-transition';
 
 const CourseDetails = () => {
     const { i18n } = useTranslation()
@@ -78,8 +80,14 @@ const CourseDetails = () => {
             listTech.push(teachObj?.id);
         }
     }
+
     return (
-        <>
+        <motion.div
+            variants={configVariants}
+            initial={"initial"}
+            animate={"animate"}
+            exit={"exit"}
+        >
             <TitleSection title={title}>
                 <BreadCrumb href={'/courses'} text={'CoursesTitle'} />
                 <BreadCrumb type="Div" text={title} />
@@ -120,7 +128,7 @@ const CourseDetails = () => {
                 </MediaQuery>
             </div>
 
-        </>
+        </motion.div>
     )
 }
 export default CourseDetails

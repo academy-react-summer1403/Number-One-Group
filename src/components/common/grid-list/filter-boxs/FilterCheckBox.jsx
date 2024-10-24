@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next"
 import { useDispatch } from "react-redux";
-import checkedIcon from '../../../../../public/true.png'
 import { useSearchParams } from "react-router-dom";
+import { Checkbox, CheckboxGroup } from "@nextui-org/react";
+import { motion } from "framer-motion";
 
 const FilterCheckBox = ({
   title,
@@ -16,6 +17,7 @@ const FilterCheckBox = ({
   const Dispatch = useDispatch();
   const [searchParams, setSearchParams] = useSearchParams();
   const [checkedData, SetCheckedData] = useState(false);
+  const [selected, setSelected] = useState('')
 
   // Checkbox filtering function
   const selectBtn = (e, item) => {
@@ -48,10 +50,16 @@ const FilterCheckBox = ({
     }
   }
 
+  useEffect(() => {
+    if (isRefetching) {
+      setSelected("")
+    }
+  }, [isRefetching])
+
   return (
     <div className="filter-box max-l">
       <div className="flex justify-between">
-        <h1 className="font-semibold pb-2">{t(title)}</h1>
+        <h1 className="text-[20px] pb-2">{t(title)}</h1>
         {/* Remove Filter Button */}
         <button
           className={`bg-gray-200  p-1 text-xs rounded-xl text-red-500 hover:bg-gray-300 duration-100
@@ -71,18 +79,34 @@ const FilterCheckBox = ({
 
         </button>
       </div>
-      {labelArray && labelArray.map((item, index) => (
-        <div
-          onChange={(e) => selectBtn(e, item)}
-          key={index}
-          className="text-sm flex items-center gap-2 mediumStyle_text w-fit mt-1"
-        >
-          <input type="checkbox" checked={isRefetching ? false : null} id={title + index} name={title}
-            className={`w-4 h-4 rounded-[4px] checked:bg-[url(../../../../../public/true.png)] bg-cover checked:border-none border border-gray-500 bg-white dark:bg-gray-950 appearance-none `} />
-          <label className="cursor-pointer" htmlFor={title + index}>{item.techName}</label>
-        </div>
-      ))}
+      <CheckboxGroup
+        value={selected}
+        onValueChange={setSelected}
+        aria-label="checkbox-group"
+      >
+        {labelArray && labelArray.map((item, index) => (
+          <motion.div
+            initial={{ x: 0 }}
+            whileHover={{ x: -10 }}
+            className="h-6"
+          >
+            <Checkbox
+              key={index}
+              value={title + index}
+              onChange={(e) => selectBtn(e, item)}
+              classNames={{
+                base: "w-full",
+                label: "text-GrayishPurple text-base",
+                wrapper: "w-4 h-4"
+              }}
+              radius="sm"
+            >
+              {item.techName}
+            </Checkbox>
+          </motion.div>
 
+        ))}
+      </CheckboxGroup>
     </div>
   )
 }

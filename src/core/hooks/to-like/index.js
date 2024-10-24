@@ -1,4 +1,5 @@
 import { toast } from "react-toastify";
+import { setStatusModal } from "../../../redux/slices/LoginPopup";
 
 const handleToLike = (
   UserInfo,
@@ -10,10 +11,13 @@ const handleToLike = (
   btnStatus,
   type,
   userLikeId,
-  refetch
+  refetch,
+  dispatch
 ) => {
+
   if (!UserInfo) {
     toast.error("لطفا لاگین کنید");
+    dispatch(setStatusModal(true));
   } else {
     // Type 1
     if (variant === "courseComment") {

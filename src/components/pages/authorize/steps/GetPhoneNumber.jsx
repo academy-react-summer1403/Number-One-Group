@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next"
 import { useDispatch } from "react-redux"
-import { FormInput, FormHolder, Button } from "../../../common"
+import { FormInput, FormHolder, CustomButton } from "../../../common"
 import { mobileNumberValidation } from "../../../../core/validations/Auth.Validations"
 import { VerifyMessage } from "../../../../core/services/api/post-data"
 
@@ -33,7 +33,7 @@ const GetPhoneNumber = ({ setPhone, phone, title, description }) => {
                 variants="simple"
                 errorStyleComment="!bg-MainBg"
             />
-            <Button vType="button" vStyle="yellow" text="GetCodeBtn" style="w-full mb-5 justify-center !py-2.5 h-auto" />
+            <CustomButton vType="button" vStyle="yellow" text="GetCodeBtn" style="w-full mb-5 justify-center !py-2.5 h-auto" />
         </FormHolder>
     )
 }

@@ -2,7 +2,7 @@ import { toast } from "react-toastify";
 import http from "../../interceptor";
 import { setItem } from "../../../hooks/local-storage";
 
-const UserLogin = async (user, navigate) => {
+const UserLogin = async (user, navigate, modalState, dispatch, isModal) => {
   try {
     const response = await toast.promise(http.post("/Sign/Login", user), {
       pending: "درحال پردازش...",
@@ -13,10 +13,12 @@ const UserLogin = async (user, navigate) => {
         setItem("token", response.token);
         setTimeout(() => {
           window.location.pathname = "/";
+          dispatch(setStatusModal(false));
         }, 3000);
       } else {
         setTimeout(() => {
-          navigate("twoStep");
+          if (!isModal) navigate("twoStep");
+          else modalState(false);
         }, 3000);
       }
       toast.success(response.message);

@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { SaveIcon } from '../../../../core/icon'
-import { FormInput, FormHolder, Button } from '../../../common'
+import { FormInput, FormHolder, CustomButton } from '../../../common'
 import { ChangePasswordWithToken } from '../../../../core/validations/UserPanel.Validations'
 import ChangePassWithTokenFields from '../../../../core/constants/user-panel/ChangePasswordFields'
 import { useMutation } from '@tanstack/react-query'
@@ -38,7 +38,7 @@ const ChangePassword = () => {
                 )}
             </div>
             <div className='w-full flex justify-center mt-16'>
-                <Button Icon={SaveIcon} vStyle="yellow" vType="button" text="saveChanges" />
+                <CustomButton Icon={SaveIcon} vStyle="yellow" vType="button" text="saveChanges" />
             </div>
         </FormHolder>
     )

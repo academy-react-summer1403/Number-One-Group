@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { FormInput, FormHolder, Button } from "../../../common"
+import { FormInput, FormHolder, CustomButton } from "../../../common"
 import { getCodeValidation } from "../../../../core/validations/Auth.Validations"
 
 const GetCode = ({ phone, handleClick }) => {
@@ -23,7 +23,7 @@ const GetCode = ({ phone, handleClick }) => {
                 variants="simple"
                 errorStyleComment="!bg-MainBg"
             />
-            <Button vType="button" vStyle="yellow" text="GetCodeBtn" style="w-full mb-5 justify-center !py-2.5 h-auto" />
+            <CustomButton vType="button" vStyle="yellow" text="GetCodeBtn" style="w-full mb-5 justify-center !py-2.5 h-auto" />
         </FormHolder>
     )
 }

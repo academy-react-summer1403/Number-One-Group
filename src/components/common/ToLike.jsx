@@ -1,5 +1,5 @@
 import { BiDislike, BiLike, BiSolidDislike, BiSolidLike } from "react-icons/bi";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { AddBlogCommentLike, AddBlogDisLike, AddBlogLike, AddCourseCommentLike, AddCourseDisLike, AddCourseLike, CourseCommentDisLike } from "../../core/services/api/post-data";
 import { DeleteBlogCommentLike, DeleteBlogLike, DeleteCourseCommentLike, DeleteCourseLike } from "../../core/services/api/delete-data";
 import handleToLike from "../../core/hooks/to-like";
@@ -18,6 +18,7 @@ const ToLike = ({
     style,
 }) => {
     const UserInfo = useSelector(state => state.UserInfo.info)
+    const dispatch = useDispatch()
     // Variants
     const ApiVariant = {
         'course': [AddCourseLike, AddCourseDisLike, DeleteCourseLike],
@@ -38,7 +39,7 @@ const ToLike = ({
         <div className="flex gap-1.5">
             {/* Like Button */}
             <div onClick={() => handleToLike(UserInfo, variant, Id, ApiVariant?.[variant][0],
-                LikeStatus, ApiVariant?.[variant][2], "LIKED", true, userLikeId, refetch)}
+                LikeStatus, ApiVariant?.[variant][2], "LIKED", true, userLikeId, refetch, dispatch)}
 
                 className={`px-2 py-0.5 bg-LightLavender mediumStyle_text flex gap-0.5 items-center rounded-2xl cursor-pointer ${style}`}>
                 {statusVariant?.[variant]?.like ? <BiLike size={iconSize} /> : <BiSolidLike size={iconSize} />}
@@ -46,7 +47,7 @@ const ToLike = ({
             </div>
             {/* disLike Button */}
             <div onClick={() => handleToLike(UserInfo, variant, Id, ApiVariant?.[variant][1],
-                variant == 'courseComment' ? LikeStatus : DissLikeStatus, ApiVariant?.[variant][2], "DISSLIKED", false, userLikeId, refetch)}
+                variant == 'courseComment' ? LikeStatus : DissLikeStatus, ApiVariant?.[variant][2], "DISSLIKED", false, userLikeId, refetch, dispatch)}
 
                 className={`px-2 py-0.5 bg-LightLavender mediumStyle_text flex gap-0.5 items-center rounded-2xl cursor-pointer ${style}`}>
                 {statusVariant?.[variant]?.disLike ? <BiDislike size={iconSize} /> : <BiSolidDislike size={iconSize} />}

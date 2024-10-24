@@ -1,26 +1,25 @@
 import { Link } from "react-router-dom"
-import { LogoGroup } from "../../common"
-import { CartIcon, UserIcon } from "../../../core/icon"
+import { HomeBtnPanelIcon, BasketIcon } from "../../../core/icon"
 import { Tooltip } from "@nextui-org/react"
 import tooltipStyle from "../../../core/constants/tooltip-style"
 import { useTranslation } from "react-i18next"
+import { LogoGroup } from "../../common"
 
 const UserPanelHeader = () => {
     const { i18n } = useTranslation()
 
     return (
-        <div className="w-full flex justify-between items-center">
-            <LogoGroup color={'text-VioletBlue'} />
-            <div className="h-full flex items-end gap-x-4">
+        <div className='w-full flex gap-x-4 items-center justify-between'>
+            <LogoGroup />
+            <div className="flex gap-x-4">
                 <Tooltip {...tooltipStyle} content={i18n.language == "en" ? "Cart" : "سبد خرید"}>
-                    <Link to={"/cart"} className="w-[37px] h-[37px] flex justify-center items-center relative">
-                        <CartIcon />
-                        <div className="w-5 h-5 text-center text-white rounded-full bg-SunshineYellow text-sm absolute -bottom-1 -right-1">1</div>
+                    <Link to="/cart" className='cursor-pointer hover:scale-110 duration-200'>
+                        <BasketIcon width="26" height="26" className="stroke-[#5751E1]" />
                     </Link>
                 </Tooltip>
-                <Tooltip {...tooltipStyle} content={i18n.language == "en" ? "User Account" : "حساب کاربری"}>
-                    <Link className="w-[47px] h-[47px] rounded-full bg-VioletBlue flex justify-center items-center">
-                        <UserIcon width="26px" height="26px" />
+                <Tooltip {...tooltipStyle} content={i18n.language == "en" ? "Home" : "خانه"}>
+                    <Link to="/" className='cursor-pointer hover:scale-110 duration-200'>
+                        <HomeBtnPanelIcon width="30" height="30" fill="#5751E1" />
                     </Link>
                 </Tooltip>
             </div>

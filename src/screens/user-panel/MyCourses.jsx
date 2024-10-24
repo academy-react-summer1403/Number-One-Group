@@ -16,7 +16,7 @@ const MyCourses = () => {
   const { data, isSuccess, isError, isLoading } = useQueryWithDependencies("MY_COURSE_LIST", GetMyCourses, MyCoursesFilter, MyCoursesFilter)
 
   const sortBox = [
-    { setState: setSortingCol, sortItem: i18n.language == "en" ? sortColOptions_MyCourses_En : sortColOptions_MyCourses_Fa },
+    { setState: setSortingCol, sortItem: i18n.language == "en" ? sortColOptions_MyCourses_En : sortColOptions_MyCourses_Fa, label: "سورت بر اساس..." },
   ]
 
   return (

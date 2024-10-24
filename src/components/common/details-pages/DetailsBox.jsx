@@ -6,13 +6,14 @@ import {
   WhatsAppIcon,
   YouTubeIcon
 } from "../../../core/icon";
-// import { Button, CreateSocialMediaItems } from ".";
+// import { CustomButton, CreateSocialMediaItems } from ".";
 import { UnitPrice } from "../../../core/utility/SeparationPrice";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
-import Button from "../Button";
+import CustomButton from "../Button";
 import CreateSocialMediaItems from "../CreateSocialMediaItems";
 import paymentIcon from '../../../assets/images/payment.png'
+import { setStatusModal } from "../../../redux/slices/LoginPopup";
 
 export const detailVariant = {
   "course-detail": "lg:w-72 mb-8",
@@ -39,11 +40,11 @@ const DetailsBox = ({
   reserveStatus,
 }) => {
   const userInfo = useSelector(state => state.UserInfo.info);
-
+  const dispatch = useDispatch()
   // Add course reserve function
   const itemReserve = () => {
     if (userInfo) {
-      console.log(reserveStatus) 
+      console.log(reserveStatus)
       if (reserveStatus == 1) {
         toast.error('دوره مورد نظر قبلا رزرو شده')
       }
@@ -51,7 +52,10 @@ const DetailsBox = ({
         actionReserve(id);
       }
     }
-    else { alert('لطفا لاگین کنید!') }
+    else {
+      toast.error('لطفا لاگین کنید!')
+      dispatch(setStatusModal(true));
+    }
   }
 
   const { t, i18n } = useTranslation();
@@ -64,8 +68,8 @@ const DetailsBox = ({
   ]
 
   return (
-    <div data-aos={`fade-${i18n.language === 'fa' ? 'left' : 'right'}`} data-aos-duration="700" 
-    className={`Box-shadow1 p-5 h-fit bg-MainBg rounded-lg border border-LightLavender flex flex-wrap justify-center ${detailVariant?.[variant]}`}>
+    <div data-aos={`fade-${i18n.language === 'fa' ? 'left' : 'right'}`} data-aos-duration="700"
+      className={`Box-shadow1 p-5 h-fit bg-MainBg rounded-lg border border-LightLavender flex flex-wrap justify-center ${detailVariant?.[variant]}`}>
       {/* price Info */}
       <div className="bg-VioletBlue px-4 py-3 w-full min-w-52 shadow-[0_0_10px_1px_rgba(13,9,99,0.36)] text-white rounded-lg flex flex-wrap justify-center gap-y-3">
         <h1 className="text-xs w-full">{t(priceInfoVariant?.[variant])}:</h1>
@@ -100,7 +104,7 @@ const DetailsBox = ({
           </div>
         )}
       </div>
-      <Button isClick={itemReserve} arrowColor={arrowColor} vType={"button"} vStyle={colorButton} text={btnText} style="mb-2 mt-6 border-2 border-black" />
+      <CustomButton isClick={itemReserve} arrowColor={arrowColor} vType={"button"} vStyle={colorButton} text={btnText} style="mb-2 mt-6 border-2 border-black" />
     </div>
   )
 }

@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next"
-import { FormInput, FormHolder, Button } from "../../../common"
+import { FormInput, FormHolder, CustomButton } from "../../../common"
 import { UserRegister } from "../../../../core/services/api/post-data"
 
 const GetUserInfo = ({ phone }) => {
@@ -39,7 +39,7 @@ const GetUserInfo = ({ phone }) => {
                     errorStyleComment="!bg-MainBg"
                 />)
             )}
-            <Button vType="button" vStyle="yellow" text="GetUserInfoBtn" style="w-full mb-5 justify-center !py-2.5 h-auto" />
+            <CustomButton vType="button" vStyle="yellow" text="GetUserInfoBtn" style="w-full mb-5 justify-center !py-2.5 h-auto" />
         </FormHolder>
     )
 }

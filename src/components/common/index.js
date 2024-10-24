@@ -1,6 +1,6 @@
 import HowToStart from "./howToStart";
 import InformedPoster from "./informedPoster";
-import Button from "./Button";
+import CustomButton from "./Button.jsx";
 import CreateSocialMediaItems from "./CreateSocialMediaItems.jsx";
 import Label from "./Label";
 import OptionParts from "./OptionParts";
@@ -41,11 +41,14 @@ import {
   SortBox,
   SortBoxHolder,
 } from "./grid-list";
+import LoadingSpinner from "./LoadingSpinner.jsx";
+import PopupLoginWrapper from "./popupLogin";
+import ScrollProgressBar from "./ScrollProgressBar.jsx";
 
 export {
   HowToStart,
   InformedPoster,
-  Button,
+  CustomButton,
   CreateSocialMediaItems,
   Label,
   OptionParts,
@@ -84,4 +87,7 @@ export {
   RelatedItems,
   OfflineWarning,
   SetRate,
+  LoadingSpinner,
+  PopupLoginWrapper,
+  ScrollProgressBar,
 };

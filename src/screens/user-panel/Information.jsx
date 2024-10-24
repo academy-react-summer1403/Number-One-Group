@@ -1,5 +1,5 @@
 import { EditIcon, UserIcon } from '../../core/icon'
-import { Button } from '../../components/common'
+import { CustomButton } from '../../components/common'
 import { useTranslation } from 'react-i18next'
 import { CreateInformationSection } from '../../components/pages/user-panel'
 import { RightSection, LeftSection } from "../../core/constants/user-panel/InformationItems"
@@ -14,7 +14,7 @@ const Information = () => {
       </div>
       <CreateInformationSection section={RightSection()} styleSection={"border-l border-LightGrayish"} />
       <CreateInformationSection section={LeftSection()} map />
-      <Button Icon={EditIcon} href="/userPanel/editInformation" text={t("edit")} vStyle="yellow" vType={"link"} style="mt-10 w-32 justify-center" />
+      <CustomButton Icon={EditIcon} href="/userPanel/editInformation" text={t("edit")} vStyle="yellow" vType={"link"} style="mt-10 w-32 justify-center" />
     </div>
   )
 }

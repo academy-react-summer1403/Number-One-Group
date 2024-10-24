@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { CourseCard, FilterSide_Courses } from "../../components/pages/course"
 import { setInstructorId, setLevelId, setListTech, setPageNumber, setPriceDown, setPriceUp, setQueryCourse, setRowsOfPage, setSortCal, setSortType, setTechCount, setTypeId } from "../../redux/slices/filter-box-slices/FilterCourses"
 import MediaQuery, { useMediaQuery } from "react-responsive";
-import { ChangeView, CreateModal, SectionTop, SortBox, SortBoxHolder, RenderItemsList, PaginatedItems, PaginateHolderItems } from "../../components/common";
+import { ChangeView, CreateModal, SectionTop, SortBox, SortBoxHolder, RenderItemsList, PaginatedItems, PaginateHolderItems, LoadingSpinner } from "../../components/common";
 import { IoFilter } from "react-icons/io5"
 import { Tooltip, useDisclosure } from "@nextui-org/react";
 import { CloseIcon } from "../../core/icon";
@@ -15,6 +15,8 @@ import { sortingOptionsType_Course_Fa, sortingOptionsType_Course_En, sortOptionC
 import { useQueryWithDependencies, useQueryWithoutDependencies } from "../../core/hooks/react-query";
 import { useSearchParams } from "react-router-dom";
 import { courseFilterParams} from "../../core/constants/filter-params";
+import { motion } from "framer-motion";
+import configVariants from "../../config/page-transition";
 
 const Courses = () => {
     const { t, i18n } = useTranslation();
@@ -52,7 +54,12 @@ const Courses = () => {
     const { data: coursesLength, isSuccess: coursesLengthFinished } = useQueryWithoutDependencies("GET_COURSES_LENGTH", GetAllCourseByPagination)
 
     return (
-        <>
+        <motion.div
+            variants={configVariants}
+            initial={"initial"}
+            animate={"animate"}
+            exit={"exit"}
+        >
             <TitleSection title={'CoursesTitle'} >
                 <BreadCrumb type="Div" text={'CoursesTitle'} />
             </TitleSection>
@@ -109,7 +116,7 @@ const Courses = () => {
                     </PaginateHolderItems>
                 </div>
             </div>
-        </>
+        </motion.div>
     )
 }
 

@@ -1,27 +1,25 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import { useTranslation } from "react-i18next";
-import { useSelector } from "react-redux";
-import { BottomNav, OfflineWarning } from "../components/common";
-import { routerPublic, routerPrivate } from "../router";
+import { BottomNav, OfflineWarning, PopupLoginWrapper } from "../components/common";
 import ToastAlert from "../components/common/ToastAlert";
 import { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import { getItem } from "../core/hooks/local-storage";
+import { AnimatePresence } from "framer-motion";
+import RouterComponent from "../router";
 
 const App = () => {
   const { i18n } = useTranslation()
-  const isLogin = useSelector(state => state.UserInfo.info)
-  const token = getItem("token")
-  const router = createBrowserRouter(isLogin || token ? routerPrivate : routerPublic);
 
   useEffect(() => { Aos.init() }, [])
 
   return (
     <main dir={i18n.language === 'fa' ? 'rtl' : 'ltr'} className={`bg-MainBg  ${i18n.language === 'fa' ? 'font-IranSans' : 'font-Pop_Med'}`}>
-      <RouterProvider router={router} />
+      <AnimatePresence mode="wait">
+        <RouterComponent />
+      </AnimatePresence>
       <ToastAlert />
       <OfflineWarning />
+      <PopupLoginWrapper />
       <BottomNav />
     </main>
   )

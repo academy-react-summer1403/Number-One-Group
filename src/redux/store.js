@@ -10,6 +10,7 @@ import {
   MyReserved,
   MyViews,
   LoginInfo,
+  LoginPopup,
 } from "./slices";
 
 const store = configureStore({
@@ -24,6 +25,7 @@ const store = configureStore({
     MyReserved,
     MyViews,
     LoginInfo,
+    LoginPopup,
   },
 });
 

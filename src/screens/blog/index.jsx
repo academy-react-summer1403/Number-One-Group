@@ -14,6 +14,8 @@ import { BreadCrumb, TitleSection } from "../../components/partials/title-sectio
 import { useSearchParams } from "react-router-dom";
 import { blogFilterParams } from "../../core/constants/filter-params";
 
+import { motion } from "framer-motion";
+import configVariants from "../../config/page-transition";
 
 const Blog = () => {
     const { t, i18n } = useTranslation();
@@ -54,7 +56,12 @@ const Blog = () => {
     const { data: blogLength, isSuccess: blogLengthFinished } = useQueryWithoutDependencies("GET_BLOG-LENGTH", GetNewsFilterPage)
 
     return (
-        <>
+        <motion.div
+            variants={configVariants}
+            initial={"initial"}
+            animate={"animate"}
+            exit={"exit"}
+        >
             <TitleSection title={'BlogSection'} >
                 <BreadCrumb type="Div" text="BlogSection" />
             </TitleSection>
@@ -102,7 +109,7 @@ const Blog = () => {
                     </PaginateHolderItems>
                 </div>
             </div>
-        </>
+        </motion.div>
     )
 }
 

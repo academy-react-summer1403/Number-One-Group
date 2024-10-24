@@ -31,7 +31,7 @@ const Reserved = () => {
   const filteredData = data?.filter(item => item.courseName.indexOf(ReservedState.Query) != -1).slice(itemOffset, endOffset)
 
   const sortBox = [
-    { setState: setSortingCurrent, sortItem: sortCurrentOffset, }
+    { setState: setSortingCurrent, sortItem: sortCurrentOffset, label: "تعداد سطر" }
   ]
 
   return (

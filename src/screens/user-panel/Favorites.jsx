@@ -72,30 +72,30 @@ const Favorites = () => {
   }, [favoriteCoursesStatus, courseSuccess, blogSuccess])
 
   const sortBox = [
-    { defaultKey: 1, setState: setSortingCol, sortItem: i18n.language == "fa" ? sortOptionChooseList_Fa : sortOptionChooseList_En },
-    { setState: setSortingCurrent, sortItem: sortCurrentOffset, }
+    { defaultKey: 1, setState: setSortingCol, sortItem: i18n.language == "fa" ? sortOptionChooseList_Fa : sortOptionChooseList_En, label: "بخش مورد نظر" },
+    { setState: setSortingCurrent, sortItem: sortCurrentOffset, label: "تعداد سطر" }
   ]
 
-  return (
-    <div className="w-full flex flex-wrap h-fit -mt-8">
-      <FilterSection boxs={sortBox} query={setQuery} />
-      <PaginateHolderItems style="justify-center h-[685px] border-t-2 border-gray-100 mt-3 pt-4">
-        <PaginatedItems currentData={count} currentDataInOnePage={sortingCurrent} setState={setItemOffset} >
-          <div className="overflow-x-auto w-full lg:overflow-x-hidden">
-            <Table sectionHeader={favoriteCoursesStatus ? MyCourseFavoriteHeader : MyBlogFavoriteHeader} itemsWidth="23">
-              <RenderItemsList
-                isLoading={favoriteCoursesStatus ? courseLoading : blogLoading}
-                isSuccess={favoriteCoursesStatus ? courseSuccess : blogSuccess}
-                isError={favoriteCoursesStatus ? courseError : blogError}
-                originalData={Query !== undefined ? filteredData : myFavoriteData}
-                {...params}
-              />
-            </Table>
-          </div>
-        </PaginatedItems>
-      </PaginateHolderItems>
-    </div>
-  )
+return (
+  <div className="w-full flex flex-wrap h-fit -mt-8">
+    <FilterSection boxs={sortBox} query={setQuery} />
+    <PaginateHolderItems style="justify-center h-[685px] border-t-2 border-gray-100 mt-3 pt-4">
+      <PaginatedItems currentData={count} currentDataInOnePage={sortingCurrent} setState={setItemOffset} >
+        <div className="overflow-x-auto w-full lg:overflow-x-hidden">
+          <Table sectionHeader={favoriteCoursesStatus ? MyCourseFavoriteHeader : MyBlogFavoriteHeader} itemsWidth="23">
+            <RenderItemsList
+              isLoading={favoriteCoursesStatus ? courseLoading : blogLoading}
+              isSuccess={favoriteCoursesStatus ? courseSuccess : blogSuccess}
+              isError={favoriteCoursesStatus ? courseError : blogError}
+              originalData={Query !== undefined ? filteredData : myFavoriteData}
+              {...params}
+            />
+          </Table>
+        </div>
+      </PaginatedItems>
+    </PaginateHolderItems>
+  </div>
+)
 }
 
 export default Favorites

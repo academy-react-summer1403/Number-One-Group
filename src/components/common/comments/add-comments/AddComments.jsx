@@ -1,12 +1,14 @@
 import { useTranslation } from "react-i18next"
 import FormHolder from "../../form/FormHolder";
 import FormInput from "../../form/FormInput";
-import Button from "../../Button";
+import CustomButton from "../../Button";
 import { CommentValid } from "../../../../core/validations/Auth.Validations";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
+import { setStatusModal } from "../../../../redux/slices/LoginPopup";
 
 const AddComments = ({ apiFunction, Id, refetch }) => {
+  const dispatch = useDispatch()
 
   const { t, } = useTranslation();
 
@@ -18,7 +20,10 @@ const AddComments = ({ apiFunction, Id, refetch }) => {
     { id: 2, sectionName: 'descComment', certificate: "description", type: "text", variant: "area", fieldStyle: 'rounded-lg pb-28 bg-whiteBlack h-auto line-clamp-4 mt-0.5' }
   ]
   const handleApi = (Id, values, refetch) => {
-    if (!userInfo) toast.error('لطفا لاگین کنید')
+    if (!userInfo) {
+      toast.error('لطفا لاگین کنید')
+      dispatch(setStatusModal(true));
+    }
     else apiFunction(Id, values, refetch, userInfo)
   }
 
@@ -45,7 +50,7 @@ const AddComments = ({ apiFunction, Id, refetch }) => {
             />
           )
         })}
-        <Button vType="button" arrowColor={"#000"} vStyle="yellow" text="sendComment" style="border sm:mx-0 mx-auto w-fit !px-10  mt-6 mb-4 justify-center !py-1.5 h-auto" />
+        <CustomButton vType="button" arrowColor={"#000"} vStyle="yellow" text="sendComment" style="border sm:mx-0 mx-auto w-fit !px-10  mt-6 mb-4 justify-center !py-1.5 h-auto" />
       </FormHolder>
     </div>
   )

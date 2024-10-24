@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import SearchBtn from "./SearchBtn";
-import { Select, SelectItem} from "@nextui-org/react";
-import { useState } from "react";
+import { Select, SelectItem } from "@nextui-org/react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { setQueryCourse } from "../../../redux/slices/filter-box-slices/FilterCourses";
 import { setQueryBlog } from "../../../redux/slices/filter-box-slices/FilterBlog";
@@ -13,38 +13,45 @@ const SearchInput = ({ showSearchFilter = true, inputStyle, holderStyle, setQuer
     const { t, i18n } = useTranslation();
     const dispatch = useDispatch()
     const [SearchValue, setSearchValue] = useState("1")
-    const [statusSearch, setStatusSearch] = useState(false)
     const Navigate = useNavigate()
+    const [initialSearchValue, setInitialSearchValue] = useState("")
     const selectItems = i18n.language === 'fa' ? selectItems_FA : selectItems_EN
 
     // Find the searched item
-    const location = useLocation()
+    const { pathname } = useLocation()
     const Path = SearchValue && selectItems.find(el => el.id == SearchValue)
-    const pageSearch = selectItems.find(el => el.path == location.pathname)
+    // const pageSearch = selectItems.find(el => el.path == location.pathname)
 
     // Select the desired setQuery
     const setHeaderQuery = SearchValue == 1 ? setQueryCourse : setQueryBlog;
     const setQuerySel = setQuery ?? setHeaderQuery;
-    const [status, setStatus] = useState(false)
-
 
     // Set the search input value to the desired query
-    const SetFilterQuery = (e) => {
-        if (statusSearch) {
-            if (e.target.value !== "") { dispatch(setQuerySel(e.target.value)); setStatus(true) }
-            else { dispatch(setQuerySel(undefined)); setStatus(false) }
+    const SetFilterQuery = () => {
+        if (initialSearchValue != "") {
+            dispatch(setQuerySel(initialSearchValue));
+            Navigate(Path.path);
         }
+        else { dispatch(setQuerySel(undefined)); }
     }
+
+    const handleDisabledKeys = () => {
+        if (pathname == "/courses") setSearchValue("2")
+        if (pathname == "/blog") setSearchValue("1")
+    }
+
+    useEffect(() => { handleDisabledKeys() }, [pathname])
 
     return (
         <div className={`w-fit border border-LightGrayish py-0.5 overflow-hidden px-px text-sm 
-        flex justify-between items-center rounded-full ${holderStyle} ${pageSearch ? "hidden" : ""}`}>
+        flex justify-between items-center rounded-full ${holderStyle}`}>
             <div className="w-[90%] flex items-center">
                 {/* category Section */}
                 {showSearchFilter && (
                     <Select
                         radius="none"
                         items={selectItems}
+                        disabledKeys={pathname == "/courses" ? ["1"] : null || pathname == "/Blog" ? ["2"] : null}
                         selectedKeys={[SearchValue]}
                         className={`w-[130px] ${i18n.language == "en" ? "border-r-2" : "border-l-2"} border-LightGrayish h-[25px] flex items-center`}
                         classNames={{
@@ -69,11 +76,11 @@ const SearchInput = ({ showSearchFilter = true, inputStyle, holderStyle, setQuer
                     </Select>
                 )}
                 {/* Search Input */}
-                <input onChange={(e) => SetFilterQuery(e)} type="text" placeholder={t(Path.placeHolder)} className={`w-[200px] h-fit outline-none px-4 ${inputStyle} bg-transparent`} />
+                <input onChange={(e) => setInitialSearchValue(e.target.value)} defaultValue={''} type="text" placeholder={t(Path.placeHolder)} className={`w-[200px] h-fit outline-none px-4 ${inputStyle} bg-transparent`} />
             </div>
-            <Popover placement="bottom" showArrow={true} className={`${status ? 'hidden' : ''}`}>
+            <Popover placement="bottom" showArrow={true} className={`${initialSearchValue != "" ? 'hidden' : ''}`}>
                 <PopoverTrigger>
-                    <button onClick={() => { if (status) Navigate(Path.path); setStatusSearch(true)}}>
+                    <button onClick={SetFilterQuery} >
                         <SearchBtn />
                     </button>
                 </PopoverTrigger>
@@ -83,7 +90,6 @@ const SearchInput = ({ showSearchFilter = true, inputStyle, holderStyle, setQuer
                     </div>
                 </PopoverContent>
             </Popover>
-
         </div>
     )
 }

@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next"
-import { Label, SwiperSlider } from "../../common"
+import { Label, SwiperSlider, CustomButton } from "../../common"
 import { useSelector } from "react-redux"
 import { GetNewsFilterPage } from "../../../core/services/api/get-data"
 import { useQueryWithoutDependencies } from "../../../core/hooks/react-query"
@@ -11,7 +11,7 @@ const LastBlogs = () => {
   const { t } = useTranslation()
   const theme = useSelector(state => state.DarkMode)
 
-  const { data, isSuccess ,refetch} = useQueryWithoutDependencies("GET_BLOG_LIST", GetNewsFilterPage)
+  const { data, isSuccess, refetch } = useQueryWithoutDependencies("GET_BLOG_LIST", GetNewsFilterPage)
 
   return (
     <div className={`w-full py-28 lg:px-44 sm:px-16 px-8 flex flex-wrap gap-y-4 justify-center ${theme ? "bg-gradientBackgroundDark" : "bg-gradientBackground"} bg-cover bg-center bg-no-repeat`}>
@@ -33,11 +33,12 @@ const LastBlogs = () => {
         >
           {isSuccess && data.news?.map(item => (
             <SwiperSlide key={item.id}>
-              <BlogCard item={item} refetch={refetch}/>
+              <BlogCard item={item} refetch={refetch} />
             </SwiperSlide>
           ))}
         </SwiperSlider>
       </div>
+      <CustomButton href="/Blog?V=1" text={t("viewAll")} style="mt-10" vType={"link"} vStyle={"purple"} arrowColor="#fff" />
     </div>
   )
 }

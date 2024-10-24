@@ -9,13 +9,20 @@ import {
     Statistics,
     TopCourses
 } from "../../components/pages/landing";
+import { motion } from "framer-motion";
+import configVariants from "../../config/page-transition";
 
 const Landing = () => {
     return (
-        <>
+        <motion.div
+            variants={configVariants}
+            initial={"initial"}
+            animate={"animate"}
+            exit={"exit"}
+        >
             <HeroSection />
-            <Categories />
             <AboutUs />
+            <Categories />
             <TopCourses />
             <InformedPoster />
             <SkilledTeachers />
@@ -23,7 +30,7 @@ const Landing = () => {
             <Faq />
             <HowToStart />
             <LastBlogs />
-        </>
+        </motion.div>
     )
 }
 

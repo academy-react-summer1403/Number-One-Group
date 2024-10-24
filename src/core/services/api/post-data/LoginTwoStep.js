@@ -2,7 +2,7 @@ import { toast } from "react-toastify";
 import http from "../../interceptor";
 import { setItem } from "../../../hooks/local-storage";
 
-const LoginTwoStep = async (code, user) => {
+const LoginTwoStep = async (code, user, dispatch) => {
   try {
     const response = await http.post(
       `/Sign/LoginTwoStep?VrifyCode=${code}`,
@@ -13,6 +13,7 @@ const LoginTwoStep = async (code, user) => {
       setItem("token", response.token);
       setTimeout(() => {
         window.location.pathname = "/";
+        dispatch(false);
       }, 3000);
       toast.success(response.message);
     } else {
