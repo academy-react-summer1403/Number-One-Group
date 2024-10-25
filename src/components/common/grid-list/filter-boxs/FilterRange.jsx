@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { SeparationPrice } from "../../../../core/utility/SeparationPrice";
 import { useDispatch } from "react-redux";
+import { useSearchParams } from "react-router-dom";
 
 const FilterRange = ({
   title,
@@ -14,10 +15,14 @@ const FilterRange = ({
   const { t } = useTranslation();
   const Dispatch = useDispatch();
   const [value, setValue] = useState([0, 1000000000]);
+  const [searchParams, setSearchParams] = useSearchParams();
   const handleInput = (event) => {
     setValue(event)
+    searchParams.set("CostDown",event[0])
+    searchParams.set("CostUp",event[1])
     Dispatch(setPriceDown(event[0]))
     Dispatch(setPriceUp(event[1]))
+    setSearchParams(searchParams);
   };
   return (
     <div className="filter-box relative">

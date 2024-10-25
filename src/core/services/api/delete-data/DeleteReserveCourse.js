@@ -9,7 +9,7 @@ const DeleteReserveCourse = async (id) => {
       }),
       {
         pending: "درحال ثبت شدن...",
-        success: "نظر شما برداشته شد",
+        success: "دوره با موفقیت حذف شد",
       }
     );
 

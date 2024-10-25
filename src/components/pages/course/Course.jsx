@@ -1,12 +1,15 @@
-import { Link } from "react-router-dom"
+import { Link, useSearchParams } from "react-router-dom"
 import { FavoriteBtn, ImageFallBack } from "../../common"
 import CourseCenterBody from "./CourseCenterBody"
 import CourseDownBody from "./CourseDownBody"
 import CourseTopBody from "./CourseTopBody"
 import { Skeleton } from "@nextui-org/react";
 import NotFoundImg from "../../../assets/images/image-not-found.png"
+import { useMediaQuery } from "react-responsive"
 
 const CourseCard = ({ loading, refetch, item }) => {
+    const [searchParams, setSearchParams] = useSearchParams()
+    const isTabletOrLapTop = useMediaQuery({ query: '(min-width: 768px)' })
     const {
         courseId: id,
         title,
@@ -31,18 +34,17 @@ const CourseCard = ({ loading, refetch, item }) => {
     return (
         <>
             <div data-aos="fade-up" className="border border-LightGrayish p-4 pb-3 grid-item w-[300px] h-[435px] rounded-lg hover:shadow-lg duration-200  m-auto relative  group/item">
-                <div className="w-full h-44 course-height-img mx-auto  rounded-lg">
+                <div className="w-full h-44 course-height-img mx-auto rounded-lg">
                     <Link to={`/CourseDetails/${id}`}>
                         <Skeleton isLoaded={!loading} className="h-44 rounded-lg">
                             <ImageFallBack
                                 src={images}
                                 alt={'coursePicture'}
                                 fallback={NotFoundImg}
-                                className={'w-full h-44 shadow-xl rounded-md'}
+                                className={`w-full shadow-xl rounded-md ${searchParams.get('V') == 2 && isTabletOrLapTop ? 'h-[227px]' : 'h-44'}`}
                             />
                         </Skeleton>
                     </Link >
-
                     <div className="flex justify-center gap-8 my-3">
                         <FavoriteBtn isLoading={loading}
                             variantStyle={"card"}

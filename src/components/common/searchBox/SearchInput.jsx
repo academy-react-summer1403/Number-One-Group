@@ -9,13 +9,14 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { Popover, PopoverTrigger, PopoverContent } from "@nextui-org/react";
 import { selectItems_EN, selectItems_FA } from "../../../core/constants/sort";
 
-const SearchInput = ({ showSearchFilter = true, inputStyle, holderStyle, setQuery }) => {
+const SearchInput = ({ setQueryProp, showSearchFilter = true, inputStyle, holderStyle, setQuery }) => {
     const { t, i18n } = useTranslation();
     const dispatch = useDispatch()
     const [SearchValue, setSearchValue] = useState("1")
     const Navigate = useNavigate()
     const [initialSearchValue, setInitialSearchValue] = useState("")
-    const selectItems = i18n.language === 'fa' ? selectItems_FA : selectItems_EN
+    const selectItems = i18n.language === 'fa' ? selectItems_FA : selectItems_EN;
+    const clickStatus = location.pathname.includes('userPanel');
 
     // Find the searched item
     const { pathname } = useLocation()
@@ -28,11 +29,16 @@ const SearchInput = ({ showSearchFilter = true, inputStyle, holderStyle, setQuer
 
     // Set the search input value to the desired query
     const SetFilterQuery = () => {
-        if (initialSearchValue != "") {
-            dispatch(setQuerySel(initialSearchValue));
-            Navigate(Path.path);
+        if (!clickStatus) {
+            if (initialSearchValue != "") {
+                dispatch(setQuerySel(initialSearchValue));
+                Navigate(Path.path);
+            }
+            else { dispatch(setQuerySel(undefined)); }
         }
-        else { dispatch(setQuerySel(undefined)); }
+    }
+    const SetQueryProps = (value) => {
+        dispatch(setQueryProp(value))
     }
 
     const handleDisabledKeys = () => {
@@ -43,7 +49,7 @@ const SearchInput = ({ showSearchFilter = true, inputStyle, holderStyle, setQuer
     useEffect(() => { handleDisabledKeys() }, [pathname])
 
     return (
-        <div className={`w-fit border border-LightGrayish py-0.5 overflow-hidden px-px text-sm 
+        <div className={`w-fit border border-LightGrayish py-0.5  overflow-hidden text-sm 
         flex justify-between items-center rounded-full ${holderStyle}`}>
             <div className="w-[90%] flex items-center">
                 {/* category Section */}
@@ -76,7 +82,7 @@ const SearchInput = ({ showSearchFilter = true, inputStyle, holderStyle, setQuer
                     </Select>
                 )}
                 {/* Search Input */}
-                <input onChange={(e) => setInitialSearchValue(e.target.value)} defaultValue={''} type="text" placeholder={t(Path.placeHolder)} className={`w-[200px] h-fit outline-none px-4 ${inputStyle} bg-transparent`} />
+                <input onChange={(e) => { setInitialSearchValue(e.target.value); SetQueryProps(e.target.value) }} defaultValue={''} type="text" placeholder={t(Path.placeHolder)} className={`w-[200px]  h-fit outline-none px-4 ${inputStyle} bg-transparent`} />
             </div>
             <Popover placement="bottom" showArrow={true} className={`${initialSearchValue != "" ? 'hidden' : ''}`}>
                 <PopoverTrigger>

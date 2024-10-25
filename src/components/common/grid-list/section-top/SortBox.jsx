@@ -18,11 +18,11 @@ const SortBox = ({ options, defaultKey, placeholder, setState, ...props }) => {
 
     return (
         <Select
-            radius='sm'
+            radius='md'
             aria-label="select"
             items={options}
             placeholder={placeholder}
-            className="w-[150px]"
+            className="w-[180px] mx-auto"
             onChange={(e) => { handleChange(e.target.value) }}
             defaultSelectedKeys={defaultKey ? [defaultKey] : null}
             classNames={{

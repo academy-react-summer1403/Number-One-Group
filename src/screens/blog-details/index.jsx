@@ -2,13 +2,13 @@ import { useParams } from "react-router-dom";
 import BreadCrumb from "../../components/partials/title-section/BreadCrumb"
 import TitleSection from "../../components/partials/title-section/TitleSection"
 import { useQueryWithDependencies } from "../../core/hooks/react-query";
-import { GetBlogsComments, GetBlogWithId, GetNewsFilterPage, GetReplayBlogComment, GetReplayCourseComment } from "../../core/services/api/get-data";
+import { GetBlogsComments, GetBlogWithId, GetNewsFilterPage, GetReplayBlogComment} from "../../core/services/api/get-data";
 import { CommentSection, FeedbackSection, ImageFallBack, OverView_Details, RelatedItems } from "../../components/common";
 import { BlogCard } from "../../components/pages/blog";
 import NotFoundImg from "../../assets/images/image-not-found.png"
 import { BlogBiography, DetailsSection } from "../../components/pages/blog-details";
 import { MajorElements } from "../../core/constants/test-text/MajorElements";
-import { AddBlogComment, AddReplayBlogComment } from "../../core/services/api/post-data";
+import { AddBlogComment, AddBlogRate, AddReplayBlogComment } from "../../core/services/api/post-data";
 import { useTranslation } from "react-i18next";
 import ChangeMoment from "../../core/utility/moment";
 import { motion } from "framer-motion";
@@ -28,15 +28,15 @@ const BlogDetails = () => {
     const {
         title, newsCatregoryId, currentImageAddress, newsCatregoryName, updateDate, currentView, commentsCount,
         googleDescribe, miniDescribe, currentUserLikeId, likeCount, dissLikeCount, currentUserIsLike,
-        currentUserIsDissLike, currentUserFavoriteId, isCurrentUserFavorite
+        currentUserIsDissLike, currentUserFavoriteId, isCurrentUserFavorite,currentUserSetRate,currentUserRateNumber
     } = isSuccess && blogData.detailsNewsDto
 
     // to like params
     const feedBackParams = {
         variant: 'blog', userLikeId: currentUserLikeId, likeNumber: likeCount, disLikeNumber: dissLikeCount,
         LikeStatus: currentUserIsLike, DissLikeStatus: currentUserIsDissLike, Id: id, favoriteId: currentUserFavoriteId,
-        refetch: refetch, userFavorite: isCurrentUserFavorite,
-        favoriteText: 'CourseFavorite'
+        refetch: refetch, userFavorite: isCurrentUserFavorite,actionRate:AddBlogRate,rateStatus: currentUserSetRate,
+        favoriteText: 'blogFavorite',rateNumber:currentUserRateNumber
     }
 
     return (
@@ -82,7 +82,7 @@ const BlogDetails = () => {
                         apiFunction={AddBlogComment}
                         variant={'blogDetails'}
                         replayComment={AddReplayBlogComment}
-                        getReplay={GetReplayCourseComment}
+                        getReplay={GetReplayBlogComment}
                         data={commentData}
                         commentSuccess={commentSuccess}
                         refetch={refetchComment}

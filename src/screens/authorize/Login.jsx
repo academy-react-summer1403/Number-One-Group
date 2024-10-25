@@ -7,6 +7,7 @@ import { UserLogin } from '../../core/services/api/post-data'
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { setKeys } from '../../redux/slices/LoginInfo'
+import { Checkbox } from '@nextui-org/react'
 
 const Login = () => {
     const context = useOutletContext()
@@ -22,6 +23,7 @@ const Login = () => {
     useEffect(() => { context.setVector(Vector) }, [])
 
     const handleUserLogin = (user) => {
+        console.log(user)
         UserLogin(user, navigate)
         dispatch(setKeys(user))
     }
@@ -46,10 +48,17 @@ const Login = () => {
                         fieldStyle="rounded-full py-2.5 h-auto"
                         variants={item.variant}
                         errorStyleComment="!bg-MainBg"
-                    />)
+                    />
+                )
                 )}
                 <div className='w-full flex justify-between gap-x-2 text-nowrap text-DarkBlue'>
-                    <FormInput certificate="twoStep" variants="checkbox" placeholder={t("RememberMe")} />
+                    {/* <FormInput certificate="twoStep" variants="checkbox" placeholder={t("RememberMe")} /> */}
+                    {/* <Field type="checkbox" name={certificate} id={certificate} /> */}
+                    <label htmlFor="rememberMe" className={`w-fit flex gap-x-2 items-center cursor-pointer`}>
+                        <Checkbox id='rememberMe'>
+                            {t("RememberMe")}
+                        </Checkbox>
+                    </label>
                     <Link to="/authorize/forgetPassword">{t("ForgetPassword")}</Link>
                 </div>
                 <CustomButton vType="button" vStyle="yellow" text={t("loginBtn")} style="w-full justify-center !py-2.5 h-auto" />

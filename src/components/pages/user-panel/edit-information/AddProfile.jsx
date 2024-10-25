@@ -1,4 +1,5 @@
 import { Camera, CheckTrueIcon, CloseIcon, IncreaseIcon } from "../../../../core/icon"
+import { GoPlus } from "react-icons/go";
 import { useDisclosure } from "@nextui-org/react"
 import { useState } from "react"
 import ProfileUploader from "./ProfileUploader"
@@ -38,11 +39,12 @@ const AddProfile = () => {
     return (
         <div className="w-56 h-56 lg:w-36 lg:h-36 rounded-full overflow-hidden relative shadow-lg">
             <ImageFallBack
-                src={profile && profile.currentPictureAddress}
+                src={profile.currentPictureAddress && profile.currentPictureAddress}
                 fallback={fallback}
                 className="w-full h-full"
             />
             <div onClick={() => { onOpen() }} className="w-full h-9 cursor-pointer bg-black/60 z-10 absolute bottom-0 left-0 flex justify-center items-center">
+                <GoPlus size={22} color="#fff" />
                 <Camera />
             </div>
             <CreateModal
@@ -58,7 +60,7 @@ const AddProfile = () => {
                 <div className="relative w-80 h-80 flex justify-center items-center">
                     <ImageFallBack
                         className="w-full h-full rounded-2xl"
-                        src={profile && profile.currentPictureAddress}
+                        src={profile.currentPictureAddress && profile.currentPictureAddress}
                         fallback={fallback}
                     />
                     <CropProfileImage

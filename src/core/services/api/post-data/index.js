@@ -21,6 +21,8 @@ import AddProfileImage from "./AddProfileImage";
 import SelectProfileImage from "./SelectProfileImage";
 import LoginTwoStep from "./LoginTwoStep";
 import ChangeUserPassword from "./ChangeUserPassword";
+import AddCourseRate from "./AddCourseRate";
+import AddBlogRate from "./AddBlogRate";
 
 export {
   ForgetPass,
@@ -45,5 +47,7 @@ export {
   AddProfileImage,
   SelectProfileImage,
   LoginTwoStep,
-  ChangeUserPassword
+  ChangeUserPassword,
+  AddCourseRate,
+  AddBlogRate,
 };

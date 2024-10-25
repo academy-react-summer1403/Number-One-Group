@@ -5,22 +5,28 @@ const AddBlogComment = async (newsId, data, refetch, user) => {
   try {
     const obj = {
       newsId: newsId,
-      userIpAddress: user?.latitude,
-      title: data.description,
+      userIpAddress: "",
+      title: data.title,
       describe: data.description,
       userId: user?.userImage[0]?.userProfileId,
     };
-    const result = await Http.post(`/News/CreateNewsComment`, {
-      obj,
-      headers: { "Content-Type": "application/json" },
-    });
+    const result = await toast.promise(
+      Http.post(
+        `/News/CreateNewsComment`,
+        obj
+        // headers: { "Content-Type": "application/json" },
+      ),
+      {
+        pending: "درحال ثبت شدن...",
+        success: "نظر شما پس از تأیید توسط ادمین ثبت خواهد شد",
+        error: "دوباره تلاش کنید",
+      }
+    );
     if (result.success) {
-      toast.success("نظر شما پس از تأیید توسط ادمین ثبت خواهد شد");
       refetch();
-    } else if (result.error) {
-      toast.error("لطفا دوباره تلاش کنید");
     }
   } catch (error) {
+    toast.error("مشکلی پیش آمده لطفا دوباره تلاش کنید");
     console.log(error);
   }
 };

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next"
 import { useDispatch } from "react-redux";
+import { useSearchParams } from "react-router-dom";
 import { Checkbox, CheckboxGroup } from "@nextui-org/react";
 import { motion } from "framer-motion";
 
@@ -13,9 +14,8 @@ const FilterCheckBox = ({
   isRefetching
 }) => {
   const { t } = useTranslation();
-
   const Dispatch = useDispatch();
-
+  const [searchParams, setSearchParams] = useSearchParams();
   const [checkedData, SetCheckedData] = useState(false);
   const [selected, setSelected] = useState('')
 
@@ -34,14 +34,19 @@ const FilterCheckBox = ({
 
 
     if (activeButton.length === 0) {
+      searchParams.delete("ListTech")
+      searchParams.delete("TechCount")
       Dispatch(SetFilteredData(null))
       Dispatch(setTechCount(null))
       SetCheckedData(false);
+      setSearchParams(searchParams);
     }
     else {
-      console.log(activeButton)
+      searchParams.set("TechCount", 1)
+      searchParams.set("ListTech", ButtonId.toString())
       Dispatch(SetFilteredData(ButtonId.toString()));
       Dispatch(setTechCount(1));
+      setSearchParams(searchParams);
     }
   }
 
@@ -64,6 +69,9 @@ const FilterCheckBox = ({
             Dispatch(SetFilteredData(null))
             SetCheckedData(false);
             Dispatch(setTechCount(null))
+            searchParams.delete("ListTech")
+            searchParams.delete("TechCount")
+            setSearchParams(searchParams);
             refetch()
           }}
         >
@@ -88,7 +96,7 @@ const FilterCheckBox = ({
               onChange={(e) => selectBtn(e, item)}
               classNames={{
                 base: "w-full",
-                label: "text-GrayishPurple text-base",
+                label: "text-GrayishPurple lg:text-base text-lg",
                 wrapper: "w-4 h-4"
               }}
               radius="sm"

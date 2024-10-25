@@ -1,20 +1,24 @@
 import { useTranslation } from "react-i18next"
 import { Search_TwoIcon } from "../../../../core/icon";
-import { useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
+import { useSearchParams } from "react-router-dom";
 
-const FilterSearch = ({ variant, setQuery, Style ,holderDefault}) => {
+const FilterSearch = ({ variant, setQuery, Style, holderDefault }) => {
     const { t } = useTranslation();
     const dispatch = useDispatch()
-    
+    const [searchParams, setSearchParams] = useSearchParams();
+
+
     const variantPlaceHolder = {
         "Courses": "PlaceHolder_Courses",
         "Blogs": "PlaceHolder_Blogs",
         "Shop": "PlaceHolder_Shop"
     }
-    
+
     const SetFilterQuery = (e) => {
-        if (e.target.value !== "") dispatch(setQuery(e.target.value))
-        else dispatch(setQuery(undefined))
+        if (e.target.value !== "") { dispatch(setQuery(e.target.value)); searchParams.set("Query", e.target.value) }
+        else { dispatch(setQuery(undefined)); searchParams.delete("Query") }
+        setSearchParams(searchParams);
     }
 
     return (

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { DownSection, TopSection } from '../comment-card';
 import ReplayComments from './ReplayComments';
 import { GetReplayCourseComment } from '../../../../core/services/api/get-data';
-const UserComments = ({ commentData, date, disLikeCount, 
+const UserComments = ({ commentData, date, disLikeCount,
   likeStatus, variant, getReplay, replayComment, refetch, itemId }) => {
   const [replayStatus, setReplayStatus] = useState(false);
   const [replayComments, setReplayComments] = useState([]);
@@ -17,7 +17,7 @@ const UserComments = ({ commentData, date, disLikeCount,
     currentUserLikeId,
     currentUserIsDissLike,
     author,
-    parentId
+    autor,
   } = commentData
 
   // Getting Replay course Comment from api
@@ -41,7 +41,7 @@ const UserComments = ({ commentData, date, disLikeCount,
             title={title}
             describe={describe}
             date={date}
-            name={author}
+            name={author ?? autor}
           />
           <DownSection
             ArrayLength={replayComments?.length}
@@ -55,7 +55,6 @@ const UserComments = ({ commentData, date, disLikeCount,
             replayComment={replayComment}
             itemId={itemId}
             commentId={id}
-            parentId={parentId}
             refetchReplay={refetchCallReplay}
             refetch={refetch}
             variant={variant}

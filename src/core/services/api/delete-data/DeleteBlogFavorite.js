@@ -13,7 +13,7 @@ const DeleteBlogFavorite = async (ParamsId, refetch) => {
       }),
       {
         pending: "درحال ثبت شدن...",
-        success: "وبلاگ به لیست علاقه مندی ها اضافه شد",
+        success: "وبلاگ از لیست علاقه مندی ها حذف شد",
         error: "دوباره تلاش کنید",
       }
     );

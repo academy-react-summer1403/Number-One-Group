@@ -16,10 +16,10 @@ const FilterSide_Courses = ({
     { title: "level", setInputID: setLevelId, inputData: levelData, resetFilters: refetchLevel, Status: StatusLevel, key: 'levelName' },
     { title: "instructor", setInputID: setInstructorId, inputData: teacherData, resetFilters: refetchTeacher, Status: StatusTeacher, key: 'fullName' },
   ]
-  const queryDefault = useSelector(state => state.FilterCourses.Query)
+  const queryDefault = useSelector(state => state.FilterCourses)
   return (
     <div className="h-fit lg:w-72">
-      <FilterSearch variant="Courses" setQuery={setQueryCourse} holderDefault={queryDefault}/>
+      <FilterSearch variant="Courses" setQuery={setQueryCourse} holderDefault={queryDefault.Query}/>
       <FilterCheckBox
         labelArray={techData}
         title={"category"}

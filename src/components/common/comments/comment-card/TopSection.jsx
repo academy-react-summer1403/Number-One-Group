@@ -9,8 +9,8 @@ const TopSection = ({ name, date, title, describe, Style }) => {
         <h1 className='text-xl font-semibold'>{name ?? t('noName')}</h1>
         <p className='mediumStyle_text text-sm'>{date && ChangeMoment(date, "YYYY/MM/DD", "persian")}</p>
       </div>
-      <h1 className={`text-lg font-semibold mt-4 ${Style}`}>{title}</h1>
-      <h2 className='mediumStyle_text mt-1'>{describe}</h2>
+      <h1 className={`text-lg font-semibold mt-6 ${Style}`}>{title}</h1>
+      <h2 className='mediumStyle_text mt-2'>{describe}</h2>
     </div>
   )
 }

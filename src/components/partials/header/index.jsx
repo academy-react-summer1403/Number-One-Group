@@ -12,7 +12,7 @@ import { useLocation } from "react-router-dom"
 import { GetProfileInfo } from "../../../core/services/api/get-data"
 import { setInfoAction } from "../../../redux/slices/UserInfo"
 import HeaderButtons from "./HeaderButtons"
-import { useQueryWithDependencies, useQueryWithoutDependencies } from "../../../core/hooks/react-query"
+import { useQueryWithoutDependencies } from "../../../core/hooks/react-query"
 import { useQuery } from "@tanstack/react-query"
 import { getItem } from "../../../core/hooks/local-storage"
 
