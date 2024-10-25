@@ -18,7 +18,7 @@ i18n.use(initReactI18next)
                     test: 'این یک پیام تستی است', priceCount: 'تومان', show: 'نمایش', result: 'نتیجه از', sortBy: 'مرتب سازی بر اساس:', upTo: 'تا',
                     studyTime: "دقیقه خواندن",
                     course: "دوره", viewAll: "مشاهده همه", edit: "ویرایش", cancel: "لغـــو", category: 'دسته بندی ها', AddToCart: "افزودن به سبد خرید",
-                    description: "شرح", Comments: "کامنت ها", products: "محصولات", related: "مرتبط",
+                    description: "شرح", Comments: "کامنت ها", products: "محصولات", related: "مرتبط", completion: "تکمیل پروفایل",
                     // shop Details
                     ShopDetailId: "شناسه", ShopDetailTags: "برچسب ها",
                     // Menu Items in the Header
@@ -162,7 +162,7 @@ i18n.use(initReactI18next)
                     test: 'This is a test message', priceCount: '$', show: 'Showing', result: 'Result of', sortBy: 'Sort By:', from: 'from', upTo: 'up To',
                     studyTime: "minutes of reading",
                     course: "Course", viewAll: "view all", edit: "Edit", cancel: "Cancel", category: 'Categories', AddToCart: "Add to cart",
-                    description: "Description", Comments: "Comments", products: "Products", related: "related",
+                    description: "Description", Comments: "Comments", products: "Products", related: "related",  completion: "Completion profile",
                     // shop Details
                     ShopDetailId: "ID", ShopDetailTags: "Tags",
                     // Menu Items in the Header
