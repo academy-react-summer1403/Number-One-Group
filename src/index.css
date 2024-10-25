@@ -99,6 +99,10 @@ body {
     background-image: url(./assets/images/gradientBackground.jpg);
   }
 
+  .titleSectionGradient {
+    background-image: url(./src/assets/images/titleSectionGradient.jpg);
+  }
+
   .informedPoster {
     background-image: url(./src/assets/images/informedPoster.jpg);
   }

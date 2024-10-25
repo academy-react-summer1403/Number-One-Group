@@ -16,7 +16,7 @@ const handleToLike = (
 ) => {
 
   if (!UserInfo) {
-    toast.error("لطفا لاگین کنید");
+    toast.error("لطفاً برای دسترسی به امکانات سایت، ابتدا وارد حساب کاربری خود شوید.");
     dispatch(setStatusModal(true));
   } else {
     // Type 1

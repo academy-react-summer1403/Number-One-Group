@@ -6,7 +6,6 @@ const UserComments = ({ commentData, date, disLikeCount,
   likeStatus, variant, getReplay, replayComment, refetch, itemId }) => {
   const [replayStatus, setReplayStatus] = useState(false);
   const [replayComments, setReplayComments] = useState([]);
-  console.log(replayComments)
   const [reload, setReload] = useState(false);
 
   const {

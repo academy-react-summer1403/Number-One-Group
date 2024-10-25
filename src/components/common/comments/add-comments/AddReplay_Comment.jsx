@@ -14,7 +14,7 @@ const AddReplay_Comment = ({ itemId, commentId, replayComment, refetch, closeMod
   const addReplayComment = (values) => {
     if (!userInfo) {
       dispatch(setStatusModal(true));
-      toast.error('لطفا لاگین کنید')
+      toast.error('لطفاً برای دسترسی به امکانات سایت، ابتدا وارد حساب کاربری خود شوید.')
     }
     else {
       replayComment(values, commentId, itemId, refetch, closeModal, userInfo)

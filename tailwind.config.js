@@ -20,9 +20,7 @@ export default {
         mobileMenu: "mobileMenu 0.2s",
       },
       backgroundImage: {
-        // heroSection: "url('./src/assets/images/hero_section_landing.jpg')",
-        // titleSectionGradient:
-        //   "url('./src/assets/images/titleSectionGradient.jpg')",
+        // heroSection: "url('./src/assets/images/hero_section_landing.jpg')"
       },
       fontFamily: {
         IranSans: ["Iran-Sans"],

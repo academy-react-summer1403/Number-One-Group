@@ -23,7 +23,7 @@ const FavoriteBtn = ({ isLoading, variantStyle, variantApi, userFavorite, refetc
     const handleFavorite = (action, deleteAction) => {
         if (UserInfo == false) {
             dispatch(setStatusModal(true))
-            toast.error('لطفا لاگین کنید')
+            toast.error('لطفاً برای دسترسی به امکانات سایت، ابتدا وارد حساب کاربری خود شوید.')
         } else {
             if (userFavorite === false) {
                 action(Id, refetch)

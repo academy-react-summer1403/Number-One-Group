@@ -21,7 +21,7 @@ const AddComments = ({ apiFunction, Id, refetch }) => {
   ]
   const handleApi = (Id, values, refetch) => {
     if (!userInfo) {
-      toast.error('لطفا لاگین کنید')
+      toast.error('لطفاً برای دسترسی به امکانات سایت، ابتدا وارد حساب کاربری خود شوید.')
       dispatch(setStatusModal(true));
     }
     else apiFunction(Id, values, refetch, userInfo)
