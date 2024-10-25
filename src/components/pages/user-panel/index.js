@@ -4,7 +4,6 @@ import Table from "./table";
 import TableItem from "./table/TableItems";
 import TitleSection from "./header-section/TitleSection";
 import FilterSection from "./header-section/FilterSection";
-import LatestBlogs from "./dashboard/LatestBlogs";
 import StatisticsUser from "./dashboard/StatisticsUser";
 import UserCourseSection from "./dashboard/UserCourseSection";
 import CreateCourseCard from "./dashboard/CreateCourseCard";
@@ -14,6 +13,7 @@ import EmailRecovery from "./security/EmailRecovery";
 import TwoStep from "./security/TwoStep";
 import ChooseAddress from "./edit-information/ChooseAddress";
 import AddProfile from "./edit-information/AddProfile";
+import CircularProgressUser from "./dashboard/CircularProgressUser";
 
 export {
   SidebarUserPanel,
@@ -22,7 +22,6 @@ export {
   TableItem,
   TitleSection,
   FilterSection,
-  LatestBlogs,
   StatisticsUser,
   UserCourseSection,
   CreateCourseCard,
@@ -32,4 +31,5 @@ export {
   TwoStep,
   ChooseAddress,
   AddProfile,
+  CircularProgressUser,
 };

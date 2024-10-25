@@ -2,11 +2,11 @@ import { Link } from 'react-router-dom'
 import { ArrowIcon } from '../../../../core/icon'
 import { useTranslation } from 'react-i18next'
 
-const UserCourseSection = ({ sectionName, children, href }) => {
+const UserCourseSection = ({ sectionName, children, href, holderStyle }) => {
     const { t } = useTranslation()
 
     return (
-        <div className='w-full lg:w-1/2 flex flex-wrap justify-center'>
+        <div className={`w-full lg:w-[480px] flex flex-wrap justify-center ${holderStyle}`}>
             <h1 className='w-full text-xl text-center lg:text-start text-neutral-400'>{sectionName}</h1>
             <div className='w-full h-[180px] mt-6 flex justify-center lg:justify-start flex-wrap gap-4'>
                 {children}

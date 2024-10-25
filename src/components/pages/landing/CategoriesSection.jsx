@@ -1,5 +1,5 @@
 import { SwiperSlide } from "swiper/react"
-import { Label, SwiperSlider } from "../../common/index"
+import { CustomButton, Label, SwiperSlider } from "../../common/index"
 import { useTranslation } from "react-i18next"
 import CategoryItem from "./CreateCategoryItem"
 import { useEffect, useState } from "react"
@@ -9,17 +9,6 @@ const Categories = () => {
     const { t, i18n } = useTranslation()
     const [technologies, setTechnologies] = useState([])
     const [newTechnologies, setNewTechnologies] = useState([])
-
-    const Breakpoints = {
-        1280: { spaceBetween: 20, slidesPerView: 6 },
-        1180: { spaceBetween: 60, slidesPerView: 4 },
-        870: { spaceBetween: 20, slidesPerView: 4 },
-        600: { spaceBetween: 20, slidesPerView: 3 },
-        500: { spaceBetween: 50, slidesPerView: 2 },
-        445: { spaceBetween: 20, slidesPerView: 2 },
-        400: { spaceBetween: 10, slidesPerView: 2 },
-        300: { spaceBetween: 0, slidesPerView: 1 },
-    }
 
     const setAmount = async () => {
         const apiParams = { PageNumber: 1, RowsOfPage: 1, TechCount: 1 }
@@ -38,28 +27,16 @@ const Categories = () => {
     useEffect(() => { setAmount() }, [technologies])
 
     return (
-        <div className="w-full flex flex-wrap gap-y-4 justify-center pb-28 lg:px-44 sm:px-16 px-8">
-            <Label data-aos="fade-left" data-aos-duration="300" text={t("categoryLabel")} variant="bgGray" />
-            <h1 data-aos="fade-right" data-aos-duration="500" className="boldStyle_text w-full text-center">{t("categoryTitle")}</h1>
-            <p data-aos="fade-left" data-aos-duration="700" className="mediumStyle_text text-center">{t("categoryDescription")}</p>
-            {newTechnologies.length > 6 ? (
-                <div className="w-full relative bg-LightGray mt-5 flex justify-center items-center px-20 xl:px-28 py-8 rounded-full">
-                    <SwiperSlider
-                        perView={4}
-                        Breakpoints={Breakpoints}
-                        arrowColor="#000"
-                        buttonSideLeft="top-[100px] xl:left-[40px] left-[20px] h-12 w-12"
-                        buttonSideRight="top-[100px] xl:right-[40px] right-[20px] h-12 w-12"
-                        buttonColor="bg-SunshineYellow"
-                    >
-                        {newTechnologies.map(item => (<SwiperSlide key={item.id}><CategoryItem amount={item.amount} title={item.techName} icon={item.iconAddress} /></SwiperSlide>))}
-                    </SwiperSlider>
-                </div>
-            ) : (
-                <div data-aos="flip-up" data-aos-easing="linear" data-aos-duration="500" className="w-full  relative bg-LightGray mt-5 flex justify-evenly items-center px-20 xl:px-28 py-8 rounded-full">
-                    {newTechnologies.map(item => <CategoryItem key={item.id} amount={item.amount} title={item.techName} />)}
-                </div>
-            )}
+        <div className="w-full flex gap-x-8 pb-28 lg:px-44 sm:px-16 px-8 justify-between items-center">
+            <div className="min-w-[400px] w-full xl:w-[400px] h-fit flex justify-center xl:justify-start flex-wrap gap-y-4">
+                <Label text={t("categoryLabel")} variant="bgGray" />
+                <h1 className="w-full text-center xl:text-start boldStyle_text">{t("categoryTitle")}</h1>
+                <p className="w-full text-center xl:text-start text-neutral-400">{t("categoryDescription")}</p>
+                <CustomButton text={t("skilledTeachersBtn")} style="mt-5" vStyle={"purple"} vType={"link"} arrowColor="#fff" />
+            </div>
+            <div className="w-full flex flex-wrap gap-x-10 gap-y-10 justify-end">
+                {newTechnologies.map(item => <CategoryItem key={item.id} amount={item.amount} title={item.techName} />)}
+            </div>
         </div>
     )
 }

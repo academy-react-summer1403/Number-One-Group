@@ -12,7 +12,7 @@ const Security = () => {
   };
   
   return (
-    <div className='w-[90%] border-t border-LightGrayish flex relative justify-center'>
+    <div className='w-[90%] border-t border-LightGrayish flex relative justify-center mt-8'>
       <TitleSection Icon={SecurityIcon} name={t("SecuritySettings")} />
       <div className='w-full h-fit mt-20'>
         <Accordion defaultExpandedKeys={["1", "2", "3"]} fullWidth selectionMode="multiple" className='flex flex-wrap gap-y-10' dividerProps={true} showDivider={false} itemClasses={itemClasses}>

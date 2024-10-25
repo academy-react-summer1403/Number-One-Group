@@ -20,23 +20,25 @@ const SidebarUserPanel = () => {
     }
 
     return (
-        <>
+        <div className="h-fit flex justify-center flex-wrap gap-y-5 my-auto">
             <ImageFallBack
                 fallback={fallback}
                 alt={'Profile'}
                 src={userInfo.currentPictureAddress}
-                className="w-[125px] h-[125px] rounded-full shadow-2xl mt-2"
+                className="w-[125px] h-[125px] rounded-full shadow-2xl"
             />
-            <h1 className="w-full h-fit text-center mt-2 text-xl text-white">{fName} {lName} {t("welcome")}</h1>
-            <span className="w-full h-1 borderButton_sidebar_userPanel -mt-2"></span>
-            <div className={`w-full h-[379px] mt-5 ${i18n.language == "en" ? "pl-8" : "pr-8"} flex flex-wrap`}>
+            <div className="flex flex-wrap w-full mb-5 h-10">
+                <h1 className="w-full h-fit text-center text-xl text-white">{fName} {lName} {t("welcome")}</h1>
+                <span className="w-full h-1 borderButton_sidebar_userPanel"></span>
+            </div>
+            <div className={`w-full ${i18n.language == "en" ? "pl-8" : "pr-8"} flex flex-wrap gap-y-4`}>
                 {sidebarBtns.map(item => <SidebarButtons key={item.id} Icon={item.icon} href={item.href} name={i18n.language != "en" ? item.name[0] : item.name[1]} />)}
             </div>
-            <Link onClick={handleExit} to="/" className="text-white flex items-center gap-x-3">
+            <Link onClick={handleExit} to="/" className="text-white flex items-center gap-x-3 mt-5">
                 <ExitBtnPanelIcon />
                 <span>{t("exitFromAccount")}</span>
             </Link>
-        </>
+        </div>
     )
 }
 

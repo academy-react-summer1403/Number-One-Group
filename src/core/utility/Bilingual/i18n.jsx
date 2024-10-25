@@ -17,14 +17,14 @@ i18n.use(initReactI18next)
                     yes: 'بله', no: 'خیر', Reviews: 'امتیاز', student: 'دانشجو', Development: 'توسعه', By: 'توسط', map: 'نقشه', from: 'از',
                     test: 'این یک پیام تستی است', priceCount: 'تومان', show: 'نمایش', result: 'نتیجه از', sortBy: 'مرتب سازی بر اساس:', upTo: 'تا',
                     studyTime: "دقیقه خواندن",
-                    course: "دوره", viewAll: "مشاهده همه", edit: "ویرایش", cancel: "لغـــو", category: 'دسته بندی ها', AddToCart: "افزودن به سبد خرید",
+                    course: "دوره", viewAll: "مشاهده همه", edit: "ویرایش پروفایل", completion: "تکمیل پروفایل", cancel: "لغـــو", category: 'دسته بندی ها', AddToCart: "افزودن به سبد خرید",
                     description: "شرح", Comments: "کامنت ها", products: "محصولات", related: "مرتبط",
                     // shop Details
                     ShopDetailId: "شناسه", ShopDetailTags: "برچسب ها",
                     // Menu Items in the Header
                     HomeSection: 'صفحه اصلی', CoursesSection: 'دوره های آموزشی', Events: 'ایونت ها', ShopSection: 'فروشگاه', BlogSection: 'وبلاگ', InstructorsSection: "مربیان",
                     // Search Input in the Header
-                    Login: 'حساب کاربری',headerSearchText:'متن جستجو را وارد کنید',
+                    Login: 'حساب کاربری', headerSearchText: 'متن جستجو را وارد کنید',
                     // PlaceHolders
                     PlaceHolder_Courses: 'جستجو برای دوره ...', PlaceHolder_Blogs: 'جستجو برای وبلاگ ...',
                     PlaceHolder_Shop: 'جستجو برای محصول ...', emailPlaceholder: "ایمیل خود را وارد کنید", passwordPlaceholder: "رمز عبور خود را وارد کنید",
@@ -39,7 +39,7 @@ i18n.use(initReactI18next)
                     heroSectionDescription: "هر سفر آموزشی و یادگیری دنبال کردن منحصر به فرد است ما به شما کمک خواهیم کرد", heroSectionTitle1: "هرگز از",
                     heroSectionTitle2: "دست نکشید زندگی هرگز از آموزش دست نمی کشد", heroSectionBtn: "رایگان آزمایش کنید",
                     // category
-                    categoryLabel: "دسته بندی های پرطرفدار", categoryTitle: "دسته بندی های برتر", categoryDescription: "امروزه به دلیل آن که ارتباطات فضای مجازی رونق زیادی یافته است",
+                    categoryLabel: "دسته بندی های پرطرفدار", categoryTitle: "دسته بندی های برتر", categoryDescription: "لورم  ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ  و با استفاده از  طراحان گرافیک است   چاپگرها و متون بلکه روزنامه و مجله در ستون و  سطرآنچنان که لازم است   و برای شرایط فعلی تکنولوژی مورد نیاز",
                     // aboutUs
                     aboutLabel: "درباره ما بیشتر بدانید", aboutTitle1: "هزاران", aboutTitle2: "برتر اکنون در یک مکان",
                     aboutDescription: "صندوق ورودی مشترک بصری Groove این کار را برای اعضای تیم آسان می کند سازماندهی، اولویت بندی و. در این قسمت از Smashing Pod ما هستیم در مورد پایه پلتفرم وب.",
@@ -117,18 +117,18 @@ i18n.use(initReactI18next)
                     descComparison: 'با مقایسه کردن دوره های آموزشی باهم دیگه میتونی دوره مناسب خودتو پیدا کنی!',
                     // course Details
                     CourseOverView: "شرح دوره", LearnCourse: 'در این دوره چه چیزی یاد خواهید گرفت؟',
-                    CourseInfo: 'دوره شامل', CoursePrice: 'هزینه دوره',CourseFavorite:'آیا از این دوره راضی بودید؟',
+                    CourseInfo: 'دوره شامل', CoursePrice: 'هزینه دوره', CourseFavorite: 'آیا از این دوره راضی بودید؟',
                     // Dashboard
-                    exitFromAccount: "خروج از حساب", welcome: "خوش آمدید", progressTipFalse: "برای شرکت در دوره ها باید حداقل ٪ ۸۰ از پروفایل خود را تکمیل کنید.", progressTipTrue: "پروفایل شما تکمیل است",
-                    latestNewsAndBlogs: "جدید ترین اخبار و مقالات", currentCourses: "دوره های در حال برگزاری:", suggestedCourses: "دوره های پیشنهادی:", changePassword: "تغییر رمز عبور", twoStep: "تایید ورود دو مرحله ای", emailRecovery: "ایمیل بازیابی",
-                    SecuritySettings: "تنظیمات امنیتی", saveChanges: "ذخیره تغییرات", newEmail: "ایمیل جدید", editInformationTitle: "ویرایش اطلاعات کاربری", participateInCourse: "شرکت کرده اید", reservationInCourse: "رزرو کرده اید",
+                    exitFromAccount: "خروج از حساب", welcome: "خوش آمدید", progressTipFalse: "پروفایل ناقص مانع ارتباط مؤثر می‌شود. اطلاعات خود را کامل کنید.", progressTipTrue: "پروفایل کامل به شما کمک می‌کند تا ارتباطات بهتری برقرار کنید",
+                    latestNewsAndBlogs: "جدید ترین اخبار و مقالات", currentCourses: "دوره های من", suggestedCourses: "دوره های پیشنهادی", changePassword: "تغییر رمز عبور", twoStep: "تایید ورود دو مرحله ای", emailRecovery: "ایمیل بازیابی",
+                    SecuritySettings: "تنظیمات امنیتی", saveChanges: "ذخیره تغییرات", newEmail: "ایمیل جدید", editInformationTitle: "ویرایش اطلاعات کاربری", participateInCourse: "شرکت کرده اید", reservationInCourse: "رزرو کرده اید", favoriteStatistics: "علاقهمندی های شما", commentStatistics: "کامنت های شما",
                     // Comments
                     comment: 'نظر', user_comment: 'نظرات کاربران', sendComment: 'ارسال نظر', titleComment: 'عنوان پیام',
                     descComment: 'توضیحات بیشتر', comment_text: 'متن خود را وارد کنید', ConfirmComment: 'نظر شما پس از تأیید توسط ادمین ثبت خواهد شد!',
-                    commentAnswer: 'پاسخ', viewAnswers: 'مشاهده پاسخ ها',viewMore:'مشاهده بیشتر +',viewLess:'مشاهده کمتر -',
-                    notFoundComment: 'نظری وجود ندارد',noName:'بدون نام',
+                    commentAnswer: 'پاسخ', viewAnswers: 'مشاهده پاسخ ها', viewMore: 'مشاهده بیشتر +', viewLess: 'مشاهده کمتر -',
+                    notFoundComment: 'نظری وجود ندارد', noName: 'بدون نام',
                     // Related titles
-                    Related: 'مرتبط', Blogs: 'اخبار',Courses:'دوره های',
+                    Related: 'مرتبط', Blogs: 'اخبار', Courses: 'دوره های',
                     // Cart
                     cartTitle: "سبد خرید", cartTotalSum: "جمع کل", cartInfo: "اطلاعات", cartButton: "اقدام به پرداخت", clearBtn: "خالی کردن سبد", numberOfItemsInCart: "تعداد آیتم ها",
                     // About
@@ -161,14 +161,14 @@ i18n.use(initReactI18next)
                     yes: 'Yes', no: 'No', Reviews: 'Reviews', student: 'Students', Development: 'Development', By: 'By', map: 'Map',
                     test: 'This is a test message', priceCount: '$', show: 'Showing', result: 'Result of', sortBy: 'Sort By:', from: 'from', upTo: 'up To',
                     studyTime: "minutes of reading",
-                    course: "Course", viewAll: "view all", edit: "Edit", cancel: "Cancel", category: 'Categories', AddToCart: "Add to cart",
+                    course: "Course", viewAll: "view all", edit: "Edit", completion: "Completion profile", cancel: "Cancel", category: 'Categories', AddToCart: "Add to cart",
                     description: "Description", Comments: "Comments", products: "Products", related: "related",
                     // shop Details
                     ShopDetailId: "ID", ShopDetailTags: "Tags",
                     // Menu Items in the Header
                     HomeSection: 'Home', CoursesSection: 'Courses', Events: 'Events', ShopSection: 'Shop', BlogSection: 'Blog', InstructorsSection: "Instructors",
                     // Search Input in the Header
-                    Login: 'User Account',headerSearchText:'Enter the search text',
+                    Login: 'User Account', headerSearchText: 'Enter the search text',
                     // PalceHolders
                     PlaceHolder_Courses: 'Search For Course ...', PlaceHolder_Blogs: 'Search For Blog ...',
                     PlaceHolder_Shop: 'Search For Product ...', emailPlaceholder: "Enter your email", passwordPlaceholder: "Enter your password",
@@ -261,18 +261,18 @@ i18n.use(initReactI18next)
                     descComparison: 'By comparing training courses, you can find the right course for you!',
                     // course Details
                     CourseOverView: "Course Overview", LearnCourse: 'What will you learn in this course?',
-                    CourseInfo: 'Course Information', CoursePrice: 'Course Fee',CourseFavorite:'What will I learn in this course?',
+                    CourseInfo: 'Course Information', CoursePrice: 'Course Fee', CourseFavorite: 'What will I learn in this course?',
                     // Dashboard
                     exitFromAccount: "Exit", welcome: "welcome", progressTipFalse: "To participate in the courses, you must complete at least 80% of your profile.", progressTipTrue: "Your profile is complete",
-                    latestNewsAndBlogs: "The latest news and Blogs", currentCourses: "Current courses:", suggestedCourses: "Suggested courses:", changePassword: "Change password", twoStep: "Two-step login verification", emailRecovery: "Email recovery",
-                    SecuritySettings: "Security settings", saveChanges: "Save changes", newEmail: "New email", editInformationTitle: "Edit user information", participateInCourse: "Participate", reservationInCourse: "Reserved",
+                    latestNewsAndBlogs: "The latest news and Blogs:", currentCourses: "Current my courses:", suggestedCourses: "Suggested courses:", changePassword: "Change password", twoStep: "Two-step login verification", emailRecovery: "Email recovery",
+                    SecuritySettings: "Security settings", saveChanges: "Save changes", newEmail: "New email", editInformationTitle: "Edit user information", participateInCourse: "Participate", reservationInCourse: "Reserved", favoriteStatistics: "Your favorites", commentStatistics: "Your comments",
                     // Comments
                     comment: 'Comment', user_comment: 'User Comments', sendComment: 'Submit a comment', titleComment: 'Comment title',
                     descComment: 'More details', comment_text: 'Enter your text', ConfirmComment: 'Your comment will be registered after approval by the admin!',
-                    commentAnswer: 'Answer', viewAnswers: 'View Answers',viewMore:'View More +',viewLess:'View Less -',
-                    notFoundComment: 'There is no comment!',noName:'No Name',
+                    commentAnswer: 'Answer', viewAnswers: 'View Answers', viewMore: 'View More +', viewLess: 'View Less -',
+                    notFoundComment: 'There is no comment!', noName: 'No Name',
                     // Related titles
-                    Related: 'Related', Blogs: 'Blogs',Courses:'Courses',
+                    Related: 'Related', Blogs: 'Blogs', Courses: 'Courses',
                     // Cart
                     cartTitle: "Cart", cartTotalSum: "Total sum", cartInfo: "Information", cartButton: "Proceed to pay", clearBtn: "Clear Cart", numberOfItemsInCart: "Number of items",
                     // About

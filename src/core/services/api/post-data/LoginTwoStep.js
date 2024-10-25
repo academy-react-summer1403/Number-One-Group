@@ -12,7 +12,7 @@ const LoginTwoStep = async (code, user, dispatch) => {
     if (response.success) {
       setItem("token", response.token);
       setTimeout(() => {
-        window.location.pathname = "/";
+        window.location.pathname = "/userPanel";
         dispatch(false);
       }, 3000);
       toast.success(response.message);

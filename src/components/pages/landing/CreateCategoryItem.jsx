@@ -5,20 +5,10 @@ import { motion } from "framer-motion"
 const CategoryItem = ({ title, amount, icon }) => {
     return (
         <motion.div
-            whileHover={{
-                scale: 1.2,
-                marginLeft: 10,
-                marginRight: 10,
-            }}
-            onViewportLeave={{
-                opacity: 0
-            }}
-            onViewportEnter={{
-                opacity: 0
-            }}
-            className="lg:w-32 flex flex-wrap gap-y-3 justify-center"
+            whileHover={{ scale: 1.1, }}
+            className="w-[250px] h-[250px] p-8 rounded-3xl bg-gradient-to-t from-neutral-300 dark:from-neutral-800 to-neutral-50 odd:-mt-[60px] even:mt-[10px] flex flex-wrap justify-center"
         >
-            <div className="w-full h-32 flex items-center justify-center rounded-full border border-LightGrayish bg-gradient-to-t from-neutral-300 dark:from-neutral-800 to-neutral-50">
+            <div className="w-28 h-28 flex items-center justify-center rounded-3xl border border-LightGrayish">
                 <ImageFallBack
                     alt={"Icon"}
                     src={icon}
@@ -27,8 +17,8 @@ const CategoryItem = ({ title, amount, icon }) => {
                 />
             </div>
             <div className="w-full flex flex-wrap justify-center gap-y-1">
-                <h2 className="w-full text-center text-DarkBlue">{title}</h2>
-                <span className="!font-Number text-sm text-neutral-400">({amount})</span>
+                <h2 className="w-full text-center text-DarkBlue text-xl">{title}</h2>
+                <span className="!font-Number text-neutral-400">({amount})</span>
             </div>
         </motion.div>
     )

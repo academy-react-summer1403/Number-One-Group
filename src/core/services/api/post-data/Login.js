@@ -12,7 +12,7 @@ const UserLogin = async (user, navigate, modalState, dispatch, isModal) => {
       if (response?.token) {
         setItem("token", response.token);
         setTimeout(() => {
-          window.location.pathname = "/";
+          window.location.pathname = "/userPanel";
           dispatch(setStatusModal(false));
         }, 3000);
       } else {

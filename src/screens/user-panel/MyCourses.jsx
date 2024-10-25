@@ -20,7 +20,7 @@ const MyCourses = () => {
   ]
 
   return (
-    <div className='w-full flex flex-wrap h-fit -mt-8'>
+    <div className='w-full flex flex-wrap h-fit'>
       <FilterSection boxs={sortBox} query={setQuery} />
       <PaginateHolderItems style="justify-center">
         <PaginatedItems currentData={isSuccess && data.totalCount} currentDataInOnePage={8} setPage={setPageNumber} >

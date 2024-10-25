@@ -13,7 +13,7 @@ const Stepper = ({ contents, steps, showSteps = true }) => {
 
     return (
         <>
-            <div className='w-full sm:h-[150px] mb-10'>{contents(active)}</div>
+            <div className='w-full mb-10'>{contents(active)}</div>
             <div className="justify-center w-full flex">
                 {showSteps && steps.map((step, index) => (
                     <div

@@ -71,7 +71,7 @@ const AddProfile = () => {
                         <CheckTrueIcon />
                     </div>
                 </div>
-                <div className="w-80 overflow-x-auto sm:overflow-visible sm:w-full h-28 flex gap-x-8 items-center">
+                <div className="w-80 h-36 overflow-x-scroll sm:w-full flex gap-x-8 items-center">
                     {
                         profile && profile["userImage"].map((item, index) => (
                             <CreateUserImages

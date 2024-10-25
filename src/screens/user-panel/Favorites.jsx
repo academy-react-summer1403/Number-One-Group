@@ -77,7 +77,7 @@ const Favorites = () => {
   ]
 
 return (
-  <div className="w-full flex flex-wrap h-fit -mt-8">
+  <div className="w-full flex flex-wrap h-fit">
     <FilterSection boxs={sortBox} query={setQuery} />
     <PaginateHolderItems style="justify-center h-[685px] border-t-2 border-gray-100 mt-3 pt-4">
       <PaginatedItems currentData={count} currentDataInOnePage={sortingCurrent} setState={setItemOffset} >
