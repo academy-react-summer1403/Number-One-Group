@@ -6,7 +6,7 @@ import MediaQuery from "react-responsive";
 const InformedPoster = () => {
     const { t } = useTranslation()
     return (
-        <div className="w-full py-6 flex justify-center overflow-hidden items-center bg-informedPoster bg-cover bg-center bg-no-repeat lg:px-44 sm:px-16 px-8">
+        <div className="w-full py-6 flex justify-center overflow-hidden items-center informedPoster bg-cover bg-center bg-no-repeat lg:px-44 sm:px-16 px-8">
             <MediaQuery minWidth={"768px"}>
                 <div className="min-w-80 w-80 relative -bottom-10 xl:-bottom-6 flex items-end ">
                     <img src={mannequin} alt="Image" />

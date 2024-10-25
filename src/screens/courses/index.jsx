@@ -3,7 +3,7 @@ import { TitleSection, BreadCrumb } from "../../components/partials/title-sectio
 import { GetAllCourseByPagination } from "../../core/services/api/get-data";
 import { useDispatch, useSelector } from "react-redux";
 import { CourseCard, FilterSide_Courses } from "../../components/pages/course"
-import { setPageNumber, setRowsOfPage, setSortCal, setSortType } from "../../redux/slices/filter-box-slices/FilterCourses"
+import { setInstructorId, setLevelId, setListTech, setPageNumber, setPriceDown, setPriceUp, setQueryCourse, setRowsOfPage, setSortCal, setSortType, setTechCount, setTypeId } from "../../redux/slices/filter-box-slices/FilterCourses"
 import MediaQuery, { useMediaQuery } from "react-responsive";
 import { ChangeView, CreateModal, SectionTop, SortBox, SortBoxHolder, RenderItemsList, PaginatedItems, PaginateHolderItems, LoadingSpinner } from "../../components/common";
 import { IoFilter } from "react-icons/io5"
@@ -13,17 +13,30 @@ import { useEffect, useState } from "react";
 import tooltipStyle from "../../core/constants/tooltip-style";
 import { sortingOptionsType_Course_Fa, sortingOptionsType_Course_En, sortOptionCal_Fa, sortOptionCal_En } from "../../core/constants/sort";
 import { useQueryWithDependencies, useQueryWithoutDependencies } from "../../core/hooks/react-query";
+import { useSearchParams } from "react-router-dom";
+import { courseFilterParams} from "../../core/constants/filter-params";
 import { motion } from "framer-motion";
 import configVariants from "../../config/page-transition";
 
 const Courses = () => {
     const { t, i18n } = useTranslation();
     const filterObj_Courses = useSelector(state => state.FilterCourses)
+    const [searchParams, setSearchParams] = useSearchParams();
     const Dispatch = useDispatch();
 
     // MediaQueries
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 640px)' });
     const isTabletOrLapTop = useMediaQuery({ query: '(min-width: 768px)' });
+
+    // Set the url filter parameters
+    useEffect(() => {
+        courseFilterParams.forEach(({ key, action }) => {
+            const value = searchParams.get(key);
+            if (value) {
+                Dispatch(action(value))
+            }
+        })
+    }, [])
 
     // Modal
     const { isOpen, onOpen, onClose } = useDisclosure();

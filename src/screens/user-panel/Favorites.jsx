@@ -47,7 +47,7 @@ const Favorites = () => {
     : myBlogData?.myFavoriteNews.slice(itemOffset, endOffset);
   const title = sortingCol === 'course' ? MyCourseFavoriteKey[0] : MyBlogFavoriteKey[0];
   const filteredData = myFavoriteData?.filter(item => item?.[title].indexOf(Query) != -1).slice(itemOffset, endOffset);
-
+console.log(Query)
   const favoriteCoursesStatus = sortingCol === 'course';
 
   // params Object

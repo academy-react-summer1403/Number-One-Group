@@ -1,16 +1,20 @@
 import { useTranslation } from "react-i18next"
 import { DownSection, TopSection } from "../comment-card";
 
-const ReplayComments = ({ item, refetch ,variant}) => {
+const ReplayComments = ({ item, refetch, variant }) => {
     const { i18n } = useTranslation();
     const {
-        author: name,
+        author,
+        autor,
         describe,
         id,
         insertDate: date,
         likeCount,
         disslikeCount,
+        dissLikeCount,
         currentUserEmotion,
+        currentUserIsLike,
+        currentUserIsDissLike,
         pictureAddress,
         currentUserLikeId,
     } = item;
@@ -22,15 +26,16 @@ const ReplayComments = ({ item, refetch ,variant}) => {
                 <div className='w-full'>
                     <TopSection
                         Style={'hidden'}
-                        name={name}
+                        name={author ?? autor}
                         date={date}
                         describe={describe} />
                     <DownSection
                         Style={'!hidden'}
                         userLikeId={currentUserLikeId}
                         like={likeCount}
-                        disLike={disslikeCount}
-                        LikeStatus={currentUserEmotion}
+                        disLike={disslikeCount ?? dissLikeCount}
+                        LikeStatus={currentUserEmotion ?? currentUserIsLike}
+                        disLikeStatus={currentUserIsDissLike}
                         commentId={id}
                         refetch={refetch}
                         variant={variant}

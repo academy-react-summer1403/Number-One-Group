@@ -2,6 +2,7 @@ import { Radio, RadioGroup } from "@nextui-org/react";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
+import { useSearchParams } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const FilterRadio = ({
@@ -15,11 +16,15 @@ const FilterRadio = ({
   const { t } = useTranslation();
   const [checkedData, SetCheckedData] = useState(false);
   const dispatch = useDispatch()
+  const [searchParams, setSearchParams] = useSearchParams();
+
   const [selected, setSelected] = useState('')
 
   const handleChange = (item) => {
     dispatch(setInputID(item.id == undefined ? item.teacherId : item.id))
+    searchParams.set(title, item.id == undefined ? item.teacherId : item.id)
     SetCheckedData(true);
+    setSearchParams(searchParams)
   }
 
   useEffect(() => {
@@ -39,8 +44,10 @@ const FilterRadio = ({
           }
           onClick={() => {
             dispatch(setInputID(""));
+            searchParams.delete(title)
             SetCheckedData(false);
             refetch();
+            setSearchParams(searchParams)
           }}
         >
           {t('removeFilters')}
@@ -63,7 +70,7 @@ const FilterRadio = ({
               value={title + index}
               classNames={{
                 base: "w-full",
-                label: "text-GrayishPurple text-base line-clamp-1",
+                label: "text-GrayishPurple lg:text-base text-lg line-clamp-1",
                 wrapper: "w-4 h-4"
               }}
             >

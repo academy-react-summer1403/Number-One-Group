@@ -9,30 +9,32 @@ const AddReplayBlogComment = async (
   refetch,
   closeModal,
   user,
-  parentId,
-
 ) => {
   try {
     const obj = {
       newsId: newsId,
-      userIpAddress: user?.email,
-      Title: "",
+      userIpAddress: "",
+      title: "پاسخ به کامنت",
       describe: value.description,
       userId: user?.userImage[0]?.userProfileId,
-      parentId: parentId,
+      parentId: commentId,
     };
-    console.log(obj)
-    const response = await Http.post("/News/CreateNewsReplyComment", {
-      data: obj,
-      headers: { "Content-Type": "application/json" },
-    });
+    const response = await toast.promise(
+      Http.post(
+        "/News/CreateNewsReplyComment",
+        obj
+        // headers: { "Content-Type": "application/json" },
+      ),
+      {
+        pending: "درحال ثبت شدن...",
+        success: "ریپلای شما پس از تائید ادمین ثبت خواهد شد",
+        error: "لطفا متن کامنت را به درستی وارد کنید",
+      }
+    );
 
     if (response.success) {
-      toast.success(" ریپلای شما ثبت شد");
       refetch();
       closeModal();
-    } else {
-      toast.error("لطفا متن کامنت را به درستی وارد کنید");
     }
   } catch (error) {
     console.error("Error submitting comment:", error);

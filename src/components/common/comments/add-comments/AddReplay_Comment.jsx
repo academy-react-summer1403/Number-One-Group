@@ -6,19 +6,18 @@ import FormInput from "../../form/FormInput"
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 
-const AddReplay_Comment = ({ itemId, commentId, replayComment, refetch, closeModal, parentId }) => {
+const AddReplay_Comment = ({ itemId, commentId, replayComment, refetch, closeModal}) => {
   const { t } = useTranslation();
   const userInfo = useSelector(state => state.UserInfo.info)
-  console.log(userInfo)
   const dispatch = useDispatch()
 
   const addReplayComment = (values) => {
     if (!userInfo) {
       dispatch(setStatusModal(true));
-      toast.error('لطفا لاگین کنید')
+      toast.error('لطفاً برای دسترسی به امکانات سایت، ابتدا وارد حساب کاربری خود شوید.')
     }
     else {
-      replayComment(values, commentId, itemId, refetch, closeModal, userInfo, parentId)
+      replayComment(values, commentId, itemId, refetch, closeModal, userInfo)
     }
   }
   return (

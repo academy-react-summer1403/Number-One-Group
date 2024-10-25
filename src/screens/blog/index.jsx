@@ -11,12 +11,17 @@ import { setPageNumber, setSortingCol, setRowsOfPage } from "../../redux/slices/
 import { useQueryWithDependencies, useQueryWithoutDependencies } from "../../core/hooks/react-query";
 import { GetNewsFilterPage } from "../../core/services/api/get-data";
 import { BreadCrumb, TitleSection } from "../../components/partials/title-section";
+import { useSearchParams } from "react-router-dom";
+import { blogFilterParams } from "../../core/constants/filter-params";
+
 import { motion } from "framer-motion";
 import configVariants from "../../config/page-transition";
+import { IoFilter } from "react-icons/io5";
 
 const Blog = () => {
     const { t, i18n } = useTranslation();
     const FilterBlogObj = useSelector(state => state.FilterBlog)
+    const [searchParams, setSearchParams] = useSearchParams();
     const dispatch = useDispatch()
 
     // MediaQueries
@@ -26,6 +31,17 @@ const Blog = () => {
     // View
     const skeletonData = [{}, {}, {}, {}, {}, {}, {}, {}, {}];
     const [showGrid, setShowGrid] = useState(false);
+
+    // Set the url filter parameters
+    useEffect(() => {
+        blogFilterParams.forEach(({ key, action }) => {
+            console.log(action)
+            const value = searchParams.get(key);
+            if (value) {
+                dispatch(action(value))
+            }
+        })
+    }, [])
 
     // Pagination
     const currentBlog = isTabletOrMobile ? 6 : 12
@@ -47,6 +63,7 @@ const Blog = () => {
             animate={"animate"}
             exit={"exit"}
         >
+        <div>
             <TitleSection title={'BlogSection'} >
                 <BreadCrumb type="Div" text="BlogSection" />
             </TitleSection>
@@ -54,7 +71,9 @@ const Blog = () => {
                 <MediaQuery minWidth={"1024px"}><FilterSide_Blogs /></MediaQuery>
                 <div className="lg:w-[87%] sm:w-full mobile:w-full mx-auto">
                     <MediaQuery maxWidth={"1023px"}>
-                        <Button onPress={onOpen} className="sticky top-3 z-30">{t('openFilter')}</Button>
+                        <div onClick={onOpen} className="fixed right-5 bottom-40 bg-VioletBlue dark:bg-LavenderMist bottomNav z-30">
+                            <IoFilter color="#fff" />
+                        </div>
                         <CreateModal isOpen={isOpen} onClose={onClose} header={t('filters')} size="xl" headerStyle="flex flex-col gap-1 text-white">
                             <div onClick={onClose} className="closeButton_modal bg-neutral-200/65 top-2 left-2">
                                 <CloseIcon />
@@ -93,6 +112,7 @@ const Blog = () => {
                         </PaginatedItems>
                     </PaginateHolderItems>
                 </div>
+            </div>
             </div>
         </motion.div>
     )

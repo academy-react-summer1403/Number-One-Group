@@ -27,6 +27,7 @@ import FeedbackSection from "./details-pages/feedbackSection.jsx";
 import CommentSection from "./comments/CommentSection.jsx";
 import RelatedItems from "./details-pages/RelatedItems.jsx";
 import OfflineWarning from "./OfflineWarning.jsx";
+import SetRate from "./SetRate.jsx";
 import {
   FilterRadio,
   ChangeView,
@@ -85,6 +86,7 @@ export {
   CommentSection,
   RelatedItems,
   OfflineWarning,
+  SetRate,
   LoadingSpinner,
   PopupLoginWrapper,
   ScrollProgressBar,

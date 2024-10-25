@@ -99,13 +99,19 @@ body {
     background-image: url(./assets/images/gradientBackground.jpg);
   }
 
+  .titleSectionGradient {
+    background-image: url(./src/assets/images/titleSectionGradient.jpg);
+  }
+
+  .informedPoster {
+    background-image: url(./src/assets/images/informedPoster.jpg);
+  }
+
   .bgGradient_menu {
-    background: linear-gradient(
-      90deg,
-      rgba(87, 81, 225, 0) 0%,
-      rgba(67, 63, 174, 0.5) 53.1%,
-      rgba(48, 44, 123, 0) 100%
-    );
+    background: linear-gradient(90deg,
+        rgba(87, 81, 225, 0) 0%,
+        rgba(67, 63, 174, 0.5) 53.1%,
+        rgba(48, 44, 123, 0) 100%);
     border-radius: 2px;
   }
 
@@ -167,15 +173,13 @@ body {
   }
 
   .playButton {
-    @apply w-14 h-14  rounded-full absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%];
+    @apply w-14 h-14 rounded-full absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%];
   }
 
   .bottomNav_shadow {
-    background: radial-gradient(
-      70.71% 70.71% at 50% 50%,
-      rgba(0, 0, 0, 0.25) 0%,
-      rgba(0, 0, 0, 0) 80%
-    );
+    background: radial-gradient(70.71% 70.71% at 50% 50%,
+        rgba(0, 0, 0, 0.25) 0%,
+        rgba(0, 0, 0, 0) 80%);
   }
 
   .bottomNav {
@@ -226,6 +230,7 @@ body {
         .course-bio {
           @apply line-clamp-1;
         }
+
         .course-title {
           @apply -mt-2;
         }
@@ -234,12 +239,10 @@ body {
   }
 
   .borderButton_sidebar_userPanel {
-    background: linear-gradient(
-      90deg,
-      transparent 0%,
-      #ffc224 50%,
-      transparent 100%
-    );
+    background: linear-gradient(90deg,
+        transparent 0%,
+        #ffc224 50%,
+        transparent 100%);
   }
 
   .userPanel_holder_shadow {
@@ -252,12 +255,10 @@ body {
   }
 
   .borderTable_header_userPanel {
-    background: linear-gradient(
-      90deg,
-      transparent 0%,
-      #ffc224 50%,
-      transparent 100%
-    );
+    background: linear-gradient(90deg,
+        transparent 0%,
+        #ffc224 50%,
+        transparent 100%);
   }
 
   .itemsTable_userPanel_holder {

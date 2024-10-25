@@ -14,9 +14,6 @@ const Error404 = () => {
             animate={"animate"}
             exit={"exit"}
         >
-            <TitleSection title={'error'} >
-                <BreadCrumb type="Div" text={'error'} />
-            </TitleSection>
             <div className="m-auto sm:my-16 my-12 w-fit flex flex-wrap boldStyle_text text-DarkBlue gap-y-4 justify-center cursor-default">
                 <Error404Icon className="sm:w-[420px] w-80" />
                 <h1 className="w-full text-center">{t('error')}!</h1>

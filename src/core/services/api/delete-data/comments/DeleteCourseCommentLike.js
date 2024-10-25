@@ -2,7 +2,7 @@ import { toast } from "react-toastify";
 import Http from "../../../interceptor";
 
 const DeleteCourseCommentLike = async (ParamsId, refetch) => {
-  alert()
+  // console.log(ParamsId);
   // try {
   //   // const obj = {
   //   //   CourseCommandId: ParamsId,
