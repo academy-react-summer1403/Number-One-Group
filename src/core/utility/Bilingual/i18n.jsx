@@ -69,7 +69,7 @@ i18n.use(initReactI18next)
                     signUpTitle: 'ثبت نام به عنوان دانش آموز', or: "یا", EventsTitle: "همه مناسبت ها", contactUsTitle: "تماس با ما", shopDetail: "جزئیات فروشگاه",
                     // Buttons
                     GoHomePage: "به صفحه اصلی بروید", Join: 'به رویداد بپیوندید', submit: "ارسال کنید",
-                    signUpCourse: "ثبت نام در دوره",
+                    signUpCourse: "ثبت نام در دوره",skilledTechnologies:'همه دسته بندی هارو ببینید',
                     // LoginForm
                     LoginCaption: "ورود",
                     LoginDesc: "برای ورود به حساب خود ایمیل و رمز عبور خود را وارد کنید",
@@ -213,7 +213,7 @@ i18n.use(initReactI18next)
                     signUpTitle: 'Student SignUp', or: "or", EventsTitle: "All Events", contactUsTitle: "Contact With Us", shopDetail: "Shop Detail",
                     // Buttons
                     GoHomePage: "Go To Home Page", Join: 'Join This Event', submit: "Submit Now",
-                    signUpCourse: "Enroll course",
+                    signUpCourse: "Enroll course",skilledTechnologies:'See all categories',
                     // LoginForm
                     LoginCaption: "Sign in",
                     LoginDesc: "Enter your email and password to log in to your account",
