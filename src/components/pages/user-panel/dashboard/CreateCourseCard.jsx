@@ -6,7 +6,7 @@ import ChangeMoment from "../../../../core/utility/moment"
 
 const CreateCourseCard = ({ price, title, teacher, picture, date, course = true }) => {
     return (
-        <div className='w-[400px] lg:w-full h-20 rounded-xl p-2 flex gap-x-2 bg-LightLavender hover:scale-105 duration-200 cursor-pointer'>
+        <div className='w-full md:w-[400px] lg:w-full h-20 rounded-xl p-2 flex gap-x-2 bg-LightLavender hover:scale-105 duration-200 cursor-pointer'>
             <ImageFallBack
                 src={picture}
                 fallback={fallback}
@@ -19,7 +19,7 @@ const CreateCourseCard = ({ price, title, teacher, picture, date, course = true 
                         <HatIcon className="w-4 h-4 stroke-VioletBlue" />
                         {teacher}
                     </span>
-                    <span className='hidden sm:block'>
+                    <span>
                         <span className="text-SunshineYellow inline-block text-base">
                             {course ? UnitPrice(price) : ChangeMoment(date, "YYYY/MM/DD", "persian")}
                         </span>

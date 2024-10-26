@@ -50,7 +50,7 @@ const StatisticsUser = () => {
     }, [myCourseCommentsSuccess, myBlogCommentsSuccess])
 
     return (
-        <div className='w-full h-fit flex gap-y-20 flex-wrap lg:flex-nowrap justify-evenly lg:justify-between'>
+        <div className='w-full h-fit flex gap-10 lg:gap-0 flex-wrap lg:flex-nowrap justify-evenly lg:justify-between'>
             <UserCourseStatus name={t("course")} href={"/userPanel/myCourses"} Icon={HatIcon} amount={myCourseSuccess && myCourseList.totalCount} description={t("participateInCourse")} />
             <UserCourseStatus name={t("course")} href={"/userPanel/reserved"} Icon={BasketIcon} amount={reserveSuccess && courseReserveList.length} description={t("reservationInCourse")} />
             <UserCourseStatus name={t("course")} href={"/userPanel/favorites"} Icon={HatIcon} amount={favoriteCount} description={t("favoriteStatistics")} />

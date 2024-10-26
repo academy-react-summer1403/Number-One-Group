@@ -18,8 +18,8 @@ const Dashboard = () => {
     return (
         <div className='w-full h-fit flex flex-wrap lg:px-10 mt-8'>
             <StatisticsUser />
-            <div className='flex flex-wrap justify-between items-center gap-y-6 mt-10'>
-                <UserCourseSection sectionName={t("latestNewsAndBlogs")}>
+            <div className='flex flex-wrap px-6 sm:px-10 lg:px-0 justify-between items-center gap-y-6 gap-x-6 mt-10'>
+                <UserCourseSection sectionName={t("latestNewsAndBlogs")} holderStyle="order-1 lg:order-none">
                     {blogSuccess && blogList.news.length != 0 ? blogList.news.slice(0, 2).map((item, index) => (
                         <CreateCourseCard
                             key={index}
@@ -29,7 +29,7 @@ const Dashboard = () => {
                             teacher={item.addUserFullName}
                             title={item.title}
                         />
-                    )) : <h1 className='w-full text-center mt-16 text-neutral-400'>موردی یافت نشد</h1>}
+                    )) : <h1 className='w-full text-center my-auto text-neutral-400'>موردی یافت نشد</h1>}
                 </UserCourseSection>
                 <CircularProgressUser />
                 <UserCourseSection sectionName={t("currentCourses")}>
@@ -41,7 +41,7 @@ const Dashboard = () => {
                             teacher={item.fullName}
                             title={item.courseTitle}
                         />
-                    )) : <h1 className='w-full text-center mt-16 text-neutral-400'>موردی یافت نشد</h1>}
+                    )) : <h1 className='w-full text-center my-auto text-neutral-400'>موردی یافت نشد</h1>}
                 </UserCourseSection>
                 <UserCourseSection href={"/course?V=1"} sectionName={t("suggestedCourses")}>
                     {suggestionCourseSuccess && suggestionCourse.length != 0 ? suggestionCourse.map((item, index) => (
@@ -52,7 +52,7 @@ const Dashboard = () => {
                             teacher={item.teacherName}
                             title={item.title}
                         />
-                    )) : <h1 className='w-full text-center mt-16 text-neutral-400'>موردی یافت نشد</h1>}
+                    )) : <h1 className='w-full text-center my-auto text-neutral-400'>موردی یافت نشد</h1>}
                 </UserCourseSection>
             </div>
         </div>

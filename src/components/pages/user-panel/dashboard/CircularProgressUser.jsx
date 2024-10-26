@@ -9,7 +9,7 @@ const CircularProgressUser = () => {
     const { t } = useTranslation()
 
     return (
-        <div className='w-[480px] h-[180px] mt-5 rounded-2xl flex items-center p-5 bg-LightLavender/50'>
+        <div className='w-full lg:w-[45%] mx-auto lg:mx-0 order-0 lg:order-none h-[180px] mt-5 rounded-2xl flex items-center p-5 bg-LightLavender/50'>
             <CircularProgress
                 classNames={{
                     svg: "w-36 h-36 drop-shadow-md",
@@ -25,13 +25,13 @@ const CircularProgressUser = () => {
                 {
                     profileProgress != 100 ? (
                         <>
-                            <p className='w-full text-center order-2 lg:order-none mediumStyle_text'>{t("progressTipFalse")}</p>
+                            <p className='w-full text-center mediumStyle_text'>{t("progressTipFalse")}</p>
                             <CustomButton Icon={EditIcon} href="/userPanel/editInformation" text={"completion"} vStyle="yellow" vType={"link"} />
                         </>
 
                     ) : (
                         <>
-                            <p className='w-full text-center order-2 lg:order-none mediumStyle_text'>{t("progressTipTrue")}</p>
+                            <p className='w-full text-center mediumStyle_text'>{t("progressTipTrue")}</p>
                             <CustomButton Icon={EditIcon} href="/userPanel/editInformation" text={"edit"} vStyle="yellow" vType={"link"} />
                         </>
                     )

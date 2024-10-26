@@ -6,7 +6,7 @@ import { Button } from "@nextui-org/react";
 const CustomButton = ({ text, arrowColor, vStyle, style, Icon, href, vType, isClick, disableArrow }) => {
     const { t, i18n } = useTranslation();
     const variantStyle = {
-        "purple": "bg-VioletBlue text-white buttonPurple_shadow",
+        "purple": "bg-VioletBlue dark:bg-[#1F1C73] text-white buttonPurple_shadow",
         "yellow": "bg-SunshineYellow text-black buttonYellow_shadow",
     }
 

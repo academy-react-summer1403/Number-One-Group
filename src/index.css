@@ -71,7 +71,7 @@ body {
   }
 
   .boldStyle_text {
-    @apply text-DarkBlue font-Sahel text-xl sm:text-3xl;
+    @apply text-DarkBlue font-Sahel text-3xl;
   }
 
   .mediumStyle_text {
