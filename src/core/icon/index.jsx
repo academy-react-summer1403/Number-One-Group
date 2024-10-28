@@ -455,7 +455,7 @@ export function ExitBtnPanelIcon(props) {
     return (
         <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
             <path d="M7 1L6.3374 1.23384C3.75867 2.144 2.46928 2.59908 1.73464 3.63742C1 4.67576 1 6.0431 1 8.7778V11.2222C1 13.9569 1 15.3242 1.73464 16.3626C2.46928 17.4009 3.75867 17.856 6.3374 18.7662L7 19" stroke="#FFC224" strokeWidth="2" strokeLinecap="round" {...props} />
-            <path d="M17 10H7M17 10C17 9.2998 15.0057 7.99153 14.5 7.5M17 10C17 10.7002 15.0057 12.0085 14.5 12.5" stroke="#FFC224" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M17 10H7M17 10C17 9.2998 15.0057 7.99153 14.5 7.5M17 10C17 10.7002 15.0057 12.0085 14.5 12.5" stroke="#FFC224" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props} />
         </svg>
     )
 }
