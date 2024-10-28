@@ -16,7 +16,7 @@ i18n.use(initReactI18next)
                     // Others
                     yes: 'بله', no: 'خیر', Reviews: 'امتیاز', student: 'دانشجو', Development: 'توسعه', By: 'توسط', map: 'نقشه', from: 'از',
                     test: 'این یک پیام تستی است', priceCount: 'تومان', show: 'نمایش', result: 'نتیجه از', sortBy: 'مرتب سازی بر اساس:', upTo: 'تا',
-                    studyTime: "دقیقه خواندن",
+                    studyTime: "دقیقه خواندن", gender: "جنسیت",
                     course: "دوره", viewAll: "مشاهده همه", edit: "ویرایش", cancel: "لغـــو", category: 'دسته بندی ها', AddToCart: "افزودن به سبد خرید",
                     description: "شرح", Comments: "کامنت ها", products: "محصولات", related: "مرتبط", completion: "تکمیل پروفایل",
                     // shop Details
@@ -160,7 +160,7 @@ i18n.use(initReactI18next)
                     // Others
                     yes: 'Yes', no: 'No', Reviews: 'Reviews', student: 'Students', Development: 'Development', By: 'By', map: 'Map',
                     test: 'This is a test message', priceCount: '$', show: 'Showing', result: 'Result of', sortBy: 'Sort By:', from: 'from', upTo: 'up To',
-                    studyTime: "minutes of reading",
+                    studyTime: "minutes of reading", gender: "Gender",
                     course: "Course", viewAll: "view all", edit: "Edit", cancel: "Cancel", category: 'Categories', AddToCart: "Add to cart",
                     description: "Description", Comments: "Comments", products: "Products", related: "related",  completion: "Completion profile",
                     // shop Details

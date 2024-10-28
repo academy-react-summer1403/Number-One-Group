@@ -3,10 +3,14 @@ import { UnitPrice } from "../../../../core/utility/SeparationPrice"
 import { ImageFallBack } from "../../../common"
 import fallback from "../../../../assets/images/image-not-found.png"
 import ChangeMoment from "../../../../core/utility/moment"
+import { Link } from "react-router-dom"
 
-const CreateCourseCard = ({ price, title, teacher, picture, date, course = true }) => {
+const CreateCourseCard = ({ price, title, teacher, picture, date, course = true, href }) => {
     return (
-        <div className='w-full md:w-[400px] lg:w-full h-20 rounded-xl p-2 flex gap-x-2 bg-LightLavender hover:scale-105 duration-200 cursor-pointer'>
+        <Link
+            to={href}
+            className='w-full md:w-[400px] lg:w-full h-20 rounded-xl p-2 flex gap-x-2 bg-LightLavender hover:scale-105 duration-200 cursor-pointer'
+        >
             <ImageFallBack
                 src={picture}
                 fallback={fallback}
@@ -27,7 +31,7 @@ const CreateCourseCard = ({ price, title, teacher, picture, date, course = true 
                     </span>
                 </div>
             </div>
-        </div>
+        </Link>
     )
 }
 

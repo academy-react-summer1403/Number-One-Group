@@ -29,10 +29,6 @@ const EditInformationFields = {
       certificate: "gender",
       sectionName: ["جنسیت", "Gender"],
       dir: "rtl",
-      options: [
-        [{id:1,value:"مرد"}, {id:2,value:"زن"}],
-        [{id:1,value:"Men"}, {id:2,value:"Women"}],
-      ],
       variant: "select",
     },
     {

@@ -13,7 +13,6 @@ const MyViews = () => {
   const { i18n } = useTranslation()
   const skeletonData = [{}, {}, {}, {}, {}, {}, {}, {}]
   const [count, setCount] = useState(0)
-  const params = { RenderComponent: TableItem, skeletonData: skeletonData, variant: "myViews", notFoundText: i18n.language == "fa" ? "موردی یافت نشد" : "No items found" }
   const { sortingCurrent, sortingCol, Query } = useSelector(state => state.MyViews)
 
   const {
@@ -49,6 +48,14 @@ const MyViews = () => {
       setCount(filteredData.length)
     }
   }, [sortingCol, courseSuccess, blogSuccess, filteredData])
+
+  const params = {
+    RenderComponent: TableItem,
+    skeletonData: skeletonData,
+    variant: "myViews",
+    notFoundText: i18n.language == "fa" ? "موردی یافت نشد" : "No items found",
+    bet: sortingCol == "course" ? 'course' : 'blog',
+  }
 
   const sortBox = [
     { defaultKey: 1, setState: setSortingCol, sortItem: i18n.language == "fa" ? sortOptionChooseList_Fa : sortOptionChooseList_En, label: "بخش مورد نظر" },
