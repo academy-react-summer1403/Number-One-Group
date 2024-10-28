@@ -15,7 +15,7 @@ const HowToStart = ({ requestSection = "show" }) => {
             <h1 className="boldStyle_text w-full text-center text-white">{t("howToStartTitle")}</h1>
             <p className="mediumStyle_text md:w-1/2 lg:w-1/3 text-center text-neutral-400">{t("howToStartDesc")}</p>
             <ul className="w-full flex flex-wrap xl:flex-nowrap relative mt-10">
-                <MediaQuery minWidth={"648px"}>
+                <MediaQuery minWidth={"1285px"}>
                     {encouragementItems.map((obj, index) => {
                         if (i18n.language === "en") {
                             return <Encouragement key={index} arrow={obj.arrow} icon={obj.icon} title={obj.title[1]} description={obj.description[1]} />
@@ -24,7 +24,7 @@ const HowToStart = ({ requestSection = "show" }) => {
                         }
                     })}
                 </MediaQuery>
-                <MediaQuery maxWidth={"648px"}>
+                <MediaQuery maxWidth={"1285px"}>
                     <SwiperSlider
                         perView={1}
                         arrowColor="#fff"
