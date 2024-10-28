@@ -35,7 +35,7 @@ const EditInformation = () => {
       <TitleSection Icon={UserIcon} name={t("editInformationTitle")} />
       <FormHolder
         initialValues={initialValues}
-        onSubmit={(event) => { mutate(event) }}
+        onSubmit={(event) => { mutate(event); console.log(event) }}
         style="w-full h-fit flex justify-center lg:justify-end flex-wrap gap-y-16 lg:gap-y-0 mt-10"
         additionParams={{ enableReinitialize: true }}
       >

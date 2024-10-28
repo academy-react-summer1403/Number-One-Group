@@ -52,12 +52,8 @@ const Login = () => {
                 )
                 )}
                 <div className='w-full flex justify-between gap-x-2 text-nowrap text-DarkBlue'>
-                    {/* <FormInput certificate="twoStep" variants="checkbox" placeholder={t("RememberMe")} /> */}
-                    {/* <Field type="checkbox" name={certificate} id={certificate} /> */}
                     <label htmlFor="rememberMe" className={`w-fit flex gap-x-2 items-center cursor-pointer`}>
-                        <Checkbox id='rememberMe'>
-                            {t("RememberMe")}
-                        </Checkbox>
+                        <FormInput certificate="twoStep" variants="checkbox" placeholder={t("RememberMe")} />
                     </label>
                     <Link to="/authorize/forgetPassword">{t("ForgetPassword")}</Link>
                 </div>

@@ -20,7 +20,10 @@ const OfflineWarning = () => {
     }, [])
 
     return (
-        !isOnline && <Spinner label="لطفا اینترنت خود را بررسی کنید..." size="lg" className="fixed z-50 top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]" color="secondary" />
+        !isOnline &&
+        <div className="h-screen w-screen bg-zinc-900/50  z-50 fixed  top-0 left-0">
+            <Spinner label="لطفا اینترنت خود را بررسی کنید..." size="lg" className="fixed z-50 top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]" color="secondary" />
+        </div>
     )
 }
 

@@ -5,6 +5,7 @@ import persian_fa from "react-date-object/locales/persian_fa"
 import { useTranslation } from 'react-i18next'
 import gregorian from "react-date-object/calendars/gregorian";
 import gregorian_en from "react-date-object/locales/gregorian_en";
+// import {DatePicker} from "@nextui-org/react";
 
 const CustomDatePicker = ({ field, form, ...props }) => {
     const { i18n } = useTranslation()
@@ -19,6 +20,7 @@ const CustomDatePicker = ({ field, form, ...props }) => {
     }
 
     return (
+        // <DatePicker className="max-w-[284px]" lang='persian' />
         <DatePicker
             calendar={persian}
             locale={persian_fa}
