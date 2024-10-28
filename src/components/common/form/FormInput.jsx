@@ -15,9 +15,7 @@ const FormInput = ({ sectionName, certificate, fullSize, dir, style, variants, f
                 name={certificate}
                 placeholder={placeholder}
                 id={certificate}
-                component={PasswordInput
-                    
-                }
+                component={PasswordInput}
             />
         ),
         simple: (

@@ -24,6 +24,7 @@ const PasswordInput = ({ form, field, ...props }) => {
                 </button>
             }
             type={isVisible ? "text" : "password"}
+            classNames={{ input: "!text-[#5751E1]" }}
             className="max-w-xs"
             {...props}
         />
