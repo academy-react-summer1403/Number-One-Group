@@ -17,7 +17,7 @@ const SkilledTeachers = () => {
                 <Label text={t("skilledTeachersLabel")} variant="bgGray" />
                 <h1 className="w-full text-center xl:text-start boldStyle_text">{t("skilledTeachersTitle")}</h1>
                 <p className="w-full text-center xl:text-start text-neutral-400">{t("skilledTeachersDesc")}</p>
-                <CustomButton text={t("skilledTeachersBtn")} style="mt-5" vStyle={"purple"} vType={"link"} arrowColor="#fff" />
+                <CustomButton href={"/teachers"} text={t("skilledTeachersBtn")} style="mt-5" vStyle={"purple"} vType={"link"} arrowColor="#fff" />
             </div>
             <div className="w-full xl:w-[640px] h-fit flex flex-wrap justify-between gap-y-10 relative">
                 <MediaQuery minWidth={"700px"}>

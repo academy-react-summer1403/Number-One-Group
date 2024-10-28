@@ -28,7 +28,7 @@ const Categories = () => {
 
     useEffect(() => { setAmount() }, [technologies])
 
-    const viewMoreBtn = <CustomButton text={t("skilledTechnologies")} style="lg:mt-5 max-lg:my-12 max-lg:mx-auto max-lg:block" vStyle={"purple"} vType={"link"} arrowColor="#fff" />
+    const viewMoreBtn = <CustomButton href={"/courses"} text={t("skilledTechnologies")} style="lg:mt-5 max-lg:my-12 max-lg:mx-auto max-lg:block" vStyle={"purple"} vType={"link"} arrowColor="#fff" />
     return (
         <div className="w-full lg:flex gap-x-2 lg:pb-28 xl:px-44 sm:px-16 px-8 justify-between items-center">
             <div data-aos="fade-left" className="min-w-[400px] w-full xl:w-[400px] h-fit flex justify-center xl:justify-start flex-wrap gap-y-4 z-40">

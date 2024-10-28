@@ -37,7 +37,7 @@ i18n.use(initReactI18next)
                     // Landing
                     // heroSection
                     heroSectionDescription: "هر سفر آموزشی و یادگیری دنبال کردن منحصر به فرد است ما به شما کمک خواهیم کرد", heroSectionTitle1: "هرگز از",
-                    heroSectionTitle2: "دست نکشید زندگی هرگز از آموزش دست نمی کشد", heroSectionBtn: "رایگان آزمایش کنید",
+                    heroSectionTitle2: "دست نکشید زندگی هرگز از آموزش دست نمی کشد", heroSectionBtn: "مشاهده دوره ها",
                     // category
                     categoryLabel: "دسته بندی های پرطرفدار", categoryTitle: "دسته بندی های برتر", categoryDescription: "دسته‌بندی‌های برتر ما به شما امکان می‌دهند دوره‌های آموزشی متناسب با علاقه‌تان را به‌راحتی پیدا کنید. با تمرکز بر مهارت‌های کلیدی، این دسته‌ها تجربه یادگیری جذاب و مؤثری را برای شما فراهم می‌کنند.",
                     // aboutUs

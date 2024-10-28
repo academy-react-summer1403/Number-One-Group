@@ -33,7 +33,7 @@ const HeroSection = () => {
                 </div>
                 <h1 className='boldStyle_text md:text-start text-center'>{t("heroSectionTitle2")}</h1>
                 <p className='mediumStyle_text md:text-start text-center'>{t("heroSectionDescription")}</p>
-                <CustomButton text={t("heroSectionBtn")} style="mt-5" vType={"button"} vStyle={"purple"} arrowColor="#fff" />
+                <CustomButton href={"/courses"} text={t("heroSectionBtn")} style="mt-5" vType={"link"} vStyle={"purple"} arrowColor="#fff" />
             </div>
             <div className="w-[600px] h-full hidden md:flex justify-center items-end relative">
                 <div className={`${i18n.language === "en" ? "left-[50px]" : "right-[50px]"} w-44 h-fit flex flex-wrap  gap-y-3 rounded-lg top-[80px] p-4 heroSection_box_shadow bg-MainBg text-DarkBlue absolute z-10`}>
