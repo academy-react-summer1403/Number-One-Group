@@ -3,46 +3,27 @@ import { ErrorMessage, Field } from "formik"
 import { UnEyeIcon, EyeIcon } from "../../../core/icon"
 import "./FormDate.css"
 import { useTranslation } from "react-i18next"
-import { Checkbox, Input, Select, SelectItem, Textarea } from "@nextui-org/react";
+import { Input, Select, SelectItem, Textarea } from "@nextui-org/react";
 import CustomDatePicker from "../../../core/utility/moment/CustomDatePicker"
+import PasswordInput from "../../pages/user-panel/edit-information/PasswordInput"
 
 const FormInput = ({ sectionName, certificate, options, fullSize, dir, style, variants, fieldStyle, eyeStyle, placeholder }) => {
-    const [isVisible, setIsVisible] = useState(false);
     const [selectedOption, SetSelectedOption] = useState(null);
     const handleChange = (selected) => {
         console.log(selected)
         var findKey = options.find(obj => obj.id == selected)
         SetSelectedOption(findKey)
     }
+    // console.log(isVisible)
     const { t, i18n } = useTranslation()
     const fieldVariants = {
         password: (
-            <div className="w-full relative">
-                <Field dir={dir} type={isVisible ? "text" : "password"} placeholder={placeholder} name={certificate} id={certificate} className={`fieldsStyle ${fieldStyle}`} />
-                <div onClick={() => { setIsVisible(!isVisible) }} className={`w-6 h-4 cursor-pointer absolute bottom-3 right-4 ${eyeStyle}`}>
-                    {isVisible ? <EyeIcon /> : <UnEyeIcon width="20" />}
-                </div>
-            </div>
-            // <Field>
-            //     {({ field }) => (
-            //         <Input
-            //             {...field}
-            //             // variant="bordered"
-            //             placeholder="Enter your password"
-            //             endContent={
-            //                 <button className="focus:outline-none" type="button" onClick={setIsVisible(!isVisible)}>
-            //                     {isVisible ? (
-            //                         <EyeIcon />
-            //                     ) : (
-            //                         <UnEyeIcon width={'20'} />
-            //                     )}
-            //                 </button>
-            //             }
-            //             type={isVisible ? "text" : "password"}
-            //             className="max-w-xs"
-            //         />
-            //     )}
-            // </Field>
+            <Field
+                name={certificate}
+                placeholder={placeholder}
+                id={certificate}
+                component={PasswordInput}
+            />
         ),
         simple: (
             <Field name={certificate}>{({ field }) => (<Input {...field} placeholder={placeholder} />)}</Field>
