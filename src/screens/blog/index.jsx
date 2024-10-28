@@ -17,6 +17,7 @@ import { blogFilterParams } from "../../core/constants/filter-params";
 import { motion } from "framer-motion";
 import configVariants from "../../config/page-transition";
 import { IoFilter } from "react-icons/io5";
+import FilterButton from "../../components/common/bottom-nav/FilterButton";
 
 const Blog = () => {
     const { t, i18n } = useTranslation();
@@ -63,56 +64,50 @@ const Blog = () => {
             animate={"animate"}
             exit={"exit"}
         >
-        <div>
-            <TitleSection title={'BlogSection'} >
-                <BreadCrumb type="Div" text="BlogSection" />
-            </TitleSection>
-            <div className="main-container flex gap-7 relative">
-                <MediaQuery minWidth={"1024px"}><FilterSide_Blogs /></MediaQuery>
-                <div className="lg:w-[87%] sm:w-full mobile:w-full mx-auto">
-                    <MediaQuery maxWidth={"1023px"}>
-                        <div onClick={onOpen} className="fixed right-5 bottom-40 bg-VioletBlue dark:bg-LavenderMist bottomNav z-30">
-                            <IoFilter color="#fff" />
-                        </div>
-                        <CreateModal isOpen={isOpen} onClose={onClose} header={t('filters')} size="xl" headerStyle="flex flex-col gap-1 text-white">
-                            <div onClick={onClose} className="closeButton_modal bg-neutral-200/65 top-2 left-2">
-                                <CloseIcon />
-                            </div>
-                            <FilterSide_Blogs />
-                        </CreateModal>
-                    </MediaQuery>
-                    <SectionTop
-                        lengthAllData={blogLengthFinished && blogLength?.totalCount}
-                        lengthFilteredData={isSuccess && blogData?.news?.length}
-                        setShowGrid={setShowGrid}
-                    >
-                        <SortBoxHolder>
-                            <SortBox
-                                setState={setSortingCol}
-                                options={i18n.language != "en" ? sortingColOptions_Blog_Fa : sortingColOptions_Blog_En}
-                                placeholder={i18n.language != "en" ? "انتخاب کنید" : "Choose"}
-                            />
-                        </SortBoxHolder>
-                        <ChangeView setShowGrid={setShowGrid} />
-                    </SectionTop>
-                    <PaginateHolderItems style="justify-center">
-                        <PaginatedItems setPage={setPageNumber} currentData={isSuccess && blogData?.totalCount} currentDataInOnePage={currentBlog}>
-                            <div className={`flex flex-wrap relative gap-x-1 justify-around gap-y-5 w-full m-auto my-2 ${showGrid && isTabletOrLapTop ? "grid-list" : ""}`}>
-                                <RenderItemsList
-                                    RenderComponent={BlogCard}
-                                    isLoading={isLoading}
-                                    isSuccess={isSuccess}
-                                    isError={isError}
-                                    originalData={isSuccess && blogData?.news}
-                                    skeletonData={skeletonData}
-                                    notFoundText={i18n.language != "en" ? "متاسفانه وبلاگی موجود نیست!" : "Unfortunately, there is no blog available!"}
-                                    refetchData={refetch}
+            <div>
+                <TitleSection title={'BlogSection'} >
+                    <BreadCrumb type="Div" text="BlogSection" />
+                </TitleSection>
+                <div className="main-container flex gap-7 relative">
+                    <MediaQuery minWidth={"1024px"}><FilterSide_Blogs /></MediaQuery>
+                    <div className="lg:w-[87%] sm:w-full mobile:w-full mx-auto">
+                        <MediaQuery maxWidth={"1023px"}>
+                            <FilterButton>
+                                <FilterSide_Blogs />
+                            </FilterButton>
+                        </MediaQuery>
+                        <SectionTop
+                            lengthAllData={blogLengthFinished && blogLength?.totalCount}
+                            lengthFilteredData={isSuccess && blogData?.news?.length}
+                            setShowGrid={setShowGrid}
+                        >
+                            <SortBoxHolder>
+                                <SortBox
+                                    setState={setSortingCol}
+                                    options={i18n.language != "en" ? sortingColOptions_Blog_Fa : sortingColOptions_Blog_En}
+                                    placeholder={i18n.language != "en" ? "انتخاب کنید" : "Choose"}
                                 />
-                            </div>
-                        </PaginatedItems>
-                    </PaginateHolderItems>
+                            </SortBoxHolder>
+                            <ChangeView setShowGrid={setShowGrid} />
+                        </SectionTop>
+                        <PaginateHolderItems style="justify-center">
+                            <PaginatedItems setPage={setPageNumber} currentData={isSuccess && blogData?.totalCount} currentDataInOnePage={currentBlog}>
+                                <div className={`flex flex-wrap relative gap-x-1 justify-around gap-y-5 w-full m-auto my-2 ${showGrid && isTabletOrLapTop ? "grid-list" : ""}`}>
+                                    <RenderItemsList
+                                        RenderComponent={BlogCard}
+                                        isLoading={isLoading}
+                                        isSuccess={isSuccess}
+                                        isError={isError}
+                                        originalData={isSuccess && blogData?.news}
+                                        skeletonData={skeletonData}
+                                        notFoundText={i18n.language != "en" ? "متاسفانه وبلاگی موجود نیست!" : "Unfortunately, there is no blog available!"}
+                                        refetchData={refetch}
+                                    />
+                                </div>
+                            </PaginatedItems>
+                        </PaginateHolderItems>
+                    </div>
                 </div>
-            </div>
             </div>
         </motion.div>
     )

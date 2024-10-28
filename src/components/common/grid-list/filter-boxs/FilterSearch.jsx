@@ -2,11 +2,13 @@ import { useTranslation } from "react-i18next"
 import { Search_TwoIcon } from "../../../../core/icon";
 import { useDispatch } from "react-redux";
 import { useSearchParams } from "react-router-dom";
+import { useEffect } from "react";
 
 const FilterSearch = ({ variant, setQuery, Style, holderDefault }) => {
     const { t } = useTranslation();
     const dispatch = useDispatch()
-    const [searchParams, setSearchParams] = useSearchParams();
+    const [searchParams, setSearchParams] = useSearchParams({ Query: holderDefault });
+    // console.log(holderDefault)
 
 
     const variantPlaceHolder = {
@@ -20,6 +22,12 @@ const FilterSearch = ({ variant, setQuery, Style, holderDefault }) => {
         else { dispatch(setQuery(undefined)); searchParams.delete("Query") }
         setSearchParams(searchParams);
     }
+    useEffect(() => {
+        if (holderDefault !== undefined) {
+            searchParams.set("Query", holderDefault);
+            setSearchParams(searchParams);
+        }
+    }, [])
 
     return (
         <div className={`flex items-center p-3 bg-LightGray rounded-lg mb-5 ${Style}`}>
