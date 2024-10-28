@@ -59,7 +59,7 @@ console.log(Query)
     variant: 'favorites',
     action: favoriteCoursesStatus ? courseMutate : blogMutate,
     keyVariant: favoriteCoursesStatus ? MyCourseFavoriteKey : MyBlogFavoriteKey,
-    navigateToPage: favoriteCoursesStatus ? '/CourseDetails/' : '/BlogDetails/',
+    bet: favoriteCoursesStatus ? 'course' : 'blog',
     id: favoriteCoursesStatus ? 'courseId' : 'newsId'
   }
 
