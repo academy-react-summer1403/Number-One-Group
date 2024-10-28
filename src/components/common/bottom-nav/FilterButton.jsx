@@ -12,7 +12,7 @@ const FilterButton = ({children}) => {
   return (
     <>
       <Tooltip {...tooltipStyle} content={i18n.language == "en" ? "ّFilters" : "فیلتر ها"}>
-        <div onClick={onOpen} className="!fixed right-5 bottom-40 bg-VioletBlue dark:bg-LavenderMist bottomNav z-30">
+        <div onClick={onOpen} className="fixed right-5 bottom-40 bg-VioletBlue dark:bg-LavenderMist bottomNav z-30">
           <IoFilter color="#fff" />
         </div>
       </Tooltip>
