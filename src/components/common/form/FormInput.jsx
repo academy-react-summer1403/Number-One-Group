@@ -1,44 +1,24 @@
-import { useState } from "react"
 import { ErrorMessage, Field } from "formik"
-import { UnEyeIcon, EyeIcon } from "../../../core/icon"
 import "./FormDate.css"
 import { useTranslation } from "react-i18next"
 import { Input, Textarea } from "@nextui-org/react";
 import CustomDatePicker from "../../../core/utility/moment/CustomDatePicker"
 import ChangeGender from "../../pages/user-panel/edit-information/ChangeGender"
+import PasswordInput from "../../pages/user-panel/edit-information/PasswordInput"
 
 const FormInput = ({ sectionName, certificate, fullSize, dir, style, variants, fieldStyle, eyeStyle, placeholder }) => {
-    const [isVisible, setIsVisible] = useState(false);
     const { t } = useTranslation()
 
     const fieldVariants = {
         password: (
-            <div className="w-full relative">
-                <Field dir={dir} type={isVisible ? "text" : "password"} placeholder={placeholder} name={certificate} id={certificate} className={`fieldsStyle ${fieldStyle}`} />
-                <div onClick={() => { setIsVisible(!isVisible) }} className={`w-6 h-4 cursor-pointer absolute bottom-3 right-4 ${eyeStyle}`}>
-                    {isVisible ? <EyeIcon /> : <UnEyeIcon width="20" />}
-                </div>
-            </div>
-            // <Field>
-            //     {({ field }) => (
-            //         <Input
-            //             {...field}
-            //             // variant="bordered"
-            //             placeholder="Enter your password"
-            //             endContent={
-            //                 <button className="focus:outline-none" type="button" onClick={setIsVisible(!isVisible)}>
-            //                     {isVisible ? (
-            //                         <EyeIcon />
-            //                     ) : (
-            //                         <UnEyeIcon width={'20'} />
-            //                     )}
-            //                 </button>
-            //             }
-            //             type={isVisible ? "text" : "password"}
-            //             className="max-w-xs"
-            //         />
-            //     )}
-            // </Field>
+            <Field
+                name={certificate}
+                placeholder={placeholder}
+                id={certificate}
+                component={PasswordInput
+                    
+                }
+            />
         ),
         simple: (
             <Field name={certificate}>

@@ -9,7 +9,7 @@ import gregorian_en from "react-date-object/locales/gregorian_en";
 
 const CustomDatePicker = ({ field, form, ...props }) => {
     const { i18n } = useTranslation()
-    const { name } = field
+    const { name } = field;
     const { setFieldValue } = form;
     const [value, setValue] = useState(new Date())
 
