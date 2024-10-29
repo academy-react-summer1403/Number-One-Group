@@ -20,7 +20,7 @@ const SectionTop = ({ lengthAllData, lengthFilteredData, children }) => {
                 {children}
                 <Tooltip {...tooltipStyle} content={i18n.language == "en" ? "Copy Address" : "کپی کردن آدرس"}>
                     <div onClick={handleCopyUrl} className="bg-VioletBlue cursor-pointer border border-VioletBlue p-2 rounded-lg">
-                        <FaHashtag className="fill-white w-[20px] h-[16px]" />
+                        <FaHashtag className="fill-white w-[20px] h-[18px]" />
                     </div>
                 </Tooltip>
             </div>
