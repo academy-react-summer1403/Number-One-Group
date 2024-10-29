@@ -6,7 +6,7 @@ import CustomDatePicker from "../../../core/utility/moment/CustomDatePicker"
 import ChangeGender from "../../pages/user-panel/edit-information/ChangeGender"
 import PasswordInput from "../../pages/user-panel/edit-information/PasswordInput"
 
-const FormInput = ({ sectionName, certificate, fullSize, dir, style, variants, fieldStyle, eyeStyle, placeholder }) => {
+const FormInput = ({ sectionName, certificate, fullSize, style, variants, fieldStyle, placeholder, color }) => {
     const { t } = useTranslation()
 
     const fieldVariants = {
@@ -25,7 +25,7 @@ const FormInput = ({ sectionName, certificate, fullSize, dir, style, variants, f
                         {...field}
                         placeholder={placeholder}
                         label={t(sectionName)}
-                        classNames={{ input: "!text-[#5751E1]" }}
+                        classNames={{ input: "!text-[#5751E1]", inputWrapper: color }}
                     />
                 )}
             </Field>
@@ -36,7 +36,7 @@ const FormInput = ({ sectionName, certificate, fullSize, dir, style, variants, f
         area: (
             <Field name={certificate} >
                 {({ field }) => (
-                    <Textarea {...field} label={t(sectionName)} classNames={{ input: "resize-y min-h-[80px] max-h-48 !text-[#5751E1]" }} />
+                    <Textarea {...field} label={t(sectionName) } classNames={{ input: "resize-y min-h-[80px] max-h-48 !text-[#5751E1]", inputWrapper:color }} />
                 )}
             </Field>
         ),

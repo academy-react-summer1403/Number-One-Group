@@ -45,8 +45,9 @@ const AddComments = ({ apiFunction, Id, refetch }) => {
               fieldStyle={field.fieldStyle}
               variants={field.variant}
               sectionName={field.sectionName}
-              placeholder={'comment_text'}
+              // placeholder={'comment_text'}
               style={'mb-4'}
+              color={'bg-white'}
             />
           )
         })}
