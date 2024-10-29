@@ -13,7 +13,8 @@ const ReplayComments = ({ item, refetch, variant }) => {
         autor,
         describe,
         id,
-        insertDate: date,
+        inserDate,
+        insertDate,
         likeCount,
         disslikeCount,
         dissLikeCount,
@@ -32,7 +33,7 @@ const ReplayComments = ({ item, refetch, variant }) => {
                     <TopSection
                         Style={'hidden'}
                         name={author ?? autor}
-                        date={date}
+                        date={inserDate ?? insertDate}
                         describe={describe} />
                     <DownSection
                         Style={'!hidden'}

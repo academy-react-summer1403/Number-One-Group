@@ -15,7 +15,7 @@ i18n.use(initReactI18next)
                     nameGroup: 'نامبر وان', teamSlogan: 'همیشه بهترین',
                     // Others
                     yes: 'بله', no: 'خیر', Reviews: 'امتیاز', student: 'دانشجو', Development: 'توسعه', By: 'توسط', map: 'نقشه', from: 'از',
-                    test: 'این یک پیام تستی است', priceCount: 'تومان', show: 'نمایش', result: 'نتیجه از', sortBy: 'مرتب سازی بر اساس:', upTo: 'تا',
+                    test: 'این یک پیام تستی است', priceCount: 'تومان', show: 'نمایش', result: 'نتیجه از', sortBy: 'مرتب سازی :', upTo: 'تا',
                     setRate:'امتیاز بدهید',
                     studyTime: "دقیقه خواندن", gender: "جنسیت",
                     course: "دوره", viewAll: "مشاهده همه", edit: "ویرایش", cancel: "لغـــو", category: 'دسته بندی ها', AddToCart: "افزودن به سبد خرید",

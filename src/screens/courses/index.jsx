@@ -7,7 +7,7 @@ import { setPageNumber, setRowsOfPage, setSortCal, setSortType } from "../../red
 import MediaQuery, { useMediaQuery } from "react-responsive";
 import { ChangeView, CreateModal, SectionTop, SortBox, SortBoxHolder, RenderItemsList, PaginatedItems, PaginateHolderItems } from "../../components/common";
 import { useEffect, useState } from "react";
-import { sortingOptionsType_Course_Fa, sortingOptionsType_Course_En, sortOptionCal_Fa, sortOptionCal_En } from "../../core/constants/sort";
+import { sortingOptionsType_Course_Fa, sortingOptionsType_Course_En, sortOptionCal_Fa, sortOptionCal_En, sortCurrentItem } from "../../core/constants/sort";
 import { useQueryWithDependencies, useQueryWithoutDependencies } from "../../core/hooks/react-query";
 import { useSearchParams } from "react-router-dom";
 import { courseFilterParams } from "../../core/constants/filter-params";
@@ -35,7 +35,11 @@ const Courses = () => {
         })
     }, [])
 
-
+    const sortBoxData = [
+        { setState: setSortCal, sortItem: i18n.language != "en" ? sortingOptionsType_Course_Fa : sortingOptionsType_Course_En, placeholder: i18n.language != "en" ? "انتخاب کنید" : "Choose" },
+        { setState: setSortType, sortItem: i18n.language != "en" ? sortOptionCal_Fa : sortOptionCal_En, placeholder: i18n.language != "en" ? "نزولی" : "Descending" },
+        { setState: setRowsOfPage, sortItem: sortCurrentItem , width:'!w-24',placeholder: i18n.language != "en" ? "تعداد " : "Number"  }
+    ]
 
     // Paginate
     const currentCourse = isTabletOrMobile ? 6 : 12;
@@ -74,21 +78,20 @@ const Courses = () => {
                             setShowGrid={setShowGrid}
                         >
                             <SortBoxHolder>
-                                <SortBox
-                                    setState={setSortCal}
-                                    options={i18n.language != "en" ? sortingOptionsType_Course_Fa : sortingOptionsType_Course_En}
-                                    placeholder={i18n.language != "en" ? "انتخاب کنید" : "Choose"}
-                                />
-                                <SortBox
-                                    setState={setSortType}
-                                    options={i18n.language != "en" ? sortOptionCal_Fa : sortOptionCal_En}
-                                    placeholder={i18n.language != "en" ? "نزولی" : "Descending"}
-                                />
+                                {sortBoxData.map((box, index) => (
+                                    <SortBox
+                                        key={index}
+                                        setState={box.setState}
+                                        options={box.sortItem}
+                                        placeholder={box.placeholder}
+                                        styleWidth={box.width}
+                                    />))}
+
                             </SortBoxHolder>
                             <ChangeView setShowGrid={setShowGrid} />
                         </SectionTop>
                         <PaginateHolderItems style="justify-center">
-                            <PaginatedItems setPage={setPageNumber} currentData={isSuccess && coursesData.totalCount} currentDataInOnePage={currentCourse}>
+                            <PaginatedItems setPage={setPageNumber} currentData={isSuccess && coursesData.totalCount} currentDataInOnePage={filterObj_Courses.RowsOfPage}>
                                 <div className={`flex flex-wrap relative gap-x-1 justify-around gap-y-5 w-full m-auto my-2 ${showGrid && isTabletOrLapTop ? "grid-list" : ""}`}>
                                     <RenderItemsList
                                         RenderComponent={CourseCard}

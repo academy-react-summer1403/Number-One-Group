@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { Select, SelectItem } from '@nextui-org/react';
 import { useDispatch } from 'react-redux';
 
-const SortBox = ({ options, defaultKey, placeholder, setState, ...props }) => {
+const SortBox = ({ options, defaultKey, placeholder, setState,styleWidth, ...props }) => {
     const [selectedOption, SetSelectedOption] = useState(null);
     const dispatch = useDispatch()
 
@@ -22,7 +22,7 @@ const SortBox = ({ options, defaultKey, placeholder, setState, ...props }) => {
             aria-label="select"
             items={options}
             placeholder={placeholder}
-            className="w-[180px] mx-auto"
+            className={`w-36 mx-auto ${styleWidth}`}
             onChange={(e) => { handleChange(e.target.value) }}
             defaultSelectedKeys={defaultKey ? [defaultKey] : null}
             classNames={{

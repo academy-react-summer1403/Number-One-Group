@@ -4,12 +4,12 @@ import { HamburgerMenu, LogoGroup, ScrollProgressBar, SearchInput } from "../../
 import { CartIcon, FavoriteIcon } from "../../../core/icon"
 import MediaQuery from "react-responsive"
 import BasketItems from "./BasketItem"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { Navbar } from "@nextui-org/react";
 import SideBarMenu from "./SideBarMenu"
 import { useState } from "react"
 import { useLocation } from "react-router-dom"
-import { GetProfileInfo } from "../../../core/services/api/get-data"
+import { GetMyFavoriteBlogs, GetMyFavoriteCourses, GetProfileInfo } from "../../../core/services/api/get-data"
 import { setInfoAction } from "../../../redux/slices/UserInfo"
 import HeaderButtons from "./HeaderButtons"
 import { useQueryWithoutDependencies } from "../../../core/hooks/react-query"
@@ -19,15 +19,19 @@ import { getItem } from "../../../core/hooks/local-storage"
 const Header = () => {
   const [visibleSearch, setVisibleSearch] = useState(false)
   const [visibleMenu, setVisibleMenu] = useState(false)
+  const UserInfo = useSelector(state => state.UserInfo.info)
   const dispatch = useDispatch()
   const location = useLocation()
 
   // basket and favoriteBox number
-  const { data: myFavoriteData } = useQueryWithoutDependencies("GET_MY_COURSES", null)
+  const { data: courseFavorite } = useQueryWithoutDependencies("GET_MY_COURSES", GetMyFavoriteCourses);
+  const { data: blogFavorite } = useQueryWithoutDependencies("GET_MY_FAVORITES", GetMyFavoriteBlogs);
+  const myFavoriteLength = courseFavorite?.favoriteCourseDto?.length + blogFavorite?.myFavoriteNews?.length;
   const { data: myCourseReserve } = useQueryWithoutDependencies('MY_RESERVED_LIST', null)
+
   const baskets = [
     { icon: CartIcon, number: myCourseReserve?.length, href: "/cart", tooltip: ["سبد خرید", "Cart"] },
-    { icon: FavoriteIcon, number: myFavoriteData?.favoriteCourseDto.length, href: "", tooltip: ["لیست علاقه مندی", "Favorite List"] },
+    { icon: FavoriteIcon, number: UserInfo !== false ? myFavoriteLength : null, href: UserInfo !== false && "/userPanel/favorites", tooltip: ["لیست علاقه مندی", "Favorite List"] },
   ];
 
   const menuItems = menuItem.map((item, index) => {

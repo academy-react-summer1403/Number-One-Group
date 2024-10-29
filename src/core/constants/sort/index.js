@@ -50,6 +50,12 @@ export const sortCurrentOffset = [
   { id: 3, value: 8, label: "8" },
 ];
 
+export const sortCurrentItem = [
+  { id: 1, value: 3, label: "3" },
+  { id: 2, value: 6, label: "6" },
+  { id: 3, value: 12, label: "12" },
+];
+
 export const sortOptionChooseList_Fa = [
   { id: 1, value: "course", label: "دوره های آموزشی" },
   { id: 2, value: "blog", label: "وبلاگ" },

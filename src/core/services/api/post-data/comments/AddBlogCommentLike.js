@@ -7,16 +7,16 @@ const AddBlogCommentLike = async (ParamsId, likeType, refetch) => {
       Http.post(`/News/CommentLike/${ParamsId}?LikeType=${likeType}`),
       {
         pending: "درحال ثبت شدن...",
-        success: "کامنت مورد نظر لایک شد",
+        success: likeType ? "کامنت مورد نظر لایک شد" : "کامنت مورد نظر دیس لایک شد",
         error: "دوباره تلاش کنید",
       }
     );
     if (result.success) {
       refetch();
-    } 
+    }
   } catch (error) {
     toast.error("مشکلی پیش آمده لطفا دوباره تلاش کنید");
-    console.log(error)
+    console.log(error);
   }
 };
 

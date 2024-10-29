@@ -5,7 +5,7 @@ import { Button, useDisclosure } from "@nextui-org/react";
 import { ChangeView, CreateModal, PaginatedItems, PaginateHolderItems, RenderItemsList, SectionTop, SortBox, SortBoxHolder } from "../../components/common";
 import { CloseIcon } from "../../core/icon";
 import { useTranslation } from "react-i18next";
-import { sortingColOptions_Blog_Fa, sortingColOptions_Blog_En } from "../../core/constants/sort";
+import { sortingColOptions_Blog_Fa, sortingColOptions_Blog_En, sortCurrentItem } from "../../core/constants/sort";
 import { useDispatch, useSelector } from "react-redux";
 import { setPageNumber, setSortingCol, setRowsOfPage } from "../../redux/slices/filter-box-slices/FilterBlog";
 import { useQueryWithDependencies, useQueryWithoutDependencies } from "../../core/hooks/react-query";
@@ -43,13 +43,14 @@ const Blog = () => {
             }
         })
     }, [])
+    const sortBoxData = [
+        { setState: setSortingCol, sortItem: i18n.language != "en" ? sortingColOptions_Blog_Fa : sortingColOptions_Blog_En, placeholder: i18n.language != "en" ? "انتخاب کنید" : "Choose" },
+        { setState: setRowsOfPage, sortItem: sortCurrentItem , width:'!w-24',placeholder: i18n.language != "en" ? "تعداد " : "Number"  }
+    ]
 
     // Pagination
     const currentBlog = isTabletOrMobile ? 6 : 12
     useEffect(() => { dispatch(setRowsOfPage(currentBlog)) }, [currentBlog])
-
-    // Modal
-    const { isOpen, onOpen, onClose } = useDisclosure();
 
     // Get blog list with filter
     const { data: blogData, isSuccess, isLoading, isError, refetch } = useQueryWithDependencies("GET_BLOGS_LIST", GetNewsFilterPage, FilterBlogObj, FilterBlogObj)
@@ -82,16 +83,19 @@ const Blog = () => {
                             setShowGrid={setShowGrid}
                         >
                             <SortBoxHolder>
-                                <SortBox
-                                    setState={setSortingCol}
-                                    options={i18n.language != "en" ? sortingColOptions_Blog_Fa : sortingColOptions_Blog_En}
-                                    placeholder={i18n.language != "en" ? "انتخاب کنید" : "Choose"}
-                                />
+                                 {sortBoxData.map((box, index) => (
+                                    <SortBox
+                                        key={index}
+                                        setState={box.setState}
+                                        options={box.sortItem}
+                                        placeholder={box.placeholder}
+                                        styleWidth={box.width}
+                                    />))}
                             </SortBoxHolder>
                             <ChangeView setShowGrid={setShowGrid} />
                         </SectionTop>
                         <PaginateHolderItems style="justify-center">
-                            <PaginatedItems setPage={setPageNumber} currentData={isSuccess && blogData?.totalCount} currentDataInOnePage={currentBlog}>
+                            <PaginatedItems setPage={setPageNumber} currentData={isSuccess && blogData?.totalCount} currentDataInOnePage={FilterBlogObj.RowsOfPage}>
                                 <div className={`flex flex-wrap relative gap-x-1 justify-around gap-y-5 w-full m-auto my-2 ${showGrid && isTabletOrLapTop ? "grid-list" : ""}`}>
                                     <RenderItemsList
                                         RenderComponent={BlogCard}

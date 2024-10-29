@@ -44,7 +44,7 @@ const Favorites = () => {
 
   // handle search filter for myFavorite Items
   const myFavoriteData = sortingCol === 'course' ? myCoursesData?.favoriteCourseDto.slice(itemOffset, endOffset)
-    : myBlogData?.myFavoriteNews.slice(itemOffset, endOffset);
+    : myBlogData?.a.slice(itemOffset, endOffset);
   const title = sortingCol === 'course' ? MyCourseFavoriteKey[0] : MyBlogFavoriteKey[0];
   const filteredData = myFavoriteData?.filter(item => item?.[title].indexOf(Query) != -1).slice(itemOffset, endOffset);
 console.log(Query)
