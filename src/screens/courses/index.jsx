@@ -37,8 +37,8 @@ const Courses = () => {
 
     const sortBoxData = [
         { setState: setSortCal, sortItem: i18n.language != "en" ? sortingOptionsType_Course_Fa : sortingOptionsType_Course_En, placeholder: i18n.language != "en" ? "انتخاب کنید" : "Choose" },
-        { setState: setSortType, sortItem: i18n.language != "en" ? sortOptionCal_Fa : sortOptionCal_En, placeholder: i18n.language != "en" ? "نزولی" : "Descending" },
-        { setState: setRowsOfPage, sortItem: sortCurrentItem , width:'!w-24',placeholder: i18n.language != "en" ? "تعداد " : "Number"  }
+        { setState: setSortType, width: '!w-24', sortItem: i18n.language != "en" ? sortOptionCal_Fa : sortOptionCal_En, placeholder: i18n.language != "en" ? "نزولی" : "Descending" },
+        { setState: setRowsOfPage, sortItem: sortCurrentItem, width: '!w-24', placeholder: i18n.language != "en" ? "تعداد " : "Number" }
     ]
 
     // Paginate
