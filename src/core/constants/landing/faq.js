@@ -2,10 +2,10 @@ export const faqOptions = [
   {
     label: [
       "نامبر وان می خواهد به شما چه چیزی دهد؟",
-      "?What’s Skillgrow Want to give you",
+      "?What’s Number One Want to give you",
     ],
     content: [
-      "صندوق ورودی مشترک بصری Groove سازماندهی اعضای تیم را آسان می کند در این قسمت نه تنها پنج قرن زنده ماند چاپگر ناشناخته یک گالری از نوع و درهم گرفت.",
+      "نامبر وان به شما بینش و اطلاعات دقیق درباره موضوع مورد نظر می‌دهد. این پاسخ می‌تواند راهنمایی‌های ارزشمندی برای تصمیم‌گیری‌های بهتر ارائه کند.",
       "Groove’s intuitive shared inbox makes it easy for team members organize prioritize and.In this episode.urvived not only five centuries.Edhen an unknown printer took a galley of type and scrambl",
     ],
   },
@@ -15,7 +15,7 @@ export const faqOptions = [
       "?Why choose us for your education",
     ],
     content: [
-      "صندوق ورودی مشترک بصری Groove سازماندهی اعضای تیم را آسان می کند در این قسمت نه تنها پنج قرن زنده ماند چاپگر ناشناخته یک گالری از نوع و درهم گرفت.",
+      "ما با ارائه آموزش با کیفیت، اساتید خبره و برنامه‌های متنوع، تجربه‌ای منحصر به فرد برای شما فراهم می‌کنیم. هدف ما ارتقاء مهارت‌ها و موفقیت شما در مسیر تحصیلی و حرفه‌ای است.",
       "Groove’s intuitive shared inbox makes it easy for team members organize prioritize and.In this episode.urvived not only five centuries.Edhen an unknown printer took a galley of type and scrambl",
     ],
   },
@@ -25,7 +25,7 @@ export const faqOptions = [
       "?How We Provide Service For you",
     ],
     content: [
-      "صندوق ورودی مشترک بصری Groove سازماندهی اعضای تیم را آسان می کند در این قسمت نه تنها پنج قرن زنده ماند چاپگر ناشناخته یک گالری از نوع و درهم گرفت.",
+      "ما با ارائه برنامه‌های آموزشی سفارشی، پشتیبانی تخصصی و منابع یادگیری پیشرفته، خدماتی جامع و مؤثر را برای شما مهیا می‌کنیم. هدف ما تضمین موفقیت شما از طریق تجربه‌ای پویا و تعاملی است.",
       "Groove’s intuitive shared inbox makes it easy for team members organize prioritize and.In this episode.urvived not only five centuries.Edhen an unknown printer took a galley of type and scrambl",
     ],
   },
@@ -35,7 +35,7 @@ export const faqOptions = [
       "Are you Affordable For Your Course",
     ],
     content: [
-      "صندوق ورودی مشترک بصری Groove سازماندهی اعضای تیم را آسان می کند در این قسمت نه تنها پنج قرن زنده ماند چاپگر ناشناخته یک گالری از نوع و درهم گرفت.",
+      "بله، دوره‌های ما با توجه به کیفیت بالای آموزش و ملاحظات مالی طراحی شده‌اند تا برای تمامی دانش‌آموزان مقرون به صرفه باشند. ما تلاش می‌کنیم تا ارزش بالایی را در عین هزینه‌های معقول ارائه دهیم.",
       "Groove’s intuitive shared inbox makes it easy for team members organize prioritize and.In this episode.urvived not only five centuries.Edhen an unknown printer took a galley of type and scrambl",
     ],
   },

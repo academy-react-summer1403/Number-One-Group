@@ -9,7 +9,7 @@ const CategoryItem = ({ title, amount, icon }) => {
         <motion.div
             whileHover={{ scale: tabletOrMobile ? 1.05 : 1.1 }}
             className="xl:w-[240px] xl:h-[240px] sm:w-48 sm:h-48 p-8 rounded-3xl bg-gradient-to-b from-neutral-400 dark:from-neutral-700
-             to-neutral-200 dark:to-neutral-900 sm:odd:-mt-[60px] sm:even:mt-[10px] max-sm:mx-auto max-sm:mt-2 flex flex-wrap justify-center z-50"
+             to-neutral-200 dark:to-neutral-900 max-sm:mx-auto max-sm:mt-2 flex flex-wrap justify-center z-50"
         >
             <div className="xl:w-28 xl:h-28 flex items-center justify-center rounded-3xl border border-LightGrayish">
                 <ImageFallBack

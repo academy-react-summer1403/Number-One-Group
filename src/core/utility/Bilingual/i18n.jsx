@@ -16,7 +16,8 @@ i18n.use(initReactI18next)
                     // Others
                     yes: 'بله', no: 'خیر', Reviews: 'امتیاز', student: 'دانشجو', Development: 'توسعه', By: 'توسط', map: 'نقشه', from: 'از',
                     test: 'این یک پیام تستی است', priceCount: 'تومان', show: 'نمایش', result: 'نتیجه از', sortBy: 'مرتب سازی بر اساس:', upTo: 'تا',
-                    studyTime: "دقیقه خواندن",setRate:'امتیاز بدهید',
+                    setRate:'امتیاز بدهید',
+                    studyTime: "دقیقه خواندن", gender: "جنسیت",
                     course: "دوره", viewAll: "مشاهده همه", edit: "ویرایش", cancel: "لغـــو", category: 'دسته بندی ها', AddToCart: "افزودن به سبد خرید",
                     description: "شرح", Comments: "کامنت ها", products: "محصولات", related: "مرتبط", completion: "تکمیل پروفایل",
                     // shop Details
@@ -30,31 +31,31 @@ i18n.use(initReactI18next)
                     PlaceHolder_Shop: 'جستجو برای محصول ...', emailPlaceholder: "ایمیل خود را وارد کنید", passwordPlaceholder: "رمز عبور خود را وارد کنید",
                     phonePlaceholder: "شماره مبایل خود را وارد کنید",
                     // data in the Footer
-                    footerDescription: 'هنگامی که یک چاپگر ناشناخته گالری را تایپ کرده و آن را در هم می زند تا نمونه ای بسازد',
+                    footerDescription: ' بهترین دوره ها جهان را با ما تجربه کنید تا بتوانید بهترین باشید',
                     // Links
                     linksTitle: 'لینک های مفید', link1: 'ارزش های ما', link2: 'هیئت مشاوران ما', link3: 'شرکای ما',
                     link4: 'شریک شدن', link5: 'در Future Learn کار کنید', link6: 'Quizlet Plus',
                     // Landing
                     // heroSection
                     heroSectionDescription: "هر سفر آموزشی و یادگیری دنبال کردن منحصر به فرد است ما به شما کمک خواهیم کرد", heroSectionTitle1: "هرگز از",
-                    heroSectionTitle2: "دست نکشید زندگی هرگز از آموزش دست نمی کشد", heroSectionBtn: "رایگان آزمایش کنید",
+                    heroSectionTitle2: "دست نکشید زندگی هرگز از آموزش دست نمی کشد", heroSectionBtn: "مشاهده دوره ها",
                     // category
-                    categoryLabel: "دسته بندی های پرطرفدار", categoryTitle: "دسته بندی های برتر", categoryDescription: "لورم  ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ  و با استفاده از  طراحان گرافیک است   چاپگرها و متون بلکه روزنامه و مجله در ستون و  سطرآنچنان که لازم است   و برای شرایط فعلی تکنولوژی مورد نیاز",
+                    categoryLabel: "دسته بندی های پرطرفدار", categoryTitle: "دسته بندی های برتر", categoryDescription: "دسته‌بندی‌های برتر ما به شما امکان می‌دهند دوره‌های آموزشی متناسب با علاقه‌تان را به‌راحتی پیدا کنید. با تمرکز بر مهارت‌های کلیدی، این دسته‌ها تجربه یادگیری جذاب و مؤثری را برای شما فراهم می‌کنند.",
                     // aboutUs
                     aboutLabel: "درباره ما بیشتر بدانید", aboutTitle1: "هزاران", aboutTitle2: "برتر اکنون در یک مکان",
-                    aboutDescription: "صندوق ورودی مشترک بصری Groove این کار را برای اعضای تیم آسان می کند سازماندهی، اولویت بندی و. در این قسمت از Smashing Pod ما هستیم در مورد پایه پلتفرم وب.",
+                    aboutDescription: "ما هزاران دوره برتر را در این مکان ارائه می‌دهیم که به ارتقای مهارت‌ها و دانش شما کمک می‌کند. این دوره‌ها در موضوعات متنوع طراحی شده‌اند تا شما را برای فرصت‌های شغلی بهتر آماده کنند.",
                     aboutBtn: "رایگان آزمایش کنید", aboutImportantWord: "دوره های", boardText: "بیش از 36 هزار دانشجوی ثبت نام شده",
                     // topCourses
-                    topCoursesLabel: "دوره های کلاس برتر", topCoursesTitle: "بهترین دوره های آموزشی جهان ما را کاوش کنید", topCoursesDescription: "امروزه به دلیل آن که ارتباطات فضای مجازی رونق زیادی یافته است",
+                    topCoursesLabel: "دوره های کلاس برتر", topCoursesTitle: "بهترین دوره های آموزشی جهان ما را کاوش کنید", topCoursesDescription: "بهترین دوره‌های آموزشی جهان را کاوش کنید و مهارت‌های خود را ارتقا دهید.",
                     // skilledTeachers
                     skilledTeachersLabel: "معلم های ماهر", skilledTeachersTitle: "کلاس برتر ما و مربیان خبره در یک مکان",
-                    skilledTeachersDesc: "هنگامی که یک چاپگر ناشناس یک گالری از نوع و کتاب نمونه درهم درست شده باقی نمانده است فقط پنج قرن", skilledTeachersBtn: "همه مربیان را ببینید",
+                    skilledTeachersDesc: "در کلاس‌های برتر ما با مربیان خبره، یادگیری با کیفیت و مهارت‌های عملی را تجربه کنید و در مسیر پیشرفت قرار گیرید.", skilledTeachersBtn: "همه مربیان را ببینید",
                     // faq
-                    faqLabel: "سوالات متداول", faqTitle: "شروع به تمرین از مربیان حرفه ای جهان", faqDescription: "صندوق ورودی مشترک بصری Groove این کار را برای اعضای تیم آسان می کند دهی، اولویت بندی و.در این قسمت.",
+                    faqLabel: "سوالات متداول", faqTitle: "شروع به تمرین از مربیان حرفه ای جهان", faqDescription: "در کلاس‌های شروع به تمرین با مربیان حرفه‌ای، مهارت‌های خود را با تمرین‌های عملی و راهنمایی‌های تخصصی بهبود دهید.",
                     // howToStart
                     howToStartLabel: "چگونه سفر را شروع می کنیم", howToStartTitle: "سفر یادگیری خود را از همین امروز شروع کنید!", howToStartDesc: "اعضای شهودی Groove make team ورودی را با هم به تقسیم سازماندهی، اولویت بندی و.در این قسمت.",
                     // lastBlogs
-                    lastBlogsLabel: "اخبار و وبلاگ ها", lastBlogsTitle: "آخرین خبر ما", lastBlogsDesc: "هنگامی که چاپگر شناخته شده یک گالری از نوع scrambl edmake گرفت",
+                    lastBlogsLabel: "اخبار و وبلاگ ها", lastBlogsTitle: "آخرین خبر ما", lastBlogsDesc: "آخرین خبر ما: جدیدترین به‌روزرسانی‌ها و اطلاعات درباره دوره‌ها و رویدادها را ببینید!",
                     blogFavorite: 'آیا از این مقاله راضی بودید؟', LearnBlog: 'در این مقاله چه چیزی یاد خواهم گرفت؟',
                     // informedPoster
                     informedPlaceholder: "ایمیل خود را تایپ کنید", informedWord1: "میخواهید در مورد", informedWord3: "جدید",
@@ -62,7 +63,7 @@ i18n.use(initReactI18next)
                     // Company
                     companyTitle: 'شرکت ما', company1: 'با ما تماس بگیرید', company2: 'معلم شوید',
                     company3: 'وبلاگ', company4: 'مربی', company5: 'مناسبت ها',
-                    touchTitle: 'در تماس باشید', touchDesc: 'هنگامی که یک چاپگر ناشناس گرفت نوع گالری و درهم',
+                    touchTitle: 'در تماس باشید', touchDesc: 'با ما در تماس باشید تا بتوانید هر چه سرعتر مشکلتان را حل کنید',
                     // titlePages
                     loginTitle: 'ورود به عنوان دانش آموز', login: "ورود", instructorsTitle: "همه مربیان",
                     CoursesTitle: 'همه دوره ها', comparisonTitle: 'مقایسه',
@@ -160,7 +161,8 @@ i18n.use(initReactI18next)
                     // Others
                     yes: 'Yes', no: 'No', Reviews: 'Reviews', student: 'Students', Development: 'Development', By: 'By', map: 'Map',
                     test: 'This is a test message', priceCount: '$', show: 'Showing', result: 'Result of', sortBy: 'Sort By:', from: 'from', upTo: 'up To',
-                    studyTime: "minutes of reading",setRate:'Rate It',
+                    setRate:'Rate It',
+                    studyTime: "minutes of reading", gender: "Gender",
                     course: "Course", viewAll: "view all", edit: "Edit", cancel: "Cancel", category: 'Categories', AddToCart: "Add to cart",
                     description: "Description", Comments: "Comments", products: "Products", related: "related",  completion: "Completion profile",
                     // shop Details
@@ -186,7 +188,7 @@ i18n.use(initReactI18next)
                     categoryLabel: "Trending Categories", categoryTitle: "Top Category We Have", categoryDescription: "when known printer took a galley of type scrambl edmake",
                     // aboutUs
                     aboutLabel: "Get More About Us", aboutTitle1: "Thousand Of Top", aboutTitle2: "Now in One Place",
-                    aboutDescription: "Groove’s intuitive shared inbox makes it easy for team members to organize, prioritize and.In this episode of the Smashing Pod we’re alking about Web Platform Baseline.",
+                    aboutDescription: "We offer thousands of top courses at this location that will help you upgrade your skills and knowledge. These courses are designed in a variety of subjects to better prepare you for career opportunities.",
                     aboutBtn: "Start Free Trial", aboutImportantWord: "Courses", boardText: "36K+ Enrolled Students",
                     // topCourses
                     topCoursesLabel: "Top Class Courses", topCoursesTitle: "Explore Our World's Best Courses", topCoursesDescription: "When known printer took a galley of type scrambl edmake",

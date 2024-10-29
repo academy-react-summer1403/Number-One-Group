@@ -3,7 +3,6 @@ import http from "../../interceptor";
 import useFormData from "../../../hooks/form-data";
 
 const EditProfile = async (value) => {
-  console.log(value)
   try {
     const dataObj = useFormData(value);
 

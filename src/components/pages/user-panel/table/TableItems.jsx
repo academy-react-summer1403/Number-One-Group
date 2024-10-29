@@ -9,8 +9,8 @@ import ChangeMoment from "../../../../core/utility/moment"
 import { ImageFallBack } from "../../../common"
 import fallback from "../../../../assets/images/image-not-found.png"
 
-const TableItem = ({ item, variant, loading: isLoading, action, keyVariant, navigateToPage, id }) => {
-    const Navigate = useNavigate();
+const TableItem = ({ item, variant, loading: isLoading, action, keyVariant, bet }) => {
+    const navigate = useNavigate();
     const { i18n } = useTranslation()
     const differentSection = {
         myCourses: {
@@ -23,11 +23,10 @@ const TableItem = ({ item, variant, loading: isLoading, action, keyVariant, navi
             ],
             width: "25",
             actions: [
-                { Icon: EyeIcon, tooltip: ["جزئیات", "Details"] },
+                { Icon: EyeIcon, tooltip: ["جزئیات", "Details"], function: () => { navigate(`/CourseDetails/${item.courseId}`) } },
             ]
         },
         reserved: {
-            pic: null,
             sections: [
                 { section: item.courseName },
                 { section: ChangeMoment(item.reserverDate, "YYYY/MM/DD", "persian"), dir: "ltr" },
@@ -36,11 +35,10 @@ const TableItem = ({ item, variant, loading: isLoading, action, keyVariant, navi
             width: "33",
             actions: [
                 { Icon: TrashCan, tooltip: ["حذف", "Delete"], function: () => { action(item.reserveId) }, accept: item.accept },
-                { Icon: EyeIcon, tooltip: ["جزئیات", "Details"], function: () => { alert('Details') } },
+                { Icon: EyeIcon, tooltip: ["جزئیات", "Details"], function: () => { navigate(`/CourseDetails/${item.courseId}`) } },
             ]
         },
         myViews: {
-            id: ++id,
             sections: [
                 { section: item.courseTitle },
                 { section: item.title },
@@ -49,11 +47,12 @@ const TableItem = ({ item, variant, loading: isLoading, action, keyVariant, navi
             ],
             width: "25",
             actions: [
-                { Icon: EyeIcon, tooltip: ["جزئیات", "Details"], function: () => { alert('Details') } },
+                { Icon: EyeIcon, tooltip: ["جزئیات", "Details"], function: () => { navigate(`${bet == "course" ? `/CourseDetails/${item.courseId}` : `/BlogDetails/${item.newsId}`}`) } },
                 { Icon: TrashCan, tooltip: ["حذف", "Delete"], function: () => { action(item.reserveId) }, accept: item.accept },
             ]
         },
         favorites: {
+            pic: bet == "course" ? item.tumbImageAddress : item.currentImageAddressTumb,
             sections: [
                 { section: item?.[keyVariant?.[0]] },
                 { section: item?.[keyVariant?.[1]] },
@@ -62,7 +61,7 @@ const TableItem = ({ item, variant, loading: isLoading, action, keyVariant, navi
             ],
             width: "25",
             actions: [
-                { Icon: EyeIcon, tooltip: ["جزئیات", "Details"], function: () => { Navigate(navigateToPage.concat(item?.[id])) } },
+                { Icon: EyeIcon, tooltip: ["جزئیات", "Details"], function: () => { navigate(`${bet == "course" ? `/CourseDetails/${item.courseId}` : `/BlogDetails/${item.newsId}`}`) } },
                 { Icon: TrashCan, tooltip: ["حذف", "Delete"], function: () => { action(item.favoriteId) } },
             ]
         }

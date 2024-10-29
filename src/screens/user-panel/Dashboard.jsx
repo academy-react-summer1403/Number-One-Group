@@ -28,6 +28,7 @@ const Dashboard = () => {
                             date={item.updateDate}
                             teacher={item.addUserFullName}
                             title={item.title}
+                            href={`/BlogDetails/${item.id}`}
                         />
                     )) : <h1 className='w-full text-center my-auto text-neutral-400'>موردی یافت نشد</h1>}
                 </UserCourseSection>
@@ -40,6 +41,7 @@ const Dashboard = () => {
                             price={item.cost}
                             teacher={item.fullName}
                             title={item.courseTitle}
+                            href={`/CourseDetails/${item.courseId}`}
                         />
                     )) : <h1 className='w-full text-center my-auto text-neutral-400'>موردی یافت نشد</h1>}
                 </UserCourseSection>
@@ -51,6 +53,7 @@ const Dashboard = () => {
                             price={item.cost}
                             teacher={item.teacherName}
                             title={item.title}
+                            href={`/CourseDetails/${item.courseId}`}
                         />
                     )) : <h1 className='w-full text-center my-auto text-neutral-400'>موردی یافت نشد</h1>}
                 </UserCourseSection>

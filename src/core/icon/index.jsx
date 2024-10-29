@@ -686,7 +686,5 @@ export function BannerImg(props) {
                 </clipPath>
             </defs>
         </svg>
-
-
     )
 }

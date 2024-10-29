@@ -20,7 +20,7 @@ const EditInformation = () => {
     email: profile["email"],
     homeAdderess: profile["homeAdderess"],
     userAbout: profile["userAbout"],
-    gender: profile["gender"],
+    gender: profile.gender,
     telegramLink: profile["telegramLink"],
     linkdinProfile: profile["linkdinProfile"],
   }
@@ -31,7 +31,7 @@ const EditInformation = () => {
   })
 
   return (
-    <div className="w-[90%] border-t border-LightGrayish flex relative">
+    <div className="w-[90%] border-t border-LightGrayish flex relative mt-8">
       <TitleSection Icon={UserIcon} name={t("editInformationTitle")} />
       <FormHolder
         initialValues={initialValues}
