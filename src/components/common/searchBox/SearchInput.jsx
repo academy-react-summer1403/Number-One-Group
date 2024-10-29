@@ -38,7 +38,7 @@ const SearchInput = ({ setQueryProp, showSearchFilter = true, inputStyle, holder
         }
     }
     const SetQueryProps = (value) => {
-        dispatch(setQueryProp(value))
+        if (setQueryProp) dispatch(setQueryProp(value))
     }
 
     const handleDisabledKeys = () => {

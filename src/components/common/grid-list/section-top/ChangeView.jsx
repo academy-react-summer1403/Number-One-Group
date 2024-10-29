@@ -19,7 +19,7 @@ const ChangeView = ({ setShowGrid }) => {
         if (searchParams.get('V') == 1) setShowGrid(false)
         else setShowGrid(true)
 
-        setSearchParams(searchParams);
+        // setSearchParams(searchParams);
     }, [searchParams])
 
     return (
