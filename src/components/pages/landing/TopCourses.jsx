@@ -57,7 +57,9 @@ const TopCourses = () => {
                     ))}
                 </SwiperSlider>
             </div>
-            <CustomButton href="/courses" text={t("viewAll")} style="mt-5" vType={"link"} vStyle={"purple"} arrowColor="#fff" />
+            <div className="w-full flex justify-center">
+                <CustomButton href="/courses" text={t("viewAll")} style="mt-5" vType={"link"} vStyle={"purple"} arrowColor="#fff" />
+            </div>
         </div>
     )
 }

@@ -10,6 +10,11 @@ import { Autoplay } from 'swiper/modules';
 const LastBlogs = () => {
   const { t } = useTranslation()
   const theme = useSelector(state => state.DarkMode)
+  const Breakpoints = {
+    1024: { spaceBetween: 20, slidesPerView: 4 },
+    680: { spaceBetween: 20, slidesPerView: 2 },
+    300: { spaceBetween: 20, slidesPerView: 1 },
+  }
 
   const { data, isSuccess, refetch } = useQueryWithoutDependencies("GET_BLOG_LIST", GetNewsFilterPage)
 
@@ -21,6 +26,7 @@ const LastBlogs = () => {
       <div className="max-[680px]:w-[300px] w-[110%] mt-5 relative">
         <SwiperSlider
           perView={4}
+          Breakpoints={Breakpoints}
           arrowColor="#fff"
           buttonSideLeft="hidden"
           buttonSideRight="hidden"
@@ -38,7 +44,9 @@ const LastBlogs = () => {
           ))}
         </SwiperSlider>
       </div>
-      <CustomButton href="/Blog?V=1" text={t("viewAll")} style="mt-5" vType={"link"} vStyle={"purple"} arrowColor="#fff" />
+      <div className="w-full flex justify-center">
+        <CustomButton href="/Blog?V=1" text={t("viewAll")} style="mt-5" vType={"link"} vStyle={"purple"} arrowColor="#fff" />
+      </div>
     </div>
   )
 }

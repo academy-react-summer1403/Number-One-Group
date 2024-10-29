@@ -17,7 +17,7 @@ const FilterCheckBox = ({
   const Dispatch = useDispatch();
   const [searchParams, setSearchParams] = useSearchParams();
   const [checkedData, SetCheckedData] = useState(false);
-  const [selected, setSelected] = useState('')
+  const [selected, setSelected] = useState([])
 
   // Checkbox filtering function
   const selectBtn = (e, item) => {
@@ -52,7 +52,7 @@ const FilterCheckBox = ({
 
   useEffect(() => {
     if (isRefetching) {
-      setSelected("")
+      setSelected([])
     }
   }, [isRefetching])
 

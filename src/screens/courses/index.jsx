@@ -54,24 +54,20 @@ const Courses = () => {
     const { data: coursesLength, isSuccess: coursesLengthFinished } = useQueryWithoutDependencies("GET_COURSES_LENGTH", GetAllCourseByPagination)
 
     return (
-        <motion.div
-            variants={configVariants}
-            initial={"initial"}
-            animate={"animate"}
-            exit={"exit"}
-        >
-            <>
+        <>
+            <motion.div
+                variants={configVariants}
+                initial={"initial"}
+                animate={"animate"}
+                exit={"exit"}
+                className=""
+            >
                 <TitleSection title={'CoursesTitle'} >
                     <BreadCrumb type="Div" text={'CoursesTitle'} />
                 </TitleSection>
                 <div className="main-container flex gap-7">
                     <MediaQuery minWidth={"1050px"}><FilterSide_Courses /></MediaQuery>
-                    <div className="lg:w-[87%] sm:w-full  mx-auto">
-                        <MediaQuery maxWidth={"1049px"}>
-                            <FilterButton>
-                                <FilterSide_Courses />
-                            </FilterButton>
-                        </MediaQuery>
+                    <div className="lg:w-[87%] sm:w-full mx-auto">
                         <SectionTop
                             lengthAllData={coursesLengthFinished && coursesLength.totalCount}
                             lengthFilteredData={isSuccess && coursesData.totalCount}
@@ -108,8 +104,13 @@ const Courses = () => {
                         </PaginateHolderItems>
                     </div>
                 </div>
-            </>
-        </motion.div>
+            </motion.div>
+            <MediaQuery maxWidth={"1049px"}>
+                <FilterButton>
+                    <FilterSide_Courses />
+                </FilterButton>
+            </MediaQuery>
+        </>
     )
 }
 
