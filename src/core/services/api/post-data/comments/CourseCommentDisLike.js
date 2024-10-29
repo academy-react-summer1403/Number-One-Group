@@ -7,7 +7,7 @@ const CourseCommentDisLike = async (ParamsId, refetch) => {
       Http.post(`/Course/AddCourseCommentDissLike?CourseCommandId=${ParamsId}`),
       {
         pending: "درحال ثبت شدن...",
-        success: "کامنت مورد نظر لایک شد",
+        success: "کامنت مورد نظر  دیس لایک شد",
         error: "دوباره تلاش کنید",
       }
     );
