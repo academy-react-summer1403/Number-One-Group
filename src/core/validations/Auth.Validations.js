@@ -38,10 +38,19 @@ export const mobileNumberValidation = yup.object().shape({
     .max(9999999999, "شماره موبایل را درست وارد کنید"),
 });
 
-export const CommentValid = yup.object().shape({
+export const courseCommentValid = yup.object().shape({
   title: yup
     .string()
-    .max(80, "طول نویسه بیش از حد مجاز")
+    .min(5, "طول نویسه کم تر از حد مجاز!")
+    .max(70, "طول نویسه بیش از حد مجاز!")
     .required("فیلد نمی تواند خالی باشد!"),
-  description: yup.string().required("فیلد نمی تواند خالی باشد!"),
+  description: yup.string().min(5, "طول نویسه کم تر از حد مجاز!").required("فیلد نمی تواند خالی باشد!"),
+});
+export const blogCommentValid = yup.object().shape({
+  title: yup
+    .string()
+    .min(10, "طول نویسه کم تر از حد مجاز!")
+    .max(70, "طول نویسه بیش از حد مجاز!")
+    .required("فیلد نمی تواند خالی باشد!"),
+  description: yup.string().min(10, "طول نویسه کم تر از حد مجاز!").required("فیلد نمی تواند خالی باشد!"),
 });

@@ -2,12 +2,11 @@ import { useTranslation } from "react-i18next"
 import FormHolder from "../../form/FormHolder";
 import FormInput from "../../form/FormInput";
 import CustomButton from "../../Button";
-import { CommentValid } from "../../../../core/validations/Auth.Validations";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { setStatusModal } from "../../../../redux/slices/LoginPopup";
 
-const AddComments = ({ apiFunction, Id, refetch }) => {
+const AddComments = ({ apiFunction, Id, refetch ,valid}) => {
   const dispatch = useDispatch()
 
   const { t, } = useTranslation();
@@ -33,7 +32,7 @@ const AddComments = ({ apiFunction, Id, refetch }) => {
       <FormHolder
         initialValues={{ title: '', description: '' }}
         onSubmit={(values) => { handleApi(Id, values, refetch) }}
-        validations={CommentValid}
+        validations={valid}
         style={'w-full mt-4'}
       >
         {fields.map(field => {

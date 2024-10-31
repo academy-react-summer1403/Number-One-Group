@@ -5,6 +5,7 @@ import { useDisclosure } from "@nextui-org/react"
 import { CloseIcon } from "../../../../core/icon"
 import { IoIosArrowDown } from "react-icons/io"
 import AddReplay_Comment from "../add-comments/AddReplay_Comment"
+import { blogCommentValid, courseCommentValid } from "../../../../core/validations/Auth.Validations"
 
 const DownSection = ({
   ArrayLength,
@@ -26,6 +27,7 @@ const DownSection = ({
 }) => {
   const { t } = useTranslation();
   const { isOpen, onOpen, onClose } = useDisclosure();
+  console.log(variant)
 
   return (
     <div className='flex justify-between items-center mt-3'>
@@ -49,6 +51,7 @@ const DownSection = ({
             replayComment={replayComment}
             refetch={refetchReplay}
             closeModal={onClose}
+            valid={variant === 'courseComment' ? courseCommentValid : blogCommentValid}
           />
         </CreateModal>
         {ArrayLength !== 0 &&

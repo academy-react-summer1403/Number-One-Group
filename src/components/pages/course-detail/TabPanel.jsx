@@ -3,6 +3,7 @@ import Tab from "./Tab";
 import { CommentSection, FeedbackSection, OptionParts, OverView_Details } from "../../common";
 import { AddCourseComment, AddReplyCourseComment } from "../../../core/services/api/post-data";
 import { weeks } from "../../../core/constants/tabs/tabData";
+import { courseCommentValid } from "../../../core/validations/Auth.Validations";
 
 const TabPanel = ({
     overView,

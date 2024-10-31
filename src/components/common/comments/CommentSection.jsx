@@ -2,6 +2,7 @@ import { useState } from "react"
 import { useTranslation } from "react-i18next";
 import AddComments from "./add-comments/AddComments";
 import UserComments from "./comment-box/UserComments";
+import { blogCommentValid, courseCommentValid } from "../../../core/validations/Auth.Validations";
 
 const CommentSection = ({ Id, replayComment, getReplay, apiFunction, data, refetch, variant }) => {
   const { t } = useTranslation();
@@ -11,7 +12,7 @@ const CommentSection = ({ Id, replayComment, getReplay, apiFunction, data, refet
   return (
     <div className="my-3">
       <h1 className="mb-6 text-[18px]">{t('user_comment')}</h1>
-      <AddComments apiFunction={apiFunction} Id={Id} refetch={refetch} />
+      <AddComments apiFunction={apiFunction} Id={Id} refetch={refetch} valid={variant === 'courseComment' ? courseCommentValid : blogCommentValid} />
       <p className="text-xl my-5">{data?.length} {t('comment')}</p>
       <div className="my-5 pb-10">
         {data?.length !== 0 ? (

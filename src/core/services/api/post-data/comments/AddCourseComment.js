@@ -15,7 +15,7 @@ const AddCourseComment = async (CourseId, data, refetch) => {
       {
         pending: "درحال ثبت شدن...",
         success: "نظر شما پس از تایید ادمین ثبت خواهد شد",
-        error: "دوباره تلاش کنید",
+        error: "طول متن کامنت کمتر از حد مجاز",
       }
     );
     if (result.success) {

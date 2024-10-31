@@ -6,7 +6,7 @@ import CustomDatePicker from "../../../core/utility/moment/CustomDatePicker"
 import ChangeGender from "../../pages/user-panel/edit-information/ChangeGender"
 import PasswordInput from "../../pages/user-panel/edit-information/PasswordInput"
 
-const FormInput = ({ sectionName, certificate, fullSize, style, variants, fieldStyle, placeholder, color }) => {
+const FormInput = ({ sectionName, certificate, fullSize, style, variants, fieldStyle, placeholder, color,errorStyleComment }) => {
     const { t } = useTranslation()
 
     const fieldVariants = {
@@ -58,7 +58,7 @@ const FormInput = ({ sectionName, certificate, fullSize, style, variants, fieldS
     return (
         <div className={`flex flex-wrap h-fit ${fullSize ? "w-full" : style ? style : "w-full sm:w-[45%]"}`}>
             {fieldVariants?.[variants]}
-            <span className={`w-full relative text-sm text-red-600 mt-1`}>
+            <span className={`w-full relative text-sm text-red-600 mt-1 ${errorStyleComment}`}>
                 <ErrorMessage name={certificate} />
             </span>
             <div className="!bg-black text-nowrap flex items-end gap-x-2 justify-between ">
