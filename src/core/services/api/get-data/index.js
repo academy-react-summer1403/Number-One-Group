@@ -22,6 +22,7 @@ import GetMyFavoriteBlogs from "./GetMyFavoriteBlogs";
 import GetMyFavoriteCourses from "./GetMyFavoriteCourses";
 import GetCoursesTop from "./GetCoursesTop";
 import GetSecurityInfo from "./GetSecurityInfo";
+import StudentUserPayList from "./StudentUserPayList";
 
 export {
   GetAllTeachers,
@@ -48,4 +49,5 @@ export {
   GetMyFavoriteCourses,
   GetCoursesTop,
   GetSecurityInfo,
+  StudentUserPayList,
 };

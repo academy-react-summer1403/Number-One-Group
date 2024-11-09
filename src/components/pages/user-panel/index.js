@@ -14,6 +14,9 @@ import TwoStep from "./security/TwoStep";
 import ChooseAddress from "./edit-information/ChooseAddress";
 import AddProfile from "./edit-information/AddProfile";
 import CircularProgressUser from "./dashboard/CircularProgressUser";
+import PaymentStepOne from "./payment/PaymentStepOne";
+import PaymentStepTwo from "./payment/PaymentStepTwo";
+import PaymentStepThree from "./payment/PaymentStepThree";
 
 export {
   SidebarUserPanel,
@@ -32,4 +35,7 @@ export {
   ChooseAddress,
   AddProfile,
   CircularProgressUser,
+  PaymentStepOne,
+  PaymentStepTwo,
+  PaymentStepThree,
 };
