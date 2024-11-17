@@ -6,6 +6,7 @@ import CourseTopBody from "./CourseTopBody"
 import { Skeleton } from "@nextui-org/react";
 import NotFoundImg from "../../../assets/images/image-not-found.png"
 import { useMediaQuery } from "react-responsive"
+import Tilt from 'react-parallax-tilt';
 
 const CourseCard = ({ loading, refetch, item }) => {
     const [searchParams, setSearchParams] = useSearchParams()
@@ -32,7 +33,7 @@ const CourseCard = ({ loading, refetch, item }) => {
     } = item;
 
     return (
-        <>
+        <Tilt transitionSpeed={2500}>
             <div data-aos="fade-up" className="border border-LightGrayish p-4 pb-3 grid-item w-[300px] h-[435px] rounded-lg hover:shadow-lg duration-200  m-auto relative  group/item">
                 <div className="w-full h-44 course-height-img mx-auto rounded-lg">
                     <Link to={`/CourseDetails/${id}`}>
@@ -86,7 +87,7 @@ const CourseCard = ({ loading, refetch, item }) => {
                     />
                 </div >
             </div>
-        </>
+        </Tilt>
     )
 }
 
