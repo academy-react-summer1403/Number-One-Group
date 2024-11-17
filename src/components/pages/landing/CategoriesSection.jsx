@@ -22,7 +22,10 @@ const Categories = () => {
         }
     }
 
-    const setCategoryItems = async () => setTechnologies(await GetTechnologies())
+    const setCategoryItems = async () => {
+        const tech = await GetTechnologies()
+        setTechnologies(tech.slice(0, 4))
+    }
 
     useEffect(() => { setCategoryItems() }, [])
 
