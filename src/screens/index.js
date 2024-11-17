@@ -17,6 +17,7 @@ import Reserved from "./user-panel/Reserved";
 import Security from "./user-panel/Security";
 import Error404 from "./error-page/Error404";
 import Payment from "./user-panel/Payment";
+import TeacherDetails from "./teacher-details";
 
 export {
   Landing,
@@ -38,4 +39,5 @@ export {
   Security,
   Error404,
   Payment,
+  TeacherDetails,
 };

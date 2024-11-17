@@ -1,6 +1,6 @@
 import { Navigate } from "react-router-dom"
 import { MainLayouts, AuthorizeLayout } from "../../components/layouts"
-import { Landing, ForgetPasswordLogin, Login, Register, TowStepLogin, Courses, Blog, CourseDetails, BlogDetails, Error404 } from "../../screens"
+import { Landing, ForgetPasswordLogin, Login, Register, TowStepLogin, Courses, Blog, CourseDetails, BlogDetails, Error404, TeacherDetails } from "../../screens"
 
 const routerPublic = [
     {
@@ -9,6 +9,11 @@ const routerPublic = [
             { path: '/', element: <Landing /> },
             { path: '/home', element: <Navigate to="/" /> },
             { path: '/Courses', element: <Courses /> },
+            {
+                path: "/teacherDetails",
+                element: <TeacherDetails />,
+                children: [{ path: '/teacherDetails/:id', element: <TeacherDetails /> }]
+            },
             {
                 path: '/CourseDetails',
                 element: <CourseDetails />,
