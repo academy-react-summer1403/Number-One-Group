@@ -1,6 +1,7 @@
-import { Dashboard, EditInformation, Favorites, Information, MyCourses, MyViews, Reserved, Security } from "../../screens"
+import { Dashboard, EditInformation, Favorites, Information, MyCourses, MyViews, Payment, Reserved, Security } from "../../screens"
 import routerPublic from "../UnAuthenticatedRoute"
 import { UserPanelLayout } from "../../components/layouts"
+import { PaymentStepOne, PaymentStepThree, PaymentStepTwo } from "../../components/pages/user-panel"
 
 const routerPrivate = [
     ...routerPublic,
@@ -15,6 +16,16 @@ const routerPrivate = [
             { path: "/userPanel/myViews", element: <MyViews /> },
             { path: "/userPanel/favorites", element: <Favorites /> },
             { path: "/userPanel/security", element: <Security /> },
+            {
+                path: "/userPanel/payment",
+                element: <Payment />,
+                children: [
+                    { path: "/userPanel/payment/:id", element: <PaymentStepOne /> },
+                    { path: "/userPanel/payment/invoice/:id/:payment", element: <PaymentStepTwo /> },
+                    { path: "/userPanel/payment/step2/:paymentId", element: <PaymentStepThree /> },
+                ]
+            },
+
         ]
     }
 ]

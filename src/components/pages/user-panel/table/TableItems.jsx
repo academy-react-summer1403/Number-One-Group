@@ -8,6 +8,7 @@ import ChangeTime from "../../../../core/utility/time"
 import ChangeMoment from "../../../../core/utility/moment"
 import { ImageFallBack } from "../../../common"
 import fallback from "../../../../assets/images/image-not-found.png"
+import { MdPayment } from "react-icons/md";
 
 const TableItem = ({ item, variant, loading: isLoading, action, keyVariant, bet }) => {
     const navigate = useNavigate();
@@ -23,6 +24,7 @@ const TableItem = ({ item, variant, loading: isLoading, action, keyVariant, bet 
             ],
             width: "25",
             actions: [
+                { Icon: MdPayment, tooltip: ["پرداخت", "Payment"], function: () => { navigate(`/userPanel/payment/${item.courseId}`) } },
                 { Icon: EyeIcon, tooltip: ["جزئیات", "Details"], function: () => { navigate(`/CourseDetails/${item.courseId}`) } },
             ]
         },
@@ -97,7 +99,7 @@ const TableItem = ({ item, variant, loading: isLoading, action, keyVariant, bet 
                     {differentSection?.[variant].actions.map((item, index) => (
                         <Tooltip key={index} {...tooltipStyle} content={i18n.language == "en" ? item.tooltip[1] : item.tooltip[0]}>
                             <span style={{ display: !item.accept ? "block" : "none" }} onClick={item.function} className="cursor-pointer bg-re hover:scale-110">
-                                <item.Icon stroke="#5751E1" />
+                                <item.Icon stroke="#5751E1" size={20} fill="#5751E1" />
                             </span>
                         </Tooltip>
                     ))}

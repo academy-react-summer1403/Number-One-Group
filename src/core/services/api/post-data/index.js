@@ -23,6 +23,8 @@ import LoginTwoStep from "./LoginTwoStep";
 import ChangeUserPassword from "./ChangeUserPassword";
 import AddCourseRate from "./AddCourseRate";
 import AddBlogRate from "./AddBlogRate";
+import CoursePayment from "./CoursePayment";
+import StudentAddPeymentImage from "./StudentAddPeymentImage";
 
 export {
   ForgetPass,
@@ -50,4 +52,6 @@ export {
   ChangeUserPassword,
   AddCourseRate,
   AddBlogRate,
+  CoursePayment,
+  StudentAddPeymentImage,
 };

@@ -34,7 +34,7 @@ const Dashboard = () => {
                 </UserCourseSection>
                 <CircularProgressUser />
                 <UserCourseSection sectionName={t("currentCourses")}>
-                    {myCourseSuccess && myCourseList.listOfMyCourses.length != 0 ? myCourseList.listOfMyCourses?.map((item, index) => (
+                    {myCourseSuccess && myCourseList.listOfMyCourses.length != 0 ? myCourseList.listOfMyCourses?.slice(0, 2).map((item, index) => (
                         <CreateCourseCard
                             key={index}
                             picture={item.tumbImageAddress}

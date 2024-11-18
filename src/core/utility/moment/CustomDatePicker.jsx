@@ -20,7 +20,6 @@ const CustomDatePicker = ({ field, form, ...props }) => {
     }
 
     return (
-        // <DatePicker className="max-w-[284px]" lang='persian' />
         <DatePicker
             calendar={persian}
             locale={persian_fa}
