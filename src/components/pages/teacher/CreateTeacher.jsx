@@ -8,7 +8,7 @@ const CreateTeacher = ({ data, itemOffset, endOffset }) => {
                     key={index}
                     name={item.fullName ? item.fullName : "بی نام"}
                     picture={item.pictureAddress}
-                    href={`/instructorsDetails/${item.teacherId}`}
+                    href={`/teacherDetails/${item.teacherId}`}
                 />
             ))}
         </div>
