@@ -3,9 +3,12 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = getItem("theme") ? getItem("theme") : false;
 
-function changeTheme(state) {
-  console.log(state);
-  state = !state;
+function changeTheme(state, action) {
+  if (!action.payload) {
+    state = !state;
+  } else {
+    state = action.payload;
+  }
   setItem("theme", state);
   return state;
 }
