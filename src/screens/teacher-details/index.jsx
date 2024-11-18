@@ -1,5 +1,7 @@
+import TeacherDetailsWrapper from "../../components/pages/teacher-details";
+
 const TeacherDetails = () => {
-  return <div></div>;
+  return <TeacherDetailsWrapper />;
 };
 
 export default TeacherDetails;
