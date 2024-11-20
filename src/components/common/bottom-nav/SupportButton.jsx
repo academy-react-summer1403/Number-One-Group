@@ -17,7 +17,7 @@ const SupportButton = () => {
             <div onClick={onOpen} className="bottomNav">
                 <BiSupport size={20} />
             </div>
-            <CreateModal isOpen={isOpen} onClose={onClose} modalStyle={`sm:absolute sm:right-12 !p-0 bg-LavenderMist duration-500 ${option ? "bottom-1" : "bottom-0"}`} bodyStyle={`rounded-lg ${option ? "p-0" : ""}`} size="md" headerStyle="flex flex-col gap-1 text-white" backdrop={option ? "blur" : "opaque"}>
+            <CreateModal isOpen={isOpen} onClose={onClose} modalStyle={`sm:absolute sm:right-12 !p-0 bg-LavenderMist duration-500 ${option ? "top-1" : "top-[500px]"}`} bodyStyle={` ${option ? "p-0" : ""}`} size="md" headerStyle="flex flex-col gap-1 text-white" backdrop={option ? "blur" : "opaque"}>
                 <div onClick={() => setOption(undefined)} className={`closeButton_modal bg-neutral-200/65 top-2 left-2 ${option ? "" : "hidden"}`}>
                     <TiArrowBack />
                 </div>

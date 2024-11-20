@@ -13,7 +13,7 @@ const MessageSpace = () => {
             backgroundPosition: 'center',
             // height: '100vh',
         }}
-            className="h-[500px]" >
+            className="h-[500px] overflow-y-auto" >
             MessageSpace
         </div>
     )

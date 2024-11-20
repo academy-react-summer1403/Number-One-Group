@@ -21,7 +21,7 @@ const CreateModal = ({
             isOpen={isOpen}
             onClose={onClose}
             hideCloseButton
-            scrollBehavior={scroll && "inside"}
+            scrollBehavior={scroll && "outside"}
             dir={i18n.language === 'fa' ? "rtl" : "ltr"}
             className={`${i18n.language === 'fa' ? 'font-Sahel' : 'font-Pop_Med'} `}
         >
