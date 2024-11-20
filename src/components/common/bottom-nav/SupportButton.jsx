@@ -5,6 +5,7 @@ import CreateModal from '../CreateModal';
 import { TiArrowBack } from "react-icons/ti";
 import { useState } from 'react';
 import { FaChalkboardTeacher } from 'react-icons/fa';
+import ChatRoom from '../../../core/utility/support/ChatRoom';
 
 const SupportButton = () => {
     // const { t, i18n } = useTranslation();
@@ -16,7 +17,7 @@ const SupportButton = () => {
             <div onClick={onOpen} className="bottomNav">
                 <BiSupport size={20} />
             </div>
-            <CreateModal isOpen={isOpen} onClose={onClose} modalStyle={`sm:absolute sm:right-12 bg-LavenderMist w-full duration-500 ${option ? "bottom-36" : "bottom-0"}`} size="lg" headerStyle="flex flex-col gap-1 text-white" backdrop={option ? "blur" : "opaque"}>
+            <CreateModal isOpen={isOpen} onClose={onClose} modalStyle={`sm:absolute sm:right-12 !p-0 bg-LavenderMist duration-500 ${option ? "bottom-36" : "bottom-0"}`} bodyStyle={`rounded-lg ${option ? "p-0" : ""}`} size="lg" headerStyle="flex flex-col gap-1 text-white" backdrop={option ? "blur" : "opaque"}>
                 <div onClick={() => setOption(undefined)} className={`closeButton_modal bg-neutral-200/65 top-2 left-2 ${option ? "" : "hidden"}`}>
                     <TiArrowBack />
                 </div>
@@ -28,7 +29,7 @@ const SupportButton = () => {
                     <span> ارتباط با اساتید</span>
                     <FaChalkboardTeacher size={20} />
                 </Button>
-                {option === "admin" && <p>Admin</p>}
+                {option === "admin" && <ChatRoom/>}
                 {option === "teacher" && <p>Teacher</p>}
                 {/* {children} */}
             </CreateModal>
