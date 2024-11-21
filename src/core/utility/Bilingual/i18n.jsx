@@ -152,6 +152,9 @@ i18n.use(initReactI18next)
                     // Two Step
                     twoStepBtn: "مایل به ورود دو مرحله ای هستم",
                     paymentTitle: "پرداخت الکترونیکی", paymentLabelInput: "شناسه پرداخت", paymentNextBtn: "ادامه", paymentCancelBtn: "انصراف",
+                    // chat 
+                    ProfileSection1:"پشتیبانی سایت", ProfileSection2:"پاسخگوی سوالات شما هستیم",startChat:"برای شروع ارتباط با ادمین پیامی وارد کنید!",
+                    placeHolderChat:"پیام خود را وارد کنید",supportBtn:"پشتیبانی و ارتباط با ادمین",supportTeacherBtn:"ارتباط با اساتید",
                 },
             },
             en: {
@@ -297,6 +300,9 @@ i18n.use(initReactI18next)
                     // Two Step
                     twoStepBtn: "I would like two-step login",
                     paymentTitle: "Electronic Payment", paymentLabelInput: "Payment ID", paymentButton: "Next",
+                      // chat 
+                      ProfileSection1:"Site support", ProfileSection2:"We answer your questions",startChat:"Enter a message to start communicating with the admin!",
+                      placeHolderChat:"Enter your message",supportBtn:"Support and communication with admin",supportTeacherBtn:"Communication with professors",
                 },
             },
         },

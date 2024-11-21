@@ -6,7 +6,9 @@ import EmojiPicker from "emoji-picker-react";
 import { useSelector } from "react-redux";
 import { AddUserMessage } from "../../services/api/put-data";
 import { AddUserChatRoom } from "../../services/api/post-data";
+import { useTranslation } from "react-i18next";
 const SendSection = ({ chatsData, refetch }) => {
+    const { t } = useTranslation()
     const [sendStatus, setSendStatus] = useState(false)
     const [query, setQuery] = useState("")
     const [showEmoji, setShowEmoji] = useState(false)
@@ -44,7 +46,7 @@ const SendSection = ({ chatsData, refetch }) => {
         <div className="py-3 px-3 bg-white dark:bg-zinc-600 flex justify-between ">
             <input
                 type="text"
-                placeholder="پیام خود را وارد کنید..."
+                placeholder={t('placeHolderChat')}
                 className="text-sm w-[350px] outline-none bg-transparent"
                 value={query}
                 onChange={(e) => handleOnChange(e.target.value)}
