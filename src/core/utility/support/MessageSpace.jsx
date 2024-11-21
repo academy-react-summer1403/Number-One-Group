@@ -4,21 +4,12 @@ import chatDark2 from '../../../assets/images/chatDark2.jpg'
 import adminImage from '../../../assets/images/AdminSupport.jpg'
 import { getItem } from '../../hooks/local-storage'
 import { useSelector } from 'react-redux'
-import { useEffect, useState } from 'react'
 
-const MessageSpace = ({ chatsData }) => {
+const MessageSpace = ({ userChatData }) => {
     const theme = getItem("theme")
     const userInfo = useSelector(state => state.UserInfo.info);
-    const [userChatData, setUserChatData] = useState(undefined)
 
-    // Getting user message data if any
-    const getMyMessage = () => {
-        const myMessage = chatsData?.find(item => item.userId == userInfo.userImage[0].userProfileId)
-        setUserChatData(myMessage)
-    }
-    useEffect(() => {
-        getMyMessage()
-    }, [chatsData])
+    console.log(userChatData)
 
     return (
         <div style={{
@@ -26,8 +17,8 @@ const MessageSpace = ({ chatsData }) => {
             backgroundSize: `${theme ? "cover" : ""}`,
             backgroundPosition: 'center',
         }}
-            className="h-[500px] overflow-y-auto relative flex flex-col py-2 px-2 gap-4 justify-end" >
-            {userChatData && userChatData.chatRoom?.map((message) => {
+            className="h-[500px] overflow-y-auto relative flex flex-col py-2 px-2 gap-4" >
+            {userChatData ? (userChatData.chatRoom?.map((message) => {
                 return (
                     <div key={message.id} className='w-full'>
                         <div className={`flex gap-1 items-end ${message.sender === "admin" ? "flex-row-reverse" : ""}`}>
@@ -40,7 +31,12 @@ const MessageSpace = ({ chatsData }) => {
                         </div>
                     </div>
                 )
-            })}
+            })
+            ) : (
+                <h1 className='text-center my-auto text-zinc-500'> برای شروع ارتباط با ادمین پیامی وارد کنید!</h1>
+            )
+
+            }
         </div>
     )
 }
