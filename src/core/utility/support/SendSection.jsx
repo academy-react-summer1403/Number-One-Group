@@ -1,7 +1,7 @@
 import { PiSmileySticker } from "react-icons/pi";
 import { MdOutlineAttachFile } from "react-icons/md";
 import { LuSend } from "react-icons/lu";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import EmojiPicker from "emoji-picker-react";
 import { useSelector } from "react-redux";
 import { AddUserMessage } from "../../services/api/put-data";
@@ -13,6 +13,7 @@ const SendSection = ({ chatsData, refetch }) => {
     const [query, setQuery] = useState("")
     const [showEmoji, setShowEmoji] = useState(false)
     const userInfo = useSelector(state => state.UserInfo.info.userImage[0].userProfileId);
+    const inputRef = useRef()
     // Change the search status and change the send icon
     const handleOnChange = (value) => {
         // console.log(value)
@@ -39,29 +40,39 @@ const SendSection = ({ chatsData, refetch }) => {
         else {
             AddUserChatRoom({ userId: userInfo, chatRoom: [{ id: 1, text: value ? value.emoji : query, messageTime: time, sender: "user" }] }, refetch)
         }
-
+        setQuery("")
     }
 
     return (
-        <div className="py-3 px-3 bg-white dark:bg-zinc-600 flex justify-between ">
+        <div className="py-3 px-3 bg-white dark:bg-zinc-600 flex justify-between items-center">
             <input
                 type="text"
                 placeholder={t('placeHolderChat')}
-                className="text-sm w-[350px] outline-none bg-transparent"
+                className="text-sm w-[350px] outline-none bg-transparent font-IranSans"
                 value={query}
+                ref={inputRef}
                 onChange={(e) => handleOnChange(e.target.value)}
             />
-            <div onClick={() => setShowEmoji(!showEmoji)} className="cursor-pointer"> <PiSmileySticker size={25} /> </div>
+            <PiSmileySticker
+                onClick={() => setShowEmoji(!showEmoji)}
+                className="cursor-pointer"
+                size={25}
+            />
+            {sendStatus ? (
+                <LuSend
+                    onClick={() => handleSendMessage()}
+                    className="cursor-pointer"
+                    color={"blue"} size={20}
+                />
+            ) : (
+                <MdOutlineAttachFile size={20} />
+            )}
             <div className="absolute left-0 bottom-12">
                 <EmojiPicker
                     width={447}
                     onEmojiClick={(value) => handleSendMessage(value)}
                     open={showEmoji ? true : false} />
             </div>
-            {sendStatus ? (<div onClick={() => handleSendMessage()} className="cursor-pointer"> <LuSend color={"blue"} size={25} /> </div>)
-                : (<div> <MdOutlineAttachFile size={25} /> </div>)}
-
-
         </div>
     )
 }

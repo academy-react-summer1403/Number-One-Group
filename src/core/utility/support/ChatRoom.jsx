@@ -9,6 +9,7 @@ import { useSelector } from "react-redux"
 const ChatRoom = () => {
   const userInfo = useSelector(state => state.UserInfo.info);
   const [userChatData, setUserChatData] = useState([])
+  
   // Getting data from Api with use Query
   const { data: chatsData, refetch , isLoading , isRefetching} = useQueryWithDependencies("GET_ALL_CHATS", GetAllChat, null, null)
 
@@ -23,7 +24,7 @@ const ChatRoom = () => {
   }, [isLoading,isRefetching])
 
   return (
-    <div className="rounded-lg">
+    <div className="rounded-xl overflow-hidden">
       <ProfileSection />
       <MessageSpace userChatData={userChatData}/>
       <SendSection chatsData={chatsData} refetch={refetch} />
