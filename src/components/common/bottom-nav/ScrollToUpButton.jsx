@@ -19,7 +19,7 @@ const ScrollToUpButton = () => {
             <div onClick={handleClick} className="bottomNav flex items-center justify-center">
                 <ArrowIcon fill="#fff" className="w-4 h-4 rotate-180" />
             </div>
-            <span className='w-10 h-3 bottomNav_shadow'></span>
+            {/* <span className='w-10 h-3 bottomNav_shadow'></span> */}
         </div>
     )
 }
