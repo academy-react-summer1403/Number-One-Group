@@ -9,6 +9,8 @@ import { setItem } from "../../core/hooks/local-storage";
 const ChooseTeacherToChat = ({ setTeacherId }) => {
     const { data, isSuccess } = useQueryWithoutDependencies("GET_TEACHERS", GetAllTeachers)
     const [selected, setSelected] = useState([])
+    const [filter, setFilter] = useState([])
+    const [query, setQuery] = useState('')
 
     useEffect(() => {
         if (selected.length == 0) return
@@ -17,16 +19,28 @@ const ChooseTeacherToChat = ({ setTeacherId }) => {
         setItem("teacherIdChat", selected)
     }, [selected])
 
+    useEffect(() => {
+        if (data) {
+            setFilter(data?.filter(item => {
+                if (item.fullName == null) {
+                    item.fullName = ""
+                }
+                return item.fullName.indexOf(query) != -1
+            }))
+        }
+    }, [query])
+
     return (
         <div className="w-[448px] h-[280px] bg-white font-IranSans absolute left-0 bottom-12 p-4 flex flex-wrap gap-y-2">
-            <input type="text" className='w-full h-10 bg-neutral-200 rounded-lg px-4 text-sm outline-none' placeholder='جستجو...' />
+            <input type="text" onChange={(ev) => { setQuery(ev.target.value) }} className='w-full h-10 bg-neutral-200 rounded-lg px-4 text-sm outline-none' placeholder='جستجو...' />
             <div className='w-full h-[200px] overflow-y-auto flex flex-wrap'>
                 <RadioGroup
-                    label="Select your favorite city"
+                    aria-label="radio"
                     value={selected}
                     onValueChange={setSelected}
+                    className="w-full"
                 >
-                    {isSuccess && data.map(item => (
+                    {filter.length > 0 ? filter.map(item => (
                         <Radio
                             value={item.teacherId}
                             classNames={{
@@ -45,8 +59,7 @@ const ChooseTeacherToChat = ({ setTeacherId }) => {
                                 <span className="text-xs text-neutral-500">{item.linkdinProfileLink ? item.linkdinProfileLink : "linkdin.com"}</span>
                             </div>
                         </Radio>
-
-                    ))}
+                    )) : <span className="w-full text-center mt-24 text-neutral-400">معلمی وجود ندارد</span>}
                 </RadioGroup>
             </div>
         </div>
