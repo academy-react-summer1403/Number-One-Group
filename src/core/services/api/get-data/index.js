@@ -24,7 +24,6 @@ import GetCoursesTop from "./GetCoursesTop";
 import GetSecurityInfo from "./GetSecurityInfo";
 import StudentUserPayList from "./StudentUserPayList";
 import GetTeacherDetails from "./GetTeacherDetails";
-import GetAllChat from "./GetAllChat";
 import GetUserChatInTeacher from "./GetUserChatInTeacher";
 import GetUserChatInAdmin from "./GetUserChatInAdmin";
 
@@ -55,7 +54,6 @@ export {
   GetSecurityInfo,
   StudentUserPayList,
   GetTeacherDetails,
-  GetAllChat,
   GetUserChatInTeacher,
   GetUserChatInAdmin,
 };

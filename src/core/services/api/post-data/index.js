@@ -25,7 +25,8 @@ import AddCourseRate from "./AddCourseRate";
 import AddBlogRate from "./AddBlogRate";
 import CoursePayment from "./CoursePayment";
 import StudentAddPeymentImage from "./StudentAddPeymentImage";
-import AddUserChatRoom from "./AddUserChatRoom";
+import AddUserChatRoomTeacher from "./AddUserChatRoomTeacher";
+import AddUserChatRoomAdmin from "./AddUserChatRoomAdmin";
 
 export {
   ForgetPass,
@@ -55,5 +56,6 @@ export {
   AddBlogRate,
   CoursePayment,
   StudentAddPeymentImage,
-  AddUserChatRoom,
+  AddUserChatRoomTeacher,
+  AddUserChatRoomAdmin,
 };

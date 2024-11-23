@@ -7,7 +7,7 @@ const GetUserChatInTeacher = async () => {
       http.get(
         `https://673cfd8a4db5a341d833a52f.mockapi.io/Teacher-Support`
       ),
-      { pending: "در حال پردازش...", error: "مشکلی در سرور به وجود آمده" }
+      { error: "مشکلی در سرور به وجود آمده" }
     );
     return response;
   } catch (error) {

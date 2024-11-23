@@ -29,7 +29,7 @@ const TeacherDetailsWrapper = () => {
                 <BreadCrumb type="Div" text={fullName} />
             </TitleSection>
             <div className='lg:px-44 sm:px-16 px-8 w-full flex flex-wrap xl:flex-nowrap gap-x-10 my-20'>
-                <ContactToTeacher />
+                <ContactToTeacher teacherId={id} />
                 <div className='xl:w-3/4 h-fit flex flex-wrap gap-y-6'>
                     <TeacherCard
                         courseCount={data?.courseCount}

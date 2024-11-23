@@ -101,7 +101,7 @@ i18n.use(initReactI18next)
                     capacity: 'ظرفیت', endTime: 'زمان پایان', startTime: 'زمان شروع', statusCourse: 'وضعیت دوره',
                     Payment: 'پرداخت امن:', ShareCourse: 'این دوره را به اشتراک بگذارید:',
                     //Instructors-Details page
-                    sideBarTitle: "تماس سریع", sideBarBtn: "فرستادن پیام", sideBarDesc: "از طریق تماس با ما راحت باشید اگر ترجیح می دهید توییتر یا فیس بوک!",
+                    sideBarTitle: "تماس سریع", sideBarBtn: "فرستادن پیام", sideBarDesc: "با اساتید خود به راحتی ازتباط بگیرید",
                     instructorBiography: "زندگینامه", instructorSkill: "مهارت ها", instructorCourses: "دوره های من",
                     EventOverview: 'نمای کلی رویداد', LearnEvent: 'در این رویداد چه خواهید آموخت؟',
                     EventElements: 'چهار عنصر اصلی که ما ارائه می دهیم برای این رویداد',
@@ -249,7 +249,7 @@ i18n.use(initReactI18next)
                     capacity: 'Capacity', endTime: 'End Time', startTime: 'Start Time', statusCourse: 'Course Status',
                     Payment: 'Secure Payment:', ShareCourse: 'Share this course:',
                     //Instructors-Details page
-                    sideBarTitle: "Quick Contact", sideBarBtn: "Send Message", sideBarDesc: "Feel free to contact us through Twitter or Facebook if you prefer!",
+                    sideBarTitle: "Quick Contact", sideBarBtn: "Send Message", sideBarDesc: "Communicate easily with your professors.",
                     instructorBiography: "Biography", instructorSkill: "Skills", instructorCourses: "My Courses",
                     EventOverview: 'Event Overview', LearnEvent: 'What will you learn in this event?',
                     EventElements: 'Four major elements that we offer for this event',
