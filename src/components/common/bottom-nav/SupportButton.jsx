@@ -3,11 +3,12 @@ import { useTranslation } from 'react-i18next';
 import { BiSupport } from "react-icons/bi";
 import CreateModal from '../CreateModal';
 import { TiArrowBack } from "react-icons/ti";
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 import { FaChalkboardTeacher } from 'react-icons/fa';
 import ChatRoom from '../../../core/utility/support/ChatRoom';
 import { useSelector } from 'react-redux';
 import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
+import { toast } from 'react-toastify';
 
 const SupportButton = () => {
     const { t, i18n } = useTranslation();
@@ -15,14 +16,20 @@ const SupportButton = () => {
     const userInfo = useSelector(state => state.UserInfo.info);
 
     // Modal
-    const { isOpen, onOpen, onClose } = useDisclosure();
+    const { isOpen, onOpen, onClose } = useDisclosure()
 
     return (
-        <div className={`${userInfo ? "" : "hidden"}`}>
-            <div onClick={onOpen} className="bottomNav">
+        <Fragment>
+            <div
+                onClick={() => {
+                    userInfo ?
+                        onOpen() :
+                        toast.error("لطفا برای دسترسی به امکانات سایت ابتدا وارد حساب کاربری خود شوید")
+                }}
+                className="bottomNav"
+            >
                 <IoChatbubbleEllipsesOutline size={23} />
             </div>
-            <span className='w-10 h-3 bottomNav_shadow'></span>
             <CreateModal
                 isOpen={isOpen}
                 onClose={onClose}
@@ -43,12 +50,9 @@ const SupportButton = () => {
                     <span>{t('supportTeacherBtn')}</span>
                     <FaChalkboardTeacher size={20} />
                 </Button>
-                {option === "admin" && <ChatRoom />}
-                {option === "teacher" && <p>Teacher</p>}
-                {/* {children} */}
+                {option && <ChatRoom section={option} />}
             </CreateModal>
-
-        </div>
+        </Fragment>
     );
 }
 

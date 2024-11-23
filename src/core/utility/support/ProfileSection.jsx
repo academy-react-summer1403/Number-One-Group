@@ -9,8 +9,8 @@ const ProfileSection = () => {
       <div className="flex items-center gap-3 py-4 px-4">
         <img src={adminImg} className='h-10 w-10 rounded-full' alt="prof"/>
           <div >
-            <h1 className='text-white'>{t('ProfileSection1')}</h1>
-            <p className='text-sm text-zinc-300'>{t('ProfileSection2')}</p>
+            <h1 className='text-white font-IranSans'>{t('ProfileSection1')}</h1>
+            <p className='text-sm text-zinc-300 font-IranSans'>{t('ProfileSection2')}</p>
           </div>
       </div>
     </div>

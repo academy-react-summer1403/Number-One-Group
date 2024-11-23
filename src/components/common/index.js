@@ -28,6 +28,7 @@ import CommentSection from "./comments/CommentSection.jsx";
 import RelatedItems from "./details-pages/RelatedItems.jsx";
 import OfflineWarning from "./OfflineWarning.jsx";
 import SetRate from "./SetRate.jsx";
+import ChooseTeacherToChat from "./ChooseTeacherToChat.jsx";
 import {
   FilterRadio,
   ChangeView,
@@ -90,4 +91,5 @@ export {
   LoadingSpinner,
   PopupLoginWrapper,
   ScrollProgressBar,
+  ChooseTeacherToChat
 };
