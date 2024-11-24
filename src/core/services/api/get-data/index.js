@@ -26,6 +26,8 @@ import StudentUserPayList from "./StudentUserPayList";
 import GetTeacherDetails from "./GetTeacherDetails";
 import GetUserChatInTeacher from "./GetUserChatInTeacher";
 import GetUserChatInAdmin from "./GetUserChatInAdmin";
+import GetAllEvents from "./GetAllEvents";
+import GetEventsLength from "./GetEventsLength";
 
 export {
   GetAllTeachers,
@@ -56,4 +58,6 @@ export {
   GetTeacherDetails,
   GetUserChatInTeacher,
   GetUserChatInAdmin,
+  GetAllEvents,
+  GetEventsLength,
 };

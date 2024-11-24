@@ -27,7 +27,7 @@ i18n.use(initReactI18next)
                     // Search Input in the Header
                     Login: 'حساب کاربری', headerSearchText: 'متن جستجو را وارد کنید',
                     // PlaceHolders
-                    PlaceHolder_Courses: 'جستجو برای دوره ...', PlaceHolder_Blogs: 'جستجو برای وبلاگ ...',
+                    PlaceHolder_Courses: 'جستجو برای دوره ...', PlaceHolder_Blogs: 'جستجو برای وبلاگ ...', PlaceHolder_Event: "جستجو برای ایونت ...",
                     PlaceHolder_Shop: 'جستجو برای محصول ...', emailPlaceholder: "ایمیل خود را وارد کنید", passwordPlaceholder: "رمز عبور خود را وارد کنید",
                     phonePlaceholder: "شماره مبایل خود را وارد کنید",
                     // data in the Footer
@@ -153,8 +153,8 @@ i18n.use(initReactI18next)
                     twoStepBtn: "مایل به ورود دو مرحله ای هستم",
                     paymentTitle: "پرداخت الکترونیکی", paymentLabelInput: "شناسه پرداخت", paymentNextBtn: "ادامه", paymentCancelBtn: "انصراف",
                     // chat 
-                    ProfileSection1:"پشتیبانی سایت", ProfileSection2:"پاسخگوی سوالات شما هستیم",startChat:"برای شروع ارتباط با ادمین پیامی وارد کنید!",
-                    placeHolderChat:"پیام خود را وارد کنید",supportBtn:"پشتیبانی و ارتباط با ادمین",supportTeacherBtn:"ارتباط با اساتید",
+                    ProfileSection1: "پشتیبانی سایت", ProfileSection2: "پاسخگوی سوالات شما هستیم", startChat: "برای شروع ارتباط با ادمین پیامی وارد کنید!",
+                    placeHolderChat: "پیام خود را وارد کنید", supportBtn: "پشتیبانی و ارتباط با ادمین", supportTeacherBtn: "ارتباط با اساتید",
                 },
             },
             en: {
@@ -175,7 +175,7 @@ i18n.use(initReactI18next)
                     // Search Input in the Header
                     Login: 'User Account', headerSearchText: 'Enter the search text',
                     // PalceHolders
-                    PlaceHolder_Courses: 'Search For Course ...', PlaceHolder_Blogs: 'Search For Blog ...',
+                    PlaceHolder_Courses: 'Search For Course ...', PlaceHolder_Blogs: 'Search For Blog ...', PlaceHolder_Event: "Search For Event ...",
                     PlaceHolder_Shop: 'Search For Product ...', emailPlaceholder: "Enter your email", passwordPlaceholder: "Enter your password",
                     phonePlaceholder: "Enter your mobile number",
                     // Footer
@@ -300,9 +300,9 @@ i18n.use(initReactI18next)
                     // Two Step
                     twoStepBtn: "I would like two-step login",
                     paymentTitle: "Electronic Payment", paymentLabelInput: "Payment ID", paymentButton: "Next",
-                      // chat 
-                      ProfileSection1:"Site support", ProfileSection2:"We answer your questions",startChat:"Enter a message to start communicating with the admin!",
-                      placeHolderChat:"Enter your message",supportBtn:"Support and communication with admin",supportTeacherBtn:"Communication with professors",
+                    // chat 
+                    ProfileSection1: "Site support", ProfileSection2: "We answer your questions", startChat: "Enter a message to start communicating with the admin!",
+                    placeHolderChat: "Enter your message", supportBtn: "Support and communication with admin", supportTeacherBtn: "Communication with professors",
                 },
             },
         },
