@@ -13,6 +13,7 @@ import {
   setTechCount,
   setTypeId,
 } from "../../../redux/slices/filter-box-slices/FilterCourses";
+import { handleQuery, handlePageNumber } from "../../../redux/slices/filter-box-slices/FilterEvents";
 
 export const courseFilterParams = [
   { key: "Query", action: setQueryCourse },
@@ -30,4 +31,9 @@ export const blogFilterParams = [
   { key: "Query", action: setQueryBlog },
   { key: "category", action: setNewsCategoryId },
   { key: "pageNumber", action: setPageNumber },
+];
+
+export const eventFilterParams = [
+  { key: "Query", action: handleQuery },
+  { key: "PageNumber", action: handlePageNumber },
 ];

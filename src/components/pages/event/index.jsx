@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect } from 'react'
 import { motion } from "framer-motion";
 import { BreadCrumb, TitleSection } from '../../partials/title-section';
 import configVariants from '../../../config/page-transition';
@@ -7,13 +7,17 @@ import { useTranslation } from 'react-i18next';
 import { useQueryWithDependencies, useQueryWithoutDependencies } from '../../../core/hooks/react-query';
 import { GetAllEvents, GetEventsLength } from '../../../core/services/api/get-data';
 import { FilterSearch, PaginatedItems, PaginateHolderItems, RenderItemsList, SectionTop, SortBox, SortBoxHolder } from '../../common';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { handlePageNumber, handleRowsOfPage, handleQuery, handleSortingCol } from '../../../redux/slices/filter-box-slices/FilterEvents';
 import { sortCurrentItem, sortingColOptions_Event_En, sortingColOptions_Event_Fa } from '../../../core/constants/sort';
+import { useSearchParams } from 'react-router-dom';
+import { eventFilterParams } from '../../../core/constants/filter-params';
 
 const EventWrapper = () => {
     const { i18n } = useTranslation()
     const params = useSelector(state => state.FilterEvent)
+    const [searchParams, setSearchParams] = useSearchParams();
+    const dispatch = useDispatch()
 
     // Skeleton
     const skeletonData = [{}, {}, {}, {}, {}, {}, {}, {}, {}];
@@ -29,6 +33,16 @@ const EventWrapper = () => {
         { setState: handleSortingCol, sortItem: i18n.language != "en" ? sortingColOptions_Event_Fa : sortingColOptions_Event_En, placeholder: i18n.language != "en" ? "انتخاب کنید" : "Choose" },
         { setState: handleRowsOfPage, sortItem: sortCurrentItem, width: '!w-24', placeholder: i18n.language != "en" ? "تعداد " : "Number" }
     ]
+
+    // Set the url filter parameters
+    useEffect(() => {
+        eventFilterParams.forEach(({ key, action }) => {
+            const value = searchParams.get(key);
+            if (value) {
+                dispatch(action(value))
+            }
+        })
+    }, [])
 
     return (
         <motion.div
