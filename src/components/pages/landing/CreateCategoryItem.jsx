@@ -4,7 +4,7 @@ import Tilt from 'react-parallax-tilt';
 
 const CategoryItem = ({ title, amount, icon }) => {
     return (
-        <Tilt tiltAngleXInitial={20} tiltAngleYInitial={-20}>
+        <Tilt scale={1.15} transitionSpeed={2500}>
             <div
                 className="xl:w-[240px] xl:h-[240px] sm:w-48 sm:h-48 p-8 rounded-3xl bg-gradient-to-b from-neutral-400 dark:from-neutral-700
              to-neutral-200 dark:to-neutral-900 max-sm:mx-auto max-sm:mt-2 flex flex-wrap justify-center z-50"

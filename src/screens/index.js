@@ -1,4 +1,4 @@
-import Landing from "./landing";
+import LandingPage from "./landing";
 import ForgetPasswordLogin from "./authorize/ForgetPassword";
 import Login from "./authorize/Login";
 import Register from "./authorize/Register";
@@ -21,7 +21,7 @@ import TeacherDetails from "./teacher-details";
 import TeacherPage from "./teachers";
 
 export {
-  Landing,
+  LandingPage,
   ForgetPasswordLogin,
   Login,
   Register,

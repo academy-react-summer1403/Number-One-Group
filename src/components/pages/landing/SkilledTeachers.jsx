@@ -19,12 +19,12 @@ const SkilledTeachers = () => {
                 <p className="w-full text-center xl:text-start text-neutral-400">{t("skilledTeachersDesc")}</p>
                 <CustomButton href={"/teachers"} text={t("skilledTeachersBtn")} style="mt-5" vStyle={"purple"} vType={"link"} arrowColor="#fff" />
             </div>
-            <div className="w-full xl:w-[640px] h-fit flex flex-wrap justify-between gap-y-10 relative">
+            <div className="w-full xl:w-[700px] h-fit flex flex-wrap justify-between gap-y-10 relative">
                 <MediaQuery minWidth={"700px"}>
                     {isSuccess && data.slice(0, 4).map(item => (
                         <TeacherCard
                             key={item.teacherId}
-                            name={item.fullName}
+                            name={item.fullName ? item.fullName : " بی نام"}
                             picture={item.pictureAddress}
                             courseCount={item.courseCounts}
                         />
