@@ -3,7 +3,7 @@ import { RenderItemsList, SwiperSlider } from "../../common"
 import { useQueryWithDependencies } from "../../../core/hooks/react-query"
 import { GetAllCourseByPagination } from "../../../core/services/api/get-data"
 import { SwiperSlide } from "swiper/react"
-import { CourseCard } from "../course"
+import CourseCard from "../course/Course"
 
 const TeacherCourse = ({ id }) => {
     const { t, i18n } = useTranslation()

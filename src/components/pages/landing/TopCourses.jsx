@@ -7,7 +7,7 @@ import { SwiperSlide } from "swiper/react"
 import { GetAllCourseByPagination, GetTechnologies } from "../../../core/services/api/get-data"
 import { useQueryWithDependencies, useQueryWithoutDependencies } from "../../../core/hooks/react-query"
 import { Autoplay } from 'swiper/modules';
-import { CourseCard } from "../course"
+import CourseCard from "../course/Course"
 
 const TopCourses = () => {
     const { t } = useTranslation()
