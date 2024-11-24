@@ -19,6 +19,7 @@ import Error404 from "./error-page/Error404";
 import Payment from "./user-panel/Payment";
 import TeacherDetails from "./teacher-details";
 import TeacherPage from "./teachers";
+import Comparison from "./comparison";
 
 export {
   Landing,
@@ -42,4 +43,5 @@ export {
   Payment,
   TeacherDetails,
   TeacherPage,
+  Comparison,
 };
