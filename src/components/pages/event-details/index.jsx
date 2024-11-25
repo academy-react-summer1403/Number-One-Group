@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom"
 import { DateIcon, TopicsIcon, TotalIcon } from "../../../core/icon";
-import { useTranslation } from "react-i18next";
-import { useMediaQuery } from "react-responsive";
+import { MdChairAlt } from "react-icons/md";
 import { useQueryWithDependencies } from "../../../core/hooks/react-query"
 import { DetailsBox, OverView_Details, Title_details, ImageFallBack, CustomMap } from "../../common";
 import { TitleSection, BreadCrumb } from "../../partials/title-section";
@@ -9,16 +8,15 @@ import { GetEventDetails } from "../../../core/services/api/get-data";
 import fallback from "../../../assets/images/image-not-found.png"
 
 const EventDetailsWrapper = () => {
-    const { i18n } = useTranslation();
     const { id } = useParams();
-    const isTablet = useMediaQuery({ query: '(max-width: 1024px)' })
 
     // Find the details of the selected event
     const { data: SelectedEvents } = useQueryWithDependencies("GET_EVENT_DETAILS", GetEventDetails, id, id)
 
     const DetailsEvent = [
-        { titleDetail: "eventDate", countDetail: SelectedEvents?.startEventTime, iconDetail: <DateIcon /> },
-        { titleDetail: "EventTotalSeat", countDetail: SelectedEvents?.students, iconDetail: <TotalIcon /> }
+        { titleDetail: "eventDate", countDetail: SelectedEvents?.startEventTime, iconDetail: <DateIcon width={18} height={18} /> },
+        { titleDetail: "graduation", countDetail: SelectedEvents?.students, iconDetail: <TotalIcon  /> },
+        { titleDetail: "chairs", countDetail: SelectedEvents?.chairs, iconDetail: <MdChairAlt color="#7F7E97" size={20} /> }
     ]
 
     return (
