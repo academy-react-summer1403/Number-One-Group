@@ -17,12 +17,15 @@ import { setStatusModal } from "../../../redux/slices/LoginPopup";
 
 export const detailVariant = {
   "course-detail": "lg:w-72 mb-8",
+  "event-detail": "w-full",
 }
 export const detailInfoVariant = {
+  "event-detail": "EventInfo",
   "course-detail": "CourseInfo",
   "cart": "cartInfo"
 }
 export const priceInfoVariant = {
+  "event-detail": "EventPrice",
   "course-detail": "CoursePrice",
   "cart": "cartTotalSum"
 }
@@ -73,7 +76,7 @@ const DetailsBox = ({
       {/* price Info */}
       <div className="bg-VioletBlue px-4 py-3 w-full min-w-52 shadow-[0_0_10px_1px_rgba(13,9,99,0.36)] text-white rounded-lg flex flex-wrap justify-center gap-y-3">
         <h1 className="text-xs w-full">{t(priceInfoVariant?.[variant])}:</h1>
-        <h2 className="text-2xl font-semibold w-fit"><span className="float-left mx-1">{i18n.language === 'fa' ? 'ریال' : '$'}</span>{UnitPrice(price)}</h2>
+        <h2 className="text-2xl font-semibold w-fit"><span className="float-left mx-1">{i18n.language === 'fa' ? 'تومان' : '$'}</span>{UnitPrice(price)}</h2>
       </div>
       {/* details Information*/}
       <div className="my-2 w-full">

@@ -45,6 +45,7 @@ import {
 import LoadingSpinner from "./LoadingSpinner.jsx";
 import PopupLoginWrapper from "./popupLogin";
 import ScrollProgressBar from "./ScrollProgressBar.jsx";
+import CustomMap from "./CustomMap.jsx";
 
 export {
   HowToStart,
@@ -91,5 +92,6 @@ export {
   LoadingSpinner,
   PopupLoginWrapper,
   ScrollProgressBar,
-  ChooseTeacherToChat
+  ChooseTeacherToChat,
+  CustomMap,
 };

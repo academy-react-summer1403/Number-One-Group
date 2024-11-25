@@ -20,6 +20,7 @@ import Payment from "./user-panel/Payment";
 import TeacherDetails from "./teacher-details";
 import TeacherPage from "./teachers";
 import Event from "./event";
+import EventDetails from "./event-details";
 
 export {
   LandingPage,
@@ -44,4 +45,5 @@ export {
   TeacherDetails,
   TeacherPage,
   Event,
+  EventDetails,
 };

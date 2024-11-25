@@ -28,6 +28,7 @@ import GetUserChatInTeacher from "./GetUserChatInTeacher";
 import GetUserChatInAdmin from "./GetUserChatInAdmin";
 import GetAllEvents from "./GetAllEvents";
 import GetEventsLength from "./GetEventsLength";
+import GetEventDetails from "./GetEventDetails";
 
 export {
   GetAllTeachers,
@@ -60,4 +61,5 @@ export {
   GetUserChatInAdmin,
   GetAllEvents,
   GetEventsLength,
+  GetEventDetails,
 };

@@ -103,11 +103,9 @@ i18n.use(initReactI18next)
                     //Instructors-Details page
                     sideBarTitle: "تماس سریع", sideBarBtn: "فرستادن پیام", sideBarDesc: "با اساتید خود به راحتی ازتباط بگیرید",
                     instructorBiography: "زندگینامه", instructorSkill: "مهارت ها", instructorCourses: "دوره های من",
-                    EventOverview: 'نمای کلی رویداد', LearnEvent: 'در این رویداد چه خواهید آموخت؟',
-                    EventElements: 'چهار عنصر اصلی که ما ارائه می دهیم برای این رویداد',
-                    EventElement1: 'با رنگ و گرادیان و شبکه کار کنید', EventElement2: 'تمام میانبرهای مفید',
-                    EventElement3: 'قادر به ایجاد بروشور، بروشور، تبلیغات باشید',
-                    EventElement4: 'نحوه کار با تصاویر و متن',
+                    // Events
+                    EventOverview: 'نمای کلی رویداد', EventPrice: 'هزینه رویداد', EventInfo: 'اطلاعات رویداد', eventDate: 'تاریخ', StartTime: 'زمان شروع', graduation: 'فارغ التحصیلی',
+                    EventTopics: 'موضوعات', EventQuizzes: 'آزمون ها', EventCertifications: 'گواهینامه ها', duration: 'مدت زمان', lessons: 'درس ها',
                     // Contact us page
                     contactUsCaption: "برای ما پیام ارسال کنید", contactUsDescription: "آدرس ایمیل شما منتشر نخواهد شد. فیلدهای الزامی علامت گذاری شده اند *",
                     // Filters Name
@@ -251,11 +249,8 @@ i18n.use(initReactI18next)
                     //Instructors-Details page
                     sideBarTitle: "Quick Contact", sideBarBtn: "Send Message", sideBarDesc: "Communicate easily with your professors.",
                     instructorBiography: "Biography", instructorSkill: "Skills", instructorCourses: "My Courses",
-                    EventOverview: 'Event Overview', LearnEvent: 'What will you learn in this event?',
-                    EventElements: 'Four major elements that we offer for this event',
-                    EventElement1: 'Work with color & Gradients & Grids', EventElement2: 'All the useful shortcuts',
-                    EventElement3: 'Be able to create Flyers, Brochures, Advertisements',
-                    EventElement4: 'How to work with Images & Text',
+                    EventOverview: 'Event Overview', EventPrice: 'Event Fee', EventInfo: 'Event Infomation', eventDate: 'Date', StartTime: 'Start Time', graduation: 'graduation',
+                    EventTopics: 'Topics', EventQuizzes: 'Quizzes', EventCertifications: 'Certifications', duration: 'duration', lessons: 'lessons',
                     // Contact us page
                     contactUsCaption: "Send Us Message", contactUsDescription: "Your email address will not be published. Required fields are marked *",
                     // Filters Name
