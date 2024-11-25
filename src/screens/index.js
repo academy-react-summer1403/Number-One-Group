@@ -23,6 +23,7 @@ import Comparison from "./comparison";
 import Event from "./event";
 import EventDetails from "./event-details";
 import ContactUs from "./contact-us";
+import Product from "./product";
 
 export {
   LandingPage,
@@ -50,4 +51,5 @@ export {
   Event,
   EventDetails,
   ContactUs,
+  Product,
 };

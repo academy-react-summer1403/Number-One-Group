@@ -12,6 +12,7 @@ import {
   LoginInfo,
   LoginPopup,
   FilterEvent,
+  FilterProducts,
 } from "./slices";
 
 const store = configureStore({
@@ -28,6 +29,7 @@ const store = configureStore({
     LoginInfo,
     LoginPopup,
     FilterEvent,
+    FilterProducts,
   },
 });
 

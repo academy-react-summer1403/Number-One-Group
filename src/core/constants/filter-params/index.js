@@ -13,7 +13,16 @@ import {
   setTechCount,
   setTypeId,
 } from "../../../redux/slices/filter-box-slices/FilterCourses";
-import { handleQuery, handlePageNumber } from "../../../redux/slices/filter-box-slices/FilterEvents";
+import {
+  handleQuery,
+  handlePageNumber,
+} from "../../../redux/slices/filter-box-slices/FilterEvents";
+import {
+  handleCategory,
+  handleProductPage,
+  handleProductQuery,
+  handleShop,
+} from "../../../redux/slices/filter-box-slices/FilterProducts";
 
 export const courseFilterParams = [
   { key: "Query", action: setQueryCourse },
@@ -36,4 +45,11 @@ export const blogFilterParams = [
 export const eventFilterParams = [
   { key: "Query", action: handleQuery },
   { key: "PageNumber", action: handlePageNumber },
+];
+
+export const productFilterParams = [
+  { key: "Query", action: handleProductQuery },
+  { key: "PageNumber", action: handleProductPage },
+  { key: "shopList", action: handleShop },
+  { key: "category", action: handleCategory },
 ];

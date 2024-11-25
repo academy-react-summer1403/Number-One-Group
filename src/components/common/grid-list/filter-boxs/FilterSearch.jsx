@@ -13,7 +13,8 @@ const FilterSearch = ({ variant, setQuery, Style, holderDefault }) => {
         "Courses": "PlaceHolder_Courses",
         "Blogs": "PlaceHolder_Blogs",
         "Shop": "PlaceHolder_Shop",
-        "Event": "PlaceHolder_Event"
+        "Event": "PlaceHolder_Event",
+        "Product": "PlaceHolder_Product"
     }
 
     const SetFilterQuery = (e) => {
