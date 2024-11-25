@@ -1,5 +1,5 @@
 import { Link, useSearchParams } from "react-router-dom"
-import { FavoriteBtn, ImageFallBack } from "../../common"
+import { ComparisonBtn, FavoriteBtn, ImageFallBack } from "../../common"
 import CourseCenterBody from "./CourseCenterBody"
 import CourseDownBody from "./CourseDownBody"
 import CourseTopBody from "./CourseTopBody"
@@ -47,6 +47,7 @@ const CourseCard = ({ loading, refetch, item }) => {
                         </Skeleton>
                     </Link >
                     <div className="flex justify-center gap-8 my-3">
+                        <ComparisonBtn isLoading={loading} CourseId={id} />
                         <FavoriteBtn isLoading={loading}
                             variantStyle={"card"}
                             variantApi={'courseDetails'}

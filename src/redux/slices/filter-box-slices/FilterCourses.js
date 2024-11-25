@@ -13,6 +13,7 @@ const initialState = {
   CostUp: 1000000000,
   PageNumber: 1,
   RowsOfPage: 1,
+  comparisonIds :[]
 };
 
 const FilterCourses = createSlice({
@@ -55,6 +56,10 @@ const FilterCourses = createSlice({
     setRowsOfPage(state, action) {
       state.RowsOfPage = action.payload;
     },
+    setComparisonIds(state, action) {
+      state.comparisonIds = action.payload;
+    },
+    
   },
 });
 export const {
@@ -70,6 +75,7 @@ export const {
   setPriceUp,
   setPageNumber,
   setRowsOfPage,
+  setComparisonIds,
 } = FilterCourses.actions;
 
 export default FilterCourses.reducer;

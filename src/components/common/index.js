@@ -29,6 +29,7 @@ import RelatedItems from "./details-pages/RelatedItems.jsx";
 import OfflineWarning from "./OfflineWarning.jsx";
 import SetRate from "./SetRate.jsx";
 import ChooseTeacherToChat from "./ChooseTeacherToChat.jsx";
+import ComparisonBtn from "./ComparisonBtn.jsx";
 import {
   FilterRadio,
   ChangeView,
@@ -93,5 +94,6 @@ export {
   PopupLoginWrapper,
   ScrollProgressBar,
   ChooseTeacherToChat,
+  ComparisonBtn,
   CustomMap,
 };

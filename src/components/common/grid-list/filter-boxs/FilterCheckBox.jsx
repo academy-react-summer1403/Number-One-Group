@@ -31,6 +31,7 @@ const FilterCheckBox = ({
     }
     let activeButton = labelArray.filter(Btn => Btn.active === true)
     let ButtonId = [...new Set(activeButton.map((Btn) => Btn.id))]
+    console.log(ButtonId)
 
 
     if (activeButton.length === 0) {

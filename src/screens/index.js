@@ -19,6 +19,7 @@ import Error404 from "./error-page/Error404";
 import Payment from "./user-panel/Payment";
 import TeacherDetails from "./teacher-details";
 import TeacherPage from "./teachers";
+import Comparison from "./comparison";
 import Event from "./event";
 import EventDetails from "./event-details";
 import ContactUs from "./contact-us";
@@ -45,6 +46,7 @@ export {
   Payment,
   TeacherDetails,
   TeacherPage,
+  Comparison,
   Event,
   EventDetails,
   ContactUs,
