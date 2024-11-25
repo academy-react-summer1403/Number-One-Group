@@ -1,11 +1,13 @@
 import { useParams } from "react-router-dom"
-import { DateIcon, TopicsIcon, TotalIcon } from "../../../core/icon";
+import { DateIcon, TotalIcon } from "../../../core/icon";
 import { MdChairAlt } from "react-icons/md";
 import { useQueryWithDependencies } from "../../../core/hooks/react-query"
 import { DetailsBox, OverView_Details, Title_details, ImageFallBack, CustomMap } from "../../common";
 import { TitleSection, BreadCrumb } from "../../partials/title-section";
 import { GetEventDetails } from "../../../core/services/api/get-data";
 import fallback from "../../../assets/images/image-not-found.png"
+import configVariants from "../../../config/page-transition";
+import { motion } from "framer-motion";
 
 const EventDetailsWrapper = () => {
     const { id } = useParams();
@@ -15,12 +17,17 @@ const EventDetailsWrapper = () => {
 
     const DetailsEvent = [
         { titleDetail: "eventDate", countDetail: SelectedEvents?.startEventTime, iconDetail: <DateIcon width={18} height={18} /> },
-        { titleDetail: "graduation", countDetail: SelectedEvents?.students, iconDetail: <TotalIcon  /> },
+        { titleDetail: "graduation", countDetail: SelectedEvents?.students, iconDetail: <TotalIcon /> },
         { titleDetail: "chairs", countDetail: SelectedEvents?.chairs, iconDetail: <MdChairAlt color="#7F7E97" size={20} /> }
     ]
 
     return (
-        <>
+        <motion.div
+            variants={configVariants}
+            initial={"initial"}
+            animate={"animate"}
+            exit={"exit"}
+        >
             <TitleSection title={SelectedEvents?.title} >
                 <BreadCrumb href={'/Events'} text={'Events'} />
                 <BreadCrumb type="Div" text={SelectedEvents?.title} />
@@ -63,7 +70,7 @@ const EventDetailsWrapper = () => {
                     </div>
                 </div>
             </div>
-        </>
+        </motion.div>
     )
 }
 
