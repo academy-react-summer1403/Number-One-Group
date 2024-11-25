@@ -724,6 +724,9 @@ export function ComparisonIcon(props) {
         <svg width="25" height="25" viewBox="0 0 97 117" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
             <path d="M53.835 16.1787H16.77C10.9213 16.1787 6.18 20.92 6.18 26.7687V90.309C6.18 96.1573 10.9213 100.899 16.77 100.899H53.835M48.54 5.58875V111.489" stroke="#fff" strokeWidth="10.59" strokeLinecap="round" strokeLinejoin="round" {...props} />
             <path d="M75.015 16.1787H80.31C86.1589 16.1787 90.9 20.92 90.9 26.7687V32.0637M90.9 85.014V90.309C90.9 96.1573 86.1589 100.899 80.31 100.899H75.015M90.9 53.244V63.834" stroke="#5751E1" strokeWidth="10.59" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+    )
+}
 export function PhoneIcon(props) {
     return (
         <svg width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
