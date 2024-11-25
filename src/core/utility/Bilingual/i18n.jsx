@@ -27,7 +27,7 @@ i18n.use(initReactI18next)
                     // Search Input in the Header
                     Login: 'حساب کاربری', headerSearchText: 'متن جستجو را وارد کنید',
                     // PlaceHolders
-                    PlaceHolder_Courses: 'جستجو برای دوره ...', PlaceHolder_Blogs: 'جستجو برای وبلاگ ...',
+                    PlaceHolder_Courses: 'جستجو برای دوره ...', PlaceHolder_Blogs: 'جستجو برای وبلاگ ...', PlaceHolder_Event: "جستجو برای ایونت ...",
                     PlaceHolder_Shop: 'جستجو برای محصول ...', emailPlaceholder: "ایمیل خود را وارد کنید", passwordPlaceholder: "رمز عبور خود را وارد کنید",
                     phonePlaceholder: "شماره مبایل خود را وارد کنید",
                     // data in the Footer
@@ -103,11 +103,9 @@ i18n.use(initReactI18next)
                     //Instructors-Details page
                     sideBarTitle: "تماس سریع", sideBarBtn: "فرستادن پیام", sideBarDesc: "با اساتید خود به راحتی ازتباط بگیرید",
                     instructorBiography: "زندگینامه", instructorSkill: "مهارت ها", instructorCourses: "دوره های من",
-                    EventOverview: 'نمای کلی رویداد', LearnEvent: 'در این رویداد چه خواهید آموخت؟',
-                    EventElements: 'چهار عنصر اصلی که ما ارائه می دهیم برای این رویداد',
-                    EventElement1: 'با رنگ و گرادیان و شبکه کار کنید', EventElement2: 'تمام میانبرهای مفید',
-                    EventElement3: 'قادر به ایجاد بروشور، بروشور، تبلیغات باشید',
-                    EventElement4: 'نحوه کار با تصاویر و متن',
+                    // Events
+                    EventOverview: 'نمای کلی رویداد', EventPrice: 'هزینه رویداد', EventInfo: 'اطلاعات رویداد', eventDate: 'تاریخ شروع', StartTime: 'زمان شروع', graduation: 'دانشجو',
+                    EventTopics: 'موضوعات', EventQuizzes: 'آزمون ها', EventCertifications: 'گواهینامه ها', duration: 'مدت زمان', lessons: 'درس ها', chairs: "تعداد صندلی",
                     // Contact us page
                     contactUsCaption: "برای ما پیام ارسال کنید", contactUsDescription: "آدرس ایمیل شما منتشر نخواهد شد. فیلدهای الزامی علامت گذاری شده اند *",
                     // Filters Name
@@ -153,8 +151,8 @@ i18n.use(initReactI18next)
                     twoStepBtn: "مایل به ورود دو مرحله ای هستم",
                     paymentTitle: "پرداخت الکترونیکی", paymentLabelInput: "شناسه پرداخت", paymentNextBtn: "ادامه", paymentCancelBtn: "انصراف",
                     // chat 
-                    ProfileSection1:"پشتیبانی سایت", ProfileSection2:"پاسخگوی سوالات شما هستیم",startChat:"برای شروع ارتباط با ادمین پیامی وارد کنید!",
-                    placeHolderChat:"پیام خود را وارد کنید",supportBtn:"پشتیبانی و ارتباط با ادمین",supportTeacherBtn:"ارتباط با اساتید",
+                    ProfileSection1: "پشتیبانی سایت", ProfileSection2: "پاسخگوی سوالات شما هستیم", startChat: "برای شروع ارتباط با ادمین پیامی وارد کنید!",
+                    placeHolderChat: "پیام خود را وارد کنید", supportBtn: "پشتیبانی و ارتباط با ادمین", supportTeacherBtn: "ارتباط با اساتید",
                 },
             },
             en: {
@@ -175,7 +173,7 @@ i18n.use(initReactI18next)
                     // Search Input in the Header
                     Login: 'User Account', headerSearchText: 'Enter the search text',
                     // PalceHolders
-                    PlaceHolder_Courses: 'Search For Course ...', PlaceHolder_Blogs: 'Search For Blog ...',
+                    PlaceHolder_Courses: 'Search For Course ...', PlaceHolder_Blogs: 'Search For Blog ...', PlaceHolder_Event: "Search For Event ...",
                     PlaceHolder_Shop: 'Search For Product ...', emailPlaceholder: "Enter your email", passwordPlaceholder: "Enter your password",
                     phonePlaceholder: "Enter your mobile number",
                     // Footer
@@ -251,11 +249,9 @@ i18n.use(initReactI18next)
                     //Instructors-Details page
                     sideBarTitle: "Quick Contact", sideBarBtn: "Send Message", sideBarDesc: "Communicate easily with your professors.",
                     instructorBiography: "Biography", instructorSkill: "Skills", instructorCourses: "My Courses",
-                    EventOverview: 'Event Overview', LearnEvent: 'What will you learn in this event?',
-                    EventElements: 'Four major elements that we offer for this event',
-                    EventElement1: 'Work with color & Gradients & Grids', EventElement2: 'All the useful shortcuts',
-                    EventElement3: 'Be able to create Flyers, Brochures, Advertisements',
-                    EventElement4: 'How to work with Images & Text',
+                    // Events
+                    EventOverview: 'Event Overview', EventPrice: 'Event Fee', EventInfo: 'Event Infomation', eventDate: 'Date', StartTime: 'Start Time', graduation: 'graduation',
+                    EventTopics: 'Topics', EventQuizzes: 'Quizzes', EventCertifications: 'Certifications', duration: 'duration', lessons: 'lessons', chairs: "Chairs",
                     // Contact us page
                     contactUsCaption: "Send Us Message", contactUsDescription: "Your email address will not be published. Required fields are marked *",
                     // Filters Name
@@ -300,9 +296,9 @@ i18n.use(initReactI18next)
                     // Two Step
                     twoStepBtn: "I would like two-step login",
                     paymentTitle: "Electronic Payment", paymentLabelInput: "Payment ID", paymentButton: "Next",
-                      // chat 
-                      ProfileSection1:"Site support", ProfileSection2:"We answer your questions",startChat:"Enter a message to start communicating with the admin!",
-                      placeHolderChat:"Enter your message",supportBtn:"Support and communication with admin",supportTeacherBtn:"Communication with professors",
+                    // chat 
+                    ProfileSection1: "Site support", ProfileSection2: "We answer your questions", startChat: "Enter a message to start communicating with the admin!",
+                    placeHolderChat: "Enter your message", supportBtn: "Support and communication with admin", supportTeacherBtn: "Communication with professors",
                 },
             },
         },

@@ -1,4 +1,4 @@
-import Landing from "./landing";
+import LandingPage from "./landing";
 import ForgetPasswordLogin from "./authorize/ForgetPassword";
 import Login from "./authorize/Login";
 import Register from "./authorize/Register";
@@ -20,9 +20,12 @@ import Payment from "./user-panel/Payment";
 import TeacherDetails from "./teacher-details";
 import TeacherPage from "./teachers";
 import Comparison from "./comparison";
+import Event from "./event";
+import EventDetails from "./event-details";
+import ContactUs from "./contact-us";
 
 export {
-  Landing,
+  LandingPage,
   ForgetPasswordLogin,
   Login,
   Register,
@@ -44,4 +47,7 @@ export {
   TeacherDetails,
   TeacherPage,
   Comparison,
+  Event,
+  EventDetails,
+  ContactUs,
 };

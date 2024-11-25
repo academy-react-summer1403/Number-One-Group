@@ -1,12 +1,13 @@
 import { Navigate } from "react-router-dom"
 import { MainLayouts, AuthorizeLayout } from "../../components/layouts"
-import { Landing, ForgetPasswordLogin, Login, Register, TowStepLogin, Courses, Blog, CourseDetails, BlogDetails, Error404, TeacherPage, TeacherDetails, Comparison } from "../../screens"
+
+import { LandingPage, ForgetPasswordLogin, Login, Register, TowStepLogin, Courses, Blog, CourseDetails, BlogDetails, Error404, TeacherPage, TeacherDetails, Event, EventDetails, ContactUs , Comparison} from "../../screens"
 
 const routerPublic = [
     {
         element: <MainLayouts />,
         children: [
-            { path: '/', element: <Landing /> },
+            { path: '/', element: <LandingPage /> },
             { path: '/home', element: <Navigate to="/" /> },
             { path: '/teachers', element: <TeacherPage /> },
             { path: '/Courses', element: <Courses /> },
@@ -26,6 +27,13 @@ const routerPublic = [
                 element: <BlogDetails />,
                 children: [{ path: '/BlogDetails/:id', element: <BlogDetails /> }]
             },
+            { path: '/events', element: <Event /> },
+            {
+                path: '/eventDetails',
+                element: <EventDetails />,
+                children: [{ path: '/eventDetails/:id', element: <EventDetails /> }]
+            },
+            { path: '/contact', element: <ContactUs /> },
             { path: '/*', element: <Error404 /> },
             {
                 path: '/Comparison',

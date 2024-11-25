@@ -12,6 +12,16 @@ export const sortingColOptions_Blog_En = [
   { id: 3, value: "currentView", label: "Most Visited" },
 ];
 
+export const sortingColOptions_Event_Fa = [
+  { id: 1, value: "price", label: "قیمت" },
+  { id: 2, value: "startEventTime", label: "جدید ترین" },
+];
+
+export const sortingColOptions_Event_En = [
+  { id: 1, value: "cost", label: "Price" },
+  { id: 2, value: "updateDate", label: "Latest" },
+];
+
 export const sortingOptionsType_Course_Fa = [
   { id: 1, value: "Active", label: "دوره های فعال" },
   { id: 2, value: "cost", label: "قیمت" },
@@ -67,10 +77,38 @@ export const sortOptionChooseList_En = [
 ];
 
 export const selectItems_FA = [
-  { id: 1, label: "دوره ها", value: "course", icon: CategoryIcon ,path:'/courses',placeHolder:'PlaceHolder_Courses'},
-  { id: 2, label: "وبلاگ ها", value: "blog", icon: TopicsIcon ,path:'/Blog',placeHolder:'PlaceHolder_Blogs' },
+  {
+    id: 1,
+    label: "دوره ها",
+    value: "course",
+    icon: CategoryIcon,
+    path: "/courses",
+    placeHolder: "PlaceHolder_Courses",
+  },
+  {
+    id: 2,
+    label: "وبلاگ ها",
+    value: "blog",
+    icon: TopicsIcon,
+    path: "/Blog",
+    placeHolder: "PlaceHolder_Blogs",
+  },
 ];
 export const selectItems_EN = [
-  { id: 1, label: "Courses", value: "course", icon: CategoryIcon ,path:'/courses',placeHolder:'PlaceHolder_Courses'},
-  { id: 2, label: "Blogs", value: "blog", icon: TopicsIcon ,path:'/Blog',placeHolder:'PlaceHolder_Blogs' },
+  {
+    id: 1,
+    label: "Courses",
+    value: "course",
+    icon: CategoryIcon,
+    path: "/courses",
+    placeHolder: "PlaceHolder_Courses",
+  },
+  {
+    id: 2,
+    label: "Blogs",
+    value: "blog",
+    icon: TopicsIcon,
+    path: "/Blog",
+    placeHolder: "PlaceHolder_Blogs",
+  },
 ];

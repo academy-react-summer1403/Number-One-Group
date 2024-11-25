@@ -11,6 +11,7 @@ import {
   MyViews,
   LoginInfo,
   LoginPopup,
+  FilterEvent,
 } from "./slices";
 
 const store = configureStore({
@@ -26,6 +27,7 @@ const store = configureStore({
     MyViews,
     LoginInfo,
     LoginPopup,
+    FilterEvent,
   },
 });
 

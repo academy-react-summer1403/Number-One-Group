@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next"
-import { DateIcon, StarIcon, TotalIcon } from "../../../core/icon";
+import { DateIcon, StarIcon, TotalIcon, LocationIcon } from "../../../core/icon";
 import Label from "../Label";
 import creatorImg from '../../../assets/images/creator.png'
 
@@ -12,6 +12,7 @@ export const categoryItems_variant = {
 }
 export const icon_variant = {
     "course-detail": <DateIcon width={18} fill={'gray'} />,
+    "event-detail": <LocationIcon />
 }
 
 const Title_details = ({
@@ -25,8 +26,8 @@ const Title_details = ({
 }) => {
     const { t, i18n } = useTranslation();
     return (
-        <div data-aos={`fade-${i18n.language === 'fa' ? 'left' : 'right'}`} data-aos-duration="500"  
-        className={`my-4 py-4  ${boxTitle_variant?.[variant]}`}>
+        <div data-aos={`fade-${i18n.language === 'fa' ? 'left' : 'right'}`} data-aos-duration="500"
+            className={`my-4 py-4  ${boxTitle_variant?.[variant]}`}>
             <div className=" flex max-sm:justify-between flex-wrap gap-2 items-center ">
                 {/* Category Box */}
                 <div className="flex gap-2 max-sm:mx-auto">
@@ -35,10 +36,13 @@ const Title_details = ({
                     ))}
                 </div>
                 {/* Score Box */}
-                <div className="flex gap-1 max-sm:mx-auto max-sm:mt-2">
-                    <StarIcon />
-                    <span className="mediumStyle_text text-sm ">({Score} {t('Reviews')})</span>
-                </div>
+                {Score && (
+                    <div className="flex gap-1 max-sm:mx-auto max-sm:mt-2">
+                        <StarIcon />
+                        <span className="mediumStyle_text text-sm ">({Score} {t('Reviews')})</span>
+                    </div>
+                )}
+
             </div>
             <h1 className="my-4 max-sm:text-center max-sm:mx-auto text-DarkBlue boldStyle_text">{t(title)} </h1>
             {/* other details */}
@@ -53,7 +57,6 @@ const Title_details = ({
                         {icon_variant?.[variant]}
                         <span dir={i18n.language === 'fa' ? 'ltr' : 'rtl'} className="mx-1">{differentDetail}</span>
                     </div>
-                    .
                     <div className="flex items-center mediumStyle_text">
                         <TotalIcon />
                         <span className="mx-1 mt-0.5">{NumberStudents} {t('student')}</span>

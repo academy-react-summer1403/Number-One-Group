@@ -8,13 +8,12 @@ const FilterSearch = ({ variant, setQuery, Style, holderDefault }) => {
     const { t } = useTranslation();
     const dispatch = useDispatch()
     const [searchParams, setSearchParams] = useSearchParams({ Query: holderDefault });
-    // console.log(holderDefault)
-
 
     const variantPlaceHolder = {
         "Courses": "PlaceHolder_Courses",
         "Blogs": "PlaceHolder_Blogs",
-        "Shop": "PlaceHolder_Shop"
+        "Shop": "PlaceHolder_Shop",
+        "Event": "PlaceHolder_Event"
     }
 
     const SetFilterQuery = (e) => {

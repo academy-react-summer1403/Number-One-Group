@@ -36,7 +36,7 @@ const FormInput = ({ sectionName, certificate, fullSize, style, variants, fieldS
         area: (
             <Field name={certificate} >
                 {({ field }) => (
-                    <Textarea {...field} label={t(sectionName) } classNames={{ input: "resize-y min-h-[80px] max-h-48 !text-[#5751E1]", inputWrapper:color }} />
+                    <Textarea {...field} label={t(sectionName) } classNames={{ input: `resize-y min-h-[80px] max-h-48 !text-[#5751E1] ${fieldStyle}`, inputWrapper:color }} />
                 )}
             </Field>
         ),

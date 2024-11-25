@@ -1,7 +1,7 @@
 import React from 'react'
 import FormHolder from '../form/FormHolder'
 import { loginValidation } from '../../../core/validations/Auth.Validations'
-import { ExitAccount } from '../../pages/authorize'
+import ExitAccount from '../../pages/authorize/ExitAccount'
 import { UserLogin } from '../../../core/services/api/post-data'
 import { useDispatch, useSelector } from 'react-redux'
 import { setKeys } from '../../../redux/slices/LoginInfo'

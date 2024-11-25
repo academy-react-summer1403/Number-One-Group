@@ -19,7 +19,7 @@ const FilterSide_Courses = ({
   const queryDefault = useSelector(state => state.FilterCourses)
   return (
     <div className="h-fit lg:w-72">
-      <FilterSearch variant="Courses" setQuery={setQueryCourse} holderDefault={queryDefault.Query}/>
+      <FilterSearch variant="Courses" setQuery={setQueryCourse} holderDefault={queryDefault.Query} />
       <FilterCheckBox
         labelArray={techData}
         title={"category"}
