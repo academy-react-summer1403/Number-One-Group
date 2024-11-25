@@ -21,6 +21,7 @@ import TeacherDetails from "./teacher-details";
 import TeacherPage from "./teachers";
 import Event from "./event";
 import EventDetails from "./event-details";
+import ContactUs from "./contact-us";
 
 export {
   LandingPage,
@@ -46,4 +47,5 @@ export {
   TeacherPage,
   Event,
   EventDetails,
+  ContactUs,
 };
