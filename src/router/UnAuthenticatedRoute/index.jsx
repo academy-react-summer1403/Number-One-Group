@@ -30,7 +30,7 @@ const routerPublic = [
             {
                 path: '/Comparison',
                 element: <Comparison />,
-                children: [{ path: '/Comparison/:id', element: <Comparison /> }]
+                // children: [{ path: '/Comparison/:id', element: <Comparison /> }]
             },
         ],
     },

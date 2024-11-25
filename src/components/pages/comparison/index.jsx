@@ -1,43 +1,55 @@
-import { useLocation, useNavigate } from "react-router-dom"
+import { useNavigate, useSearchParams } from "react-router-dom"
 import { useEffect } from "react"
 import { useState } from "react"
 import { VsIcon } from "../../../core/icon"
-// import BreadCrumb, { TitleSection } from "../../partials/title-section"
 import { useQueryWithDependencies } from "../../../core/hooks/react-query"
 import { GetAllCourseByPagination } from "../../../core/services/api/get-data"
 import HeadingSection from "./HeadingSection"
 import ItemsCompared from "./ItemsCompared"
-import { BreadCrumb } from "../../partials/title-section"
+import { BreadCrumb, TitleSection } from "../../partials/title-section"
+import { useDispatch, useSelector } from "react-redux"
+import { setComparisonIds } from "../../../redux/slices/filter-box-slices/FilterCourses"
 
 const ComparisonPage = () => {
-
-  // Getting data from Api with use Query
-  const { data: coursesData, isSuccess, isError, isLoading, refetch } = useQueryWithDependencies("GET_COURSES", GetAllCourseByPagination, null, { PageNumber: 1, RowsOfPage: 1000 });
-
-  const location = useLocation();
+  const selectedIds = useSelector(state => state.FilterCourses.comparisonIds)
+  const [searchParams, setSearchParams] = useSearchParams();
+  const Dispatch = useDispatch()
   const [objects, setObjects] = useState([]);
   const navigate = useNavigate()
 
-  useEffect(() => {
-    SetArray();
-
-  }, [location.pathname])
+  // Getting data from Api with use Query
+  const { data: coursesData, isSuccess } = useQueryWithDependencies("GET_COURSES", GetAllCourseByPagination, null, { PageNumber: 1, RowsOfPage: 1000 });
 
   // Converting the IDs in the form Array and Set to state
   const SetArray = () => {
-    const getId = location.pathname.split("/")[2]
-    const ArrayId = getId.split(",");
-
     var CoursesFiltered = [];
-    for (let Id of ArrayId) {
+
+    for (let Id of selectedIds) {
       CoursesFiltered.push(
-        coursesData?.find(el => el.id === Id)
+        coursesData?.courseFilterDtos?.find(el => el.courseId == Id)
       )
     }
-    if (CoursesFiltered.flat(Infinity).length <= 2) {
-      setObjects(CoursesFiltered.flat(Infinity))
+    // console.log(CoursesFiltered)
+    if (CoursesFiltered.length <= 2) {
+      setObjects(CoursesFiltered)
     } else navigate("/*")
   }
+  useEffect(() => {
+    if (isSuccess) {
+      SetArray();
+    }
+  }, [isSuccess])
+
+  useEffect(() => {
+    // console.log(selectedIds)
+    if (selectedIds.length != 0) {
+      searchParams.set("Ids", selectedIds);
+      setSearchParams(searchParams);
+    }
+    const value = searchParams.get("Ids");
+    if (value === null) navigate("/*")
+    Dispatch(setComparisonIds(value.split(",")))
+  }, [])
 
   return (
     <>
@@ -50,22 +62,23 @@ const ComparisonPage = () => {
         <div className="h-fit w-fit absolute md:block hidden lg:mx-0 -mt-16">
           <VsIcon />
         </div>
-        {objects.map((item) => {
+        {objects && objects.length != 0 && objects.map((item) => {
           return (
             <ItemsCompared
               key={item.id}
-              // images={item.img}
-              // title={item.title}
-              // score={item.score}
-              // level={item.level}
-              // date={item.date}
-              // lessons={item.lessons}
-              // quizzes={item.quizzes}
-              // duration={item.duration}
-              // certifications={item.certifications}
-              // students={item.students}
-              // instructor={item.instructor}
-              // price={item.price}
+              id={item.courseId}
+              images={item.tumbImageAddress}
+              title={item.title}
+              score={item.courseRate}
+              technology={item.technologyList}
+              level={item.levelName}
+              status={item.statusName}
+              instructor={item.teacherName}
+              date={item.lastUpdate}
+              students={item.currentRegistrants}
+              likeCount={item.likeCount}
+              disLikeCount={item.dissLikeCount}
+              price={item.cost}
             />
           )
         })}

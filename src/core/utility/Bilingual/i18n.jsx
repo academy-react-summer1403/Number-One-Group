@@ -15,11 +15,11 @@ i18n.use(initReactI18next)
                     nameGroup: 'نامبر وان', teamSlogan: 'همیشه بهترین',
                     // Others
                     yes: 'بله', no: 'خیر', Reviews: 'امتیاز', student: 'دانشجو', Development: 'توسعه', By: 'توسط', map: 'نقشه', from: 'از',
-                    test: 'این یک پیام تستی است', priceCount: 'تومان', show: 'نمایش', result: 'نتیجه از', sortBy: 'مرتب سازی :', upTo: 'تا',
+                    test: 'این یک پیام تستی است', priceCount: 'ریال', show: 'نمایش', result: 'نتیجه از', sortBy: 'مرتب سازی :', upTo: 'تا',
                     setRate: 'امتیاز بدهید',
                     studyTime: "دقیقه خواندن", gender: "جنسیت",
                     course: "دوره", viewAll: "مشاهده همه", edit: "ویرایش", cancel: "لغـــو", category: 'دسته بندی ها', AddToCart: "افزودن به سبد خرید",
-                    description: "شرح", Comments: "کامنت ها", products: "محصولات", related: "مرتبط", completion: "تکمیل پروفایل",
+                    description: "شرح", Comments: "کامنت ها", products: "محصولات", related: "مرتبط", completion: "تکمیل پروفایل",likeCount:"تعداد پسندیده ها",disLikeCount:"تعداد نپسندیده ها",
                     // shop Details
                     ShopDetailId: "شناسه", ShopDetailTags: "برچسب ها",
                     // Menu Items in the Header
@@ -70,7 +70,7 @@ i18n.use(initReactI18next)
                     signUpTitle: 'ثبت نام به عنوان دانش آموز', or: "یا", EventsTitle: "همه مناسبت ها", contactUsTitle: "تماس با ما", shopDetail: "جزئیات فروشگاه",
                     // Buttons
                     GoHomePage: "به صفحه اصلی بروید", Join: 'به رویداد بپیوندید', submit: "ارسال کنید",
-                    signUpCourse: "ثبت نام در دوره", skilledTechnologies: 'همه دسته بندی هارو ببینید',
+                    signUpCourse: "ثبت نام در دوره", skilledTechnologies: 'همه دسته بندی هارو ببینید',detailsCourse:"جزئیات دوره و ثیت نام",
                     // LoginForm
                     LoginCaption: "ورود",
                     LoginDesc: "برای ورود به حساب خود ایمیل و رمز عبور خود را وارد کنید",
@@ -167,7 +167,7 @@ i18n.use(initReactI18next)
                     setRate: 'Rate It',
                     studyTime: "minutes of reading", gender: "Gender",
                     course: "Course", viewAll: "view all", edit: "Edit", cancel: "Cancel", category: 'Categories', AddToCart: "Add to cart",
-                    description: "Description", Comments: "Comments", products: "Products", related: "related", completion: "Completion profile",
+                    description: "Description", Comments: "Comments", products: "Products", related: "related", completion: "Completion profile",likeCount:"Likes",disLikeCount:"dissLikes",
                     // shop Details
                     ShopDetailId: "ID", ShopDetailTags: "Tags",
                     // Menu Items in the Header
@@ -218,7 +218,7 @@ i18n.use(initReactI18next)
                     signUpTitle: 'Student SignUp', or: "or", EventsTitle: "All Events", contactUsTitle: "Contact With Us", shopDetail: "Shop Detail",
                     // Buttons
                     GoHomePage: "Go To Home Page", Join: 'Join This Event', submit: "Submit Now",
-                    signUpCourse: "Enroll course", skilledTechnologies: 'See all categories',
+                    signUpCourse: "Enroll course", skilledTechnologies: 'See all categories',detailsCourse:"Course details and registration",
                     // LoginForm
                     LoginCaption: "Sign in",
                     LoginDesc: "Enter your email and password to log in to your account",
