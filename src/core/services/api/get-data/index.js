@@ -29,6 +29,11 @@ import GetUserChatInAdmin from "./GetUserChatInAdmin";
 import GetAllEvents from "./GetAllEvents";
 import GetEventsLength from "./GetEventsLength";
 import GetEventDetails from "./GetEventDetails";
+import GetProductCategory from "./GetProductCategory";
+import GetProductCategoryList from "./GetProductCategoryList";
+import GetAllProducts from "./GetAllProducts";
+import GetProductsLength from "./GetProductsLength";
+import GetAllShops from "./GetAllShops";
 
 export {
   GetAllTeachers,
@@ -62,4 +67,9 @@ export {
   GetAllEvents,
   GetEventsLength,
   GetEventDetails,
+  GetProductCategory,
+  GetProductCategoryList,
+  GetAllProducts,
+  GetProductsLength,
+  GetAllShops,
 };

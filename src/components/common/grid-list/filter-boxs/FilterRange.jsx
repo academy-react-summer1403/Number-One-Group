@@ -26,7 +26,7 @@ const FilterRange = ({
   };
   return (
     <div className="filter-box relative">
-      <h1 className="font-semibold pb-2">{t(title)}</h1>
+      <h1 className="text-[20px] pb-2">{t(title)}</h1>
       <Slider
         aria-label="filter-rage"
         step={10}

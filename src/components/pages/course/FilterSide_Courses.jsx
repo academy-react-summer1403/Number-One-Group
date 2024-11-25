@@ -27,6 +27,7 @@ const FilterSide_Courses = ({
         setTechCount={setTechCount}
         refetch={refetchTech}
         isRefetching={StatusTech}
+        titleKey={"techName"}
       />
       {radioInput.map((filterBox, index) => (
         <FilterRadio

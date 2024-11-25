@@ -18,16 +18,16 @@ i18n.use(initReactI18next)
                     test: 'این یک پیام تستی است', priceCount: 'تومان', show: 'نمایش', result: 'نتیجه از', sortBy: 'مرتب سازی :', upTo: 'تا',
                     setRate: 'امتیاز بدهید',
                     studyTime: "دقیقه خواندن", gender: "جنسیت",
-                    course: "دوره", viewAll: "مشاهده همه", edit: "ویرایش", cancel: "لغـــو", category: 'دسته بندی ها', AddToCart: "افزودن به سبد خرید",
+                    course: "دوره", viewAll: "مشاهده همه", edit: "ویرایش", cancel: "لغـــو", category: 'دسته بندی ها', AddToCart: "افزودن به سبد خرید", shopList: "فروشگاه ها",
                     description: "شرح", Comments: "کامنت ها", products: "محصولات", related: "مرتبط", completion: "تکمیل پروفایل",
                     // shop Details
                     ShopDetailId: "شناسه", ShopDetailTags: "برچسب ها",
                     // Menu Items in the Header
-                    HomeSection: 'صفحه اصلی', CoursesSection: 'دوره های آموزشی', Events: 'ایونت ها', ShopSection: 'فروشگاه', BlogSection: 'وبلاگ', InstructorsSection: "مربیان",
+                    HomeSection: 'صفحه اصلی', CoursesSection: 'دوره های آموزشی', Events: 'ایونت ها', ShopSection: 'فروشگاه', BlogSection: 'وبلاگ', InstructorsSection: "مربیان", ProductSection: "محصولات",
                     // Search Input in the Header
                     Login: 'حساب کاربری', headerSearchText: 'متن جستجو را وارد کنید',
                     // PlaceHolders
-                    PlaceHolder_Courses: 'جستجو برای دوره ...', PlaceHolder_Blogs: 'جستجو برای وبلاگ ...', PlaceHolder_Event: "جستجو برای ایونت ...",
+                    PlaceHolder_Courses: 'جستجو برای دوره ...', PlaceHolder_Blogs: 'جستجو برای وبلاگ ...', PlaceHolder_Event: "جستجو برای ایونت ...", PlaceHolder_Product: "جستجو برای محصول ...",
                     PlaceHolder_Shop: 'جستجو برای محصول ...', emailPlaceholder: "ایمیل خود را وارد کنید", passwordPlaceholder: "رمز عبور خود را وارد کنید",
                     phonePlaceholder: "شماره مبایل خود را وارد کنید",
                     // data in the Footer
@@ -164,7 +164,7 @@ i18n.use(initReactI18next)
                     test: 'This is a test message', priceCount: '$', show: 'Showing', result: 'Result of', sortBy: 'Sort By:', from: 'from', upTo: 'up To',
                     setRate: 'Rate It',
                     studyTime: "minutes of reading", gender: "Gender",
-                    course: "Course", viewAll: "view all", edit: "Edit", cancel: "Cancel", category: 'Categories', AddToCart: "Add to cart",
+                    course: "Course", viewAll: "view all", edit: "Edit", cancel: "Cancel", category: 'Categories', AddToCart: "Add to cart", shopList: "Shops",
                     description: "Description", Comments: "Comments", products: "Products", related: "related", completion: "Completion profile",
                     // shop Details
                     ShopDetailId: "ID", ShopDetailTags: "Tags",
@@ -173,7 +173,7 @@ i18n.use(initReactI18next)
                     // Search Input in the Header
                     Login: 'User Account', headerSearchText: 'Enter the search text',
                     // PalceHolders
-                    PlaceHolder_Courses: 'Search For Course ...', PlaceHolder_Blogs: 'Search For Blog ...', PlaceHolder_Event: "Search For Event ...",
+                    PlaceHolder_Courses: 'Search For Course ...', PlaceHolder_Blogs: 'Search For Blog ...', PlaceHolder_Event: "Search For Event ...", PlaceHolder_Product: "Search For Product ...",
                     PlaceHolder_Shop: 'Search For Product ...', emailPlaceholder: "Enter your email", passwordPlaceholder: "Enter your password",
                     phonePlaceholder: "Enter your mobile number",
                     // Footer

@@ -11,7 +11,8 @@ const FilterCheckBox = ({
   SetFilteredData,
   setTechCount,
   refetch,
-  isRefetching
+  isRefetching,
+  titleKey
 }) => {
   const { t } = useTranslation();
   const Dispatch = useDispatch();
@@ -101,7 +102,7 @@ const FilterCheckBox = ({
               }}
               radius="sm"
             >
-              {item.techName}
+              {item?.[titleKey]}
             </Checkbox>
           </motion.div>
 

@@ -9,7 +9,8 @@ import MyReserved from "./userPanel-filter-slices/MyReserved";
 import MyViews from "./userPanel-filter-slices/MyViews";
 import LoginInfo from "./LoginInfo";
 import LoginPopup from "./LoginPopup";
-import FilterEvent from "./filter-box-slices/FilterEvents"
+import FilterEvent from "./filter-box-slices/FilterEvents";
+import FilterProducts from "./filter-box-slices/FilterProducts";
 
 export {
   StepStatus,
@@ -23,5 +24,6 @@ export {
   MyViews,
   LoginInfo,
   LoginPopup,
-  FilterEvent
+  FilterEvent,
+  FilterProducts,
 };

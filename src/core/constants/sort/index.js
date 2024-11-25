@@ -18,8 +18,18 @@ export const sortingColOptions_Event_Fa = [
 ];
 
 export const sortingColOptions_Event_En = [
-  { id: 1, value: "cost", label: "Price" },
-  { id: 2, value: "updateDate", label: "Latest" },
+  { id: 1, value: "price", label: "Price" },
+  { id: 2, value: "startEventTime", label: "Latest" },
+];
+
+export const sortingColOptions_Product_Fa = [
+  { id: 1, value: "price", label: "قیمت" },
+  { id: 2, value: "insertDate", label: "جدید ترین" },
+];
+
+export const sortingColOptions_Product_En = [
+  { id: 1, value: "price", label: "Price" },
+  { id: 2, value: "insertDate", label: "Latest" },
 ];
 
 export const sortingOptionsType_Course_Fa = [
