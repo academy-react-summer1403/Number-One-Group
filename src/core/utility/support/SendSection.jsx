@@ -10,6 +10,7 @@ import { useTranslation } from "react-i18next";
 import { FaT } from "react-icons/fa6";
 import ChooseTeacherToChat from "../../../components/common/ChooseTeacherToChat";
 import { toast } from "react-toastify";
+import AntiSwearingSystem from "../anti-swearing-system";
 
 const SendSection = ({ chatsData, refetch, section, setTeacherId, teacherId, allChats }) => {
     const { t } = useTranslation()
@@ -62,6 +63,11 @@ const SendSection = ({ chatsData, refetch, section, setTeacherId, teacherId, all
     const handleTeacherSendMessage = (value) => {
         if (!teacherId) {
             return toast.error("لطفا معلم مورد نظر خود را انتخاب کنید")
+        }
+
+        const antiSwearing = AntiSwearingSystem(query)
+        if (antiSwearing) {
+            return toast.error("متن شما شامل کلامات ناپسند است لطفا آن زا عوض کنید!");
         }
 
         if (value == null) setSendStatus(false)
