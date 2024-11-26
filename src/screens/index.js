@@ -24,6 +24,7 @@ import Event from "./event";
 import EventDetails from "./event-details";
 import ContactUs from "./contact-us";
 import Product from "./product";
+import Shops from "./shop";
 
 export {
   LandingPage,
@@ -52,4 +53,5 @@ export {
   EventDetails,
   ContactUs,
   Product,
+  Shops,
 };

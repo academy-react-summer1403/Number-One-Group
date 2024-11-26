@@ -23,7 +23,7 @@ i18n.use(initReactI18next)
                     // shop Details
                     ShopDetailId: "شناسه", ShopDetailTags: "برچسب ها",
                     // Menu Items in the Header
-                    HomeSection: 'صفحه اصلی', CoursesSection: 'دوره های آموزشی', Events: 'ایونت ها', ShopSection: 'فروشگاه', BlogSection: 'وبلاگ', InstructorsSection: "مربیان", ProductSection: "محصولات",
+                    HomeSection: 'صفحه اصلی', CoursesSection: 'دوره های آموزشی', Events: 'ایونت ها', ShopSection: 'فروشگاه ها', BlogSection: 'وبلاگ', InstructorsSection: "مربیان", ProductSection: "محصولات",
                     // Search Input in the Header
                     Login: 'حساب کاربری', headerSearchText: 'متن جستجو را وارد کنید',
                     // PlaceHolders
@@ -169,7 +169,7 @@ i18n.use(initReactI18next)
                     // shop Details
                     ShopDetailId: "ID", ShopDetailTags: "Tags",
                     // Menu Items in the Header
-                    HomeSection: 'Home', CoursesSection: 'Courses', Events: 'Events', ShopSection: 'Shop', BlogSection: 'Blog', InstructorsSection: "Instructors",
+                    HomeSection: 'Home', CoursesSection: 'Courses', Events: 'Events', ShopSection: 'Shops', BlogSection: 'Blog', InstructorsSection: "Instructors",
                     // Search Input in the Header
                     Login: 'User Account', headerSearchText: 'Enter the search text',
                     // PalceHolders
