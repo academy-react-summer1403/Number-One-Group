@@ -11,7 +11,7 @@ import LoginInfo from "./LoginInfo";
 import LoginPopup from "./LoginPopup";
 import FilterEvent from "./filter-box-slices/FilterEvents";
 import FilterProducts from "./filter-box-slices/FilterProducts";
-import FilterSide_Shops from "../../components/pages/shops/FilterSide_Shops";
+import FilterShops from "./filter-box-slices/FilterShops"
 
 export {
   StepStatus,
@@ -27,5 +27,5 @@ export {
   LoginPopup,
   FilterEvent,
   FilterProducts,
-  FilterSide_Shops,
+  FilterShops,
 };
