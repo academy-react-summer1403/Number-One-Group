@@ -17,7 +17,7 @@ const ProductCardWrapper = ({ item }) => {
 
     return (
         <Link
-            to={"/shopDetails/" + id}
+            to={`/productDetails/${id}`}
             className='w-[300px] h-fit flex flex-wrap gap-y-4 p-5 border border-LightGrayish rounded-lg hover:shadow-lg duration-200 relative cursor-pointer'
         >
             <ProductHeaderCard image={pictureList?.[0]} special={special} />

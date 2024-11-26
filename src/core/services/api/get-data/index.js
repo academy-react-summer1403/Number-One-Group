@@ -34,6 +34,8 @@ import GetProductCategoryList from "./GetProductCategoryList";
 import GetAllProducts from "./GetAllProducts";
 import GetProductsLength from "./GetProductsLength";
 import GetAllShops from "./GetAllShops";
+import GetProductDetails from "./GetProductDetails";
+import GetProductShop from "./GetProductShop";
 
 export {
   GetAllTeachers,
@@ -72,4 +74,6 @@ export {
   GetAllProducts,
   GetProductsLength,
   GetAllShops,
+  GetProductDetails,
+  GetProductShop,
 };
