@@ -28,7 +28,7 @@ const ShopWrapper = () => {
     // Skeleton
     const skeletonData = [{}, {}, {}, {}, {}, {}, {}, {}, {}];
 
-    console.log(ShopsData)
+    console.log(shopParams)
 
     return (
         <motion.div

@@ -14,6 +14,7 @@ const ProductCardWrapper = ({ item }) => {
         price,
         special
     } = item
+    console.log(title)
 
     return (
         <Link

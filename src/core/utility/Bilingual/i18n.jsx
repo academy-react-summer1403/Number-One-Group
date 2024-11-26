@@ -28,7 +28,7 @@ i18n.use(initReactI18next)
                     Login: 'حساب کاربری', headerSearchText: 'متن جستجو را وارد کنید',
                     // PlaceHolders
                     PlaceHolder_Courses: 'جستجو برای دوره ...', PlaceHolder_Blogs: 'جستجو برای وبلاگ ...', PlaceHolder_Event: "جستجو برای ایونت ...", PlaceHolder_Product: "جستجو برای محصول ...",
-                    PlaceHolder_Shop: 'جستجو برای محصول ...', emailPlaceholder: "ایمیل خود را وارد کنید", passwordPlaceholder: "رمز عبور خود را وارد کنید",
+                    PlaceHolder_Shop: 'جستجو برای فروشگاه ...', emailPlaceholder: "ایمیل خود را وارد کنید", passwordPlaceholder: "رمز عبور خود را وارد کنید",
                     phonePlaceholder: "شماره مبایل خود را وارد کنید",
                     // data in the Footer
                     footerDescription: ' بهترین دوره ها جهان را با ما تجربه کنید تا بتوانید بهترین باشید',
@@ -174,7 +174,7 @@ i18n.use(initReactI18next)
                     Login: 'User Account', headerSearchText: 'Enter the search text',
                     // PalceHolders
                     PlaceHolder_Courses: 'Search For Course ...', PlaceHolder_Blogs: 'Search For Blog ...', PlaceHolder_Event: "Search For Event ...", PlaceHolder_Product: "Search For Product ...",
-                    PlaceHolder_Shop: 'Search For Product ...', emailPlaceholder: "Enter your email", passwordPlaceholder: "Enter your password",
+                    PlaceHolder_Shop: 'Search For shop ...', emailPlaceholder: "Enter your email", passwordPlaceholder: "Enter your password",
                     phonePlaceholder: "Enter your mobile number",
                     // Footer
                     footerDescription: 'when an unknown printer took galley of type and scrambled it to make pspecimen bookt has.',

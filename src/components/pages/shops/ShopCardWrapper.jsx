@@ -17,6 +17,8 @@ const ShopCardWrapper = ({ item }) => {
         startTime,
         endTime
     } = item
+    console.log(name)
+
     return (
         <Link
             to={"/shopDetails/" + id}
