@@ -15,6 +15,7 @@ const GetAllProducts = async (params) => {
       params.Category ? params.Category : ""
     );
     url.searchParams.append("shopId", params.Shop ? params.Shop : "");
+    url.searchParams.append("isActive", true);
     
     const response = await axios.get(url);
     return response.data;
