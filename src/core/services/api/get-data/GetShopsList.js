@@ -10,6 +10,7 @@ const GetShopsList = async (params) => {
       params.RowsOfPage ? params.RowsOfPage : 12
     );
     url.searchParams.append("name", params.Query ? params.Query : "");
+    url.searchParams.append("sortby", params ? params.SortingCol : null);
 
     const response = await axios.get(url);
     // console.log( response.data)
