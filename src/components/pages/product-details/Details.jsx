@@ -3,7 +3,7 @@ import { BasketIcon } from "../../../core/icon"
 import KeyDetails from "./KeyDetails";
 import { useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
-// import { addToCartAction } from "../../../redux/slices/CartData";
+import { addToCartAction } from "../../../redux/slices/CartData";
 import { useEffect, useState } from "react";
 import { UnitPrice } from "../../../core/utility/SeparationPrice";
 import { useQueryWithDependencies } from "../../../core/hooks/react-query";
@@ -25,7 +25,7 @@ const Details = ({ item }) => {
     // Handle Add To Cart
     const handleAdd = (item) => {
         let obj = { ...item, amount: productAmount }
-        // dispatch(addToCartAction(obj))
+        dispatch(addToCartAction(obj))
     }
 
     return (
