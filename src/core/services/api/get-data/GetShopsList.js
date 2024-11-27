@@ -11,6 +11,10 @@ const GetShopsList = async (params) => {
     );
     url.searchParams.append("name", params.Query ? params.Query : "");
     url.searchParams.append("sortby", params ? params.SortingCol : null);
+    url.searchParams.append(
+      "categoryId",
+      params.Category ? params.Category : ""
+    );
 
     const response = await axios.get(url);
     // console.log( response.data)

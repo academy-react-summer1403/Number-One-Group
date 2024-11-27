@@ -60,10 +60,11 @@ const FilterRadio = ({
       >
         {inputData && inputData.map((item, index) => (
           <motion.div
-            initial={{ x: 0 }}
-            whileHover={{ x: -10 }}
-            className="h-6"
+          initial={{ x: 0 }}
+          whileHover={{ x: -10 }}
+          className="h-6"
           >
+            {console.log(item)}
             <Radio
               key={index}
               onChange={() => { handleChange(item); }}
@@ -74,7 +75,7 @@ const FilterRadio = ({
                 wrapper: "w-4 h-4"
               }}
             >
-              {item?.[titleKey]}
+              {item?.[titleKey] ? item?.[titleKey] : item}
             </Radio>
           </motion.div>
         ))}
