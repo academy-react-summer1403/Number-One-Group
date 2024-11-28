@@ -6,6 +6,7 @@ export const BorderStyleVariant = {
 }
 
 const OverView_Details = ({
+    overView,
     miniDescribe,
     describe,
     Class,
@@ -22,8 +23,8 @@ const OverView_Details = ({
                 <p className="mediumStyle_text">{miniDescribe}</p>
             </div>
             <p className="mediumStyle_text">
-                <HandleIdentityEditorJs desc={describe}/>
-                </p>
+                <HandleIdentityEditorJs desc={describe ? describe : overView} />
+            </p>
         </div>
     )
 }

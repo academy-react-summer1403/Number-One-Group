@@ -2,7 +2,7 @@ import { Skeleton } from '@nextui-org/react';
 import { useQueryWithDependencies } from '../../../core/hooks/react-query';
 import { StarIcon } from '../../../core/icon'
 import { GetShopCategory } from '../../../core/services/api/get-data';
-import { Label } from '../../common'
+import { HandleIdentityEditorJs, Label } from '../../common'
 
 const ShopContentCard = ({
     name,
@@ -19,12 +19,12 @@ const ShopContentCard = ({
         categoryId
     );
     return (
-        <div className='w-full border-b border-gray-400/30 pb-4 flex flex-wrap gap-y-3'>
+        <div className='w-full border-b border-gray-400/30 pb-4 flex flex-col gap-y-3'>
             <Skeleton isLoaded={!loading} className="rounded-xl">
                 <h1 className='text-DarkBlue text-xl'>{name}</h1>
             </Skeleton>
             <Skeleton isLoaded={!loading} className="rounded-xl">
-                <h2 className='text-gray-400 line-clamp-2'>{aboutUs}</h2>
+                <div className='text-gray-400 line-clamp-2 h-14'> <HandleIdentityEditorJs desc={aboutUs} /></div>
             </Skeleton>
             <div className='w-full flex justify-between'>
                 <Skeleton isLoaded={!loading} className="rounded-xl">

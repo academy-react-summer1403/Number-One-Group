@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next"
 import { DateIcon, StarIcon, TotalIcon, LocationIcon } from "../../../core/icon";
 import Label from "../Label";
 import creatorImg from '../../../assets/images/creator.png'
+import { SiTabelog } from "react-icons/si";
 
 export const boxTitle_variant = {
     "course-detail": 'w-full',
@@ -37,13 +38,10 @@ const Title_details = ({
                     ))}
                 </div>
                 {/* Score Box */}
-                {Score && (
-                    <div className="flex gap-1 max-sm:mx-auto max-sm:mt-2">
-                        <StarIcon />
-                        <span className="mediumStyle_text text-sm ">({Score} {t('Reviews')})</span>
-                    </div>
-                )}
-
+                <div className="flex gap-1 max-sm:mx-auto max-sm:mt-2">
+                    <StarIcon />
+                    <span className="mediumStyle_text text-sm ">({Score && Score} {t('Reviews')})</span>
+                </div>
             </div>
             <h1 className="my-4 max-sm:text-center max-sm:mx-auto text-DarkBlue boldStyle_text">{t(title)} </h1>
             {/* other details */}
