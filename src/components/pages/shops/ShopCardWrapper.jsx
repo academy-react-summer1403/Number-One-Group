@@ -3,7 +3,7 @@ import ShopHeaderCard from "./ShopHeaderCard"
 import ShopContentCard from "./ShopContentCard"
 import ShopFooterCard from "./ShopFooterCard"
 
-const ShopCardWrapper = ({ item }) => {
+const ShopCardWrapper = ({ item ,loading}) => {
 
     const {
         id,
@@ -22,9 +22,9 @@ const ShopCardWrapper = ({ item }) => {
             to={"/shopDetails/" + id}
             className='w-[300px] h-fit flex flex-wrap gap-y-4 p-5 border border-LightGrayish rounded-lg hover:shadow-lg duration-200 relative cursor-pointer'
         >
-            <ShopHeaderCard image={img} offer={offer} />
-            <ShopContentCard name={name}  aboutUs={aboutUs} categoryId={categoryId} rate={rate}/>
-            <ShopFooterCard startTime={startTime} endTime={endTime}/>
+            <ShopHeaderCard loading={loading} image={img} offer={offer} />
+            <ShopContentCard loading={loading} name={name}  aboutUs={aboutUs} categoryId={categoryId} rate={rate}/>
+            <ShopFooterCard loading={loading} startTime={startTime} endTime={endTime}/>
         </Link>
     )
 }
