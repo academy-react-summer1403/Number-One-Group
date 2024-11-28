@@ -40,6 +40,7 @@ import GetShopCategories from "./GetShopCategories";
 import GetShopCategory from "./GetShopCategory";
 import GetProductDetails from "./GetProductDetails";
 import GetProductShop from "./GetProductShop";
+import GetShopDetails from "./GetShopDetails";
 
 
 export {
@@ -85,4 +86,5 @@ export {
   GetShopCategory,
   GetProductDetails,
   GetProductShop,
+  GetShopDetails,
 };
