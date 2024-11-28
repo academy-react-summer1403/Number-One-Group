@@ -26,6 +26,7 @@ const TabPanel = ({
                             ElementClass={'hidden'}
                             titleOverView={'CourseOverView'}
                             titleLearning={'LearnCourse'}
+                            describe={params.describe}
                             variant={params.variant} />
                         <FeedbackSection params={params} />
                     </>

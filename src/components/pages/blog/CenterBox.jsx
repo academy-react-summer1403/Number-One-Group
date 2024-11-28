@@ -1,6 +1,6 @@
 import { Skeleton } from "@nextui-org/react"
 import { DateIcon } from "../../../core/icon"
-import { Label } from "../../common"
+import { HandleIdentityEditorJs, Label } from "../../common"
 import ChangeMoment from "../../../core/utility/moment"
 
 const CenterBox = ({
@@ -29,7 +29,8 @@ const CenterBox = ({
         </Skeleton>
       </div>
       <Skeleton isLoaded={loading} className="rounded-md">
-        <p className="line-clamp-2 text-gray-500 text-sm mt-3 blog-bio h-10">{bio}</p>
+        <div className="line-clamp-2 text-gray-500 text-sm mt-3 blog-bio h-10">
+        <HandleIdentityEditorJs desc={bio}/></div>
       </Skeleton>
     </div>
   )

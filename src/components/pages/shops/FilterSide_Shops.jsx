@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux"
-import { handleCategory, handleShopQuery } from "../../../redux/slices/filter-box-slices/FilterShops"
+import { handleShopCategory, handleShopQuery } from "../../../redux/slices/filter-box-slices/FilterShops"
 import { FilterRadio, FilterSearch } from "../../common"
 import { useQueryWithoutDependencies } from "../../../core/hooks/react-query"
 import { GetShopCategories } from "../../../core/services/api/get-data"
@@ -22,7 +22,7 @@ const FilterSide_Shops = ({
       <FilterSearch setQuery={handleShopQuery} variant="Shop" holderDefault={queryDefault} />
       <FilterRadio
         title={"category"}
-        setInputID={handleCategory}
+        setInputID={handleShopCategory}
         inputData={categorySuccess && category}
         titleKey={"categoryName"}
         fetchStatus={categoryRefetching}

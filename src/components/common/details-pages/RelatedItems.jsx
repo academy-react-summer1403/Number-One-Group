@@ -6,6 +6,7 @@ import SwiperSlider from "../../common/swiper/SwiperSlider";
 import { SwiperSlide } from "swiper/react";
 import { useQueryWithDependencies } from "../../../core/hooks/react-query";
 import ChangeMoment from "../../../core/utility/moment";
+import RenderRelatedItems from "./RenderRelatedItems";
 
 const titleVariant = {
   "courseFilterDtos": 'Courses',
@@ -16,7 +17,7 @@ const maxWidthVariant = {
   "news": "1024px"
 }
 
-const RelatedItems = ({ category, params, apiFunction, variant, RenderItem}) => {
+const RelatedItems = ({ category, params, apiFunction, variant, RenderItem }) => {
 
 
   const { t, i18n } = useTranslation();
@@ -38,8 +39,8 @@ const RelatedItems = ({ category, params, apiFunction, variant, RenderItem}) => 
       {/* Side related blogs for laptop mode */}
       {titleVariant?.[variant] === 'Blogs' &&
         <MediaQuery minWidth={'1024px'}>
-          <div data-aos={`fade-${i18n.language === 'fa' ? 'left' : 'right'}`} data-aos-duration="700"  
-          className="bg-LightGray min-h-[300px] h-fit lg:min-w-[315px] p-5 rounded-lg">
+          <div data-aos={`fade-${i18n.language === 'fa' ? 'left' : 'right'}`} data-aos-duration="700"
+            className="bg-LightGray min-h-[300px] h-fit lg:min-w-[315px] p-5 rounded-lg">
             <h1 className="boldStyle_text text-xl">{t('Blogs')} {t('Related')}</h1>
             {isSuccess && data.news?.length > 0 ? data.news?.map((item) => (
               <Link key={item.id} to={`/BlogDetails/${item.id}`}>
@@ -60,32 +61,14 @@ const RelatedItems = ({ category, params, apiFunction, variant, RenderItem}) => 
       }
       {/* Related news box for tablet and mobile mode */}
       <MediaQuery maxWidth={maxWidthVariant?.[variant]}>
-        <div className="relative my-6 ">
-          <div className="pt-2 pb-8 flex items-center gap-3">
-            <h1 className="importantWord py-1">{t(titleVariant?.[variant])}</h1>
-            <p className="text-2xl font-semibold">{t("Related")}</p>
-          </div>
-          <div>
-            <SwiperSlider
-              perView={1}
-              Breakpoints={Breakpoints}
-              arrowColor="#fff"
-              buttonSideLeft={`top-3 h-10 w-10 ${isSuccess && data?.[variant]?.length <= 3 ? "hidden" : ""} ${i18n.language === 'fa' ? "left-0" : "right-12"} `}
-              buttonSideRight={`top-3 h-10 w-10 ${isSuccess && data?.[variant]?.length <= 3 ? "hidden" : ""} ${i18n.language === 'fa' ? "left-12" : "right-0"} `}
-              buttonColor="bg-VioletBlue"
-            >
-              {isSuccess && data?.[variant]?.map((item, index) => (
-                <SwiperSlide key={index}>
-                  <RenderItem
-                    item={item}
-                    loading={isLoading}
-                    refetch={refetch}
-                  />
-                </SwiperSlide>
-              ))}
-            </SwiperSlider>
-          </div>
-        </div>
+        <RenderRelatedItems
+          title={titleVariant?.[variant]}
+          RenderItem={RenderItem}
+          renderData={data?.[variant]}
+          isSuccess={isSuccess}
+          isLoading={isLoading}
+          refetch={refetch}
+        />
       </MediaQuery>
     </>
   )

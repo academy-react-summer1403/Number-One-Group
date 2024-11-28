@@ -26,6 +26,7 @@ import ContactUs from "./contact-us";
 import Product from "./product";
 import Shops from "./shop";
 import ProductDetails from "./product-details";
+import ShopDetails from "./shop-details";
 
 export {
   LandingPage,
@@ -56,4 +57,5 @@ export {
   Product,
   Shops,
   ProductDetails,
+  ShopDetails,
 };
