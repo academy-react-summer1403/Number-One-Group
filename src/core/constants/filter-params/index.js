@@ -23,6 +23,7 @@ import {
   handleProductQuery,
   handleShop,
 } from "../../../redux/slices/filter-box-slices/FilterProducts";
+import { handleShopCategory, handleShopPage, handleShopQuery } from "../../../redux/slices/filter-box-slices/FilterShops";
 
 export const courseFilterParams = [
   { key: "Query", action: setQueryCourse },
@@ -52,4 +53,10 @@ export const productFilterParams = [
   { key: "PageNumber", action: handleProductPage },
   { key: "shopList", action: handleShop },
   { key: "category", action: handleCategory },
+];
+
+export const shopsFilterParams = [
+  { key: "Query", action: handleShopQuery },
+  { key: "PageNumber", action: handleShopPage },
+  { key: "category", action: handleShopCategory },
 ];

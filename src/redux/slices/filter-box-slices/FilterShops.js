@@ -24,7 +24,7 @@ const FilterShops = createSlice({
     handleSortingCol: (state, action) => {
       state.SortingCol = action.payload;
     },
-    handleCategory: (state, action) => {
+    handleShopCategory: (state, action) => {
       state.Category = action.payload;
     },
   },
@@ -35,6 +35,6 @@ export const {
   handleShopPage,
   handleRowsOfPage,
   handleSortingCol,
-  handleCategory,
+  handleShopCategory,
 } = FilterShops.actions;
 export default FilterShops.reducer;
