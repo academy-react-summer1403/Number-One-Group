@@ -82,7 +82,7 @@ export {
   GetShopsLength,
   GetShopsList,
   GetShopCategories,
-  GetShopCategory
+  GetShopCategory,
   GetProductDetails,
   GetProductShop,
 };
