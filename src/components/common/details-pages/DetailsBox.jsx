@@ -22,7 +22,9 @@ export const detailVariant = {
 export const detailInfoVariant = {
   "event-detail": "EventInfo",
   "course-detail": "CourseInfo",
-  "cart": "cartInfo"
+  "cart": "cartInfo",
+  "shop-detail": "shopInfo",
+  
 }
 export const priceInfoVariant = {
   "event-detail": "EventPrice",
@@ -41,6 +43,8 @@ const DetailsBox = ({
   shareBox = true,
   actionReserve,
   reserveStatus,
+  styleDisplay,
+  shareText,
 }) => {
   const userInfo = useSelector(state => state.UserInfo.info);
   const dispatch = useDispatch()
@@ -74,7 +78,7 @@ const DetailsBox = ({
     <div data-aos={`fade-${i18n.language === 'fa' ? 'left' : 'right'}`} data-aos-duration="700"
       className={`Box-shadow1 p-5 h-fit bg-MainBg rounded-lg border border-LightLavender flex flex-wrap justify-center ${detailVariant?.[variant]}`}>
       {/* price Info */}
-      <div className="bg-VioletBlue px-4 py-3 w-full min-w-52 shadow-[0_0_10px_1px_rgba(13,9,99,0.36)] text-white rounded-lg flex flex-wrap justify-center gap-y-3">
+      <div className={`bg-VioletBlue px-4 py-3 w-full min-w-52 shadow-[0_0_10px_1px_rgba(13,9,99,0.36)] text-white rounded-lg flex flex-wrap justify-center gap-y-3 ${styleDisplay}`}>
         <h1 className="text-xs w-full">{t(priceInfoVariant?.[variant])}:</h1>
         <h2 className="text-2xl font-semibold w-fit"><span className="float-left mx-1">{i18n.language === 'fa' ? 'تومان' : '$'}</span>{UnitPrice(price)}</h2>
       </div>
@@ -93,14 +97,14 @@ const DetailsBox = ({
       </div>
       <div className="w-full max-md:flex max-sm:block justify-evenly mt-0">
         {/* Payment Box */}
-        <div className="border-b py-2 pb-4 ">
+        <div className={`border-b py-2 pb-4 ${styleDisplay}`}>
           <h1 className="text-sm text-DarkBlue">{t('Payment')}</h1>
           <img src={paymentIcon} alt="Payment Icon" className="h-6 mt-2" />
         </div>
         {/* Share Box */}
         {shareBox && (
           <div className="border-b py-4">
-            <h1 className="text-sm text-DarkBlue">{t('ShareCourse')}</h1>
+            <h1 className="text-sm text-DarkBlue">{t(shareText)}</h1>
             <div className="flex justify-around mt-2">
               {AppIcons.map((item, index) => <CreateSocialMediaItems key={index} Icon={item} style="bg-neutral-200" />)}
             </div>
