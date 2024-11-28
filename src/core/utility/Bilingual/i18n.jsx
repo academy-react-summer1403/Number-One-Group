@@ -154,7 +154,7 @@ i18n.use(initReactI18next)
                     ProfileSection1: "پشتیبانی سایت", ProfileSection2: "پاسخگوی سوالات شما هستیم", startChat: "برای شروع ارتباط با ادمین پیامی وارد کنید!",
                     placeHolderChat: "پیام خود را وارد کنید", supportBtn: "پشتیبانی و ارتباط با ادمین", supportTeacherBtn: "ارتباط با اساتید",
                     // shops
-                    shopInfo: 'اطلاعات فروشگاه',
+                    shopInfo: 'اطلاعات فروشگاه',shopOverview: 'درباره فروشگاه'
                 },
             },
             en: {
@@ -302,7 +302,7 @@ i18n.use(initReactI18next)
                     ProfileSection1: "Site support", ProfileSection2: "We answer your questions", startChat: "Enter a message to start communicating with the admin!",
                     placeHolderChat: "Enter your message", supportBtn: "Support and communication with admin", supportTeacherBtn: "Communication with professors",
                   // shops
-                  shopInfo: 'Shop Infomation',
+                  shopInfo: 'Shop Infomation',shopOverview: 'About the shop',
                 },
             },
         },

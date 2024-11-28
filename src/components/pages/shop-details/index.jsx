@@ -5,7 +5,7 @@ import { useQueryWithDependencies } from "../../../core/hooks/react-query";
 import GetShopDetails from "../../../core/services/api/get-data/GetShopDetails";
 import { motion } from "framer-motion";
 import fallback from "../../../assets/images/image-not-found.png"
-import { CustomMap, DetailsBox, ImageFallBack } from "../../common";
+import { CustomMap, DetailsBox, ImageFallBack, OverView_Details, Title_details } from "../../common";
 import { FaHourglassStart } from "react-icons/fa";
 
 
@@ -17,7 +17,7 @@ const ShopDetailsWrapper = () => {
   const DetailsShop = [
     { titleDetail: "startTime", countDetail: SelectedShop?.startTime, iconDetail: <FaHourglassStart width={18} height={18} color="gray" /> },
     { titleDetail: "endTime", countDetail: SelectedShop?.endTime, iconDetail: <FaHourglassStart width={18} height={18} className="rotate-180" color="gray" /> },
-]
+  ]
 
   return (
     <motion.div
@@ -36,7 +36,19 @@ const ShopDetailsWrapper = () => {
           className="w-full md:h-[450px] rounded-xl"
           fallback={fallback}
         />
-        <div className="flex max-lg:flex-wrap gap-7">
+        <div className="flex max-lg:flex-wrap gap-7 justify-between">
+          <div className="max-lg:w-full">
+            <Title_details
+              title={SelectedShop?.name}
+              styleDisplay={'hidden'}
+              differentDetail={SelectedShop?.address}
+              variant={"event-detail"}
+            />
+            <OverView_Details
+              title={'shopOverview'}
+              describe={SelectedShop?.aboutUs}
+            />
+          </div>
           <div className="flex flex-wrap gap-y-7 min-w-72 w-full lg:w-72 lg:-mt-14 lg:ml-7">
             <DetailsBox
               variant="shop-detail"

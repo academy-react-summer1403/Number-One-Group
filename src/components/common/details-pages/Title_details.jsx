@@ -23,6 +23,7 @@ const Title_details = ({
     category,
     differentDetail,
     variant,
+    styleDisplay,
 }) => {
     const { t, i18n } = useTranslation();
     return (
@@ -48,7 +49,7 @@ const Title_details = ({
             {/* other details */}
             <div className="sm:flex items-center text-sm gap-3">
                 {/* Creator detail */}
-                <div className="flex items-center w-fit  max-sm:mx-auto">
+                <div className={`flex items-center w-fit  max-sm:mx-auto ${styleDisplay}`}>
                     <img src={creatorImg} className="h-11" />
                     <span className="mx-3 text-DarkBlue"><span className="mediumStyle_text">{t('By')}</span> {creator}</span>
                 </div>
@@ -57,7 +58,7 @@ const Title_details = ({
                         {icon_variant?.[variant]}
                         <span dir={i18n.language === 'fa' ? 'ltr' : 'rtl'} className="mx-1">{differentDetail}</span>
                     </div>
-                    <div className="flex items-center mediumStyle_text">
+                    <div className={`flex items-center mediumStyle_text ${styleDisplay}`}>
                         <TotalIcon />
                         <span className="mx-1 mt-0.5">{NumberStudents} {t('student')}</span>
                     </div>

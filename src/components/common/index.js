@@ -48,6 +48,7 @@ import PopupLoginWrapper from "./popupLogin";
 import ScrollProgressBar from "./ScrollProgressBar.jsx";
 import CustomMap from "./CustomMap.jsx";
 import Spinner from "./Spinner.jsx";
+import HandleIdentityEditorJs from "./create-editorjs-blocks/IdentityEditorJs.jsx";
 
 export {
   HowToStart,
@@ -98,4 +99,5 @@ export {
   ComparisonBtn,
   CustomMap,
   Spinner,
+  HandleIdentityEditorJs,
 };
