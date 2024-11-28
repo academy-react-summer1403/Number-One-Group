@@ -69,7 +69,7 @@ const ProductWrapper = () => {
                         </FilterButton>
                     </MediaQuery>
                     <SectionTop
-                        lengthAllData={countSuccess && totalCount}
+                        lengthAllData={countSuccess && totalCount.length}
                         lengthFilteredData={isSuccess && productData.length}
                     >
                         <SortBoxHolder>
@@ -84,7 +84,7 @@ const ProductWrapper = () => {
                         </SortBoxHolder>
                     </SectionTop>
                     <PaginateHolderItems style="justify-center">
-                        <PaginatedItems setPage={handleProductPage} currentData={countSuccess && totalCount} currentDataInOnePage={params.RowsOfPage}>
+                        <PaginatedItems setPage={handleProductPage} currentData={countSuccess && totalCount.length} currentDataInOnePage={params.RowsOfPage}>
                             <div className={`flex flex-wrap relative gap-x-1 justify-around gap-y-5 w-full m-auto my-2`}>
                                 <RenderItemsList
                                     RenderComponent={ProductCardWrapper}

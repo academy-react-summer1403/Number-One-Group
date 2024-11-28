@@ -1,23 +1,45 @@
 import { useParams } from "react-router-dom";
 import configVariants from "../../../config/page-transition"
 import { BreadCrumb, TitleSection } from "../../partials/title-section"
-import { useQueryWithDependencies } from "../../../core/hooks/react-query";
+import { useQueryWithDependencies, useQueryWithoutDependencies } from "../../../core/hooks/react-query";
 import GetShopDetails from "../../../core/services/api/get-data/GetShopDetails";
 import { motion } from "framer-motion";
 import fallback from "../../../assets/images/image-not-found.png"
-import { CustomMap, DetailsBox, ImageFallBack, OverView_Details, Title_details } from "../../common";
+import { CustomMap, DetailsBox, ImageFallBack, OverView_Details, RelatedItems, Title_details } from "../../common";
 import { FaHourglassStart } from "react-icons/fa";
+import ShopCardWrapper from "../shops/ShopCardWrapper";
+import { GetProductsLength } from "../../../core/services/api/get-data";
+import { useEffect, useState } from "react";
+import RenderRelatedItems from "../../common/details-pages/RenderRelatedItems";
+import ProductCardWrapper from "../product/ProductCardWrapper";
 
 
 const ShopDetailsWrapper = () => {
   const { id } = useParams();
+  const [relatedProducts, setRelatedProducts] = useState()
   // Find the details of the selected event
-  const { data: SelectedShop } = useQueryWithDependencies("GET_SHOP_DETAILS", GetShopDetails, id, id)
+  const { data: SelectedShop, isSuccess } = useQueryWithDependencies("GET_SHOP_DETAILS", GetShopDetails, id, id)
+  // Get Products List 
+  const { data: totalCount, isSuccess: countSuccess, isLoading, refetch } =
+    useQueryWithoutDependencies("GET_PRODUCTS_LENGTH", GetProductsLength)
 
   const DetailsShop = [
     { titleDetail: "startTime", countDetail: SelectedShop?.startTime, iconDetail: <FaHourglassStart width={18} height={18} color="gray" /> },
     { titleDetail: "endTime", countDetail: SelectedShop?.endTime, iconDetail: <FaHourglassStart width={18} height={18} className="rotate-180" color="gray" /> },
   ]
+
+  // Get the products of this store
+  const handleGetProducts = () => {
+    const product = totalCount?.filter(item => item.shopId == SelectedShop?.id)
+    console.log(product)
+    setRelatedProducts(product)
+  }
+
+  useEffect(() => {
+    handleGetProducts()
+  }, [countSuccess, isSuccess])
+
+
 
   return (
     <motion.div
@@ -65,7 +87,14 @@ const ShopDetailsWrapper = () => {
             </div>
           </div>
         </div>
-
+        <RenderRelatedItems
+          title={"ProductSection"}
+          RenderItem={ProductCardWrapper}
+          renderData={relatedProducts && relatedProducts}
+          isSuccess={countSuccess}
+          isLoading={isLoading}
+          refetch={refetch}
+        />
       </div>
 
     </motion.div>

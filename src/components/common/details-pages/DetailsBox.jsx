@@ -76,7 +76,7 @@ const DetailsBox = ({
 
   return (
     <div data-aos={`fade-${i18n.language === 'fa' ? 'left' : 'right'}`} data-aos-duration="700"
-      className={`Box-shadow1 p-5 h-fit bg-MainBg rounded-lg border border-LightLavender flex flex-wrap justify-center ${detailVariant?.[variant]}`}>
+      className={`Box-shadow1 w-full p-5 h-fit bg-MainBg rounded-lg border border-LightLavender flex flex-wrap justify-center ${detailVariant?.[variant]}`}>
       {/* price Info */}
       <div className={`bg-VioletBlue px-4 py-3 w-full min-w-52 shadow-[0_0_10px_1px_rgba(13,9,99,0.36)] text-white rounded-lg flex flex-wrap justify-center gap-y-3 ${styleDisplay}`}>
         <h1 className="text-xs w-full">{t(priceInfoVariant?.[variant])}:</h1>
