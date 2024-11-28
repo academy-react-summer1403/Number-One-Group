@@ -42,7 +42,8 @@ const ChatRoom = ({ section }) => {
     data: teacherChats,
     refetch: teacherRefetch,
     isLoading: teacherLoading,
-    isRefetching: teacherRefetching
+    isRefetching: teacherRefetching,
+    isSuccess
   } = useQueryWithoutDependencies("GET_TEACHER_CHATS", GetUserChatInTeacher)
 
   // Get This User Chats From All Chats For Teacher
@@ -64,8 +65,13 @@ const ChatRoom = ({ section }) => {
 
   useEffect(() => {
     getMyTeacherMessage()
-    fetchChatsBetweenUserAndTeacher()
   }, [teacherLoading, teacherRefetching])
+
+  useEffect(() => {
+    if (teacherChatData) {
+      fetchChatsBetweenUserAndTeacher()
+    }
+  }, [teacherChatData, teacherRefetching])
 
   // When Teacher Id Exists
   useEffect(() => {

@@ -10,6 +10,8 @@ import { useTranslation } from "react-i18next";
 import { FaT } from "react-icons/fa6";
 import ChooseTeacherToChat from "../../../components/common/ChooseTeacherToChat";
 import { toast } from "react-toastify";
+import AntiSwearingSystem from "../anti-swearing-system";
+import RemoveConsecutiveDuplicates from "../remove-consecutive-duplicates";
 
 const SendSection = ({ chatsData, refetch, section, setTeacherId, teacherId, allChats }) => {
     const { t } = useTranslation()
@@ -64,12 +66,19 @@ const SendSection = ({ chatsData, refetch, section, setTeacherId, teacherId, all
             return toast.error("لطفا معلم مورد نظر خود را انتخاب کنید")
         }
 
+        const queryOutput = RemoveConsecutiveDuplicates(query)
+
+        const antiSwearing = AntiSwearingSystem(queryOutput)
+        if (antiSwearing) {
+            return toast.error("متن شما شامل کلامات ناپسند است لطفا آن زا عوض کنید!");
+        }
+
         if (value == null) setSendStatus(false)
 
         if (allChats) {
             allChats?.push({
                 id: allChats?.length + 1,
-                text: value ? value.emoji : query,
+                text: value ? value.emoji : queryOutput,
                 messageTime: time, sender: "user",
                 teacherId: teacherId
             })
@@ -80,7 +89,7 @@ const SendSection = ({ chatsData, refetch, section, setTeacherId, teacherId, all
                 userId: userInfo,
                 chatRoom: [{
                     id: 1,
-                    text: value ? value.emoji : query,
+                    text: value ? value.emoji : queryOutput,
                     messageTime: time,
                     sender: "user",
                     teacherId: teacherId

@@ -21,7 +21,7 @@ i18n.use(initReactI18next)
                     course: "دوره", viewAll: "مشاهده همه", edit: "ویرایش", cancel: "لغـــو", category: 'دسته بندی ها', AddToCart: "افزودن به سبد خرید", shopList: "فروشگاه ها",
                     description: "شرح", Comments: "کامنت ها", products: "محصولات", related: "مرتبط", completion: "تکمیل پروفایل", likeCount: "تعداد پسندیده ها", disLikeCount: "تعداد نپسندیده ها",
                     // shop Details
-                    ShopDetailId: "شناسه", ShopDetailTags: "برچسب ها",
+                    ShopDetailExist: "تعداد مجود در انبار", ShopDetailShop: "فروشگاه",
                     // Menu Items in the Header
                     HomeSection: 'صفحه اصلی', CoursesSection: 'دوره های آموزشی', Events: 'ایونت ها', ShopSection: 'فروشگاه ها', BlogSection: 'وبلاگ', InstructorsSection: "مربیان", ProductSection: "محصولات",
                     // Search Input in the Header
@@ -167,7 +167,7 @@ i18n.use(initReactI18next)
                     course: "Course", viewAll: "view all", edit: "Edit", cancel: "Cancel", category: 'Categories', AddToCart: "Add to cart", shopList: "Shops",
                     description: "Description", Comments: "Comments", products: "Products", related: "related", completion: "Completion profile", likeCount: "Likes", disLikeCount: "dissLikes",
                     // shop Details
-                    ShopDetailId: "ID", ShopDetailTags: "Tags",
+                    ShopDetailExist: "Quantity in stock", ShopDetailShop: "Shop",
                     // Menu Items in the Header
                     HomeSection: 'Home', CoursesSection: 'Courses', Events: 'Events', ShopSection: 'Shops', BlogSection: 'Blog', InstructorsSection: "Instructors",
                     // Search Input in the Header
