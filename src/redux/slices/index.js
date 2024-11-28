@@ -11,6 +11,7 @@ import LoginInfo from "./LoginInfo";
 import LoginPopup from "./LoginPopup";
 import FilterEvent from "./filter-box-slices/FilterEvents";
 import FilterProducts from "./filter-box-slices/FilterProducts";
+import FilterShops from "./filter-box-slices/FilterShops"
 
 export {
   StepStatus,
@@ -26,4 +27,5 @@ export {
   LoginPopup,
   FilterEvent,
   FilterProducts,
+  FilterShops,
 };

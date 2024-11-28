@@ -15,6 +15,7 @@ const ProductCardWrapper = ({ item }) => {
         price,
         special
     } = item
+    console.log(title)
 
     return (
         <Tilt transitionSpeed={2500}>

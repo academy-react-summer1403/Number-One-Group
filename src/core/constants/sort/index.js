@@ -31,6 +31,17 @@ export const sortingColOptions_Product_En = [
   { id: 1, value: "price", label: "Price" },
   { id: 2, value: "insertDate", label: "Latest" },
 ];
+export const sortingColOptions_Shop_Fa = [
+  { id: 1, value: "rate", label: "محبوب ترین" },
+  { id: 2, value: "startTime", label: "شروع تایم ارسال" },
+  { id: 3, value: "endTime", label: "پایان تایم ارسال" },
+];
+
+export const sortingColOptions_Shop_En = [
+  { id: 1, value: "rate", label: "most popular" },
+  { id: 2, value: "startTime", label: "Start sending" },
+  { id: 3, value: "endTime", label: "end of sending" },
+];
 
 export const sortingOptionsType_Course_Fa = [
   { id: 1, value: "Active", label: "دوره های فعال" },
