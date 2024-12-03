@@ -66,7 +66,19 @@ const TableItem = ({ item, variant, loading: isLoading, action, keyVariant, bet 
                 { Icon: EyeIcon, tooltip: ["جزئیات", "Details"], function: () => { navigate(`${bet == "course" ? `/CourseDetails/${item.courseId}` : `/BlogDetails/${item.newsId}`}`) } },
                 { Icon: TrashCan, tooltip: ["حذف", "Delete"], function: () => { action(item.favoriteId) } },
             ]
-        }
+        },
+        myJobs: {
+            sections: [
+                { section: item.jobTitle },
+                { section: item.aboutJob },
+                { section: item.companyName },
+                { section: [ChangeMoment(item.workStartDate, "YYYY/MM/DD", "persian"), " تا ", ChangeMoment(item.workEndDate, "YYYY/MM/DD", "persian")], dir: "rtl" }
+            ],
+            width: "25",
+            actions: [
+                { Icon: EyeIcon, tooltip: ["جزئیات", "Details"], function: () => { navigate(`/CourseDetails/${item.courseId}`) } },
+            ]
+        },
     }
 
     return (

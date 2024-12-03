@@ -12,7 +12,8 @@ import LoginPopup from "./LoginPopup";
 import FilterEvent from "./filter-box-slices/FilterEvents";
 import FilterProducts from "./filter-box-slices/FilterProducts";
 import CartData from "./CartData";
-import FilterShops from "./filter-box-slices/FilterShops"
+import FilterShops from "./filter-box-slices/FilterShops";
+import MyJobs from "./userPanel-filter-slices/MyJob";
 
 export {
   StepStatus,
@@ -30,4 +31,5 @@ export {
   FilterProducts,
   CartData,
   FilterShops,
+  MyJobs,
 };

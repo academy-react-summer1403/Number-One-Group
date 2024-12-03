@@ -27,6 +27,8 @@ import CoursePayment from "./CoursePayment";
 import StudentAddPeymentImage from "./StudentAddPeymentImage";
 import AddUserChatRoomTeacher from "./AddUserChatRoomTeacher";
 import AddUserChatRoomAdmin from "./AddUserChatRoomAdmin";
+import CreateJobHistory from "./CreateJobHistory";
+import UpdateJobHistory from "./UpdateJobHistory";
 
 export {
   ForgetPass,
@@ -58,4 +60,6 @@ export {
   StudentAddPeymentImage,
   AddUserChatRoomTeacher,
   AddUserChatRoomAdmin,
+  CreateJobHistory,
+  UpdateJobHistory,
 };

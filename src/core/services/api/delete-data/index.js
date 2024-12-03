@@ -6,6 +6,7 @@ import DeleteBlogFavorite from "./DeleteBlogFavorite";
 import DeleteBlogCommentLike from "./comments/DeleteBlogCommentLike";
 import DeleteReserveCourse from "./DeleteReserveCourse";
 import DeleteProfileImage from "./DeleteProfileImage";
+import DeleteJobHistory from "./DeleteJobHistory";
 
 export {
   DeleteCourseLike,
@@ -16,4 +17,5 @@ export {
   DeleteBlogCommentLike,
   DeleteReserveCourse,
   DeleteProfileImage,
+  DeleteJobHistory,
 };

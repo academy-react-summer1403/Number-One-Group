@@ -41,7 +41,8 @@ import GetShopCategory from "./GetShopCategory";
 import GetProductDetails from "./GetProductDetails";
 import GetProductShop from "./GetProductShop";
 import GetShopDetails from "./GetShopDetails";
-
+import GetMyJobHistories from "./GetMyJobHistories";
+import GetJobHistoryDetail from "./GetJobHistoryDetail";
 
 export {
   GetAllTeachers,
@@ -87,4 +88,6 @@ export {
   GetProductDetails,
   GetProductShop,
   GetShopDetails,
+  GetMyJobHistories,
+  GetJobHistoryDetail,
 };

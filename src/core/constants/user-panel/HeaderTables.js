@@ -32,6 +32,13 @@ export const MyBlogFavoriteHeader = [
   { text: ["مشاهده شده", "view"] },
 ];
 
+export const MyJobHistoryHeader = [
+  { text: ["عنوان", "Title"] },
+  { text: ["توضیحات", "About"] },
+  { text: ["شرکت", "Company"] },
+  { text: ["تاریخ شروع / پایان", "Start & End Date"] },
+];
+
 export const MyCourseFavoriteKey = [
   "courseTitle",
   "typeName",
