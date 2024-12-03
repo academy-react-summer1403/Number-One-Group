@@ -1,4 +1,4 @@
-import { Dashboard, EditInformation, Favorites, Information, MyCourses, MyViews, Payment, Reserved, Security } from "../../screens"
+import { Dashboard, EditInformation, Favorites, Information, Jobs, MyCourses, MyViews, Payment, Reserved, Security } from "../../screens"
 import routerPublic from "../UnAuthenticatedRoute"
 import { UserPanelLayout } from "../../components/layouts"
 import { PaymentStepOne, PaymentStepThree, PaymentStepTwo } from "../../components/pages/user-panel"
@@ -25,7 +25,7 @@ const routerPrivate = [
                     { path: "/userPanel/payment/step2/:paymentId", element: <PaymentStepThree /> },
                 ]
             },
-
+            { path: "/userPanel/jobs", element: <Jobs /> },
         ]
     }
 ]

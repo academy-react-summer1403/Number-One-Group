@@ -51,6 +51,12 @@ const sidebarBtns = [
     href: "/userPanel/security",
     icon: SecurityBtnIcon,
   },
+  {
+    id: 8,
+    name: ["سوابق شغلی من", "Job Histories"],
+    href: "/userPanel/jobs",
+    icon: SecurityBtnIcon,
+  },
 ];
 
 export default sidebarBtns;

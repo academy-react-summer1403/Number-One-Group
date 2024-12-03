@@ -28,6 +28,7 @@ import Shops from "./shop";
 import ProductDetails from "./product-details";
 import Cart from "./cart";
 import ShopDetails from "./shop-details";
+import Jobs from "./user-panel/Jobs";
 
 export {
   LandingPage,
@@ -60,4 +61,5 @@ export {
   ProductDetails,
   Cart,
   ShopDetails,
+  Jobs,
 };

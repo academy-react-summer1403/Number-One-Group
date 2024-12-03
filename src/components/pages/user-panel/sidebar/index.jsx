@@ -34,10 +34,10 @@ const SidebarUserPanel = () => {
             <div className={`w-full ${i18n.language == "en" ? "pl-8" : "pr-8"} flex flex-wrap gap-y-4`}>
                 {sidebarBtns.map(item => <SidebarButtons key={item.id} Icon={item.icon} href={item.href} name={i18n.language != "en" ? item.name[0] : item.name[1]} />)}
             </div>
-            <Link onClick={handleExit} to="/" className="text-white flex items-center gap-x-3 mt-5">
+            {/* <Link onClick={handleExit} to="/" className="text-white flex items-center gap-x-3 mt-5">
                 <ExitBtnPanelIcon />
                 <span>{t("exitFromAccount")}</span>
-            </Link>
+            </Link> */}
         </div>
     )
 }
