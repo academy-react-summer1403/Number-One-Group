@@ -1,9 +1,9 @@
 import axios from "axios";
 
-const GetProductCategory = async (id) => {
+const GetShopCategory = async (id) => {
   try {
     const response = await axios.get(
-      `https://67448500b4e2e04abea28bf5.mockapi.io/Product-Category/${id}`
+      `https://6747054d38c8741641d5120e.mockapi.io/shop_Categories/${id}`
     );
     console.log(response.data)
     return response.data;
@@ -12,4 +12,4 @@ const GetProductCategory = async (id) => {
   }
 };
 
-export default GetProductCategory
+export default GetShopCategory

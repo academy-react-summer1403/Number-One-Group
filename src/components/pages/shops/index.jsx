@@ -1,52 +1,54 @@
 import { motion } from "framer-motion";
-import { BreadCrumb, TitleSection } from "../../partials/title-section";
-import { useTranslation } from "react-i18next";
-import MediaQuery from "react-responsive";
-import FilterButton from "../../common/bottom-nav/FilterButton";
-import { PaginatedItems, PaginateHolderItems, RenderItemsList, SectionTop, SortBox, SortBoxHolder } from "../../common";
-import ProductCardWrapper from "./ProductCardWrapper";
-import { useQueryWithDependencies, useQueryWithoutDependencies } from "../../../core/hooks/react-query";
-import { GetAllProducts, GetProductsLength } from "../../../core/services/api/get-data";
-import { useDispatch, useSelector } from "react-redux";
 import configVariants from "../../../config/page-transition";
-import { handleProductPage, handleRowsOfPage, handleSortingCol } from "../../../redux/slices/filter-box-slices/FilterProducts"
-import { sortCurrentItem, sortingColOptions_Product_En, sortingColOptions_Product_Fa } from "../../../core/constants/sort";
-import FilterSide_Products from "./FilterSide_Products";
-import { useEffect } from "react";
-import { productFilterParams } from "../../../core/constants/filter-params";
+import { BreadCrumb, TitleSection } from "../../partials/title-section";
+import FilterSide_Shops from "./FilterSide_Shops";
+import MediaQuery from "react-responsive";
+import { PaginatedItems, PaginateHolderItems, RenderItemsList, SectionTop, SortBox, SortBoxHolder } from "../../common";
+import { GetShopsLength, GetShopsList } from "../../../core/services/api/get-data";
+import { useQueryWithDependencies, useQueryWithoutDependencies } from "../../../core/hooks/react-query";
+import { handleRowsOfPage, handleShopPage, handleSortingCol } from "../../../redux/slices/filter-box-slices/FilterShops";
+import { useDispatch, useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
+import ShopCardWrapper from "./ShopCardWrapper";
+import FilterButton from "../../common/bottom-nav/FilterButton";
+import { sortCurrentItem, sortingColOptions_Shop_En, sortingColOptions_Shop_Fa } from "../../../core/constants/sort";
 import { useSearchParams } from "react-router-dom";
+import { useEffect } from "react";
+import { shopsFilterParams } from "../../../core/constants/filter-params";
 
-const ProductWrapper = () => {
+const ShopWrapper = () => {
     const { i18n } = useTranslation()
-    const params = useSelector(state => state.FilterProducts)
-    const [searchParams, setSearchParams] = useSearchParams();
     const dispatch = useDispatch()
 
-    // Get Products List From Mock Api
-    const { data: productData, isSuccess, isError, isLoading, refetch } =
-        useQueryWithDependencies("GET_PRODUCTS", GetAllProducts, params, params)
+    // shops Params
+    const shopParams = useSelector(state => state.FilterShops)
+    const [searchParams, setSearchParams] = useSearchParams()
 
-    // Get Products List Length
-    const { data: totalCount, isSuccess: countSuccess } =
-        useQueryWithoutDependencies("GET_PRODUCTS_LENGTH", GetProductsLength)
+    // Get Shops List Length
+    const { data: ShopsTotalCount, isSuccess: countSuccess } =
+        useQueryWithoutDependencies("GET_SHOPS_LENGTH", GetShopsLength)
 
+    // Get Shops List with Params
+    const { data: ShopsData, isSuccess, isError, isLoading, refetch, isRefetching, } =
+        useQueryWithDependencies("GET_SHOPS_LIST", GetShopsList, shopParams, shopParams)
     // Skeleton
     const skeletonData = [{}, {}, {}, {}, {}, {}, {}, {}, {}];
 
     const sortBoxData = [
-        { setState: handleSortingCol, sortItem: i18n.language != "en" ? sortingColOptions_Product_Fa : sortingColOptions_Product_En, placeholder: i18n.language != "en" ? "انتخاب کنید" : "Choose" },
+        { setState: handleSortingCol, sortItem: i18n.language != "en" ? sortingColOptions_Shop_Fa : sortingColOptions_Shop_En, placeholder: i18n.language != "en" ? "انتخاب کنید" : "Choose" },
         { setState: handleRowsOfPage, sortItem: sortCurrentItem, width: '!w-24', placeholder: i18n.language != "en" ? "تعداد " : "Number" }
     ]
 
-    // Set The Url Filter Parameters
-    useEffect(() => {
-        productFilterParams.forEach(({ key, action }) => {
+     // Set The Url Filter Parameters
+     useEffect(() => {
+        shopsFilterParams.forEach(({ key, action }) => {
             const value = searchParams.get(key);
             if (value) {
                 dispatch(action(value))
             }
         })
     }, [])
+
 
     return (
         <motion.div
@@ -55,22 +57,23 @@ const ProductWrapper = () => {
             animate={"animate"}
             exit={"exit"}
         >
-            <TitleSection title={'ProductSection'} >
-                <BreadCrumb type="Div" text="ProductSection" />
+            <TitleSection title={'ShopSection'} >
+                <BreadCrumb type="Div" text="ShopSection" />
             </TitleSection>
             <div className="main-container flex gap-7 relative">
                 <MediaQuery minWidth={"1024px"}>
-                    <FilterSide_Products />
+                    <FilterSide_Shops />
                 </MediaQuery>
+
                 <div className="lg:w-[87%] sm:w-full mobile:w-full mx-auto">
                     <MediaQuery maxWidth={"1023px"}>
                         <FilterButton>
-                            <FilterSide_Products />
+                            <FilterSide_Shops />
                         </FilterButton>
                     </MediaQuery>
                     <SectionTop
-                        lengthAllData={countSuccess && totalCount.length}
-                        lengthFilteredData={isSuccess && productData.length}
+                        lengthAllData={countSuccess && ShopsTotalCount}
+                        lengthFilteredData={isSuccess && ShopsData.length}
                     >
                         <SortBoxHolder>
                             {sortBoxData.map((box, index) => (
@@ -84,16 +87,16 @@ const ProductWrapper = () => {
                         </SortBoxHolder>
                     </SectionTop>
                     <PaginateHolderItems style="justify-center">
-                        <PaginatedItems setPage={handleProductPage} currentData={countSuccess && totalCount.length} currentDataInOnePage={params.RowsOfPage}>
+                        <PaginatedItems setPage={handleShopPage} currentData={countSuccess && ShopsTotalCount} currentDataInOnePage={shopParams?.RowsOfPage}>
                             <div className={`flex flex-wrap relative gap-x-1 justify-around gap-y-5 w-full m-auto my-2`}>
                                 <RenderItemsList
-                                    RenderComponent={ProductCardWrapper}
+                                    RenderComponent={ShopCardWrapper}
                                     isLoading={isLoading}
                                     isSuccess={isSuccess}
                                     isError={isError}
-                                    originalData={isSuccess && productData}
+                                    originalData={isSuccess && ShopsData}
                                     skeletonData={skeletonData}
-                                    notFoundText={i18n.language != "en" ? "متاسفانه وبلاگی موجود نیست!" : "Unfortunately, there is no blog available!"}
+                                    notFoundText={i18n.language != "en" ? "متاسفانه فروشگاهی ای موجود نیست!" : "Unfortunately, there is no course available!"}
                                     refetchData={refetch}
                                 />
                             </div>
@@ -105,4 +108,4 @@ const ProductWrapper = () => {
     )
 }
 
-export default ProductWrapper
+export default ShopWrapper

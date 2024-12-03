@@ -14,6 +14,7 @@ import {
   FilterEvent,
   FilterProducts,
   CartData,
+  FilterShops,
 } from "./slices";
 
 const store = configureStore({
@@ -32,6 +33,7 @@ const store = configureStore({
     FilterEvent,
     FilterProducts,
     CartData,
+    FilterShops,
   },
 });
 

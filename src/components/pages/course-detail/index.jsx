@@ -52,7 +52,7 @@ const CourseDetailsWrapperPage = () => {
     /* PARAMS */
     // Details Params
     const detailsParams = {
-        variant: "course-detail", price: cost, Detail: DetailsCourse, arrowColor: "#000", id: id,
+        variant: "course-detail", price: cost, Detail: DetailsCourse, arrowColor: "#000", id: id,shareText:"ShareCourse",
         colorButton: "yellow", btnText: "AddToCart", actionReserve: reserveMutate, reserveStatus: isCourseReseve
     }
     // Title Details Params

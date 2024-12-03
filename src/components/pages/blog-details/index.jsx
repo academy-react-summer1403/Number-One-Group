@@ -27,7 +27,7 @@ const BlogDetailsWrapperPage = () => {
     // Blog Object
     const {
         title, newsCatregoryId, currentImageAddress, newsCatregoryName, updateDate, currentView, commentsCount,
-        googleDescribe, miniDescribe, currentUserLikeId, likeCount, dissLikeCount, currentUserIsLike,
+        googleDescribe, miniDescribe, describe, currentUserLikeId, likeCount, dissLikeCount, currentUserIsLike,
         currentUserIsDissLike, currentUserFavoriteId, isCurrentUserFavorite, currentUserSetRate, currentUserRateNumber
     } = isSuccess && blogData.detailsNewsDto
 
@@ -38,7 +38,6 @@ const BlogDetailsWrapperPage = () => {
         refetch: refetch, userFavorite: isCurrentUserFavorite, actionRate: AddBlogRate, rateStatus: currentUserSetRate,
         favoriteText: 'blogFavorite', rateNumber: currentUserRateNumber
     }
-
     return (
         <motion.div
             variants={configVariants}
@@ -69,6 +68,7 @@ const BlogDetailsWrapperPage = () => {
                         bio={googleDescribe}
                     />
                     <OverView_Details
+                        describe={describe}
                         training={miniDescribe}
                         MajorElements={MajorElements}
                         Class={"hidden"}

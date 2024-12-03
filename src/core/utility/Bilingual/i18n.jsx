@@ -23,12 +23,12 @@ i18n.use(initReactI18next)
                     // shop Details
                     ShopDetailExist: "تعداد مجود در انبار", ShopDetailShop: "فروشگاه",
                     // Menu Items in the Header
-                    HomeSection: 'صفحه اصلی', CoursesSection: 'دوره های آموزشی', Events: 'ایونت ها', ShopSection: 'فروشگاه', BlogSection: 'وبلاگ', InstructorsSection: "مربیان", ProductSection: "محصولات",
+                    HomeSection: 'صفحه اصلی', CoursesSection: 'دوره های آموزشی', Events: 'ایونت ها', ShopSection: 'فروشگاه ها', BlogSection: 'وبلاگ', InstructorsSection: "مربیان", ProductSection: "محصولات",
                     // Search Input in the Header
                     Login: 'حساب کاربری', headerSearchText: 'متن جستجو را وارد کنید',
                     // PlaceHolders
                     PlaceHolder_Courses: 'جستجو برای دوره ...', PlaceHolder_Blogs: 'جستجو برای وبلاگ ...', PlaceHolder_Event: "جستجو برای ایونت ...", PlaceHolder_Product: "جستجو برای محصول ...",
-                    PlaceHolder_Shop: 'جستجو برای محصول ...', emailPlaceholder: "ایمیل خود را وارد کنید", passwordPlaceholder: "رمز عبور خود را وارد کنید",
+                    PlaceHolder_Shop: 'جستجو برای فروشگاه ...', emailPlaceholder: "ایمیل خود را وارد کنید", passwordPlaceholder: "رمز عبور خود را وارد کنید",
                     phonePlaceholder: "شماره مبایل خود را وارد کنید",
                     // data in the Footer
                     footerDescription: ' بهترین دوره ها جهان را با ما تجربه کنید تا بتوانید بهترین باشید',
@@ -69,7 +69,7 @@ i18n.use(initReactI18next)
                     CoursesTitle: 'همه دوره ها', comparisonTitle: 'مقایسه',
                     signUpTitle: 'ثبت نام به عنوان دانش آموز', or: "یا", EventsTitle: "همه مناسبت ها", contactUsTitle: "تماس با ما", shopDetail: "جزئیات فروشگاه",
                     // Buttons
-                    GoHomePage: "به صفحه اصلی بروید", Join: 'به رویداد بپیوندید', submit: "ارسال کنید",
+                    GoHomePage: "به صفحه اصلی بروید", Join: 'به رویداد بپیوندید', submit: "ارسال کنید",JoinShop: 'اشتراک با فروشگاه',
                     signUpCourse: "ثبت نام در دوره", skilledTechnologies: 'همه دسته بندی هارو ببینید', detailsCourse: "جزئیات دوره و ثیت نام",
                     // LoginForm
                     LoginCaption: "ورود",
@@ -99,7 +99,7 @@ i18n.use(initReactI18next)
                     // detailsBox
                     StartTime: 'زمان شروع', Registrants: 'ثبت نام شده ها',
                     capacity: 'ظرفیت', endTime: 'زمان پایان', startTime: 'زمان شروع', statusCourse: 'وضعیت دوره',
-                    Payment: 'پرداخت امن:', ShareCourse: 'این دوره را به اشتراک بگذارید:',
+                    Payment: 'پرداخت امن:', ShareCourse: 'این دوره را به اشتراک بگذارید:',ShareShop: 'این فروشگاه را به اشتراک بگذارید:',
                     //Instructors-Details page
                     sideBarTitle: "تماس سریع", sideBarBtn: "فرستادن پیام", sideBarDesc: "با اساتید خود به راحتی ازتباط بگیرید",
                     instructorBiography: "زندگینامه", instructorSkill: "مهارت ها", instructorCourses: "دوره های من",
@@ -153,6 +153,8 @@ i18n.use(initReactI18next)
                     // chat 
                     ProfileSection1: "پشتیبانی سایت", ProfileSection2: "پاسخگوی سوالات شما هستیم", startChat: "برای شروع ارتباط با ادمین پیامی وارد کنید!",
                     placeHolderChat: "پیام خود را وارد کنید", supportBtn: "پشتیبانی و ارتباط با ادمین", supportTeacherBtn: "ارتباط با اساتید",
+                    // shops
+                    shopInfo: 'اطلاعات فروشگاه',shopOverview: 'درباره فروشگاه'
                 },
             },
             en: {
@@ -169,12 +171,12 @@ i18n.use(initReactI18next)
                     // shop Details
                     ShopDetailExist: "Quantity in stock", ShopDetailShop: "Shop",
                     // Menu Items in the Header
-                    HomeSection: 'Home', CoursesSection: 'Courses', Events: 'Events', ShopSection: 'Shop', BlogSection: 'Blog', InstructorsSection: "Instructors",
+                    HomeSection: 'Home', CoursesSection: 'Courses', Events: 'Events', ShopSection: 'Shops', BlogSection: 'Blog', InstructorsSection: "Instructors",
                     // Search Input in the Header
                     Login: 'User Account', headerSearchText: 'Enter the search text',
                     // PalceHolders
                     PlaceHolder_Courses: 'Search For Course ...', PlaceHolder_Blogs: 'Search For Blog ...', PlaceHolder_Event: "Search For Event ...", PlaceHolder_Product: "Search For Product ...",
-                    PlaceHolder_Shop: 'Search For Product ...', emailPlaceholder: "Enter your email", passwordPlaceholder: "Enter your password",
+                    PlaceHolder_Shop: 'Search For shop ...', emailPlaceholder: "Enter your email", passwordPlaceholder: "Enter your password",
                     phonePlaceholder: "Enter your mobile number",
                     // Footer
                     footerDescription: 'when an unknown printer took galley of type and scrambled it to make pspecimen bookt has.',
@@ -215,7 +217,7 @@ i18n.use(initReactI18next)
                     CoursesTitle: 'All Courses', comparisonTitle: 'Comparison',
                     signUpTitle: 'Student SignUp', or: "or", EventsTitle: "All Events", contactUsTitle: "Contact With Us", shopDetail: "Shop Detail",
                     // Buttons
-                    GoHomePage: "Go To Home Page", Join: 'Join This Event', submit: "Submit Now",
+                    GoHomePage: "Go To Home Page", Join: 'Join This Event', submit: "Submit Now",JoinShop: 'Subscribe to the store',
                     signUpCourse: "Enroll course", skilledTechnologies: 'See all categories', detailsCourse: "Course details and registration",
                     // LoginForm
                     LoginCaption: "Sign in",
@@ -245,7 +247,7 @@ i18n.use(initReactI18next)
                     // detailsBox
                     StartTime: 'Start Time', Registrants: 'Registrants',
                     capacity: 'Capacity', endTime: 'End Time', startTime: 'Start Time', statusCourse: 'Course Status',
-                    Payment: 'Secure Payment:', ShareCourse: 'Share this course:',
+                    Payment: 'Secure Payment:', ShareCourse: 'Share this course:',ShareShop: 'Share this shop:',
                     //Instructors-Details page
                     sideBarTitle: "Quick Contact", sideBarBtn: "Send Message", sideBarDesc: "Communicate easily with your professors.",
                     instructorBiography: "Biography", instructorSkill: "Skills", instructorCourses: "My Courses",
@@ -299,6 +301,8 @@ i18n.use(initReactI18next)
                     // chat 
                     ProfileSection1: "Site support", ProfileSection2: "We answer your questions", startChat: "Enter a message to start communicating with the admin!",
                     placeHolderChat: "Enter your message", supportBtn: "Support and communication with admin", supportTeacherBtn: "Communication with professors",
+                  // shops
+                  shopInfo: 'Shop Infomation',shopOverview: 'About the shop',
                 },
             },
         },

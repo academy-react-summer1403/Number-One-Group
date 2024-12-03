@@ -38,7 +38,7 @@ const EventDetailsWrapper = () => {
                     className="w-full md:h-[450px]"
                     fallback={fallback}
                 />
-                <div className="flex max-lg:flex-wrap gap-7">
+                <div className="flex max-lg:flex-wrap gap-7 justify-between">
                     <div className="max-lg:w-full">
                         <Title_details
                             title={SelectedEvents?.title}
