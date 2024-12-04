@@ -9,7 +9,7 @@ const HelperButton = () => {
   const { setIsOpen } = useTour()
 
   return (
-    <button className={`bottomNav ${locStatus ? "" : "hidden"}`} onClick={() => setIsOpen(true)}> <TbHelpOctagonFilled size={25} /></button>
+    <button className={`bottomNav ${locStatus ? "" : "hidden"} `} onClick={() => setIsOpen(true)}> <TbHelpOctagonFilled size={25} /></button>
   )
 }
 
