@@ -13,7 +13,7 @@ const TourProvide = ({ children }) => {
       const first = currentStep === 0
       return (
         <button
-          className="bg-VioletBlue px-3 rounded-md text-LightLavender "
+          className="bg-VioletBlue px-3 rounded-md text-white"
           onClick={() => {
             if (first) {
               setCurrentStep((s) => steps.length - 1)
