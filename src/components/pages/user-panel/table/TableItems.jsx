@@ -8,7 +8,9 @@ import ChangeTime from "../../../../core/utility/time"
 import ChangeMoment from "../../../../core/utility/moment"
 import { ImageFallBack } from "../../../common"
 import fallback from "../../../../assets/images/image-not-found.png"
-import { MdPayment } from "react-icons/md";
+import { MdPayment, MdDelete } from "react-icons/md";
+import { FaRegEdit } from "react-icons/fa";
+
 
 const TableItem = ({ item, variant, loading: isLoading, action, keyVariant, bet }) => {
     const navigate = useNavigate();
@@ -76,7 +78,8 @@ const TableItem = ({ item, variant, loading: isLoading, action, keyVariant, bet 
             ],
             width: "25",
             actions: [
-                { Icon: EyeIcon, tooltip: ["جزئیات", "Details"], function: () => { navigate(`/CourseDetails/${item.courseId}`) } },
+                { Icon: MdDelete, tooltip: ["حذف", "Delete"], function: () => { action(item.id) } },
+                { Icon: FaRegEdit, tooltip: ["ویرایش", "Edit"], function: () => { navigate(`/userPanel/updateJob/${item.id}`) } },
             ]
         },
     }

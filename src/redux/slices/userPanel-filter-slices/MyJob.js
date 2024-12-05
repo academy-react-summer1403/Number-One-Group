@@ -17,6 +17,11 @@ const MyJobs = createSlice({
     },
     setQuery(state, action) {
       state.Query = action.payload;
+      state.FilteredData = state.Data.filter(
+        (item) =>
+          item.jobTitle.toLowerCase().indexOf(action.payload.toLowerCase()) !=
+          -1
+      );
     },
     setSortingCurrent(state, action) {
       state.sortingCurrent = action.payload;

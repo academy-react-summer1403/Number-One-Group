@@ -14,7 +14,7 @@ const CustomDatePicker = ({ field, form, ...props }) => {
     const [value, setValue] = useState(new Date())
 
     const handleChange = (date) => {
-        const gregorianDate = new DateObject(date).convert(gregorian, gregorian_en).format("M/D/YYYY HH:mm:ss A")
+        const gregorianDate = new DateObject(date).convert(gregorian, gregorian_en).format("YYYY-MM-DDTHH:mm:ss")
         setFieldValue(name, gregorianDate)
         setValue(date)
     }

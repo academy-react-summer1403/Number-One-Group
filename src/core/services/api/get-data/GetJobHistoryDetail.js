@@ -5,7 +5,7 @@ const GetJobHistoryDetail = async (id) => {
     const response = await http.get(
       `/SharePanel/GetJobHistory?HistoryId=${id}`
     );
-    return response;
+    return response.singleJob;
   } catch (error) {
     return;
   }

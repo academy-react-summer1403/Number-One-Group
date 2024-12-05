@@ -29,6 +29,8 @@ import ProductDetails from "./product-details";
 import Cart from "./cart";
 import ShopDetails from "./shop-details";
 import Jobs from "./user-panel/Jobs";
+import CreateJob from "./user-panel/CreateJob";
+import UpdateJob from "./user-panel/UpdateJob";
 
 export {
   LandingPage,
@@ -62,4 +64,6 @@ export {
   Cart,
   ShopDetails,
   Jobs,
+  CreateJob,
+  UpdateJob,
 };
