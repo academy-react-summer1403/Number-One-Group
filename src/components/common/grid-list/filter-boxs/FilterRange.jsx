@@ -25,7 +25,7 @@ const FilterRange = ({
     setSearchParams(searchParams);
   };
   return (
-    <div className="filter-box relative">
+    <div className="filter-box relative mx-2">
       <h1 className="text-[20px] pb-2">{t(title)}</h1>
       <Slider
         aria-label="filter-rage"
@@ -39,7 +39,7 @@ const FilterRange = ({
         classNames={{
           base: "max-w-md gap-3 my-5",
           filler: "bg-[#5751E1]",
-          thumb: "bg-[#5751E1]"
+          thumb: "bg-[#5751E1]",
         }}
         color="#5751E1"
       />
