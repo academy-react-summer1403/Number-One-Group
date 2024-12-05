@@ -5,7 +5,7 @@ import { useQueryWithDependencies } from "../../../core/hooks/react-query"
 import { DetailsBox, OverView_Details, Title_details, ImageFallBack, CustomMap } from "../../common";
 import { TitleSection, BreadCrumb } from "../../partials/title-section";
 import { GetEventDetails } from "../../../core/services/api/get-data";
-import fallback from "../../../assets/images/image-not-found.png"
+import fallback from "../../../assets/images/events.png"
 import configVariants from "../../../config/page-transition";
 import { motion } from "framer-motion";
 
@@ -35,7 +35,7 @@ const EventDetailsWrapper = () => {
             <div className="xl:w-9/12 w-[88%]  mx-auto my-20 relative  cursor-default">
                 <ImageFallBack
                     src={SelectedEvents?.currentImageAddressTumb}
-                    className="w-full md:h-[450px]"
+                    className="w-full md:h-[450px] rounded-xl"
                     fallback={fallback}
                 />
                 <div className="flex max-lg:flex-wrap gap-7 justify-between">

@@ -3,7 +3,7 @@ import { LocationIcon } from "../../../core/icon"
 import ConvertDateToPersianText from "../../../core/utility/moment/CovertDateToPersianText"
 import { ImageFallBack } from "../../common"
 import { useTranslation } from "react-i18next"
-import fallback from "../../../assets/images/image-not-found.png"
+import fallback from "../../../assets/images/events.png"
 import Tilt from 'react-parallax-tilt';
 
 const EventCard = ({ item }) => {

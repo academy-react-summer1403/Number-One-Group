@@ -1,6 +1,6 @@
 import { ImageFallBack } from "../../common"
 import SidebarPictures from "./SidebarPictures"
-import fallback from "../../../assets/images/image-not-found.png"
+import fallback from "../../../assets/images/products.png"
 
 const PictureSection = ({ img, activePic, setActivePic }) => {
     return (

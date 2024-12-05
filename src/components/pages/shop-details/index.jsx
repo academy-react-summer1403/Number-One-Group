@@ -4,7 +4,7 @@ import { BreadCrumb, TitleSection } from "../../partials/title-section"
 import { useQueryWithDependencies, useQueryWithoutDependencies } from "../../../core/hooks/react-query";
 import GetShopDetails from "../../../core/services/api/get-data/GetShopDetails";
 import { motion } from "framer-motion";
-import fallback from "../../../assets/images/image-not-found.png"
+import fallback from "../../../assets/images/shops.png"
 import { CustomMap, DetailsBox, ImageFallBack, OverView_Details, RelatedItems, Title_details } from "../../common";
 import { FaHourglassStart } from "react-icons/fa";
 import ShopCardWrapper from "../shops/ShopCardWrapper";

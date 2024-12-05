@@ -6,7 +6,7 @@ import { useQueryWithDependencies } from "../../../core/hooks/react-query";
 import { GetBlogsComments, GetBlogWithId, GetNewsFilterPage, GetReplayBlogComment } from "../../../core/services/api/get-data";
 import { CommentSection, FeedbackSection, ImageFallBack, OverView_Details, RelatedItems } from "../../common";
 import BlogCard from "../blog/BlogCard";
-import NotFoundImg from "../../../assets/images/image-not-found.png"
+import NotFoundImg from "../../../assets/images/blogs.png"
 import BlogBiography from "./BlogBiography";
 import DetailsSection from "./DetailsSection";
 import { MajorElements } from "../../../core/constants/test-text/MajorElements";

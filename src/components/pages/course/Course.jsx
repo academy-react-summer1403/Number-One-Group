@@ -4,7 +4,7 @@ import CourseCenterBody from "./CourseCenterBody"
 import CourseDownBody from "./CourseDownBody"
 import CourseTopBody from "./CourseTopBody"
 import { Skeleton } from "@nextui-org/react";
-import NotFoundImg from "../../../assets/images/image-not-found.png"
+import NotFoundImg from "../../../assets/images/courses.png"
 import { useMediaQuery } from "react-responsive"
 import Tilt from 'react-parallax-tilt';
 

@@ -1,5 +1,5 @@
 import { ImageFallBack } from "../../common"
-import fallback from "../../../assets/images/image-not-found.png"
+import fallback from "../../../assets/images/products.png"
 
 const ProductHeaderCard = ({ image, special }) => {
     return (
