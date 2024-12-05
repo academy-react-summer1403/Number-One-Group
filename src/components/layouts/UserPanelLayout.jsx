@@ -29,7 +29,7 @@ const UserPanelLayout = () => {
         <div className='relative w-full lg:h-[813px] flex'>
             <MediaQuery minWidth="1280px">
                 <div className='min-w-[308px] w-[308px] h-svh bg-transparent'></div>
-                <div className={`min-w-[308px] w-[308px] h-svh bg-VioletBlue dark:bg-[#1B1B2A] flex justify-center flex-wrap fixed top-0 ${i18n.language == "fa" ? "right-0" : "left-0"}`}>
+                <div className={`min-w-[308px] w-[308px] overflow-y-auto h-svh bg-VioletBlue dark:bg-[#1B1B2A] flex justify-center flex-wrap fixed top-0 ${i18n.language == "fa" ? "right-0" : "left-0"}`}>
                     <SidebarUserPanel />
                 </div>
             </MediaQuery>

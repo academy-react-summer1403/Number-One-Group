@@ -43,8 +43,8 @@ const JobHistoryWrapper = () => {
   return (
     <div className='w-full flex flex-wrap h-fit'>
       <div className="w-full flex justify-between items-center">
-      <FilterSection boxs={[]} query={setQuery} />
-      <CustomButton vStyle={"yellow"} vType={"link"} text={"افزودن شغل"} Icon={FaPlus} href={"/userPanel/createJob"}  />
+        <FilterSection boxs={[]} query={setQuery} />
+        <CustomButton vStyle={"yellow"} vType={"link"} text={"افزودن شغل"} Icon={FaPlus} href={"/userPanel/createJob"} />
       </div>
       <PaginateHolderItems style="justify-center">
         <PaginatedItems currentData={isSuccess && params.FilteredData?.length} currentDataInOnePage={8} setPage={setItemOffset} >

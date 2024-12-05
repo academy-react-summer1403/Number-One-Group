@@ -39,6 +39,11 @@ export const MyJobHistoryHeader = [
   { text: ["تاریخ شروع / پایان", "Start & End Date"] },
 ];
 
+export const MyGroupsHeader = [
+  { text: ["عنوان گروه", "Title"] },
+  { text: ["وضعیت", "Status"] },
+];
+
 export const MyCourseFavoriteKey = [
   "courseTitle",
   "typeName",

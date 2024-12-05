@@ -16,6 +16,7 @@ import {
   CartData,
   FilterShops,
   MyJobs,
+  MyGroups,
 } from "./slices";
 
 const store = configureStore({
@@ -35,7 +36,8 @@ const store = configureStore({
     FilterProducts,
     CartData,
     FilterShops,
-    MyJobs
+    MyJobs,
+    MyGroups,
   },
 });
 

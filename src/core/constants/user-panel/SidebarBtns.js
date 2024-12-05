@@ -46,6 +46,12 @@ const sidebarBtns = [
     icon: FavoritesBtnIcon,
   },
   {
+    id: 9,
+    name: ["گروه های من", "My Groups"],
+    href: "/userPanel/groups",
+    icon: FavoritesBtnIcon,
+  },
+  {
     id: 7,
     name: ["تنظیمات امنیتی", "Security Settings"],
     href: "/userPanel/security",

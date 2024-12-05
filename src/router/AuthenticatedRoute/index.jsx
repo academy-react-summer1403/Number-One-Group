@@ -1,4 +1,4 @@
-import { Dashboard, EditInformation, Favorites, Information, CreateJob, Jobs, MyCourses, MyViews, Payment, Reserved, Security, UpdateJob } from "../../screens"
+import { Dashboard, EditInformation, Favorites, Information, CreateJob, Jobs, MyCourses, MyViews, Payment, Reserved, Security, UpdateJob, Groups } from "../../screens"
 import routerPublic from "../UnAuthenticatedRoute"
 import { UserPanelLayout } from "../../components/layouts"
 import { PaymentStepOne, PaymentStepThree, PaymentStepTwo } from "../../components/pages/user-panel"
@@ -28,6 +28,7 @@ const routerPrivate = [
             { path: "/userPanel/jobs", element: <Jobs /> },
             { path: "/userPanel/createJob", element: <CreateJob /> },
             { path: "/userPanel/updateJob/:id", element: <UpdateJob /> },
+            { path: "/userPanel/groups", element: <Groups /> },
         ]
     }
 ]

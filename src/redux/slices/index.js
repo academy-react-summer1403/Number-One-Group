@@ -14,6 +14,7 @@ import FilterProducts from "./filter-box-slices/FilterProducts";
 import CartData from "./CartData";
 import FilterShops from "./filter-box-slices/FilterShops";
 import MyJobs from "./userPanel-filter-slices/MyJob";
+import MyGroups from "./userPanel-filter-slices/MyGroup";
 
 export {
   StepStatus,
@@ -32,4 +33,5 @@ export {
   CartData,
   FilterShops,
   MyJobs,
+  MyGroups
 };

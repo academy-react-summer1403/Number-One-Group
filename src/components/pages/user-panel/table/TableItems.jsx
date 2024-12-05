@@ -82,6 +82,16 @@ const TableItem = ({ item, variant, loading: isLoading, action, keyVariant, bet 
                 { Icon: FaRegEdit, tooltip: ["ویرایش", "Edit"], function: () => { navigate(`/userPanel/updateJob/${item.id}`) } },
             ]
         },
+        myGroups: {
+            sections: [
+                { section: item.groupName },
+                { section: i18n.language == "en" ? (item.payment ? "Confirmed" : "Waiting") : (item.payment ? "پرداخت شده" : "پرداخت نشده"), color: item.payment ? "#128E5A" : "#DE5204" },
+            ],
+            width: "48",
+            actions: [
+                { Icon: EyeIcon, tooltip: ["جزئیات", "Details"], function: () => { navigate(`/CourseDetails/${item.courseId}`) } },
+            ]
+        },
     }
 
     return (
