@@ -9,6 +9,7 @@ import Faq from "./Faq.jsx";
 import LastBlogs from "./LastBlogs.jsx";
 import { motion } from "framer-motion";
 import configVariants from "../../../config/page-transition";
+import EventSection from "./EventSection.jsx";
 
 const Landing = () => {
     return (
@@ -26,6 +27,7 @@ const Landing = () => {
             <SkilledTeachers />
             <Statistics />
             <Faq />
+            <EventSection />
             <HowToStart />
             <LastBlogs />
         </motion.div>

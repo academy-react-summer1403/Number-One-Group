@@ -69,7 +69,7 @@ i18n.use(initReactI18next)
                     CoursesTitle: 'همه دوره ها', comparisonTitle: 'مقایسه',
                     signUpTitle: 'ثبت نام به عنوان دانش آموز', or: "یا", EventsTitle: "همه مناسبت ها", contactUsTitle: "تماس با ما", shopDetail: "جزئیات فروشگاه",
                     // Buttons
-                    GoHomePage: "به صفحه اصلی بروید", Join: 'به رویداد بپیوندید', submit: "ارسال کنید",JoinShop: 'اشتراک با فروشگاه',
+                    GoHomePage: "به صفحه اصلی بروید", Join: 'به رویداد بپیوندید', submit: "ارسال کنید", JoinShop: 'اشتراک با فروشگاه',
                     signUpCourse: "ثبت نام در دوره", skilledTechnologies: 'همه دسته بندی هارو ببینید', detailsCourse: "جزئیات دوره و ثیت نام",
                     // LoginForm
                     LoginCaption: "ورود",
@@ -99,7 +99,7 @@ i18n.use(initReactI18next)
                     // detailsBox
                     StartTime: 'زمان شروع', Registrants: 'ثبت نام شده ها',
                     capacity: 'ظرفیت', endTime: 'زمان پایان', startTime: 'زمان شروع', statusCourse: 'وضعیت دوره',
-                    Payment: 'پرداخت امن:', ShareCourse: 'این دوره را به اشتراک بگذارید:',ShareShop: 'این فروشگاه را به اشتراک بگذارید:',
+                    Payment: 'پرداخت امن:', ShareCourse: 'این دوره را به اشتراک بگذارید:', ShareShop: 'این فروشگاه را به اشتراک بگذارید:',
                     //Instructors-Details page
                     sideBarTitle: "تماس سریع", sideBarBtn: "فرستادن پیام", sideBarDesc: "با اساتید خود به راحتی ازتباط بگیرید",
                     instructorBiography: "زندگینامه", instructorSkill: "مهارت ها", instructorCourses: "دوره های من",
@@ -154,7 +154,8 @@ i18n.use(initReactI18next)
                     ProfileSection1: "پشتیبانی سایت", ProfileSection2: "پاسخگوی سوالات شما هستیم", startChat: "برای شروع ارتباط با ادمین پیامی وارد کنید!",
                     placeHolderChat: "پیام خود را وارد کنید", supportBtn: "پشتیبانی و ارتباط با ادمین", supportTeacherBtn: "ارتباط با اساتید",
                     // shops
-                    shopInfo: 'اطلاعات فروشگاه',shopOverview: 'درباره فروشگاه'
+                    shopInfo: 'اطلاعات فروشگاه', shopOverview: 'درباره فروشگاه',
+                    eventTitle: "بهترین ایونت های سال را بیابید", eventDescription: "بهترین ایونت های آموزشی را در اینجا پیدا کنید"
                 },
             },
             en: {
@@ -217,7 +218,7 @@ i18n.use(initReactI18next)
                     CoursesTitle: 'All Courses', comparisonTitle: 'Comparison',
                     signUpTitle: 'Student SignUp', or: "or", EventsTitle: "All Events", contactUsTitle: "Contact With Us", shopDetail: "Shop Detail",
                     // Buttons
-                    GoHomePage: "Go To Home Page", Join: 'Join This Event', submit: "Submit Now",JoinShop: 'Subscribe to the store',
+                    GoHomePage: "Go To Home Page", Join: 'Join This Event', submit: "Submit Now", JoinShop: 'Subscribe to the store',
                     signUpCourse: "Enroll course", skilledTechnologies: 'See all categories', detailsCourse: "Course details and registration",
                     // LoginForm
                     LoginCaption: "Sign in",
@@ -247,7 +248,7 @@ i18n.use(initReactI18next)
                     // detailsBox
                     StartTime: 'Start Time', Registrants: 'Registrants',
                     capacity: 'Capacity', endTime: 'End Time', startTime: 'Start Time', statusCourse: 'Course Status',
-                    Payment: 'Secure Payment:', ShareCourse: 'Share this course:',ShareShop: 'Share this shop:',
+                    Payment: 'Secure Payment:', ShareCourse: 'Share this course:', ShareShop: 'Share this shop:',
                     //Instructors-Details page
                     sideBarTitle: "Quick Contact", sideBarBtn: "Send Message", sideBarDesc: "Communicate easily with your professors.",
                     instructorBiography: "Biography", instructorSkill: "Skills", instructorCourses: "My Courses",
@@ -301,8 +302,9 @@ i18n.use(initReactI18next)
                     // chat 
                     ProfileSection1: "Site support", ProfileSection2: "We answer your questions", startChat: "Enter a message to start communicating with the admin!",
                     placeHolderChat: "Enter your message", supportBtn: "Support and communication with admin", supportTeacherBtn: "Communication with professors",
-                  // shops
-                  shopInfo: 'Shop Infomation',shopOverview: 'About the shop',
+                    // shops
+                    shopInfo: 'Shop Infomation', shopOverview: 'About the shop',
+                    eventTitle: "Find The Best Events Of The Year", eventDescription: "Find the best educational events here.",
                 },
             },
         },
