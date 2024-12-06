@@ -15,7 +15,6 @@ const TeacherDetailsWrapper = () => {
     const { data } = useQueryWithDependencies("GET_TEACHER_DETAILS", GetTeacherDetails, id, id)
 
     const fullName = data?.fullName ? data?.fullName : "بی نام"
-    console.log(data)
 
     return (
         <motion.div

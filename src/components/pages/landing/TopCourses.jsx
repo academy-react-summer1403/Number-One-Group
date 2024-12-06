@@ -49,7 +49,7 @@ const TopCourses = () => {
                 >
                     {isSuccess && Courses.courseFilterDtos?.map((item, index) => (
                         <SwiperSlide key={index}>
-                            <CourseCard item={item} isLoading={isLoading} refetch={refetch} />
+                            <CourseCard inSlider item={item} isLoading={isLoading} refetch={refetch} />
                         </SwiperSlide>
                     ))}
                 </SwiperSlider>

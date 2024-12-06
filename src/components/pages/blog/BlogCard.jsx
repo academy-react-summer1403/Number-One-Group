@@ -6,7 +6,7 @@ import { ImageFallBack } from "../../common"
 import fallback from "../../../assets/images/blogs.png"
 import Tilt from 'react-parallax-tilt';
 
-const BlogCard = ({ item, loading, refetch }) => {
+const BlogCard = ({ item, loading, refetch, inSlider = false }) => {
     const {
         id,
         title,
@@ -23,12 +23,12 @@ const BlogCard = ({ item, loading, refetch }) => {
     } = item;
     return (
         <Tilt transitionSpeed={2500}>
-            <div data-aos="fade-up" className="border border-LightGrayish p-5 grid-item w-[300px] rounded-lg hover:shadow-lg duration-200 relative m-auto">
+            <div data-aos="fade-up" style={{ width: !inSlider && "300px" }} className="border border-LightGrayish p-5 grid-item rounded-lg hover:shadow-lg duration-200 relative m-auto">
                 <Skeleton isLoaded={!loading} className="rounded-xl">
                     <ImageFallBack
                         alt={"Picture"}
                         src={images}
-                        className="rounded-xl max-w-[258px] min-w-[258px] h-[224px]"
+                        className="rounded-xl w-full h-[224px]"
                         fallback={fallback}
                     />
                 </Skeleton>
