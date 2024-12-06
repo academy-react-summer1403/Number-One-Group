@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import { HamburgerMenu, LogoGroup } from '../../common'
 import MediaQuery from 'react-responsive'
 import Menu from "./Menu"
+import SideBarMenu from './SideBarMenu'
 
 const RightSection = ({ setVisibleMenu, visibleMenu }) => {
     return (
@@ -18,7 +19,7 @@ const RightSection = ({ setVisibleMenu, visibleMenu }) => {
                     visible={visibleMenu}
                     style={'bg-VioletBlue dark:bg-LightLavender z-50 p-8'}
                 >
-                    {/* <SideBarMenu basketItems={basketItems} menuItems={menuItem} /> */}
+                    <SideBarMenu />
                 </HamburgerMenu >
             </MediaQuery>
         </Fragment>

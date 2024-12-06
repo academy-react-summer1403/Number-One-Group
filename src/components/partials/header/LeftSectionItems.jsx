@@ -13,33 +13,10 @@ import tooltipStyle from '../../../core/constants/tooltip-style'
 import { Link } from 'react-router-dom'
 import fallback from "../../../assets/images/user-circle-icon.png"
 import { Tooltip } from '@nextui-org/react'
+import StatusButton from './StatusButton'
 
 const LeftSectionItems = ({ setVisibleSearch, visibleSearch }) => {
-    const token = getItem('token')
-    const cartItems = getItem('cartItems')
     const UserInfo = useSelector(state => state.UserInfo.info)
-
-    // Get Favorite Blogs
-    const { data: blogFavorite, } = useQuery({
-        queryKey: ["GET_MY_FAVORITES"],
-        queryFn: GetMyFavoriteBlogs,
-        enabled: token ? true : false
-    })
-
-    // Get Favorite Courses
-    const { data: courseFavorite, } = useQuery({
-        queryKey: ["GET_MY_COURSES"],
-        queryFn: GetMyFavoriteCourses,
-        enabled: token ? true : false
-    })
-
-    const myFavoriteLength =
-        courseFavorite?.favoriteCourseDto?.length + blogFavorite?.myFavoriteNews?.length;
-
-    const StatusButtonItems = [
-        { icon: CartIcon, number: cartItems?.length ? cartItems?.length : 0, href: "/cart", tooltip: ["سبد خرید", "Cart"] },
-        { icon: FavoriteIcon, number: myFavoriteLength ? myFavoriteLength : 0, href: UserInfo !== false && "/userPanel/favorites", tooltip: ["لیست علاقه مندی", "Favorite List"] },
-    ];
 
     return (
         <Fragment>
@@ -53,7 +30,7 @@ const LeftSectionItems = ({ setVisibleSearch, visibleSearch }) => {
                 <SearchModal setVisible={setVisibleSearch} visible={visibleSearch} />
             </MediaQuery>
             <MediaQuery minWidth={"768px"}>
-                {StatusButtonItems?.map((item, index) => <BasketItems key={index} item={item} />)}
+                <StatusButton />
             </MediaQuery>
             {
                 UserInfo == false ?

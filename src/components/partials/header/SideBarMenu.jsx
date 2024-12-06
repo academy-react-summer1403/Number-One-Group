@@ -1,19 +1,27 @@
 import MediaQuery from "react-responsive"
 import { CustomButton, LogoGroup } from "../../common"
+import { menuItem } from '../../../core/constants/Header/headerData'
+import MenuHeaderItems from "./MenuHeaderItems"
+import StatusButton from "./StatusButton"
 
-const SideBarMenu = ({ basketItems, menuItems }) => {
+const SideBarMenu = () => {
     return (
         <div className="mx-auto my-12">
             <MediaQuery maxWidth={'768px'}>
                 <div className="flex gap-3 items-center justify-between">
-                    <CustomButton href={"/authorize/login"} disableArrow={'hidden'} vType={'link'} vStyle={"yellow"} style={'shadow-none !pt-2 !pb-2 !h-fit'} text={'Login'} />
-                    <div className="flex gap-1">
-                        {basketItems}
+                    <div className="flex gap-1 absolute left-6 top-6">
+                        <StatusButton />
                     </div>
                 </div>
             </MediaQuery>
             <div>
-                {menuItems}
+                {menuItem.map((item, index) => (
+                    <MenuHeaderItems
+                        key={index}
+                        href={item.href}
+                        title={item.title}
+                    />
+                ))}
             </div>
             <div className="bg-LightGray w-fit p-2 rounded-full mt-28 mx-auto">
                 <LogoGroup />
