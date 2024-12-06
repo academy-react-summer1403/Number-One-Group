@@ -10,6 +10,7 @@ import LastBlogs from "./LastBlogs.jsx";
 import { motion } from "framer-motion";
 import configVariants from "../../../config/page-transition";
 import EventSection from "./EventSection.jsx";
+import ComparisonSection from "./Comparison.jsx";
 
 const Landing = () => {
     return (
@@ -23,7 +24,7 @@ const Landing = () => {
             <AboutUs />
             <Categories />
             <TopCourses />
-            <InformedPoster />
+            <ComparisonSection />
             <SkilledTeachers />
             <Statistics />
             <Faq />

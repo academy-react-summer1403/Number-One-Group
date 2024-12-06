@@ -9,6 +9,10 @@ import ItemsCompared from "./ItemsCompared"
 import { BreadCrumb, TitleSection } from "../../partials/title-section"
 import { useDispatch, useSelector } from "react-redux"
 import { setComparisonIds } from "../../../redux/slices/filter-box-slices/FilterCourses"
+import ChangeMoment from "../../../core/utility/moment"
+import comparisonPic from '../../../assets/images/vs.png'
+import { CustomButton } from "../../common"
+
 
 const ComparisonPage = () => {
   const selectedIds = useSelector(state => state.FilterCourses.comparisonIds)
@@ -57,11 +61,11 @@ const ComparisonPage = () => {
         <BreadCrumb href={'/courses'} text={'CoursesTitle'} />
         <BreadCrumb type="Div" text={'comparisonTitle'} />
       </TitleSection>
-      <HeadingSection />
-      <div className="md:mb-20 mt-52 sm:mx-4 md:flex gap-28 justify-evenly">
-        <div className="h-fit w-fit absolute md:block hidden lg:mx-0 -mt-16">
-          <VsIcon />
-        </div>
+      {/* <HeadingSection /> */}
+      {/* <div className="w-full flex justify-center">
+        <img src={comparisonPic} className="h-72 mb-[-200px]" />
+      </div> */}
+      <div className="w-full md:mb-20 mt-52 xl:px-44 sm:px-16 px-8 flex gap-y-36 max-lg:flex-wrap items-center justify-between max-lg:justify-center relative">
         {objects && objects.length != 0 && objects.map((item) => {
           return (
             <ItemsCompared
@@ -74,7 +78,7 @@ const ComparisonPage = () => {
               level={item.levelName}
               status={item.statusName}
               instructor={item.teacherName}
-              date={item.lastUpdate}
+              date={ChangeMoment(item.lastUpdate, "YYYY/MM/DD", "persian")}
               students={item.currentRegistrants}
               likeCount={item.likeCount}
               disLikeCount={item.dissLikeCount}
@@ -82,6 +86,9 @@ const ComparisonPage = () => {
             />
           )
         })}
+      </div>
+      <div className="w-full flex justify-center mb-20">
+        <CustomButton vStyle={"purple"} vType={"link"} href={"/courses"} text={"به صفحه دوره ها بروید"} arrowColor={"#fff"} />
       </div>
     </>
   )

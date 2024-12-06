@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next"
 import comparisonPic from '../../../assets/images/vs.png'
 import { CustomButton, Label } from "../../common"
 
-const HeadingSection = () => {
+const ComparisonSection = () => {
     const { t } = useTranslation()
     return (
         <div className="bg-DarkIndigo py-6 px-3 flex gap-3 justify-around items-center">
@@ -16,4 +16,4 @@ const HeadingSection = () => {
     )
 }
 
-export default HeadingSection
+export default ComparisonSection
