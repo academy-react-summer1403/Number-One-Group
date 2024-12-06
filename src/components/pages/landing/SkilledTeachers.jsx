@@ -27,6 +27,7 @@ const SkilledTeachers = () => {
                             name={item.fullName ? item.fullName : " بی نام"}
                             picture={item.pictureAddress}
                             courseCount={item.courseCounts}
+                            href={`/teacherDetails/${item.teacherId}`}
                         />
                     ))}
                 </MediaQuery>

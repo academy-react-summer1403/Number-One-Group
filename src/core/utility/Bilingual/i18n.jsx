@@ -44,7 +44,7 @@ i18n.use(initReactI18next)
                     // aboutUs
                     aboutLabel: "درباره ما بیشتر بدانید", aboutTitle1: "هزاران", aboutTitle2: "برتر اکنون در یک مکان",
                     aboutDescription: "ما هزاران دوره برتر را در این مکان ارائه می‌دهیم که به ارتقای مهارت‌ها و دانش شما کمک می‌کند. این دوره‌ها در موضوعات متنوع طراحی شده‌اند تا شما را برای فرصت‌های شغلی بهتر آماده کنند.",
-                    aboutBtn: "رایگان آزمایش کنید", aboutImportantWord: "دوره های", boardText: "بیش از 36 هزار دانشجوی ثبت نام شده",
+                    aboutBtn: "درباره ما", aboutImportantWord: "دوره های", boardText: "بیش از 36 هزار دانشجوی ثبت نام شده",
                     // topCourses
                     topCoursesLabel: "دوره های کلاس برتر", topCoursesTitle: "بهترین دوره های آموزشی جهان ما را کاوش کنید", topCoursesDescription: "بهترین دوره‌های آموزشی جهان را کاوش کنید و مهارت‌های خود را ارتقا دهید.",
                     // skilledTeachers
@@ -193,7 +193,7 @@ i18n.use(initReactI18next)
                     // aboutUs
                     aboutLabel: "Get More About Us", aboutTitle1: "Thousand Of Top", aboutTitle2: "Now in One Place",
                     aboutDescription: "We offer thousands of top courses at this location that will help you upgrade your skills and knowledge. These courses are designed in a variety of subjects to better prepare you for career opportunities.",
-                    aboutBtn: "Start Free Trial", aboutImportantWord: "Courses", boardText: "36K+ Enrolled Students",
+                    aboutBtn: "About Us", aboutImportantWord: "Courses", boardText: "36K+ Enrolled Students",
                     // topCourses
                     topCoursesLabel: "Top Class Courses", topCoursesTitle: "Explore Our World's Best Courses", topCoursesDescription: "When known printer took a galley of type scrambl edmake",
                     //skilledTeachers
