@@ -33,7 +33,7 @@ const CourseCard = ({ loading, refetch, item, inSlider = false }) => {
     } = item;
 
     return (
-        <Tilt transitionSpeed={2500}>
+        <Tilt transitionSpeed={2500} className="w-fit h-fit">
             <div data-aos="fade-up" style={{ width: !inSlider && "300px" }} className="border border-LightGrayish p-4 pb-3 grid-item h-[435px] rounded-lg hover:shadow-lg duration-200  m-auto relative group/item">
                 <div className="w-full h-44 course-height-img mx-auto rounded-lg">
                     <Link to={`/CourseDetails/${id}`}>

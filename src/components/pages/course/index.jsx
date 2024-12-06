@@ -68,7 +68,7 @@ const CoursesWrapperPage = () => {
                 </TitleSection>
                 <div className="main-container flex gap-7">
                     <MediaQuery minWidth={"1050px"}><FilterSide_Courses /></MediaQuery>
-                    <div className="lg:w-[87%] sm:w-full mx-auto">
+                    <div className="lg:w-[87%] lg:max-w-[976px] sm:w-full mx-auto">
                         <SectionTop
                             lengthAllData={coursesLengthFinished && coursesLength.totalCount}
                             lengthFilteredData={isSuccess && coursesData.totalCount}

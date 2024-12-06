@@ -30,6 +30,7 @@ const BlogCard = ({ item, loading, refetch, inSlider = false }) => {
                         src={images}
                         className="rounded-xl w-full h-[224px]"
                         fallback={fallback}
+                        style={{ width: "500px" }}
                     />
                 </Skeleton>
                 <div className="w-full">

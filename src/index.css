@@ -202,7 +202,7 @@ body {
     @apply md:block;
 
     .grid-item {
-      @apply w-full flex gap-4 h-auto;
+      @apply !w-[976px] lg:max-w-[976px] flex gap-4 h-auto;
 
       .blog-bio {
         @apply line-clamp-3 h-16;
