@@ -5,9 +5,14 @@ import { getItem } from '../../../core/hooks/local-storage'
 import { CartIcon, FavoriteIcon } from '../../../core/icon'
 import MediaQuery from 'react-responsive'
 import SearchBtn from '../../common/searchBox/SearchBtn'
-import { CustomButton, SearchInput, SearchModal } from '../../common'
+import { CustomButton, ImageFallBack, SearchInput, SearchModal } from '../../common'
 import BasketItems from './BasketItem'
 import { useSelector } from 'react-redux'
+
+import tooltipStyle from '../../../core/constants/tooltip-style'
+import { Link } from 'react-router-dom'
+import fallback from "../../../assets/images/user-circle-icon.png"
+import { Tooltip } from '@nextui-org/react'
 
 const LeftSectionItems = ({ setVisibleSearch, visibleSearch }) => {
     const token = getItem('token')
