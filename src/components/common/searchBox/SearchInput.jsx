@@ -13,6 +13,7 @@ const SearchInput = ({ setQueryProp, showSearchFilter = true, inputStyle, holder
     const { t, i18n } = useTranslation();
     const dispatch = useDispatch()
     const [SearchValue, setSearchValue] = useState("1")
+    const [disableKey, setDisableKey] = useState("1")
     const Navigate = useNavigate()
     const [initialSearchValue, setInitialSearchValue] = useState("")
     const selectItems = i18n.language === 'fa' ? selectItems_FA : selectItems_EN;
@@ -24,7 +25,8 @@ const SearchInput = ({ setQueryProp, showSearchFilter = true, inputStyle, holder
     // const pageSearch = selectItems.find(el => el.path == location.pathname)
 
     // Select the desired setQuery
-    const setHeaderQuery = SearchValue == 1 ? setQueryCourse : setQueryBlog;
+    // const setHeaderQuery = SearchValue == 1 ? setQueryCourse : setQueryBlog;
+    const setHeaderQuery = selectItems_FA[SearchValue - 1].action
     const setQuerySel = setQuery ?? setHeaderQuery;
 
     // Set the search input value to the desired query
@@ -41,12 +43,27 @@ const SearchInput = ({ setQueryProp, showSearchFilter = true, inputStyle, holder
         if (setQueryProp) dispatch(setQueryProp(value))
     }
 
-    const handleDisabledKeys = () => {
+    const handleEnableKeys = () => {
         if (pathname == "/courses") setSearchValue("2")
         if (pathname == "/blog") setSearchValue("1")
+        if (pathname == "/products") setSearchValue("1")
+        if (pathname == "/events") setSearchValue("1")
+        if (pathname == "/shops") setSearchValue("1")
     }
 
-    useEffect(() => { handleDisabledKeys() }, [pathname])
+    const handleDisableKeys = () => {
+        if (pathname == "/courses") setDisableKey("1")
+        else if (pathname == "/Blog") setDisableKey("2")
+        else if (pathname == "/products") setDisableKey("3")
+        else if (pathname == "/events") setDisableKey("4")
+        else if (pathname == "/shops") setDisableKey("5")
+        else return null
+    }
+
+    useEffect(() => {
+        handleEnableKeys()
+        handleDisableKeys()
+    }, [pathname])
 
     return (
         <div className={`w-fit border border-LightGrayish py-0.5  overflow-hidden text-sm 
@@ -57,7 +74,7 @@ const SearchInput = ({ setQueryProp, showSearchFilter = true, inputStyle, holder
                     <Select
                         radius="none"
                         items={selectItems}
-                        disabledKeys={pathname == "/courses" ? ["1"] : null || pathname == "/Blog" ? ["2"] : null}
+                        disabledKeys={[disableKey]}
                         selectedKeys={[SearchValue]}
                         className={`w-[130px] ${i18n.language == "en" ? "border-r-2" : "border-l-2"} border-LightGrayish h-[25px] flex items-center`}
                         classNames={{
