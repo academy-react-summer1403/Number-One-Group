@@ -5,6 +5,9 @@ import UserCourseSection from './UserCourseSection';
 import { useTranslation } from 'react-i18next';
 import { GetCoursesTop, GetMyCourses, GetNewsFilterPage } from '../../../../core/services/api/get-data';
 import { useQueryWithDependencies } from '../../../../core/hooks/react-query';
+import { useEffect } from 'react';
+import { TourSteps } from '../../../../core/constants/tour-steps';
+import { useSelector } from 'react-redux';
 
 const DashboardWrapper = () => {
     const { t } = useTranslation()

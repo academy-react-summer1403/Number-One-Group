@@ -26,7 +26,7 @@ const SupportButton = () => {
                         onOpen() :
                         toast.error("لطفا برای دسترسی به امکانات سایت ابتدا وارد حساب کاربری خود شوید")
                 }}
-                className="bottomNav"
+                className={`bottomNav step-support`}
             >
                 <IoChatbubbleEllipsesOutline size={23} />
             </div>
@@ -39,7 +39,7 @@ const SupportButton = () => {
                 headerStyle="flex flex-col gap-1 text-white"
                 backdrop={option ? "blur" : "opaque"}
             >
-                <div onClick={() => setOption(undefined)} className={`closeButton_modal bg-neutral-200/65 top-2 ${i18n.language === 'fa' ? "left-2" : "right-2"}  ${option ? "" : "hidden"}`}>
+                <div onClick={() => setOption(undefined)} className={`closeButton_modal bg-neutral-200/65 top-2 ${i18n.language === 'fa' ? "left-2" : "right-2"}  ${option ? "" : "hidden"} `}>
                     <TiArrowBack />
                 </div>
                 <Button onClick={() => setOption("admin")} radius="full" className={`bg-gradient-to-tr from-VioletBlue to-blue-900  text-white shadow-lg font-IranSans ${option ? "hidden" : ""}`}>
