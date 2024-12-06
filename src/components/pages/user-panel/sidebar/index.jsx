@@ -32,7 +32,7 @@ const SidebarUserPanel = () => {
                 <span className="w-full h-1 borderButton_sidebar_userPanel"></span>
             </div>
             <div className={`w-full ${i18n.language == "en" ? "pl-8" : "pr-8"} flex flex-wrap gap-y-4`}>
-                {sidebarBtns.map(item => <SidebarButtons key={item.id} Icon={item.icon} href={item.href} name={i18n.language != "en" ? item.name[0] : item.name[1]} />)}
+                {sidebarBtns.map(item => <SidebarButtons key={item.id} Icon={item.icon} href={item.href} name={i18n.language != "en" ? item.name[0] : item.name[1]} tourStyle={item.tourStyle} />)}
             </div>
             <Link onClick={handleExit} to="/" className="text-white flex items-center gap-x-3 my-5">
                 <ExitBtnPanelIcon />

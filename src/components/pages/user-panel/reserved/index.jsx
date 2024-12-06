@@ -37,7 +37,7 @@ const ReservedWrapper = () => {
   ]
 
   return (
-    <div className="w-full flex flex-wrap h-fit">
+    <div className="w-full flex flex-wrap h-fit bg-black">
       <FilterSection boxs={sortBox} query={setQuery} />
       <PaginateHolderItems style="justify-center">
         <PaginatedItems currentData={ReservedState.Query == undefined ? data?.length : filteredData.length} currentDataInOnePage={ReservedState.sortingCurrent} setState={setItemOffset} >

@@ -4,11 +4,13 @@ import ThemeButton from './ThemeButton'
 import ScrollToUpButton from './ScrollToUpButton'
 import VoiceToText from './SpeechRecognition'
 import SupportButton from './SupportButton'
+import HelperButton from './HelperButton'
 
 const BottomNav = () => {
     return (
         <>
             <div className="flex flex-col gap-3 fixed left-5 bottom-20 z-30">
+                <HelperButton/>
                 <VoiceToText />
                 <ThemeButton />
                 <LanguageButton />

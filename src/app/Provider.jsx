@@ -4,16 +4,18 @@ import store from "../redux/store";
 import { reactQueryConfig } from "../config/react-query";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter } from "react-router-dom";
+import TourProvide from "../core/utility/tour";
 
 const ProviderApp = ({ children }) => {
     const queryClient = new QueryClient(reactQueryConfig);
-
     return (
         <Provider store={store}>
             <NextUIProvider>
                 <QueryClientProvider client={queryClient}>
                     <BrowserRouter>
-                        {children}
+                        <TourProvide>
+                            {children}
+                        </TourProvide>
                     </BrowserRouter>
                 </QueryClientProvider>
             </NextUIProvider>
@@ -22,3 +24,4 @@ const ProviderApp = ({ children }) => {
 }
 
 export default ProviderApp
+
