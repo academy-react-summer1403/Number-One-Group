@@ -59,7 +59,7 @@ const ShopDetailsWrapper = () => {
           fallback={fallback}
         />
         <div className="flex max-lg:flex-wrap gap-7 justify-between">
-          <div className="max-lg:w-full">
+          <div className="w-full">
             <Title_details
               title={SelectedShop?.name}
               styleDisplay={'hidden'}
@@ -69,6 +69,7 @@ const ShopDetailsWrapper = () => {
             <OverView_Details
               title={'shopOverview'}
               describe={SelectedShop?.aboutUs}
+              Class="w-full"
             />
           </div>
           <div className="flex flex-wrap gap-y-7 min-w-72 w-full lg:w-72 lg:-mt-14 lg:ml-7">

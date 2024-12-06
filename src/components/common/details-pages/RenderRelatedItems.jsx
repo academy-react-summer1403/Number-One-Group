@@ -20,7 +20,7 @@ const RenderRelatedItems = ({ title, renderData, RenderItem, isSuccess, isLoadin
                 <p className="text-2xl font-semibold">{t("Related")}</p>
             </div>
             <div>
-                <SwiperSlider
+                {renderData?.length > 0 ? (<SwiperSlider
                     perView={1}
                     Breakpoints={Breakpoints}
                     arrowColor="#fff"
@@ -37,7 +37,9 @@ const RenderRelatedItems = ({ title, renderData, RenderItem, isSuccess, isLoadin
                             />
                         </SwiperSlide>
                     ))}
-                </SwiperSlider>
+                </SwiperSlider>) : (
+                    <div className='my-20 mediumStyle_text w-full text-center'>محصولی وجود ندارد</div>
+                )}
             </div>
         </div>
     )
