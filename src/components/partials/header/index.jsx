@@ -28,7 +28,7 @@ const Header = () => {
   return (
     <Navbar
       shouldHideOnScroll={visibleMenu || visibleSearch ? false : true}
-      className="flex gap-x-10 items-center justify-between py-3"
+      className="flex gap-x-10 items-center justify-between py-3 shadow-lg"
       maxWidth="full"
     >
       <div className="w-fit flex gap-x-6 items-center min-[1360px]:px-20 sm:px-10 px-3">
