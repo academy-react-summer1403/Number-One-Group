@@ -14,7 +14,7 @@ const RenderRelatedItems = ({ title, renderData, RenderItem, isSuccess, isLoadin
     }
 
     return (
-        <div className="relative my-6 ">
+        <div className="relative my-6">
             <div className="pt-2 pb-8 flex items-center gap-3">
                 <h1 className="importantWord py-1">{t(title)}</h1>
                 <p className="text-2xl font-semibold">{t("Related")}</p>

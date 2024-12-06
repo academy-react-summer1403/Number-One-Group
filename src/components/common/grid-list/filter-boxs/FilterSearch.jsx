@@ -30,7 +30,7 @@ const FilterSearch = ({ variant, setQuery, Style, holderDefault }) => {
     }, [])
 
     return (
-        <div className={`flex items-center p-3 bg-LightGray rounded-lg mb-5 ${Style}`}>
+        <div className={`flex items-center p-3 bg-LightGray rounded-lg mb-5 mx-2 ${Style}`}>
             <input type="text" defaultValue={holderDefault} onChange={(e) => SetFilterQuery(e)} placeholder={t(variantPlaceHolder?.[variant])} className="text-sm w-11/12 bg-transparent outline-none" />
             <Search_TwoIcon />
         </div>

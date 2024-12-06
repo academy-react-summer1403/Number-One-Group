@@ -46,11 +46,17 @@ export const courseCommentValid = yup.object().shape({
     .required("فیلد نمی تواند خالی باشد!"),
   description: yup.string().min(5, "طول نویسه کم تر از حد مجاز!").required("فیلد نمی تواند خالی باشد!"),
 });
+export const courseReplayCommentValid = yup.object().shape({
+  description: yup.string().min(5, "طول نویسه کم تر از حد مجاز!").required("فیلد نمی تواند خالی باشد!"),
+});
 export const blogCommentValid = yup.object().shape({
   title: yup
     .string()
     .min(10, "طول نویسه کم تر از حد مجاز!")
     .max(70, "طول نویسه بیش از حد مجاز!")
     .required("فیلد نمی تواند خالی باشد!"),
+  description: yup.string().min(10, "طول نویسه کم تر از حد مجاز!").required("فیلد نمی تواند خالی باشد!"),
+});
+export const blogReplayCommentValid = yup.object().shape({
   description: yup.string().min(10, "طول نویسه کم تر از حد مجاز!").required("فیلد نمی تواند خالی باشد!"),
 });

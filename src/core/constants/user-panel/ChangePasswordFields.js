@@ -4,6 +4,7 @@ const ChangePassWithTokenFields = [
     certificate: "currentPassword",
     sectionName: ["رمز عبور فعلی", "Current password"],
     dir: "ltr",
+    
   },
   {
     id: 2,

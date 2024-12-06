@@ -5,7 +5,7 @@ import { useDisclosure } from "@nextui-org/react"
 import { CloseIcon } from "../../../../core/icon"
 import { IoIosArrowDown } from "react-icons/io"
 import AddReplay_Comment from "../add-comments/AddReplay_Comment"
-import { blogCommentValid, courseCommentValid } from "../../../../core/validations/Auth.Validations"
+import { blogCommentValid, blogReplayCommentValid, courseCommentValid, courseReplayCommentValid } from "../../../../core/validations/Auth.Validations"
 
 const DownSection = ({
   ArrayLength,
@@ -51,7 +51,7 @@ const DownSection = ({
             replayComment={replayComment}
             refetch={refetchReplay}
             closeModal={onClose}
-            valid={variant === 'courseComment' ? courseCommentValid : blogCommentValid}
+            valid={variant === 'courseComment' ? courseReplayCommentValid : blogReplayCommentValid}
           />
         </CreateModal>
         {ArrayLength !== 0 &&

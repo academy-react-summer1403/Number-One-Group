@@ -9,7 +9,7 @@ const CircularProgressUser = () => {
     const { t } = useTranslation()
 
     return (
-        <div className='w-full lg:w-[45%] mx-auto lg:mx-0 order-0 lg:order-none h-[180px] mt-5 rounded-2xl flex items-center p-5 bg-LightLavender/50'>
+        <div className='w-full lg:w-[45%] mx-auto lg:mx-0 order-0 lg:order-none h-[180px] mt-5 rounded-2xl flex items-center p-5 bg-LightLavender/50 step-profBox'>
             <CircularProgress
                 classNames={{
                     svg: "w-36 h-36 drop-shadow-md",
