@@ -10,7 +10,7 @@ const HelperButton = () => {
   const { setIsOpen } = useTour()
 
   useEffect(() => {
-    setIsOpen(true)
+    if(locStatus) setIsOpen(true)
   }, [])
 
   return (
