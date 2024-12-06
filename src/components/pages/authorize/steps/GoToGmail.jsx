@@ -11,7 +11,7 @@ const GoToGmail = ({ userEmail }) => {
                 <span className="text-VioletBlue"> {userEmail} </span>
                 {t("GoToEmailDesc2")}
             </p>
-            <CustomButton vType="link" href={"https://mail.google.com/"} vStyle="yellow" text="GoToEmailBtn" style="w-full mb-5 justify-center !py-2.5 h-auto" />
+            <CustomButton vType="link" href={"https://mail.google.com/"} arrowColor="#000" vStyle="yellow" text="GoToEmailBtn" style="w-full flex mb-5 justify-center !py-2.5 h-auto" />
         </>
     )
 }

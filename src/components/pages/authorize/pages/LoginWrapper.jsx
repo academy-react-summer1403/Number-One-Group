@@ -25,7 +25,6 @@ const LoginWrapper = () => {
         console.log(user)
         UserLogin(user, navigate)
         dispatch(setKeys(user))
-        // if(user)
     }
 
     return (

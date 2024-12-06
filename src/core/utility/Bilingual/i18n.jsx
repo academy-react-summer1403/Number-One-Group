@@ -155,7 +155,9 @@ i18n.use(initReactI18next)
                     placeHolderChat: "پیام خود را وارد کنید", supportBtn: "پشتیبانی و ارتباط با ادمین", supportTeacherBtn: "ارتباط با اساتید",
                     // shops
                     shopInfo: 'اطلاعات فروشگاه', shopOverview: 'درباره فروشگاه',
-                    eventTitle: "بهترین ایونت های سال را بیابید", eventDescription: "بهترین ایونت های آموزشی را در اینجا پیدا کنید"
+                    eventTitle: "بهترین ایونت های سال را بیابید", eventDescription: "بهترین ایونت های آموزشی را در اینجا پیدا کنید",
+
+                    lastProductLabel: "محصولات", lastProductTitle: "محصولات ما", lastProductDesc: "ارزان ترین محصولات را با کفیت بالا از ما بخرید"
                 },
             },
             en: {
@@ -305,6 +307,8 @@ i18n.use(initReactI18next)
                     // shops
                     shopInfo: 'Shop Infomation', shopOverview: 'About the shop',
                     eventTitle: "Find The Best Events Of The Year", eventDescription: "Find the best educational events here.",
+
+                    lastProductLabel: "Products", lastProductTitle: "Our Products", lastProductDesc: "Buy the cheapest products with high quality from us."
                 },
             },
         },

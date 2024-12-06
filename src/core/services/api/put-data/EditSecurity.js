@@ -3,8 +3,12 @@ import http from "../../interceptor";
 
 const EditSecurity = async (params) => {
   try {
-    const response = await http.put("/SharePanel/EditSecurity", params);
-
+    const response = await toast.promise(
+      http.put("/SharePanel/EditSecurity", params),
+      {
+        pending: "در حال پردازش..."
+      }
+    );
     if (response.success) {
       toast.success(response.message);
     } else {

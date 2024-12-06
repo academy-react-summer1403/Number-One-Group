@@ -13,7 +13,7 @@ const CustomButton = ({ text, arrowColor, vStyle, style, Icon, href, vType, isCl
     const variantType = {
         link: (
             <Button radius="full" className={`bg-VioletBlue text-white duration-200 group px-0 py-0 ${variantStyle?.[vStyle]} ${style}`}>
-                <Link to={href} className="flex items-center gap-x-2 w-full h-full  px-5">
+                <Link to={href} className="flex items-center justify-center gap-x-2 w-full h-full px-5">
                     {t(text)}
                     <div className={`group-hover:ms-2 duration-200 ${i18n.language === "en" ? "reverse-img" : ""} ${disableArrow}`}>
                         {Icon ? <Icon /> : <ArrowLeftIcon stroke={arrowColor} height="12px" />}

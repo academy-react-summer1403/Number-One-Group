@@ -25,9 +25,6 @@ const SecurityWrapper = () => {
           <AccordionItem key="2" title={t("twoStep")} className='w-full' isCompact>
             <TwoStep />
           </AccordionItem>
-          <AccordionItem key="3" title={t("emailRecovery")} className='w-full' isCompact >
-            <EmailRecovery />
-          </AccordionItem>
         </Accordion>
       </div>
     </div>

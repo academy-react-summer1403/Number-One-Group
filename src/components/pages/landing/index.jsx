@@ -11,6 +11,7 @@ import { motion } from "framer-motion";
 import configVariants from "../../../config/page-transition";
 import EventSection from "./EventSection.jsx";
 import ComparisonSection from "./Comparison.jsx";
+import ProductSection from "./ProductSection.jsx";
 
 const Landing = () => {
     return (
@@ -27,6 +28,7 @@ const Landing = () => {
             <ComparisonSection />
             <SkilledTeachers />
             <Statistics />
+            <ProductSection />
             <Faq />
             <EventSection />
             <HowToStart />

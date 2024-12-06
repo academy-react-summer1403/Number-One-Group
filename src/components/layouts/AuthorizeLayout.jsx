@@ -1,19 +1,27 @@
 // packages
 import Typewriter from 'typewriter-effect';
 import { useTranslation } from 'react-i18next'
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useLocation } from 'react-router-dom';
 import { Tooltip } from '@nextui-org/react';
 import { AdminIcon, ExitBtnPanelIcon, HomeBtnPanelIcon } from '../../core/icon';
 import tooltipStyle from '../../core/constants/tooltip-style';
 import ParticlesBackground from '../../core/utility/Particles'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { LoadingSpinner } from '../common';
+import { useDispatch } from 'react-redux';
+import { clearAction } from '../../redux/slices/StepStatus';
 
 const AuthorizeLayout = () => {
     const { t, i18n } = useTranslation()
     const persianWords = ["یادگیری", "تلاش", "استقامت"]
     const englishWords = ["Learning", "Effort", "Stamina"]
     const [vector, setVector] = useState("")
+    const dispatch = useDispatch()
+    const location = useLocation()
+
+    useEffect(() => {
+        dispatch(clearAction())
+    }, [location.pathname])
 
     return (
         <>
@@ -27,7 +35,7 @@ const AuthorizeLayout = () => {
                     <div className='relative hidden w-full h-full xl:flex flex-wrap justify-end rounded-e-[50px] py-28 px-10'>
                         <div className='w-full'>
                             <div className='w-full flex items-center justify-between -mt-16 mb-8'>
-                                <Link to={"/authorize/login"} className='flex gap-x-2 items-center text-[#161439]'>
+                                <Link to={"/authorize/login"} className='flex gap-x-2 items-center text-[#161439] px-4 rounded-full py-1 bg-[#5751E1]'>
                                     <ExitBtnPanelIcon className="stroke-[#161439]" />
                                     {t("loginBtn")}
                                 </Link>

@@ -36,7 +36,7 @@ const FirstStepPassword = ({ title, description, setUserEmail, userEmail }) => {
                 type="email"
                 errorStyleComment="!bg-MainBg"
             />
-            <CustomButton vType="button" vStyle="yellow" text="ChangePasswordBtn" style="w-full mb-5 justify-center !py-2.5 h-auto" />
+            <CustomButton vType="button" vStyle="yellow" text="ChangePasswordBtn" style="w-full my-5 justify-center !py-2.5 h-auto" />
         </FormHolder>
     )
 }

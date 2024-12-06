@@ -21,11 +21,11 @@ const GetUserInfo = ({ phone }) => {
             initialValues={{ gmail: "", password: "" }}
             onSubmit={(event) => { handleSubmit(event) }}
             validations=""
-            style="w-full"
+            style="w-full flex flex-wrap gap-y-5"
             additionParams={{ enableReinitialize: true }}
         >
-            <h1 className='boldStyle_text w-full mb-5'>{t("GetUserInfoCaption")}</h1>
-            <p className='mediumStyle_text mb-5'>{t("GetUserInfoDesc")}</p>
+            <h1 className='boldStyle_text w-full'>{t("GetUserInfoCaption")}</h1>
+            <p className='mediumStyle_text'>{t("GetUserInfoDesc")}</p>
             {fields.map(item => (
                 <FormInput
                     key={item.id}
@@ -34,12 +34,12 @@ const GetUserInfo = ({ phone }) => {
                     eyeStyle={item.eyeStyle}
                     fullSize
                     type={item.type}
-                    fieldStyle="rounded-full py-2.5 h-auto mb-5"
+                    fieldStyle="rounded-full py-2.5 h-auto"
                     variants={item.variant}
                     errorStyleComment="!bg-MainBg"
                 />)
             )}
-            <CustomButton vType="button" vStyle="yellow" text="GetUserInfoBtn" style="w-full mb-5 justify-center !py-2.5 h-auto" />
+            <CustomButton vType="button" vStyle="yellow" text="GetUserInfoBtn" style="w-full justify-center !py-2.5 h-auto" />
         </FormHolder>
     )
 }

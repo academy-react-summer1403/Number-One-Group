@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  value: 1,
+  value: 1
 };
 
 function increase(state, action) {
@@ -17,15 +17,20 @@ function decrease(state, action) {
   state.value = action.payload + 1;
 }
 
+function clearStep(state) {
+  state.value = 1;
+}
+
 const stepStatus = createSlice({
   name: "step",
   initialState,
   reducers: {
     increase,
     decrease,
-  },
+    clearStep
+  }
 });
 
-export const { increase: increaseAction, decrease: decreaseAction } =
+export const { increase: increaseAction, decrease: decreaseAction, clearStep: clearAction } =
   stepStatus.actions;
 export default stepStatus.reducer;

@@ -33,7 +33,7 @@ const GetPhoneNumber = ({ setPhone, phone, title, description }) => {
                 variants="simple"
                 errorStyleComment="!bg-MainBg"
             />
-            <CustomButton vType="button" vStyle="yellow" text="GetCodeBtn" style="w-full mb-5 justify-center !py-2.5 h-auto" />
+            <CustomButton vType="button" vStyle="yellow" text="GetCodeBtn" style="w-full my-5 justify-center !py-2.5 h-auto" />
         </FormHolder>
     )
 }

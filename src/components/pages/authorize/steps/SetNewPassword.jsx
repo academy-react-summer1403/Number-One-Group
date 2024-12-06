@@ -30,14 +30,14 @@ const SetNewPassword = ({ userId }) => {
             <p className='mediumStyle_text mb-5'>{t("SetNewPasswordDesc")}</p>
             <FormInput
                 certificate="password"
-                fieldStyle="rounded-full mb-5  py-2.5 h-auto"
+                fieldStyle="rounded-full mb-5 py-2.5 h-auto"
                 placeholder={t("SetNewPasswordPlaceholder")}
                 fullSize
                 variants="password"
                 eyeStyle={`bottom-9 ${i18n.language == "en" ? "" : "left-4 right-auto"}`}
                 errorStyleComment="!bg-MainBg"
             />
-            <CustomButton vType="button" vStyle="yellow" text="SetNewPasswordBtn" style="w-full mb-5 justify-center !py-2.5 h-auto" />
+            <CustomButton vType="button" vStyle="yellow" text="SetNewPasswordBtn" style="w-full my-5 justify-center !py-2.5 h-auto" />
         </FormHolder>
     )
 }

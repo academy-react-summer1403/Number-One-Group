@@ -1,8 +1,6 @@
 import axios from "axios";
 
 const GetAllProducts = async (params) => {
-  console.log(params.Category)
-  console.log(params.Shop)
   try {
     const url = new URL("https://673cfd8a4db5a341d833a52f.mockapi.io/Products");
     url.searchParams.append("title", params.Query ? params.Query : "");
