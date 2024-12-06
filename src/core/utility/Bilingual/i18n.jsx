@@ -23,7 +23,7 @@ i18n.use(initReactI18next)
                     // shop Details
                     ShopDetailExist: "تعداد مجود در انبار", ShopDetailShop: "فروشگاه",
                     // Menu Items in the Header
-                    HomeSection: 'صفحه اصلی', CoursesSection: 'دوره های آموزشی', Events: 'ایونت ها', ShopSection: 'فروشگاه ها', BlogSection: 'وبلاگ', InstructorsSection: "مربیان", ProductSection: "محصولات",
+                    HomeSection: 'صفحه اصلی', CoursesSection: 'دوره های آموزشی', Events: 'ایونت ها', ShopSection: 'فروشگاه ها', BlogSection: 'وبلاگ', InstructorsSection: "مربیان", ProductSection: "محصولات", ContactSection: "ارتباط با ما", AboutSection: "درباره ما",
                     // Search Input in the Header
                     Login: 'حساب کاربری', headerSearchText: 'متن جستجو را وارد کنید',
                     // PlaceHolders
@@ -172,7 +172,7 @@ i18n.use(initReactI18next)
                     // shop Details
                     ShopDetailExist: "Quantity in stock", ShopDetailShop: "Shop",
                     // Menu Items in the Header
-                    HomeSection: 'Home', CoursesSection: 'Courses', Events: 'Events', ShopSection: 'Shops', BlogSection: 'Blog', InstructorsSection: "Instructors",
+                    HomeSection: 'Home', CoursesSection: 'Courses', Events: 'Events', ShopSection: 'Shops', BlogSection: 'Blog', InstructorsSection: "Instructors", ContactSection: "Contact", ProductSection: "Products", AboutSection: "About",
                     // Search Input in the Header
                     Login: 'User Account', headerSearchText: 'Enter the search text',
                     // PalceHolders

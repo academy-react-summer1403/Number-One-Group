@@ -6,4 +6,6 @@ export const menuItem = [
   { title: "ShopSection", href: "/shops", key: 5, show: false },
   { title: "ProductSection", href: "/products", key: 6, show: false },
   { title: "InstructorsSection", href: "/teachers", key: 7, show: false },
+  { title: "ContactSection", href: "/contact", key: 8, show: false },
+  { title: "AboutSection", href: "/about", key: 9, show: false },
 ];
