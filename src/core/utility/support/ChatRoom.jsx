@@ -6,8 +6,9 @@ import ProfileSection from "./ProfileSection"
 import SendSection from "./SendSection"
 import { useSelector } from "react-redux"
 import { getItem } from "../../hooks/local-storage"
+import NoSelect from "./NoSelect"
 
-const ChatRoom = ({ section }) => {
+const ChatRoom = ({ section, setOption }) => {
   const userInfo = useSelector(state => state.UserInfo.info);
 
   // Get This User Chats From Api
@@ -85,15 +86,21 @@ const ChatRoom = ({ section }) => {
   return (
     <div className="rounded-xl overflow-hidden">
       <ProfileSection />
-      <MessageSpace userChatData={section == "admin" ? adminChatData : userTeacherChats} />
-      <SendSection
-        chatsData={section == "admin" ? adminChatData : userTeacherChats}
-        refetch={section == "admin" ? adminRefetch : teacherRefetch}
-        section={section}
-        setTeacherId={setTeacherId}
-        teacherId={teacherId}
-        allChats={teacherChatData?.chatRoom}
-      />
+      {section != undefined ? (
+        <>
+          <MessageSpace userChatData={section == "admin" ? adminChatData : userTeacherChats} />
+          <SendSection
+            chatsData={section == "admin" ? adminChatData : userTeacherChats}
+            refetch={section == "admin" ? adminRefetch : teacherRefetch}
+            section={section}
+            setTeacherId={setTeacherId}
+            teacherId={teacherId}
+            allChats={teacherChatData?.chatRoom}
+          />
+        </>
+      ) : (
+        <NoSelect setOption={setOption} />
+      )}
     </div>
   )
 }
