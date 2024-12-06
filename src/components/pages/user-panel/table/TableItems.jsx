@@ -11,10 +11,10 @@ import fallback from "../../../../assets/images/image-not-found.png"
 import { MdPayment, MdDelete } from "react-icons/md";
 import { FaRegEdit } from "react-icons/fa";
 
-
 const TableItem = ({ item, variant, loading: isLoading, action, keyVariant, bet }) => {
     const navigate = useNavigate();
     const { i18n } = useTranslation()
+    
     const differentSection = {
         myCourses: {
             pic: item.tumbImageAddress,

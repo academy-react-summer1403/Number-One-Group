@@ -8,6 +8,7 @@ import { EditProfile } from "../../../../core/services/api/put-data"
 import TitleSection from "../header-section/TitleSection"
 import ChooseAddress from "./ChooseAddress"
 import AddProfile from "./AddProfile"
+import { EditInformationValidation } from "../../../../core/validations/EditUserInfo.Validation"
 
 const EditInformationWrapper = () => {
   const { t, i18n } = useTranslation()
@@ -40,6 +41,7 @@ const EditInformationWrapper = () => {
         onSubmit={(event) => { mutate(event); console.log(event) }}
         style="w-full h-fit flex justify-center lg:justify-end flex-wrap gap-y-16 lg:gap-y-0 mt-10"
         additionParams={{ enableReinitialize: true }}
+        validations={EditInformationValidation}
       >
         <div className="w-full lg:w-3/5 h-fit flex justify-center sm:justify-between flex-wrap gap-y-3">
           {EditInformationFields.sectionRight.map(obj => <FormInput key={obj.id} certificate={obj.certificate} dir={obj.dir} fullSize={obj.fullSize} options={obj.options} type={obj.type} sectionName={i18n.language == "en" ? obj.sectionName[1] : obj.sectionName[0]} variants={obj.variant} />)}

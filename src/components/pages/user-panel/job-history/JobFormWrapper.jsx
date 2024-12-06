@@ -8,6 +8,7 @@ import { CreateJobHistory, UpdateJobHistory } from "../../../../core/services/ap
 import { useParams } from "react-router-dom";
 import { useQueryWithDependencies } from "../../../../core/hooks/react-query";
 import { GetJobHistoryDetail } from "../../../../core/services/api/get-data";
+import { JobHistoryFormValidation } from "../../../../core/validations/CreateJob.Validation";
 
 const JobFormWrapper = ({ section }) => {
     const { id } = useParams()
@@ -24,7 +25,7 @@ const JobFormWrapper = ({ section }) => {
         inWork: detail?.inWork ? true : false,
         companyName: detail?.companyName ?? "",
         id: detail?.id ?? "",
-        userId: detail?.userId ?? "",
+        userId: detail?.userId ?? ""
     }
 
     const { i18n } = useTranslation()
@@ -51,6 +52,7 @@ const JobFormWrapper = ({ section }) => {
                 onSubmit={(event) => { section === "create" ? create(event) : update(event) }}
                 style="w-full h-fit flex justify-center lg:justify-end flex-wrap gap-y-16 lg:gap-y-0 mt-10"
                 additionParams={{ enableReinitialize: true }}
+                validations={JobHistoryFormValidation}
             >
                 <div className="w-full flex flex-wrap gap-10 justify-center">
                     {JobFormFields.map(item => (
