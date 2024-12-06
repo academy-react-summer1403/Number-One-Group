@@ -10,7 +10,7 @@ import { SiStatuspage } from "react-icons/si";
 import { FaRegIdCard } from "react-icons/fa";
 import ChangeMoment from '../../../core/utility/moment';
 import { DetailsBox, ImageFallBack, RelatedItems, Title_details } from '../../common';
-import NotFoundImg from "../../../assets/images/image-not-found.png"
+import NotFoundImg from "../../../assets/images/courses.png"
 import TabPanel from '../../pages/course-detail/TabPanel';
 import CourseCard from '../../pages/course/Course';
 import { useTranslation } from 'react-i18next';

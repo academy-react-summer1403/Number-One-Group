@@ -1,5 +1,5 @@
 import { ImageFallBack } from "../../common"
-import fallback from "../../../assets/images/image-not-found.png"
+import fallback from "../../../assets/images/shops.png"
 import { useTranslation } from "react-i18next"
 import { Skeleton } from "@nextui-org/react"
 

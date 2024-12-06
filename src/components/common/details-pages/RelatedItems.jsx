@@ -2,11 +2,11 @@ import { useTranslation } from "react-i18next";
 import { DateIcon } from "../../../core/icon";
 import { Link } from "react-router-dom";
 import MediaQuery from "react-responsive";
-import SwiperSlider from "../../common/swiper/SwiperSlider";
-import { SwiperSlide } from "swiper/react";
 import { useQueryWithDependencies } from "../../../core/hooks/react-query";
 import ChangeMoment from "../../../core/utility/moment";
 import RenderRelatedItems from "./RenderRelatedItems";
+import ImageFallBack from "../ImageFallBack";
+import fallback from "../../../assets/images/blogs.png"
 
 const titleVariant = {
   "courseFilterDtos": 'Courses',
@@ -26,13 +26,13 @@ const RelatedItems = ({ category, params, apiFunction, variant, RenderItem }) =>
   const { data, isSuccess, isLoading, refetch } = useQueryWithDependencies('GET_RELATED_ITEMS',
     apiFunction, category, apiParams
   )
-  const Breakpoints = {
-    1420: { spaceBetween: 20, slidesPerView: 3 },
-    1024: { spaceBetween: 30, slidesPerView: 2 },
-    970: { spaceBetween: 20, slidesPerView: 3 },
-    615: { spaceBetween: 30, slidesPerView: 2 },
-    200: { spaceBetween: 0, slidesPerView: 1 },
-  }
+  // const Breakpoints = {
+  //   1420: { spaceBetween: 20, slidesPerView: 3 },
+  //   1024: { spaceBetween: 30, slidesPerView: 2 },
+  //   970: { spaceBetween: 20, slidesPerView: 3 },
+  //   615: { spaceBetween: 30, slidesPerView: 2 },
+  //   200: { spaceBetween: 0, slidesPerView: 1 },
+  // }
 
   return (
     <>
@@ -45,7 +45,11 @@ const RelatedItems = ({ category, params, apiFunction, variant, RenderItem }) =>
             {isSuccess && data.news?.length > 0 ? data.news?.map((item) => (
               <Link key={item.id} to={`/BlogDetails/${item.id}`}>
                 <div className="flex gap-x-4 items-center mt-3 py-1 cursor-pointer hover:Box-shadow1 dark:hover:Box-shadow2 duration-250 rounded-md">
-                  <img src={item.currentImageAddressTumb} alt="" className="h-16 w-16 rounded-md" />
+                  <ImageFallBack
+                    src={item.currentImageAddressTumb}
+                    className="h-16 w-16 rounded-md"
+                    fallback={fallback}
+                  />
                   <div>
                     <div className="flex gap-2">
                       <DateIcon fill="#5751E1" height={14} width={14} />

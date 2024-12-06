@@ -4,7 +4,7 @@ import { BreadCrumb, TitleSection } from "../../partials/title-section"
 import { useQueryWithDependencies, useQueryWithoutDependencies } from "../../../core/hooks/react-query";
 import GetShopDetails from "../../../core/services/api/get-data/GetShopDetails";
 import { motion } from "framer-motion";
-import fallback from "../../../assets/images/image-not-found.png"
+import fallback from "../../../assets/images/shops.png"
 import { CustomMap, DetailsBox, ImageFallBack, OverView_Details, RelatedItems, Title_details } from "../../common";
 import { FaHourglassStart } from "react-icons/fa";
 import ShopCardWrapper from "../shops/ShopCardWrapper";
@@ -59,7 +59,7 @@ const ShopDetailsWrapper = () => {
           fallback={fallback}
         />
         <div className="flex max-lg:flex-wrap gap-7 justify-between">
-          <div className="max-lg:w-full">
+          <div className="w-full">
             <Title_details
               title={SelectedShop?.name}
               styleDisplay={'hidden'}
@@ -69,6 +69,7 @@ const ShopDetailsWrapper = () => {
             <OverView_Details
               title={'shopOverview'}
               describe={SelectedShop?.aboutUs}
+              Class="w-full"
             />
           </div>
           <div className="flex flex-wrap gap-y-7 min-w-72 w-full lg:w-72 lg:-mt-14 lg:ml-7">

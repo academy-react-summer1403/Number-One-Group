@@ -4,7 +4,7 @@ import ProductFooterCard from './ProductFooterCard'
 import { Link } from 'react-router-dom'
 import Tilt from 'react-parallax-tilt';
 
-const ProductCardWrapper = ({ item }) => {
+const ProductCardWrapper = ({ item, loading }) => {
     const {
         id,
         pictureList,
@@ -15,7 +15,6 @@ const ProductCardWrapper = ({ item }) => {
         price,
         special
     } = item
-    console.log(title)
 
     return (
         <Tilt transitionSpeed={2500}>
@@ -23,13 +22,14 @@ const ProductCardWrapper = ({ item }) => {
                 to={`/productDetails/${id}`}
                 className='w-[300px] h-fit flex flex-wrap gap-y-4 p-5 border border-LightGrayish rounded-lg hover:shadow-lg duration-200 relative cursor-pointer'
             >
-                <ProductHeaderCard image={pictureList?.[0]} special={special} />
+                <ProductHeaderCard image={pictureList?.[0]} special={special} loading={loading} />
                 <ProductContentCard
                     category={categoryId}
                     exist={exist}
                     title={title}
+                    loading={loading}
                 />
-                <ProductFooterCard discount={discount} price={price} />
+                <ProductFooterCard discount={discount} price={price} loading={loading} />
             </Link>
         </Tilt>
     )

@@ -15,7 +15,7 @@ const TeacherCourse = ({ id }) => {
     )
 
     const Breakpoints = {
-        1420: { spaceBetween: 50, slidesPerView: 3 },
+        1420: { spaceBetween: 10, slidesPerView: 3 },
         1024: { spaceBetween: 30, slidesPerView: 2 },
         970: { spaceBetween: 20, slidesPerView: 3 },
         615: { spaceBetween: 30, slidesPerView: 2 },
@@ -37,7 +37,7 @@ const TeacherCourse = ({ id }) => {
                 >
                     {isSuccess && data?.courseFilterDtos.map((item, index) => (
                         <SwiperSlide key={index}>
-                            <CourseCard item={item} refetch={refetch} loading={isLoading} />
+                            <CourseCard inSlider item={item} refetch={refetch} loading={isLoading} />
                         </SwiperSlide>
                     ))}
                 </SwiperSlider>

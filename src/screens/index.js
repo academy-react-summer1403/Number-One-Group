@@ -32,6 +32,7 @@ import Jobs from "./user-panel/Jobs";
 import CreateJob from "./user-panel/CreateJob";
 import UpdateJob from "./user-panel/UpdateJob";
 import Groups from "./user-panel/Groups";
+import About from "./about-us";
 
 export {
   LandingPage,
@@ -68,4 +69,5 @@ export {
   CreateJob,
   UpdateJob,
   Groups,
+  About,
 };

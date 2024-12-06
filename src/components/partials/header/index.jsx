@@ -1,51 +1,21 @@
-import { menuItem } from "../../../core/constants/Header/headerData"
-import MenuHeader from "./MenuHeader"
-import { HamburgerMenu, LogoGroup, ScrollProgressBar, SearchInput } from "../../common"
-import { CartIcon, FavoriteIcon } from "../../../core/icon"
-import MediaQuery from "react-responsive"
-import BasketItems from "./BasketItem"
-import { useDispatch, useSelector } from "react-redux"
+import { ScrollProgressBar } from "../../common"
+import { useDispatch } from "react-redux"
 import { Navbar } from "@nextui-org/react";
-import SideBarMenu from "./SideBarMenu"
 import { useState } from "react"
 import { useLocation } from "react-router-dom"
-import { GetMyFavoriteBlogs, GetMyFavoriteCourses, GetProfileInfo } from "../../../core/services/api/get-data"
+import { GetProfileInfo } from "../../../core/services/api/get-data"
 import { setInfoAction } from "../../../redux/slices/UserInfo"
-import HeaderButtons from "./HeaderButtons"
-import { useQueryWithoutDependencies } from "../../../core/hooks/react-query"
 import { useQuery } from "@tanstack/react-query"
 import { getItem } from "../../../core/hooks/local-storage"
+import LeftSectionItems from "./LeftSectionItems"
+import RightSection from "./RightSection"
 
 const Header = () => {
   const [visibleSearch, setVisibleSearch] = useState(false)
   const [visibleMenu, setVisibleMenu] = useState(false)
-  const UserInfo = useSelector(state => state.UserInfo.info)
   const dispatch = useDispatch()
   const location = useLocation()
-
-  // basket and favoriteBox number
-  const { data: courseFavorite } = useQueryWithoutDependencies("GET_MY_COURSES", GetMyFavoriteCourses);
-  const { data: blogFavorite } = useQueryWithoutDependencies("GET_MY_FAVORITES", GetMyFavoriteBlogs);
-  const myFavoriteLength = courseFavorite?.favoriteCourseDto?.length + blogFavorite?.myFavoriteNews?.length;
-  const { data: myCourseReserve } = useQueryWithoutDependencies('MY_RESERVED_LIST', null)
-
-  const baskets = [
-    { icon: CartIcon, number: myCourseReserve?.length, href: "/cart", tooltip: ["سبد خرید", "Cart"] },
-    { icon: FavoriteIcon, number: UserInfo !== false ? myFavoriteLength : null, href: UserInfo !== false && "/userPanel/favorites", tooltip: ["لیست علاقه مندی", "Favorite List"] },
-  ];
-
-  const menuItems = menuItem.map((item, index) => {
-    return (
-      <MenuHeader
-        key={index}
-        href={item.href}
-        title={item.title} />
-    )
-  });
-
-  const basketItems = baskets.map((item, index) => <BasketItems key={index} item={item} />);
-
-  const token = getItem('token')
+  const token = getItem("token")
 
   const { data: userInfo, isSuccess } = useQuery({
     queryKey: ["GET-USER-PROFILE", location],
@@ -56,38 +26,22 @@ const Header = () => {
   if (isSuccess) { dispatch(setInfoAction(userInfo)) }
 
   return (
-    <>
-      <Navbar
-        shouldHideOnScroll={visibleMenu || visibleSearch ? false : true}
-        className="flex gap-x-10 items-center justify-between py-3"
-        maxWidth="full"
-      >
-        <div className="w-fit flex gap-x-6 items-center min-[1360px]:px-20 sm:px-10 px-3">
-          <LogoGroup color={'text-VioletBlue'} />
-          <MediaQuery minWidth={"1024px"}>
-            <div className="w-fit flex gap-x-6 items-center">
-              {menuItems}
-            </div>
-          </MediaQuery>
-          <MediaQuery maxWidth={"1024px"}>
-            <HamburgerMenu setVisible={setVisibleMenu} visible={visibleMenu} style={'bg-VioletBlue dark:bg-LightLavender z-50 p-8'}>
-              <SideBarMenu basketItems={basketItems} menuItems={menuItems} />
-            </HamburgerMenu >
-          </MediaQuery>
-        </div>
-        <div className="w-fit h-[42px] flex gap-x-3 justify-end items-center min-[1360px]:px-20 sm:px-10 px-3">
-          <MediaQuery minWidth={"1285px"}>
-            <SearchInput />
-          </MediaQuery>
-          <HeaderButtons
-            setVisibleSearch={setVisibleSearch}
-            visibleSearch={visibleSearch}
-            basketItems={basketItems}
-          />
-        </div>
-        <ScrollProgressBar />
-      </Navbar>
-    </>
+    <Navbar
+      shouldHideOnScroll={visibleMenu || visibleSearch ? false : true}
+      className="flex gap-x-10 items-center justify-between py-3 shadow-lg"
+      maxWidth="full"
+    >
+      <div className="w-fit flex gap-x-6 items-center min-[1360px]:px-20 sm:px-10 px-3">
+        <RightSection setVisibleMenu={setVisibleMenu} visibleMenu={visibleMenu} />
+      </div>
+      <div className="w-fit h-[42px] flex gap-x-3 justify-end items-center min-[1360px]:px-20 sm:px-10 px-3">
+        <LeftSectionItems
+          setVisibleSearch={setVisibleSearch}
+          visibleSearch={visibleSearch}
+        />
+      </div>
+      <ScrollProgressBar />
+    </Navbar>
   )
 }
 

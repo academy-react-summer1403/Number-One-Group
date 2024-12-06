@@ -4,11 +4,11 @@ import CourseCenterBody from "./CourseCenterBody"
 import CourseDownBody from "./CourseDownBody"
 import CourseTopBody from "./CourseTopBody"
 import { Skeleton } from "@nextui-org/react";
-import NotFoundImg from "../../../assets/images/image-not-found.png"
+import NotFoundImg from "../../../assets/images/courses.png"
 import { useMediaQuery } from "react-responsive"
 import Tilt from 'react-parallax-tilt';
 
-const CourseCard = ({ loading, refetch, item }) => {
+const CourseCard = ({ loading, refetch, item, inSlider = false }) => {
     const [searchParams, setSearchParams] = useSearchParams()
     const isTabletOrLapTop = useMediaQuery({ query: '(min-width: 768px)' })
     const {
@@ -34,7 +34,7 @@ const CourseCard = ({ loading, refetch, item }) => {
 
     return (
         <Tilt transitionSpeed={2500}>
-            <div data-aos="fade-up" className="border border-LightGrayish p-4 pb-3 grid-item w-[300px] h-[435px] rounded-lg hover:shadow-lg duration-200  m-auto relative  group/item">
+            <div data-aos="fade-up" style={{ width: !inSlider && "300px" }} className="border border-LightGrayish p-4 pb-3 grid-item h-[435px] rounded-lg hover:shadow-lg duration-200  m-auto relative group/item">
                 <div className="w-full h-44 course-height-img mx-auto rounded-lg">
                     <Link to={`/CourseDetails/${id}`}>
                         <Skeleton isLoaded={!loading} className="h-44 rounded-lg">

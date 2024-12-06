@@ -39,7 +39,7 @@ const LastBlogs = () => {
         >
           {isSuccess && data.news?.map(item => (
             <SwiperSlide key={item.id}>
-              <BlogCard item={item} refetch={refetch} />
+              <BlogCard inSlider item={item} refetch={refetch} />
             </SwiperSlide>
           ))}
         </SwiperSlider>

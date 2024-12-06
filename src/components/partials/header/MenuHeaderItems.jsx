@@ -2,8 +2,8 @@ import { useTranslation } from "react-i18next"
 import { useMediaQuery } from "react-responsive";
 import { NavLink } from "react-router-dom";
 
-const MenuHeader = ({ title, href }) => {
-  const { t, i18n } = useTranslation();
+const MenuHeaderItems = ({ title, href }) => {
+  const { t } = useTranslation();
   const mobileOrTablet = useMediaQuery({ minWidth: 1024 })
 
   return (
@@ -14,4 +14,4 @@ const MenuHeader = ({ title, href }) => {
   )
 }
 
-export default MenuHeader
+export default MenuHeaderItems
