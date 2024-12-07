@@ -26,6 +26,7 @@ const PasswordInput = ({ form, field, ...props }) => {
             type={isVisible ? "text" : "password"}
             classNames={{ input: "!text-[#5751E1]" }}
             className="max-w-xs"
+            placeholder="پسورد"
             {...props}
         />
     )

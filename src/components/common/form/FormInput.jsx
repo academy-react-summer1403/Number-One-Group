@@ -13,7 +13,7 @@ const FormInput = ({ sectionName, certificate, fullSize, style, variants, fieldS
         password: (
             <Field
                 name={certificate}
-                placeholder={sectionName}
+                // placeholder={sectionName}
                 id={certificate}
                 component={PasswordInput}
             />
