@@ -37,7 +37,7 @@ const HeroSection = () => {
             </div>
             <div className="w-[600px] h-full hidden md:flex justify-center items-end relative">
                 <div className={`${i18n.language === "en" ? "left-[50px]" : "right-[50px]"} w-44 h-fit flex flex-wrap  gap-y-3 rounded-lg top-[80px] p-4 heroSection_box_shadow bg-MainBg text-DarkBlue absolute z-10`}>
-                    <h1>بیش از 30 استاد برتر</h1>
+                    <h1>بیش از {data?.length - 3} استاد برتر</h1>
                     <AvatarGroup isBordered max={3}>
                         {isSuccess && data.map((item) => (
                             <Avatar key={item.teacherId} src={item.pictureAddress} />
