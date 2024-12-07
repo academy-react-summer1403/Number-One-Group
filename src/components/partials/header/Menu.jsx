@@ -27,8 +27,8 @@ const Menu = () => {
                 />
             ))}
             <Dropdown>
-                <DropdownTrigger className='hover:text-VioletBlue cursor-pointer duration-200'>
-                    صفحات دیگر
+                <DropdownTrigger className='hover:text-VioletBlue w-[110px] cursor-pointer duration-200'>
+                    {t("anotherPage")}
                 </DropdownTrigger>
                 <DropdownMenu
                     dir={i18n.language != "en" ? "rtl" : "ltr"}
