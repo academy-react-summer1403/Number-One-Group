@@ -13,7 +13,7 @@ const SearchInput = ({ setQueryProp, showSearchFilter = true, inputStyle, holder
     const { t, i18n } = useTranslation();
     const dispatch = useDispatch()
     const [SearchValue, setSearchValue] = useState("1")
-    const [disableKey, setDisableKey] = useState("1")
+    const [disableKey, setDisableKey] = useState(null)
     const Navigate = useNavigate()
     const [initialSearchValue, setInitialSearchValue] = useState("")
     const selectItems = i18n.language === 'fa' ? selectItems_FA : selectItems_EN;
