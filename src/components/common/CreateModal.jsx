@@ -17,15 +17,15 @@ const CreateModal = ({
     return (
         <Modal
             size={size}
-            backdrop={backdrop ? backdrop : "blur"}
+            // backdrop={backdrop ? backdrop : "blur"}
             isOpen={isOpen}
             onClose={onClose}
-            hideCloseButton
-            scrollBehavior={scroll && "outside"}
+            // hideCloseButton
+            // scrollBehavior={scroll && "outside"}
             dir={i18n.language === 'fa' ? "rtl" : "ltr"}
-            className={`${i18n.language === 'fa' ? 'font-Sahel' : 'font-Pop_Med'} `}
+            className={`${i18n.language === 'fa' ? 'font-IranSans' : 'font-Pop_Med'} `}
         >
-            <ModalContent className={`bg-[#525252]/70 p-3 ${modalStyle}`}>
+            <ModalContent>
                 {header ? <ModalHeader className={headerStyle}>{header}</ModalHeader> : null}
                 <ModalBody className={bodyStyle}>
                     {children}

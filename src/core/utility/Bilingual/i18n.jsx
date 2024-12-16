@@ -156,9 +156,9 @@ i18n.use(initReactI18next)
                     // shops
                     shopInfo: 'اطلاعات فروشگاه', shopOverview: 'درباره فروشگاه',
                     eventTitle: "بهترین ایونت های سال را بیابید", eventDescription: "بهترین ایونت های آموزشی را در اینجا پیدا کنید",
-
                     lastProductLabel: "محصولات", lastProductTitle: "محصولات ما", lastProductDesc: "ارزان ترین محصولات را با کفیت بالا از ما بخرید",
                     anotherPage: "صفحات دیگر", herosectionBox1: "بیش از ", herosectionBox2: " استاد برتر",
+                    captchaTitle: "تایید کنید", captchaDescription: "لطفا حروف بالا را در باکس پایین وارد کنید",
                 },
             },
             en: {
@@ -311,6 +311,7 @@ i18n.use(initReactI18next)
 
                     lastProductLabel: "Products", lastProductTitle: "Our Products", lastProductDesc: "Buy the cheapest products with high quality from us.",
                     anotherPage: "Another Page", herosectionBox1: "More than ", herosectionBox2: " top professors",
+                    captchaTitle: "Verify", captchaDescription: "Please enter the letters above in the box below.",
                 },
             },
         },

@@ -49,6 +49,7 @@ import ScrollProgressBar from "./ScrollProgressBar.jsx";
 import CustomMap from "./CustomMap.jsx";
 import Spinner from "./Spinner.jsx";
 import HandleIdentityEditorJs from "./create-editorjs-blocks/IdentityEditorJs.jsx";
+import Captcha from "./Captcha.jsx";
 
 export {
   HowToStart,
@@ -100,4 +101,5 @@ export {
   CustomMap,
   Spinner,
   HandleIdentityEditorJs,
+  Captcha,
 };
