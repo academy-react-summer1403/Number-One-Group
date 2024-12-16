@@ -35,16 +35,11 @@ const AuthorizeLayout = () => {
                     <div className='relative hidden w-full h-full xl:flex flex-wrap justify-end rounded-e-[50px] py-28 px-10'>
                         <div className='w-full'>
                             <div className='w-full flex items-center justify-between -mt-16 mb-8'>
-                                <Link to={"/authorize/login"} className='flex gap-x-2 items-center text-[#161439] px-4 rounded-full py-1 bg-[#5751E1]'>
-                                    <ExitBtnPanelIcon className="stroke-[#161439]" />
+                                <Link to={"/authorize/login"} className='flex gap-x-2 items-center text-white px-4 rounded-full py-1 bg-[#5751E1]'>
+                                    <ExitBtnPanelIcon className="stroke-white" />
                                     {t("loginBtn")}
                                 </Link>
                                 <div className='flex gap-x-3 items-center'>
-                                    <Tooltip {...tooltipStyle} content={i18n.language == "en" ? "Admin" : "ادمین"}>
-                                        <Link>
-                                            <AdminIcon fill="#050079" />
-                                        </Link>
-                                    </Tooltip>
                                     <Tooltip {...tooltipStyle} content={i18n.language == "en" ? "Home" : "خانه"}>
                                         <Link to="/">
                                             <HomeBtnPanelIcon fill="#050079" />
