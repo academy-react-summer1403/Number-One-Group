@@ -42,8 +42,8 @@ const Categories = () => {
             </div>
             <div className="w-full sm:flex flex-wrap md:gap-x-10 gap-y-10 lg:justify-end max-lg:mt-24 justify-around relative">
                 <BannerImg className={'absolute -top-24 -left-12 opacity-90 max-lg:hidden'} />
-                {newTechnologies.map(item => (
-                    <div data-aos="fade-right" className="sm:odd:-mt-[60px] sm:even:mt-[10px] z-50">
+                {newTechnologies.map((item , index) => (
+                    <div key={index} data-aos="fade-right" className="sm:odd:-mt-[60px] sm:even:mt-[10px] z-50">
                         <CategoryItem key={item.id} amount={item.amount} title={item.techName} />
                     </div>
                 ))}
