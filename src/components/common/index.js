@@ -1,5 +1,5 @@
 import HowToStart from "./HowToStart";
-import InformedPoster from "./informedPoster";
+import InformedPoster from "./InformedPoster";
 import CustomButton from "./Button.jsx";
 import CreateSocialMediaItems from "./CreateSocialMediaItems.jsx";
 import Label from "./Label";
