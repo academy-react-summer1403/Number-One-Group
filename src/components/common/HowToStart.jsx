@@ -1,6 +1,6 @@
 import { Label, SwiperSlider } from "."
-import CreateRequestCard from "../pages/landing/createRequestCard"
-import Encouragement from "../pages/landing/encouragementList"
+import CreateRequestCard from "../pages/landing/CreateRequestCard"
+import Encouragement from "../pages/landing/EncouragementList"
 import { SwiperSlide } from 'swiper/react';
 import MediaQuery from "react-responsive";
 import { useTranslation } from "react-i18next"
