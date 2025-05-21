@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next"
 import { Label, SwiperSlider, CustomButton } from "../../common"
-import Tab from "./tab"
+import Tab from "./Tab"
 import { useSelector } from "react-redux"
 import { useState } from "react"
 import { SwiperSlide } from "swiper/react"

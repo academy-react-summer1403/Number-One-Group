@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next"
-import CreateStatisticsItem from "./createStatisticsItem"
+import CreateStatisticsItem from "./CreateStatisticsItem"
 import { useQueryWithoutDependencies } from "../../../core/hooks/react-query"
 import { GetLandingReports } from "../../../core/services/api/get-data"
 import { motion } from "framer-motion"
