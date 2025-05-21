@@ -20,7 +20,6 @@ export default defineConfig({
             "react-multi-carousel",
           ],
           formValidation: ["formik", "yup"],
-          animations: ["framer-motion", "react-countup", "aos"],
           router: ["react-router-dom", "react-redux", "@reduxjs/toolkit"],
           network: ["axios", "@tanstack/react-query"],
           media: [
