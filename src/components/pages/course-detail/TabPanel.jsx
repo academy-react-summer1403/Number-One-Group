@@ -50,7 +50,7 @@ const TabPanel = ({
                 </Tab>
                 <Tab label="User comments">
                     <CommentSection
-                        Id={params.Id}
+                        Id={params.commentId}
                         apiFunction={AddCourseComment}
                         variant={variant}
                         replayComment={AddReplyCourseComment}

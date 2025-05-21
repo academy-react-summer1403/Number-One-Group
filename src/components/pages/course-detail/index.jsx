@@ -67,7 +67,7 @@ const CourseDetailsWrapperPage = () => {
         refetch: refetch, userFavorite: isUserFavorite,
         favoriteText: 'CourseFavorite', refetchComment: refetchComment, commentSuccess: commentSuccess,
         commentData: commentData, actionRate: AddCourseRate, rateStatus: currentUserSetRate, rateNumber: currentRate,
-        Id: id,
+        commentId: id,
     }
     // Find related courses based on technology
     const listTech = [];

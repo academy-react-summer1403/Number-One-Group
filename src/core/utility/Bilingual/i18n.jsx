@@ -98,13 +98,13 @@ i18n.use(initReactI18next)
                     error: "صفحه خطا", ErrorDesc: "متاسفم! این صفحه در دسترس نیست!",
                     // detailsBox
                     StartTime: 'زمان شروع', Registrants: 'ثبت نام شده ها',
-                    capacity: 'ظرفیت', endTime: 'زمان پایان', startTime: 'زمان شروع', statusCourse: 'وضعیت دوره',
+                    capacity: 'ظرفیت', endTime: 'زمان پایان', statusCourse: 'وضعیت دوره',
                     Payment: 'پرداخت امن:', ShareCourse: 'این دوره را به اشتراک بگذارید:', ShareShop: 'این فروشگاه را به اشتراک بگذارید:',
                     //Instructors-Details page
                     sideBarTitle: "تماس سریع", sideBarBtn: "فرستادن پیام", sideBarDesc: "با اساتید خود به راحتی ازتباط بگیرید",
                     instructorBiography: "زندگینامه", instructorSkill: "مهارت ها", instructorCourses: "دوره های من",
                     // Events
-                    EventOverview: 'نمای کلی رویداد', EventPrice: 'هزینه رویداد', EventInfo: 'اطلاعات رویداد', eventDate: 'تاریخ شروع', StartTime: 'زمان شروع', graduation: 'دانشجو',
+                    EventOverview: 'نمای کلی رویداد', EventPrice: 'هزینه رویداد', EventInfo: 'اطلاعات رویداد', eventDate: 'تاریخ شروع', graduation: 'دانشجو',
                     EventTopics: 'موضوعات', EventQuizzes: 'آزمون ها', EventCertifications: 'گواهینامه ها', duration: 'مدت زمان', lessons: 'درس ها', chairs: "تعداد صندلی",
                     // Contact us page
                     contactUsCaption: "برای ما پیام ارسال کنید", contactUsDescription: "آدرس ایمیل شما منتشر نخواهد شد. فیلدهای الزامی علامت گذاری شده اند *",
@@ -250,13 +250,13 @@ i18n.use(initReactI18next)
                     error: "Error Page", ErrorDesc: "Sorry! This Page is Not Available!",
                     // detailsBox
                     StartTime: 'Start Time', Registrants: 'Registrants',
-                    capacity: 'Capacity', endTime: 'End Time', startTime: 'Start Time', statusCourse: 'Course Status',
+                    capacity: 'Capacity', endTime: 'End Time', statusCourse: 'Course Status',
                     Payment: 'Secure Payment:', ShareCourse: 'Share this course:', ShareShop: 'Share this shop:',
                     //Instructors-Details page
                     sideBarTitle: "Quick Contact", sideBarBtn: "Send Message", sideBarDesc: "Communicate easily with your professors.",
                     instructorBiography: "Biography", instructorSkill: "Skills", instructorCourses: "My Courses",
                     // Events
-                    EventOverview: 'Event Overview', EventPrice: 'Event Fee', EventInfo: 'Event Infomation', eventDate: 'Date', StartTime: 'Start Time', graduation: 'graduation',
+                    EventOverview: 'Event Overview', EventPrice: 'Event Fee', EventInfo: 'Event Infomation', eventDate: 'Date',  graduation: 'graduation',
                     EventTopics: 'Topics', EventQuizzes: 'Quizzes', EventCertifications: 'Certifications', duration: 'duration', lessons: 'lessons', chairs: "Chairs",
                     // Contact us page
                     contactUsCaption: "Send Us Message", contactUsDescription: "Your email address will not be published. Required fields are marked *",
