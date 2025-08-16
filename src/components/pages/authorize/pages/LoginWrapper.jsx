@@ -35,7 +35,7 @@ const LoginWrapper = () => {
 
     return (
         <>
-            {/* <Captcha isOpen={isOpen} onClose={onClose} setCorrect={setIsCaptcha} /> */}
+            <Captcha isOpen={isOpen} onClose={onClose} setCorrect={setIsCaptcha} />
             <FormHolder
                 initialValues={initialValues}
                 onSubmit={(event) => { handleUserLogin(event) }}
