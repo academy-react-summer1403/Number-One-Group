@@ -1,7 +1,7 @@
 import { toast } from "react-toastify";
 import { setStatusModal } from "../../../redux/slices/LoginPopup";
 
-const handleToLike = (
+const handleToLike = async (
   UserInfo,
   variant,
   id,
@@ -18,42 +18,49 @@ const handleToLike = (
   if (!UserInfo) {
     toast.error("لطفاً برای دسترسی به امکانات سایت، ابتدا وارد حساب کاربری خود شوید.");
     dispatch(setStatusModal(true));
-  } else {
+    return;
+  }
+
+  try {
     // Type 1
     if (variant === "courseComment") {
       if (status === "-" || status !== btnStatus) {
-        api(id, refetch);
+        await api(id, refetch);
       } else {
-        Delete(userLikeId, refetch);
+        await Delete(userLikeId, refetch);
       }
     }
 
     // Type 2
     else if (variant === "courseDetails") {
       if (status == 1) {
-        Delete(userLikeId, refetch);
+        await Delete(userLikeId, refetch);
       } else {
-        api(id, refetch);
+        await api(id, refetch);
       }
     }
 
     // Type 3
     else if (variant === "blogDetails") {
       if (status) {
-        Delete(userLikeId, refetch);
+        await Delete(userLikeId, refetch);
       } else {
-        api(id, type, refetch);
+        await api(type, id, refetch);
       }
     }
 
     // The rest of the types
     else {
       if (status) {
-        Delete(userLikeId, refetch);
+        await Delete(userLikeId, refetch);
       } else {
-        api(id, refetch);
+        await api(id, refetch);
       }
     }
+  } catch (error) {
+    console.error("Error in handleToLike:", error);
+    toast.error("خطا در عملیات لایک/دیسلایک");
   }
 };
+
 export default handleToLike;

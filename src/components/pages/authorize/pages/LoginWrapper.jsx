@@ -19,7 +19,7 @@ const LoginWrapper = () => {
     ]
     const dispatch = useDispatch()
     const navigate = useNavigate()
-    const [isCaptcha, setIsCaptcha] = useState(false)
+    const [isCaptcha, setIsCaptcha] = useState(true)
     const { onOpen, isOpen, onClose } = useDisclosure();
 
     useEffect(() => { context.setVector(Vector) }, [])
@@ -35,7 +35,7 @@ const LoginWrapper = () => {
 
     return (
         <>
-            <Captcha isOpen={isOpen} onClose={onClose} setCorrect={setIsCaptcha} />
+            {/* <Captcha isOpen={isOpen} onClose={onClose} setCorrect={setIsCaptcha} /> */}
             <FormHolder
                 initialValues={initialValues}
                 onSubmit={(event) => { handleUserLogin(event) }}

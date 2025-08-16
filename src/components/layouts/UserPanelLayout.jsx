@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import MediaQuery from 'react-responsive'
 import { useTranslation } from 'react-i18next'
@@ -17,12 +17,25 @@ const UserPanelLayout = () => {
     const location = useLocation()
     const { i18n } = useTranslation()
 
-    const { data, isSuccess } = useQueryWithDependencies("GET_PROFILE_INFO", GetProfileInfo, location, null)
-    if (isSuccess) {
-        const token = getItem("token")
-        if (!token) return
+    const { data, isSuccess, isLoading } = useQueryWithDependencies("GET_PROFILE_INFO", GetProfileInfo, location, null)
+    
+    // Move dispatch logic to useEffect to prevent setState during render
+    useEffect(() => {
+        if (isSuccess && data) {
+            const token = getItem("token")
+            if (token) {
+                dispatch(setInfoAction(data))
+            }
+        }
+    }, [isSuccess, data, dispatch])
 
-        dispatch(setInfoAction(data))
+    // Show loading state while fetching data
+    if (isLoading) {
+        return (
+            <div className="flex items-center justify-center h-screen">
+                <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-VioletBlue"></div>
+            </div>
+        )
     }
 
     return (

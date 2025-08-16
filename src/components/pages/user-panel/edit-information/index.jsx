@@ -20,7 +20,7 @@ const EditInformationWrapper = () => {
     birthDay: profile.birthDay,
     phoneNumber: profile["phoneNumber"],
     nationalCode: profile["nationalCode"],
-    email: profile["email"],
+    // email: profile["email"],
     homeAdderess: profile["homeAdderess"],
     userAbout: profile["userAbout"],
     gender: profile.gender,
