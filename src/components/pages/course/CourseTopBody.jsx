@@ -28,7 +28,7 @@ const CourseTopBody = ({
         <Skeleton isLoaded={!isLoaded} className="rounded-lg w-8">
           <div className="flex gap-1 items-baseline">
             <StarIcon />
-            <span className="text-gray-500 text-sm">{score}</span>
+            <span className="text-gray-500 text-sm">{score?.count}</span>
           </div>
         </Skeleton>
       </div>

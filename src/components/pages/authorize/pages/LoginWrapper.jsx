@@ -7,7 +7,7 @@ import { UserLogin } from '../../../../core/services/api/post-data'
 import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { setKeys } from '../../../../redux/slices/LoginInfo'
-import { useDisclosure } from '@nextui-org/react'
+import { Button, useDisclosure } from '@nextui-org/react'
 
 const LoginWrapper = () => {
     const context = useOutletContext()
@@ -69,6 +69,7 @@ const LoginWrapper = () => {
                         <span className='text-DarkBlue'>{t("HaveAccount2")}</span>
                         <Link to="/authorize/register" className='text-[#5751E1] underline'>{t("signUp")}</Link>
                     </div>
+                    <Button/>
                 </div>
             </FormHolder></>
     )
